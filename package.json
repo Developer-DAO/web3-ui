@@ -5,13 +5,13 @@
   "private": false,
   "description": "React Typescript Library Boilerplate",
   "author": "Dhaiwat Pandya",
-  "homepage": "https://github.com/dhaiwat10/react-library-boilerplate",
+  "homepage": "https://github.com/Developer-DAO/web3-ui/",
   "bugs": {
-    "url": "https://github.com/dhaiwat10/react-library-boilerplate/issues"
+    "url": "https://github.com/Developer-DAO/web3-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhaiwat10/react-library-boilerplate.git"
+    "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
   "scripts": {
     "build": "yarn clean; rollup -c",
