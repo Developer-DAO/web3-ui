@@ -30,11 +30,15 @@
     "component:new": "hygen component with-prompt",
     "publish": "npx semantic-release --no-ci"
   },
-  "main": "index.js",
-  "module": "index.esm.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
-    "classnames": "^2.2.6"
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "classnames": "^2.2.6",
+    "framer-motion": "^4"
   },
   "peerDependencies": {
     "react": "*",
@@ -91,7 +95,7 @@
     "stylelint-scss": "^3.18.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
-    "typescript": "^3.8.3",
+    "typescript": "^4.1.0",
     "webpack": "^4.42.1"
   },
   "engines": {

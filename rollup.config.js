@@ -12,12 +12,12 @@ export default {
   external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   output: [
     {
-      file: `./dist/${pkg.module}`,
+      file: `./${pkg.module}`,
       format: 'es',
       sourcemap: true,
     },
     {
-      file: `./dist/${pkg.main}`,
+      file: `./${pkg.main}`,
       format: 'cjs',
       sourcemap: true,
     },
