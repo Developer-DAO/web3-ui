@@ -19,8 +19,6 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn install
-      # - name: Lint code
-      #   run: yarn lint
       - name: Test code
         run: yarn test --passWithNoTests
       - name: Build
@@ -49,7 +47,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Release
-        env: 
+        env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
         run: npx semantic-release

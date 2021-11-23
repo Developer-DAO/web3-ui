@@ -19,9 +19,6 @@
     "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "lint": "yarn lint:script && yarn lint:style",
-    "lint:script": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "lint:style": "stylelint ./src",
     "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
@@ -62,17 +59,10 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "conventional-changelog-conventionalcommits": "^4.4.0",
     "css-loader": "^5.0.1",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "hygen": "^6.0.4",
     "identity-obj-proxy": "^3.0.0",
@@ -90,9 +80,6 @@
     "sass-loader": "^10.1.0",
     "semantic-release": "^17.3.0",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.18.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.0",
@@ -104,7 +91,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn format"
     }
   },
   "release": {
