@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import './example.scss';
 
 export interface ExampleProps {
   active?: boolean | undefined;
