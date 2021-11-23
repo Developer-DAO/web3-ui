@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Developer-DAO/web3-ui//compare/v1.1.0...v1.2.0) (2021-11-23)
+
+
+### Features
+
+* add Chakra ([#4](https://github.com/Developer-DAO/web3-ui//issues/4)) ([1d67318](https://github.com/Developer-DAO/web3-ui//commit/1d6731870461deeea607219ed5f9f091a67be1f3))
+
 ## [1.1.0](https://github.com/Developer-DAO/web3-ui//compare/v1.0.0...v1.1.0) (2021-11-22)
 
 
