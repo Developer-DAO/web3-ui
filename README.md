@@ -1,4 +1,4 @@
-# Welcome to Web3-UI
+# Welcome to Web3-UI (The UI library for Web3)
 
 Web3-UI has been developed keeping in mind the specific needs of web3 websites.
 
