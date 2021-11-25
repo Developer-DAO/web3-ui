@@ -1,12 +1,8 @@
 ---
 to: src/components/<%= h.changeCase.pascalCase(name) %>/<%= h.changeCase.pascalCase(name) %>.stories.tsx
 ---
+import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { <%= h.changeCase.pascalCase(name) %> } from '.';
 
-export interface <%= h.changeCase.pascalCase(name) %>Props {}
-
-export const <%= h.changeCase.pascalCase(name) %>: React.FC<<%= h.changeCase.pascalCase(name) %>Props> = ({ children }) => {
-  return (
-    <div>{ children }</div>
-  );
-}
+storiesOf('<%= h.changeCase.pascalCase(name) %>', module).add('Default', () => <<%= h.changeCase.pascalCase(name) %> />);
