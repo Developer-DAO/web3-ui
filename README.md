@@ -5,7 +5,7 @@ web3-ui is a library made up of UI components specifically crafted for web3 use 
 
 ## Installation
 
-Web3-UI is available as an [npm package](https://www.npmjs.com/package/web3-ui)
+web3-ui is available as an [npm package](https://www.npmjs.com/package/web3-ui)
 Install using:
 ```npm install web3-ui```
  or
@@ -19,3 +19,4 @@ To start storybook and see the components already created, use:
 ## Contribute
 
 [Contribute to the project!](CONTRIBUTING.md)
+
