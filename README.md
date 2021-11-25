@@ -19,4 +19,3 @@ To start storybook and see the components already created, use:
 ## Contribute
 
 [Contribute to the project!](CONTRIBUTING.md)
-
