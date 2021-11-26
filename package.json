@@ -34,8 +34,11 @@
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@walletconnect/web3-provider": "^1.6.6",
     "classnames": "^2.2.6",
-    "framer-motion": "^4"
+    "ethers": "^5.5.1",
+    "framer-motion": "^4",
+    "web3modal": "^1.9.4"
   },
   "peerDependencies": {
     "react": "*",

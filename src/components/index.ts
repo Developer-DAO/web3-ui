@@ -4,3 +4,4 @@ export * from './Example';
 export * from './Provider';
 
 export * from './Address';
+export * from './ConnectWallet';
