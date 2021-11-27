@@ -1,14 +1,21 @@
-# Welcome to Web3-UI (The UI library for Web3)
+# Welcome to web3-ui (The UI library for Web3)
 
-Web3-UI has been developed keeping in mind the specific needs of web3 websites.
+web3-ui is a library made up of UI components specifically crafted for web3 use cases.
+[Read the RFC](https://forum.developerdao.com/t/rfc-web3-ui-a-web3-specific-ui-library)
 
 ## Installation
 
 Web3-UI is available as an [npm package](https://www.npmjs.com/package/web3-ui)
-```npm install web3-ui``` or ```npm i web3-ui```
+Install using:
+```npm install web3-ui```
+ or
+```npm i web3-ui```
+or
+```yarn add web3-ui```
 
-## Examples
+To start storybook and see the components already created, use:
+```yarn storybook```
 
-Here is an example to get you started
-``` Starter code goes here ```
+## Contribute
 
+[Contribute to the project!](CONTRIBUTING.md)
