@@ -3,6 +3,10 @@
   "license": "MIT",
   "version": "1.0.0",
   "private": false,
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
   "description": "React Typescript Library Boilerplate",
   "author": "Dhaiwat Pandya",
   "homepage": "https://github.com/Developer-DAO/web3-ui/",
@@ -75,10 +79,6 @@
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.0",
     "webpack": "^4.42.1"
-  },
-  "engines": {
-    "node": ">=12.0.0",
-    "yarn": "^1.5"
   },
   "husky": {
     "hooks": {
