@@ -59,7 +59,6 @@
     "@types/react-dom": "^16.9.10",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
-    "conventional-changelog-conventionalcommits": "^4.4.0",
     "husky": "^7.0.0",
     "hygen": "^6.0.4",
     "identity-obj-proxy": "^3.0.0",
