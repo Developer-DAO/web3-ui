@@ -1,0 +1,2 @@
+# Don't include storybook files in the published release
+*.stories.*
