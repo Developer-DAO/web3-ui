@@ -3,6 +3,10 @@
   "license": "MIT",
   "version": "1.0.0",
   "private": false,
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
   "description": "React Typescript Library Boilerplate",
   "author": "Dhaiwat Pandya",
   "homepage": "https://github.com/Developer-DAO/web3-ui/",
@@ -25,7 +29,6 @@
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "hygen": "hygen",
     "component:new": "hygen component with-prompt",
-    "publish": "npx semantic-release --no-ci",
     "prepare": "husky install"
   },
   "main": "dist/index.js",
@@ -44,15 +47,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/npm": "^7.0.8",
-    "@semantic-release/release-notes-generator": "^9.0.1",
     "@storybook/react": "^6.3.12",
     "@testing-library/react": "^12.1.2",
     "@types/classnames": "^2.2.11",
@@ -62,12 +58,10 @@
     "@types/react-dom": "^16.9.10",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
-    "conventional-changelog-conventionalcommits": "^4.4.0",
-    "css-loader": "^5.0.1",
+    "husky": "^7.0.0",
     "hygen": "^6.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-    "node-sass": "^5.0.0",
     "prettier": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -77,69 +71,9 @@
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
-    "sass-loader": "^10.1.0",
-    "semantic-release": "^17.3.0",
-    "style-loader": "^2.0.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.0",
-    "webpack": "^4.42.1",
-    "husky": "^7.0.0"
-  },
-  "engines": {
-    "node": ">=12.0.0",
-    "yarn": "^1.5"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn format"
-    }
-  },
-  "release": {
-    "branches": [
-      "master",
-      "next"
-    ],
-    "preset": "conventionalcommits",
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "releaseRules": [
-            {
-              "type": "revert",
-              "release": "patch"
-            },
-            {
-              "type": "build",
-              "release": "patch"
-            }
-          ]
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/changelog",
-        {
-          "changelogTitle": "# Changelog"
-        }
-      ],
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "dist"
-        }
-      ],
-      [
-        "@semantic-release/git",
-        {
-          "message": "chore(release): ${nextRelease.version} [skip ci]",
-          "assets": [
-            "CHANGELOG.md"
-          ]
-        }
-      ]
-    ]
+    "webpack": "^4.42.1"
   }
 }

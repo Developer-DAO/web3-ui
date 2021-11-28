@@ -1,6 +1,12 @@
 name: CI
 
-on: push
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   test-lint-build:
@@ -9,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 16
       - name: Restore node modules cache
         uses: actions/cache@v2
         env:
@@ -23,31 +29,3 @@ jobs:
         run: yarn test --passWithNoTests
       - name: Build
         run: yarn build
-
-  publish:
-    if: ${{ github.ref == 'refs/heads/master' }}
-    needs: test-lint-build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Restore node modules cache
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build
-      - name: Release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-        run: npx semantic-release
