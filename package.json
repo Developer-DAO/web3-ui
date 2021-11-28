@@ -29,7 +29,8 @@
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "hygen": "hygen",
     "component:new": "hygen component with-prompt",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit-hook": "yarn lint-staged"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
