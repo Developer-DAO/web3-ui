@@ -4,16 +4,6 @@ const toPath = (_path) => path.join(process.cwd(), _path);
 
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
-  // webpackFinal: async (config, { configType }) => {
-  //  // add scss support
-  //   config.module.rules.push({
-  //     test: /\.scss$/,
-  //     use: ['style-loader', 'css-loader', 'sass-loader'],
-  //     include: path.resolve(__dirname, '../'),
-  //   });
-
-  //   return config;
-  // },
   webpackFinal: async (config) => {
     return {
       ...config,
