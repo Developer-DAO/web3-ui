@@ -15,8 +15,12 @@
     "prepare": "husky install",
     "pre-commit-hook": "yarn lint-staged",
     "format": "prettier --write",
-    "build": "yarn workspace @web3-ui/components build",
-    "test": "yarn workspace @web3-ui/components test"
+    "build:components": "yarn workspace @web3-ui/components build",
+    "build:hooks": "yarn workspace @web3-ui/hooks build",
+    "build": "yarn build:components && yarn build:hooks",
+    "test": "yarn workspace @web3-ui/components test",
+    "storybook:components": "yarn workspace @web3-ui/components storybook",
+    "storybook:hooks": "yarn workspace @web3-ui/hooks storybook"
   },
   "lint-staged": {
     "*.{ts,tsx,json,js,jsx}": "yarn format"

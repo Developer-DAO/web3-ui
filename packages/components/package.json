@@ -7,7 +7,7 @@
     "node": ">=16.0.0",
     "yarn": "^1.5"
   },
-  "description": "React components for web3, built with Chakra-UI",
+  "description": "React UI components for web3",
   "author": "Developer DAO",
   "homepage": "https://github.com/Developer-DAO/web3-ui/",
   "bugs": {
@@ -20,15 +20,12 @@
   "scripts": {
     "build": "yarn clean; rollup -c",
     "clean": "rimraf dist",
-    "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
-    "hygen": "hygen",
-    "component:new": "hygen component with-prompt",
     "pre-commit-hook": "yarn lint-staged"
   },
   "main": "dist/index.js",
@@ -57,11 +54,10 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.0.1",
+    "@web3-ui/hooks": "^0.1.0",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "husky": "^7.0.0",
-    "hygen": "^6.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^12.1.2",
