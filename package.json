@@ -6,7 +6,9 @@
   "scripts": {
     "prepare": "husky install",
     "pre-commit-hook": "yarn lint-staged",
-    "format": "prettier --write"
+    "format": "prettier --write",
+    "build": "yarn workspace @web3-ui/components build",
+    "test": "yarn workspace @web3-ui/components test"
   },
   "lint-staged": {
     "*.{ts,tsx,json,js,jsx}": "yarn format"
