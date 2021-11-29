@@ -8,9 +8,9 @@
     "pre-commit-hook": "yarn lint-staged",
     "format": "prettier --write",
     "build": "yarn workspace @web3-ui/components build",
-    "test": "jest --maxWorkers=2",
+    "test": "jest",
     "test:watch": "yarn test --watch",
-    "test:coverage": "jest --coverage --colors --maxWorkers=2"
+    "test:coverage": "jest --coverage --colors"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
