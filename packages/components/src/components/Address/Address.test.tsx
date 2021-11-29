@@ -5,7 +5,7 @@ import { Address } from './Address';
 
 describe('Address', () => {
   it('renders without throwing', () => {
-    const { container } = render(<Address />);
+    const { container } = render(<Address value="taylorswift.eth" />);
     expect(container).toBeInTheDocument();
   });
 });
