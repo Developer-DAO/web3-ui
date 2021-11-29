@@ -1,14 +1,14 @@
 {
   "name": "@web3-ui/components",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
     "yarn": "^1.5"
   },
-  "description": "React Typescript Library Boilerplate",
-  "author": "Dhaiwat Pandya",
+  "description": "React components for web3, built with Chakra-UI",
+  "author": "Developer DAO",
   "homepage": "https://github.com/Developer-DAO/web3-ui/",
   "bugs": {
     "url": "https://github.com/Developer-DAO/web3-ui/issues"
@@ -57,7 +57,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "1.0.0",
+    "@web3-ui/hooks": "^0.0.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "husky": "^7.0.0",

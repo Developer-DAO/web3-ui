@@ -1,15 +1,28 @@
 {
   "name": "@web3-ui/hooks",
-  "version": "1.0.0",
-  "description": "",
+  "license": "MIT",
+  "version": "0.0.1",
+  "private": false,
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
+  "description": "React hooks for web3",
+  "author": "Developer DAO",
+  "homepage": "https://github.com/Developer-DAO/web3-ui/",
+  "bugs": {
+    "url": "https://github.com/Developer-DAO/web3-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Developer-DAO/web3-ui/"
+  },
   "main": "index.js",
   "scripts": {
     "types": "index.d.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "react": "^17.0.2"
   },
