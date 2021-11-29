@@ -26,6 +26,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Test code
-        run: yarn test --passWithNoTests
+        run: yarn test
       - name: Build
         run: yarn build

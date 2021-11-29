@@ -18,9 +18,17 @@
     "build:components": "yarn workspace @web3-ui/components build",
     "build:hooks": "yarn workspace @web3-ui/hooks build",
     "build": "yarn build:components && yarn build:hooks",
-    "test": "yarn workspace @web3-ui/components test",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "jest --coverage --colors",
     "storybook:components": "yarn workspace @web3-ui/components storybook",
     "storybook:hooks": "yarn workspace @web3-ui/hooks storybook"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4"
   },
   "lint-staged": {
     "*.{ts,tsx,json,js,jsx}": "yarn format"
