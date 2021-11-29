@@ -20,7 +20,7 @@
     "build": "yarn build:components && yarn build:hooks",
     "test": "jest",
     "test:watch": "yarn test --watch",
-    "test:coverage": "jest --coverage --colors"
+    "test:coverage": "jest --coverage --colors",
     "storybook:components": "yarn workspace @web3-ui/components storybook",
     "storybook:hooks": "yarn workspace @web3-ui/hooks storybook"
   },
