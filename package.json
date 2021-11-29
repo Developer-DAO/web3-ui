@@ -1,5 +1,13 @@
 {
+  "name": "@web3-ui/root",
+  "license": "MIT",
+  "version": "0.0.0",
   "private": "true",
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
+  "author": "Developer DAO",
   "workspaces": [
     "packages/*"
   ],
