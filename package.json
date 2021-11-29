@@ -1,5 +1,13 @@
 {
+  "name": "@web3-ui/root",
+  "license": "MIT",
+  "version": "0.0.0",
   "private": "true",
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
+  "author": "Developer DAO",
   "workspaces": [
     "packages/*"
   ],
@@ -7,10 +15,14 @@
     "prepare": "husky install",
     "pre-commit-hook": "yarn lint-staged",
     "format": "prettier --write",
-    "build": "yarn workspace @web3-ui/components build",
+    "build:components": "yarn workspace @web3-ui/components build",
+    "build:hooks": "yarn workspace @web3-ui/hooks build",
+    "build": "yarn build:components && yarn build:hooks",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors"
+    "storybook:components": "yarn workspace @web3-ui/components storybook",
+    "storybook:hooks": "yarn workspace @web3-ui/hooks storybook"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",

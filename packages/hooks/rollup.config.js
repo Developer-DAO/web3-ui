@@ -1,6 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
@@ -25,7 +24,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    postcss(),
     typescript({
       typescript: ts,
       tsconfig: 'tsconfig.json',
@@ -33,14 +31,14 @@ export default {
         exclude: [
           '**/*.spec.ts',
           '**/*.test.ts',
-          '**/*.stories.ts',
           '**/*.spec.tsx',
           '**/*.test.tsx',
-          '**/*.stories.tsx',
           'node_modules',
           'bower_components',
           'jspm_packages',
           'dist',
+          '**/*.stories.tsx',
+          '**/*.stories.ts',
         ],
         compilerOptions: {
           sourceMap: true,
