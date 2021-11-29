@@ -1,0 +1,19 @@
+{
+  "name": "@web3-ui/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "types": "index.d.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.6"
+  }
+}
