@@ -14,10 +14,12 @@ cd web3-ui
 # web3-ui uses Node 16. We recommend using nvm to locally manage node versions.
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 nvm install
+# yarn install also runs `preconstruct dev`, which dynamically links all
+# packages in the monorepo together.
 yarn install
 ```
 
-To verify setup, run the Storybook by first running `yarn build` and then either `yarn storybook:components` or `yarn storybook:hooks`. You can develop new or existing components and verify functionality in the Storybook.
+To verify setup, run the Storybook for one of the packages with either `yarn storybook:components` or `yarn storybook:hooks`. You can develop new or existing components and verify functionality in the Storybook.
 
 Run all unit tests with `yarn test`. Run unit tests on only the package you're working on with `yarn test packages/<PACKAGE_NAME_HERE>`.
 
