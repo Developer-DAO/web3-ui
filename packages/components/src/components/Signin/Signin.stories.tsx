@@ -52,7 +52,7 @@ const SignInWithWallet = () => {
   const { connected, connectWallet, connection } = useWallet();
 
   async function handleSignIn() {
-    if (!connected) connectWallet();
+    if (!connected) await connectWallet();
     let signer = connection.signer;
     signer.signMessage('Test');
   }
