@@ -11,13 +11,17 @@ const WithWallet = () => {
   const { connected, connectWallet, connection } = useWallet();
 
   return (
-    <Provider network='rinkeby'>
+    <>
       <Address
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
-    </Provider>
+    </>
   );
 };
 
-storiesOf('Address', module).add('WithWallet', () => <WithWallet />);
+storiesOf('Address', module).add('WithWallet', () => (
+  <Provider network='rinkeby'>
+    <WithWallet />
+  </Provider>
+));

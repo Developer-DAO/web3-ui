@@ -2,7 +2,7 @@ import React from 'react';
 import { Web3Context } from '../Provider';
 
 /**
- * @dev Hook to get the current web3 context inlcuding information about the connection and other helper methods.
+ * @dev Hook to get the current web3 context including information about the connection and other helper methods.
  */
 export function useWallet() {
   const context = React.useContext(Web3Context);
