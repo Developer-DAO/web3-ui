@@ -17,7 +17,7 @@ nvm install
 yarn install
 ```
 
-To verify setup, run the Storybook with `yarn dev`. You can develop new or existing components and verify functionality in the Storybook.
+To verify setup, run the Storybook by first running `yarn build` and then either `yarn storybook:components` or `yarn storybook:hooks`. You can develop new or existing components and verify functionality in the Storybook.
 
 Run all unit tests with `yarn test`. Run unit tests on only the package you're working on with `yarn test packages/<PACKAGE_NAME_HERE>`.
 
