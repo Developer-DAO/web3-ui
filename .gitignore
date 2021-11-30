@@ -1,6 +1,5 @@
 .DS_STORE
 
-/dist/
 node_modules
 .rpt2_cache
 .cache
@@ -16,3 +15,5 @@ yarn-error.log
 .out
 
 /coverage
+
+dist

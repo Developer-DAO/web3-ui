@@ -10,10 +10,7 @@ module.exports = {
     '<rootDir>/src/index.ts',
     '<rootDir>/src/components/index.ts',
   ],
-  collectCoverageFrom: ['<rootDir>/src/**/*.{js,ts,tsx,jsx}', '!<rootDir>/src/**/*.stories.*'],
-  moduleNameMapper: {
-    '\\.s?css$': 'identity-obj-proxy',
-  },
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,ts,tsx,jsx}'],
   coverageThreshold: {
     global: {
       branches: 90,
