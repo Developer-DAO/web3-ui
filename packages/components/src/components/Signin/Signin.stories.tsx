@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Signin } from '.';
 import { useWallet, Provider } from '@web3-ui/hooks';
+import { ethers } from 'ethers';
 
 // builds EIP-4361 compliant message.
 function buildMessage(
@@ -53,8 +54,9 @@ const SignInWithWallet = () => {
 
   async function handleSignIn() {
     if (!connected) await connectWallet();
-    let signer = connection.signer;
-    signer.signMessage('Test');
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    signer.signMessage('TEST');
   }
   return (
     <>
@@ -63,7 +65,7 @@ const SignInWithWallet = () => {
   );
 };
 
-storiesOf('Sign-in', module).add('With Waller', () => (
+storiesOf('Sign-in', module).add('With Wallet', () => (
   <Provider network='rinkeby'>
     <SignInWithWallet />
   </Provider>
