@@ -18,8 +18,7 @@
     "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
   "scripts": {
-    "build": "yarn clean; rollup -c",
-    "clean": "rimraf dist",
+    "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "test": "jest --maxWorkers=2",
@@ -29,8 +28,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/web3-ui-hooks.cjs.js",
+  "module": "dist/web3-ui-hooks.esm.js",
   "types": "dist/index.d.ts",
   "dependencies": {
     "@walletconnect/web3-provider": "^1.6.6",
@@ -43,8 +42,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/addon-links": "^6.4.0",
@@ -61,11 +58,6 @@
     "prettier": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.33.3",
-    "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-terser": "7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.0"
