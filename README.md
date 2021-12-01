@@ -9,14 +9,12 @@ web3-ui is a library made up of UI components specifically crafted for web3 use 
 web3-ui is available as an [npm package](https://www.npmjs.com/package/web3-ui)
 
 Install using:
-```npm install web3-ui```
- or
-```npm i web3-ui```
-or
-```yarn add web3-ui```
 
-To start storybook and see the components already created, use:
-```yarn storybook```
+```bash
+yarn add web3-ui;
+or
+npm i web3-ui;
+```
 
 ## Contribute
 
