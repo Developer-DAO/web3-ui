@@ -1,4 +1,4 @@
-import { Input } from '@chakra-ui/input';
+import { Input } from '@chakra-ui/react';
 import React from 'react';
 
 export interface AddressProps {
