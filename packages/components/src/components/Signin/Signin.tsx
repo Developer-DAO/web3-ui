@@ -1,8 +1,7 @@
-import { Button } from '@chakra-ui/react';
+import { ethers } from 'ethers';
 import React from 'react';
 import { useWallet, Provider } from '@web3-ui/hooks';
-import { ethers } from 'ethers';
-
+import { Button } from '@chakra-ui/react';
 export interface SigninProps {
   data: string;
 }
