@@ -2,3 +2,4 @@
 
 export * from './Provider';
 export * from './Address';
+export * from './NFTGallery';
