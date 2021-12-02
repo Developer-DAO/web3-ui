@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Nazeeh21",
+      "name": "Nazeeh Vahora",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56908732?v=4",
+      "profile": "https://nazeeh.dev/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "web3-ui",
+  "projectOwner": "Developer-DAO",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
