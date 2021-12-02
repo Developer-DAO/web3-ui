@@ -17,6 +17,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/crondinini"><img src="https://avatars.githubusercontent.com/u/21973269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camila Rondinini</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=crondinini" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Acrondinini" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://erikritter.io"><img src="https://avatars.githubusercontent.com/u/7409244?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Erik Ritter</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=etr2460" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Aetr2460" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>

@@ -14,6 +14,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "crondinini",
+      "name": "Camila Rondinini",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21973269?v=4",
+      "profile": "https://github.com/crondinini",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
