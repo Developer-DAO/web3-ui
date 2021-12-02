@@ -24,6 +24,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "Dhaiwat10",
+      "name": "Dhaiwat Pandya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39617427?v=4",
+      "profile": "http://dhaiwat.com",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
