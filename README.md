@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -55,6 +55,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://dhaiwat.com"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://nazeeh.dev/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Code">💻</a></td>
     <td align="center"><a href="https://zanzeta.com"><img src="https://avatars.githubusercontent.com/u/48886275?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jose L. Velez</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=joselvelez" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Awith-heart" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
