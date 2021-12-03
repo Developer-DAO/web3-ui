@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Button } from '@chakra-ui/react';
 import { Provider, useWallet } from '..';
 
 const Default = () => {
@@ -8,7 +9,7 @@ const Default = () => {
   if (connected) {
     return (
       <div>
-        <button onClick={disconnectWallet}>Disconnect wallet</button>
+        <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <p>{connection.ens || connection.userAddress}</p>
       </div>
     );

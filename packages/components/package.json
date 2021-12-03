@@ -21,7 +21,6 @@
     "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "pre-commit-hook": "yarn lint-staged"
   },
   "main": "dist/web3-ui-components.cjs.js",
