@@ -1,40 +1,48 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Box, Heading, Image, Flex, Tag, Text } from '@chakra-ui/react';
+import fetch from 'cross-fetch';
 
 export interface NFTProps {
-  /**
-   * The id for the NFT, unique within the contract
-   */
+  contractAddress: string;
   tokenId: string;
-  /**
-   * The name of the NFT, potentially null
-   */
-  name: string | null;
-  /**
-   * The image of the NFT, cached from OpenSea
-   */
+}
+
+interface NFTData {
+  tokenId: string;
   imageUrl: string;
-  /**
-   * The name of the NFT collection
-   */
-  assetContractName: string;
-  /**
-   * The symbol for the NFT collection
-   */
+  name: string;
   assetContractSymbol: string;
+  assetContractName: string;
 }
 
 /**
  * Component to display an NFT given render params
  */
-export const NFT = ({
-  tokenId,
-  name,
-  imageUrl,
-  assetContractName,
-  assetContractSymbol,
-}: NFTProps) => {
-  const displayName = name || tokenId;
+export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
+  const [nftData, setNftData] = React.useState<NFTData>();
+
+  const fetchNFTData = useCallback(async () => {
+    const response = await (
+      await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`)
+    ).json();
+    setNftData({
+      tokenId: response.tokenId,
+      imageUrl: response.image_url,
+      name: response.name,
+      assetContractName: response.asset_contract.name,
+      assetContractSymbol: response.asset_contract.symbol,
+    });
+  }, [contractAddress, tokenId]);
+
+  useEffect(() => {
+    fetchNFTData();
+  }, [contractAddress, tokenId]);
+
+  if (!nftData) {
+    return <div>Loading...</div>;
+  }
+
+  const { name: displayName, imageUrl, assetContractName, assetContractSymbol } = nftData;
 
   return (
     <Box maxW='xs' borderRadius='lg' borderWidth='1px' overflow='hidden'>
