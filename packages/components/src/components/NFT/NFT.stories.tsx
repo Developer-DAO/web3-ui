@@ -13,4 +13,7 @@ storiesOf('NFT', module)
   ))
   .add('Video', () => (
     <NFT contractAddress='0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0' tokenId='29192' />
+  ))
+  .add('Audio', () => (
+    <NFT contractAddress='0x0eede4764cfdfcd5dac0e00b3b7f4778c0cc994e' tokenId='1' />
   ));
