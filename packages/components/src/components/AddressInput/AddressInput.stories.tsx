@@ -7,7 +7,15 @@ import { Provider, useWallet } from '@web3-ui/hooks';
 storiesOf('AddressInput', module).add('default', () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const [value, setValue] = React.useState('');
-  return <AddressInput value={value} onChange={setValue} provider={provider} />;
+  return (
+    <AddressInput
+      borderColor='red.500'
+      fontSize='xl'
+      value={value}
+      onChange={(e) => setValue(e)}
+      provider={provider}
+    />
+  );
 });
 
 storiesOf('AddressInput', module).add('using @web3-hook', () => {
@@ -19,7 +27,7 @@ storiesOf('AddressInput', module).add('using @web3-hook', () => {
   }, []);
   return (
     <Provider>
-      <AddressInput value={value} onChange={setValue} provider={connection.signer} />
+      <AddressInput value={value} onChange={(e) => setValue(e)} provider={connection.signer} />
     </Provider>
   );
 });

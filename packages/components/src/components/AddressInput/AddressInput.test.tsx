@@ -9,7 +9,7 @@ describe('AddressInput', () => {
     const [value, setValue] = React.useState('');
 
     const { container } = render(
-      <AddressInput value={value} onChange={setValue} provider={provider} />
+      <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider} />
     );
     expect(container);
   });
