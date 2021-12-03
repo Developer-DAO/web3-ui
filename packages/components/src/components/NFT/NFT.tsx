@@ -13,6 +13,7 @@ interface NFTData {
   name: string;
   assetContractSymbol: string;
   assetContractName: string;
+  animationOriginalUrl?: string;
 }
 
 /**
@@ -31,6 +32,7 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
       name: response.name,
       assetContractName: response.asset_contract.name,
       assetContractSymbol: response.asset_contract.symbol,
+      animationOriginalUrl: response.animation_original_url,
     });
   }, [contractAddress, tokenId]);
 
@@ -42,17 +44,28 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
     return null;
   }
 
-  const { name: displayName, imageUrl, assetContractName, assetContractSymbol } = nftData;
+  let {
+    name: displayName,
+    imageUrl,
+    assetContractName,
+    assetContractSymbol,
+    animationOriginalUrl,
+  } = nftData;
 
   return (
     <Box maxW='xs' borderRadius='lg' borderWidth='1px' overflow='hidden'>
-      <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+      {animationOriginalUrl ? (
+        <video src={animationOriginalUrl} autoPlay loop muted controls />
+      ) : (
+        <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+      )}
+
       <Box p='6'>
         <Flex alignItems='center' justifyContent='space-between' pb='2'>
           <Heading as='h3' size='sm'>
             {displayName}
           </Heading>
-          <Tag size='sm'>{assetContractSymbol}</Tag>
+          {assetContractSymbol && <Tag size='sm'>{assetContractSymbol}</Tag>}
         </Flex>
         <Text fontSize='xs'>
           {assetContractName} #{tokenId}

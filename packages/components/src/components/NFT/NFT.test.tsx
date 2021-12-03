@@ -6,13 +6,7 @@ import { NFT } from './NFT';
 describe('NFT', () => {
   it('displays the NFT name', () => {
     const { container } = render(
-      <NFT
-        tokenId='1'
-        name='Dev #1'
-        imageUrl='https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg'
-        assetContractName='Devs for Revolution'
-        assetContractSymbol='DEVS'
-      />
+      <NFT tokenId='1' contractAddress='0x25ed58c027921e14d86380ea2646e3a1b5c55a8b' />
     );
 
     expect(container.textContent).toContain('Dev #1');
