@@ -39,7 +39,7 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
   }, [contractAddress, tokenId]);
 
   if (!nftData) {
-    return <div>Loading...</div>;
+    return null;
   }
 
   const { name: displayName, imageUrl, assetContractName, assetContractSymbol } = nftData;

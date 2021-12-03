@@ -22,6 +22,7 @@ export interface OpenSeaAsset {
   name: string | null;
   asset_contract: {
     name: string;
+    address: string;
     symbol: string;
   };
 }
@@ -70,10 +71,7 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
           <NFT
             key={`${nft.asset_contract.symbol}-${nft.token_id}`}
             tokenId={nft.token_id}
-            name={nft.name}
-            imageUrl={nft.image_url}
-            assetContractName={nft.asset_contract.name}
-            assetContractSymbol={nft.asset_contract.symbol}
+            contractAddress={nft.asset_contract.address}
           />
         ))}
       </Grid>
