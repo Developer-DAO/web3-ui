@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -50,10 +50,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://dhaiwat.com"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/crondinini"><img src="https://avatars.githubusercontent.com/u/21973269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camila Rondinini</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=crondinini" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Acrondinini" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://erikritter.io"><img src="https://avatars.githubusercontent.com/u/7409244?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Erik Ritter</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=etr2460" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Aetr2460" title="Reviewed Pull Requests">👀</a></td>
-     <td align="center"><a href="https://nazeeh.dev/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/crondinini"><img src="https://avatars.githubusercontent.com/u/21973269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camila Rondinini</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=crondinini" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Acrondinini" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://dhaiwat.com"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://nazeeh.dev/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Code">💻</a></td>
+    <td align="center"><a href="https://zanzeta.com"><img src="https://avatars.githubusercontent.com/u/48886275?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jose L. Velez</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=joselvelez" title="Documentation">📖</a></td>
   </tr>
 </table>
 
