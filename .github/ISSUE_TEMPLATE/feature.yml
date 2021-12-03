@@ -1,0 +1,41 @@
+name: "Component/Hook Request"
+description: "Add suggestion for a component and/or a hook"
+labels: ["feature"]
+body:
+  - type: "markdown"
+    attributes:
+      value: |
+        Thanks for creating an issue!
+
+        Make sure to search open/closed issues before submitting.
+  - type: "textarea"
+    id: "description"
+    attributes:
+      label: "Description"
+      description: "Please describe your idea in one or two sentences."
+    validations:
+      required: true
+  - type: "textarea"
+    id: "justification"
+    attributes:
+      label: "Why is this needed?"
+      description: |
+        Please explain why you believe this is needed.
+    validations:
+      required: true
+  - type: "textarea"
+    id: "proposed-solution"
+    attributes:
+      label: "Proposed Solution or API"
+      description: |
+        Please share what you believe the ideal design/API should be like.
+        You can use code snippets, gists, or links to communicate it.
+    validations:
+      required: true
+  - type: "textarea"
+    id: "additional-information"
+    attributes:
+      label: "Additional Information"
+      description: |
+        What resources (links, screenshots, etc.) do you have to assist this
+        effort?
