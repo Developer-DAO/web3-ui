@@ -26,7 +26,7 @@
   },
   "main": "dist/web3-ui-components.cjs.js",
   "module": "dist/web3-ui-components.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
     "@chakra-ui/react": "^1.7.2",
     "@emotion/core": "^11.0.0",

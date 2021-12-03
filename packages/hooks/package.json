@@ -30,7 +30,7 @@
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/web3-ui-hooks.cjs.d.ts",
   "dependencies": {
     "@walletconnect/web3-provider": "^1.6.6",
     "ethers": "^5.5.1",
