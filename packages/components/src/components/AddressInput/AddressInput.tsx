@@ -2,22 +2,27 @@ import { Input } from '@chakra-ui/input';
 import { Text } from '@chakra-ui/layout';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
+import { useDebounce } from './useDebounce';
 
 export interface AddressInputProps {
   provider: ethers.providers.Web3Provider;
   value: string;
-  setValue: (value: string) => void;
+  onChange: (value: string) => void;
 }
 
-export const AddressInput: React.FC<AddressInputProps> = ({ provider, value, setValue }) => {
+export const AddressInput: React.FC<AddressInputProps> = ({ provider, value, onChange }) => {
   const [inputValue, setInputValue] = useState('');
+  const deboucedValued = useDebounce(inputValue, 700);
   const [ensValue, setEnsValue] = useState('');
   const [balance, setBalance] = useState('');
   const regex = /^0x[a-fA-F0-9]{40}$/;
 
+  useEffect(() => {
+    console.log('Provider', { provider });
+  }, [provider]);
   const getAddressFromEns = async () => {
     try {
-      let address = await provider.resolveName(inputValue);
+      let address = await provider.resolveName(deboucedValued);
       getBalance();
       return address;
     } catch (error) {
@@ -28,7 +33,7 @@ export const AddressInput: React.FC<AddressInputProps> = ({ provider, value, set
 
   const getBalance = async () => {
     try {
-      let balance = await provider.getBalance(inputValue);
+      let balance = await provider.getBalance(deboucedValued);
       console.log('balance : ', balance);
       setBalance(ethers.utils.formatEther(balance));
     } catch (error) {
@@ -37,19 +42,23 @@ export const AddressInput: React.FC<AddressInputProps> = ({ provider, value, set
   };
 
   useEffect(() => {
-    if (typeof window.ethereum !== 'undefined') {
+    console.log('useEffect running....');
+    if (deboucedValued) {
+      console.log('deboucedValued : ', deboucedValued);
       setBalance('');
-      if (regex.test(inputValue)) {
-        console.log('inputValue is a valid address');
-        setValue(inputValue);
+      setEnsValue('');
+      onChange('');
+      if (regex.test(deboucedValued)) {
+        console.log('deboucedValued is a valid address');
+        onChange(deboucedValued);
         getBalance();
-      } else if (inputValue.endsWith('.eth') || inputValue.endsWith('.xyz')) {
+      } else if (deboucedValued.endsWith('.eth') || deboucedValued.endsWith('.xyz')) {
         console.log('current value is ens');
-        setEnsValue(inputValue);
-        getAddressFromEns().then((address) => setValue(address ? address : ''));
+        setEnsValue(deboucedValued);
+        getAddressFromEns().then((address) => onChange(address ? address : ''));
       }
     }
-  }, [inputValue]);
+  }, [deboucedValued]);
   return (
     <div>
       <Text>Input address</Text>
