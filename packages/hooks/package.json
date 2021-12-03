@@ -24,9 +24,7 @@
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
-    "pre-commit-hook": "yarn lint-staged",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "pre-commit-hook": "yarn lint-staged"
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",
