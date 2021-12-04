@@ -6,6 +6,7 @@ import ERC20 from './ERC20.json';
 export const useTokenBalance = (address: string, owner: string) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [balance, setBalance] = React.useState<null | string>(null);
+  const [hasError, setHasError] = React.useState(false);
 
   const { provider } = useContext(Web3Context);
 
@@ -15,20 +16,30 @@ export const useTokenBalance = (address: string, owner: string) => {
 
   const getTokenBalance = async () => {
     if (provider === undefined) {
+      setHasError(true);
+      setIsLoading(false);
       return;
     }
-    const contract = new ethers.Contract(address, ERC20, provider);
-    const balanceFuture = contract.balanceOf(owner);
-    const decimalsFuture = contract.decimals();
+    try {
+      const contract = new ethers.Contract(address, ERC20, provider);
+      const balanceFuture = contract.balanceOf(owner);
+      const decimalsFuture = contract.decimals();
 
-    const [resolvedBalance, resolvedDecimals] = await Promise.all([balanceFuture, decimalsFuture]);
+      const [resolvedBalance, resolvedDecimals] = await Promise.all([
+        balanceFuture,
+        decimalsFuture,
+      ]);
 
-    const balanceAsNumber = Number.parseInt(resolvedBalance);
-    const displayBalance = (balanceAsNumber / 10 ** resolvedDecimals).toFixed(3);
+      const balanceAsNumber = Number.parseInt(resolvedBalance);
+      const displayBalance = (balanceAsNumber / 10 ** resolvedDecimals).toFixed(3);
 
-    setBalance(displayBalance);
-    setIsLoading(false);
+      setBalance(displayBalance);
+      setIsLoading(false);
+    } catch (e) {
+      setHasError(true);
+      setIsLoading(false);
+    }
   };
 
-  return [isLoading, balance];
+  return [isLoading, balance, hasError];
 };
