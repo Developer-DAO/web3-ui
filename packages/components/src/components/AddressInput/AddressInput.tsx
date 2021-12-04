@@ -1,21 +1,35 @@
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Text,
-  FormErrorMessage,
-  InputProps,
-} from '@chakra-ui/react';
+import { FormControl, FormLabel, Input, FormErrorMessage, InputProps } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
+import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
 
 export interface AddressInputProps {
-  provider: ethers.providers.Web3Provider;
+  /**
+   * @dev The provider or signer to fetch the address from the ens
+   * @type JsonRpcSigner or ethers.providers.Web3Provider
+   */
+  provider: ethers.providers.Web3Provider | JsonRpcSigner;
+  /**
+   * @dev The value for the input
+   * @type string
+   * @default ''
+   */
   value: string;
+  /**
+   * @dev Change hanlder for the text input
+   * @type (value: string) => void
+   */
   onChange: (value: string) => void;
 }
 
+/**
+ * @dev A text input component that is used to get the address of the user from the ens. You can also pass all the styling props of the Chakra UI Input component.
+ * @param provider The provider or signer to fetch the address from the ens
+ * @param value The value for the input
+ * @param onChange Change hanlder for the text input
+ * @returns JSX.Element
+ */
 export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,
   value,
@@ -24,56 +38,45 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState('');
   const deboucedValued = useDebounce(inputValue, 700);
-  const [ensValue, setEnsValue] = useState('');
-  const [balance, setBalance] = useState('');
+  const [, setEnsValue] = useState('');
   const [error, setError] = useState<null | string>(null);
   const regex = /^0x[a-fA-F0-9]{40}$/;
 
-  useEffect(() => {
-    console.log('Provider', { provider });
-  }, [provider]);
   const getAddressFromEns = async () => {
     try {
       let address = await provider.resolveName(deboucedValued);
-      getBalance();
+      console.log({ address });
+      if (!address) {
+        setError('Invalid Input');
+      }
       return address;
     } catch (error) {
       setError(error as string);
-      console.log('error in fetching ens', error);
       return;
     }
   };
 
-  const getBalance = async () => {
-    try {
-      let balance = await provider.getBalance(deboucedValued);
-      console.log('balance : ', balance);
-      setBalance(ethers.utils.formatEther(balance));
-    } catch (error) {
-      setError(error as string);
-      console.log('error in fetching balance', error);
-    }
-  };
-
   useEffect(() => {
-    console.log('useEffect running....');
     if (deboucedValued) {
-      console.log('deboucedValued : ', deboucedValued);
-      setBalance('');
       setEnsValue('');
       onChange('');
       setError(null);
       if (regex.test(deboucedValued)) {
-        console.log('deboucedValued is a valid address');
         onChange(deboucedValued);
-        getBalance();
       } else if (deboucedValued.endsWith('.eth') || deboucedValued.endsWith('.xyz')) {
-        console.log('current value is ens');
         setEnsValue(deboucedValued);
         getAddressFromEns().then((address) => onChange(address ? address : ''));
       }
     }
   }, [deboucedValued]);
+
+  useEffect(() => {
+    if (inputValue === '') {
+      onChange('');
+      setError(null);
+    }
+  }, [inputValue]);
+
   return (
     <FormControl isInvalid={!!error}>
       <FormLabel>Input address</FormLabel>
@@ -87,9 +90,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
         placeholder='Input address'
       />
       <FormErrorMessage>{error ? ' ' + error : ''}</FormErrorMessage>
-      <Text>Value: {value}</Text>
-      <Text>Ens: {ensValue}</Text>
-      <Text>Balance: {balance}</Text>
+      {}
     </FormControl>
   );
 };
