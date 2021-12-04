@@ -5,14 +5,14 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
 
 export interface Web3ContextType {
-  connectWallet?: () => void;
-  signer?: JsonRpcSigner | null;
-  userAddress?: string | null;
-  disconnectWallet?: () => void;
+  connectWallet: () => void;
+  signer: JsonRpcSigner;
+  userAddress: string;
+  disconnectWallet: () => void;
   network: string;
-  chainId?: number;
+  chainId: number;
   connected: boolean;
-  provider?: ethers.providers.Web3Provider | null;
+  provider: ethers.providers.Web3Provider;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(undefined);
@@ -38,9 +38,9 @@ export interface ProviderProps {
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
  */
 export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId }) => {
-  const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
+  const [signer, setSigner] = React.useState<JsonRpcSigner>();
   const [provider, setProvider] = React.useState<ethers.providers.Web3Provider>();
-  const [userAddress, setUserAddress] = React.useState<null | string>();
+  const [userAddress, setUserAddress] = React.useState<string>();
   const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
   const [chainId, setChainId] = React.useState<number>();
   const [connected, setConnected] = React.useState<boolean>(false);
@@ -70,8 +70,8 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
 
   const disconnectWallet = React.useCallback(() => {
     web3Modal?.clearCachedProvider();
-    setSigner(null);
-    setUserAddress(null);
+    setSigner(undefined);
+    setUserAddress(undefined);
     setConnected(false);
   }, [web3Modal]);
 
@@ -89,5 +89,7 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
     [connectWallet, signer, userAddress, web3Modal, connected, provider, network, chainId]
   );
 
-  return <Web3Context.Provider value={{ ...value }}>{children}</Web3Context.Provider>;
+  return (
+    <Web3Context.Provider value={{ ...value } as Web3ContextType}>{children}</Web3Context.Provider>
+  );
 };

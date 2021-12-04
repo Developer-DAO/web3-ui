@@ -1,4 +1,5 @@
 import React from 'react';
+import { Web3ContextType } from '..';
 import { Web3Context } from '../Provider';
 
 /**
@@ -6,28 +7,30 @@ import { Web3Context } from '../Provider';
  */
 export function useWallet() {
   const context = React.useContext(Web3Context);
+  const { connectWallet, disconnectWallet, userAddress, provider, network, signer, connected } =
+    context as Web3ContextType;
   const [ens, setEns] = React.useState<string>();
 
   React.useEffect(() => {
-    if (context) {
-      const { userAddress, provider } = context;
-      if (userAddress && provider) {
-        provider.lookupAddress(userAddress).then((address) => {
-          setEns(address as string);
-        });
-      }
+    if (userAddress && provider) {
+      provider.lookupAddress(userAddress).then((address) => {
+        setEns(address as string);
+      });
     }
-  }, [context?.userAddress, context?.provider]);
+  }, [userAddress, provider]);
 
   return {
-    connectWallet: context?.connectWallet,
-    disconnectWallet: context?.disconnectWallet,
-    connection: {
-      userAddress: context?.userAddress,
-      network: context?.network,
-      signer: context?.signer,
-      ens,
-    },
-    connected: context?.connected,
+    connectWallet,
+    disconnectWallet,
+    connection:
+      context && connected
+        ? {
+            userAddress,
+            network,
+            signer,
+            ens,
+          }
+        : null,
+    connected,
   };
 }
