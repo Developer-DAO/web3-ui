@@ -3,6 +3,8 @@ import React from 'react';
 import { Provider, useWallet } from '..';
 import { useTokenBalance } from '../hooks/useTokenBalance';
 
+const SOME_OWNER = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+const DAI_STABLECOIN_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
 const Default = () => {
   const { connectWallet, connected } = useWallet();
 
@@ -20,15 +22,13 @@ const Default = () => {
 };
 
 storiesOf('useTokenBalance', module).add('Default', () => (
-  <Provider network='mainnet'>
+  <Provider network='rinkeby'>
     <Default />
   </Provider>
 ));
 
 const BalanceOfDai = () => {
-  const owner = '0x503828976D22510aad0201ac7EC88293211D23Da';
-  const address = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
-  const [loading, balance] = useTokenBalance(address, owner);
+  const [loading, balance] = useTokenBalance(DAI_STABLECOIN_ADDRESS, SOME_OWNER);
 
   return (
     <>
@@ -38,9 +38,7 @@ const BalanceOfDai = () => {
 };
 
 const UnknownOwner = () => {
-  const owner = '';
-  const address = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
-  const [loading, balance, hasError] = useTokenBalance(address, owner);
+  const [loading, balance, hasError] = useTokenBalance(DAI_STABLECOIN_ADDRESS, '');
 
   return (
     <>
@@ -50,9 +48,7 @@ const UnknownOwner = () => {
 };
 
 const UnknownContract = () => {
-  const owner = '0x503828976D22510aad0201ac7EC88293211D23Da';
-  const address = '';
-  const [loading, balance, hasError] = useTokenBalance(address, owner);
+  const [loading, balance, hasError] = useTokenBalance('', SOME_OWNER);
 
   return (
     <>
