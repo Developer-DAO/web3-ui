@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
 import { ethers } from 'ethers';
 import { Web3Context } from '../../Provider';
-import ERC20 from './ERC20.json';
+import ERC20 from './ERC20ABI.json';
 
-export const useTokenBalance = (address: string, owner: string) => {
+/**
+ * @param contractAddress -> the address of the ERC20 token contract
+ * @param ownerAddress -> the address of the owner which balance should be fetched
+
+ */
+export const useTokenBalance = (contractAddress: string, ownerAddress: string) => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [balance, setBalance] = React.useState<null | string>(null);
-  const [hasError, setHasError] = React.useState(false);
+  const [balance, setBalance] = React.useState<string>();
+  const [errorMsg, setErrorMsg] = React.useState(false);
 
   const { provider } = useContext(Web3Context);
 
@@ -16,13 +21,15 @@ export const useTokenBalance = (address: string, owner: string) => {
 
   const getTokenBalance = async () => {
     if (provider === undefined) {
-      setHasError(true);
+      setErrorMsg(
+        'provider is undefined. Please make sure to you the hook within the Web3Context Provider '
+      );
       setIsLoading(false);
       return;
     }
     try {
-      const contract = new ethers.Contract(address, ERC20, provider);
-      const balanceFuture = contract.balanceOf(owner);
+      const contract = new ethers.Contract(contractAddress, ERC20, provider);
+      const balanceFuture = contract.balanceOf(ownerAddress);
       const decimalsFuture = contract.decimals();
 
       const [resolvedBalance, resolvedDecimals] = await Promise.all([
@@ -36,10 +43,10 @@ export const useTokenBalance = (address: string, owner: string) => {
       setBalance(displayBalance);
       setIsLoading(false);
     } catch (e) {
-      setHasError(true);
+      setErrorMsg(e);
       setIsLoading(false);
     }
   };
 
-  return [isLoading, balance, hasError];
+  return [isLoading, balance, errorMsg];
 };
