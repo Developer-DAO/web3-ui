@@ -1,0 +1,67 @@
+{
+  "name": "@web3-ui/core",
+  "license": "MIT",
+  "version": "0.0.1",
+  "private": false,
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.5"
+  },
+  "description": "React UI components for web3",
+  "author": "Developer DAO",
+  "homepage": "https://github.com/Developer-DAO/web3-ui/",
+  "bugs": {
+    "url": "https://github.com/Developer-DAO/web3-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Developer-DAO/web3-ui/"
+  },
+  "scripts": {
+    "build": "preconstruct build",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "pre-commit-hook": "yarn lint-staged"
+  },
+  "main": "dist/web3-ui-core.cjs.js",
+  "module": "dist/web3-ui-core.esm.js",
+  "types": "dist/web3-ui-core.cjs.d.ts",
+  "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "classnames": "^2.2.6",
+    "cross-fetch": "^3.1.4",
+    "framer-motion": "^4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@storybook/react": "^6.3.12",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^16.11.9",
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^16.9.10",
+    "@web3-ui/hooks": "^0.1.0",
+    "babel-loader": "^8.2.1",
+    "classnames": "^2.2.6",
+    "ethers": "^5.5.1",
+    "husky": "^7.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.0",
+    "webpack": "^4.42.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json,js,jsx}": "yarn format"
+  }
+}
