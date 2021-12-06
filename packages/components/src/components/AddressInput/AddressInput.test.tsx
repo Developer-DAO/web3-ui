@@ -44,7 +44,7 @@ describe('AddressInput', () => {
     expect(container);
   });
 
-  it('renders AddressInput correctly', () => {
+  it('changes Input value correctly', () => {
     const { getByPlaceholderText } = render(<Component />);
     const input = getByPlaceholderText('Input address') as HTMLInputElement;
 
