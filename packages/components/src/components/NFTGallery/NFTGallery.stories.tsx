@@ -1,11 +1,11 @@
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { NFTGallery } from '.';
 
-storiesOf('NFTGallery', module).add('Renders a list of nfts owned by an account', () => (
-  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
-));
+export default {
+  title: 'Components/NFTGallery',
+  component: NFTGallery,
+};
 
-storiesOf('NFTGallery', module).add('Renders an error when OpenSea fails', () => (
-  <NFTGallery address='bad_address' />
-));
+export const Default = () => <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />;
+
+export const WithAnError = () => <NFTGallery address='bad_address' />;

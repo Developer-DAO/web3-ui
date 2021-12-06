@@ -2,18 +2,30 @@ import React from 'react';
 import { Box, Heading, Image, Flex, Tag, Text } from '@chakra-ui/react';
 
 export interface NFTProps {
+  /**
+   * The id for the NFT, unique within the contract
+   */
   tokenId: string;
+  /**
+   * The name of the NFT, potentially null
+   */
   name: string | null;
+  /**
+   * The image of the NFT, cached from OpenSea
+   */
   imageUrl: string;
+  /**
+   * The name of the NFT collection
+   */
   assetContractName: string;
+  /**
+   * The symbol for the NFT collection
+   */
   assetContractSymbol: string;
 }
 
 /**
- * @dev Component to display an NFT given render params
- *
- * TODO: Add a component that fetchs the NFT data from the blockchain and uses this component to
- * display it
+ * Component to display an NFT given render params
  */
 export const NFT = ({
   tokenId,

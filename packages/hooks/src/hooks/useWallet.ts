@@ -32,5 +32,6 @@ export function useWallet() {
           }
         : null,
     connected,
+    provider: provider,
   };
 }
