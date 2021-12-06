@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { AddressInput } from '.';
 import { ethers } from 'ethers';
 import 'regenerator-runtime/runtime';
@@ -42,5 +42,13 @@ describe('AddressInput', () => {
   it('renders AddressInput correctly', () => {
     const { container } = render(<Component />);
     expect(container);
+  });
+
+  it('renders AddressInput correctly', () => {
+    const { getByPlaceholderText } = render(<Component />);
+    const input = getByPlaceholderText('Input address') as HTMLInputElement;
+
+    fireEvent.change(input, { target: { value: WALLET_ADDRESS } });
+    expect(input.value).toBe(WALLET_ADDRESS);
   });
 });
