@@ -5,7 +5,13 @@ import { VStack, Heading, Grid, Alert, AlertIcon } from '@chakra-ui/react';
 import { NFT } from '../NFT';
 
 export interface NFTGalleryProps {
+  /**
+   * The owner of the NFTs
+   */
   address: string;
+  /**
+   * The number of columns in the grid
+   */
   gridWidth?: number;
 }
 
@@ -20,7 +26,7 @@ export interface OpenSeaAsset {
 }
 
 /**
- * @dev Component to display a grid of NFTs owned by an address. It uses the OpenSea API to fetch
+ * Component to display a grid of NFTs owned by an address. It uses the OpenSea API to fetch
  * the NFTs.
  */
 export const NFTGallery = ({ address, gridWidth = 4 }: NFTGalleryProps) => {

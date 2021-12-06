@@ -1,8 +1,12 @@
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { NFT } from '.';
 
-storiesOf('NFT', module).add('Renders an NFT', () => (
+export default {
+  title: 'Components/NFT',
+  component: NFT,
+};
+
+export const Default = () => (
   <NFT
     tokenId='1'
     name='Dev #1'
@@ -10,4 +14,4 @@ storiesOf('NFT', module).add('Renders an NFT', () => (
     assetContractName='Devs for Revolution'
     assetContractSymbol='DEVS'
   />
-));
+);
