@@ -1,13 +1,17 @@
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Address } from '.';
 
 import { useWallet, Provider } from '@web3-ui/hooks';
 import { Button } from '@chakra-ui/react';
 
-storiesOf('Address', module).add('Default', () => <Address value='testaddress.eth' />);
+export default {
+  title: 'Components/Address',
+  component: Address,
+};
 
-const WithWallet = () => {
+export const Default = () => <Address value='testaddress.eth' />;
+
+const AddressUsingProvider = () => {
   const { connected, connectWallet, connection } = useWallet();
 
   return (
@@ -20,8 +24,8 @@ const WithWallet = () => {
   );
 };
 
-storiesOf('Address', module).add('WithWallet', () => (
+export const WithWallet = () => (
   <Provider network='rinkeby'>
-    <WithWallet />
+    <AddressUsingProvider />
   </Provider>
-));
+);

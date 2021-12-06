@@ -1,9 +1,12 @@
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 import { Provider, useWallet } from '..';
 
-const Default = () => {
+export default {
+  title: 'Hooks/useWallet',
+};
+
+const DefaultUsingProvider = () => {
   const { connection, connectWallet, disconnectWallet, connected } = useWallet();
 
   if (connected) {
@@ -15,11 +18,11 @@ const Default = () => {
     );
   }
 
-  return <button onClick={connectWallet}>Connect Wallet</button>;
+  return <Button onClick={connectWallet}>Connect Wallet</Button>;
 };
 
-storiesOf('ConnectWallet', module).add('Default', () => (
+export const Default = () => (
   <Provider network='rinkeby'>
-    <Default />
+    <DefaultUsingProvider />
   </Provider>
-));
+);
