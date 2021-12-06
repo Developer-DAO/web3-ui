@@ -38,7 +38,7 @@ const Component = ({ ...props }) => {
   );
 };
 
-storiesOf('AddressInput', module)
+storiesOf('Components/AddressInput', module)
   .add('Default', () => {
     return <Component />;
   })
