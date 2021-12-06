@@ -28,7 +28,7 @@ storiesOf('useTokenBalance', module).add('Default', () => (
 ));
 
 const BalanceOfDai = () => {
-  const [loading, balance] = useTokenBalance(DAI_STABLECOIN_ADDRESS, SOME_OWNER);
+  const [balance, loading, error] = useTokenBalance(DAI_STABLECOIN_ADDRESS, SOME_OWNER);
 
   return (
     <>
@@ -38,21 +38,21 @@ const BalanceOfDai = () => {
 };
 
 const UnknownOwner = () => {
-  const [loading, balance, hasError] = useTokenBalance(DAI_STABLECOIN_ADDRESS, '');
+  const [balance, loading, error] = useTokenBalance(DAI_STABLECOIN_ADDRESS, '');
 
   return (
     <>
-      <p>{loading ? 'Loading...' : 'Error ' + hasError}</p>
+      <p>{loading ? 'Loading...' : 'Error ' + error}</p>
     </>
   );
 };
 
 const UnknownContract = () => {
-  const [loading, balance, hasError] = useTokenBalance('', SOME_OWNER);
+  const [balance, loading, error] = useTokenBalance('', SOME_OWNER);
 
   return (
     <>
-      <p>{loading ? 'Loading...' : 'Error ' + hasError}</p>
+      <p>{loading ? 'Loading...' : 'Error ' + error}</p>
     </>
   );
 };

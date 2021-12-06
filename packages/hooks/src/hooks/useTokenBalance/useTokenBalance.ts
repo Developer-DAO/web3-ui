@@ -9,9 +9,9 @@ import ERC20 from './ERC20ABI.json';
 
  */
 export const useTokenBalance = (contractAddress: string, ownerAddress: string) => {
-  const [isLoading, setIsLoading] = React.useState(true);
   const [balance, setBalance] = React.useState<string>();
-  const [errorMsg, setErrorMsg] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
   const { provider } = useContext(Web3Context);
 
@@ -21,10 +21,10 @@ export const useTokenBalance = (contractAddress: string, ownerAddress: string) =
 
   const getTokenBalance = async () => {
     if (provider === undefined) {
-      setErrorMsg(
+      setError(
         'provider is undefined. Please make sure to you the hook within the Web3Context Provider '
       );
-      setIsLoading(false);
+      setLoading(false);
       return;
     }
     try {
@@ -41,12 +41,12 @@ export const useTokenBalance = (contractAddress: string, ownerAddress: string) =
       const displayBalance = (balanceAsNumber / 10 ** resolvedDecimals).toFixed(3);
 
       setBalance(displayBalance);
-      setIsLoading(false);
+      setLoading(false);
     } catch (e) {
-      setErrorMsg(e);
-      setIsLoading(false);
+      setError(e);
+      setLoading(false);
     }
   };
 
-  return [isLoading, balance, errorMsg];
+  return [balance, loading, error];
 };
