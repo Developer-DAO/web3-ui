@@ -35,7 +35,14 @@ const Component = () => {
   const provider = new ethers.providers.Web3Provider(WINDOW_ETHEREUM);
   const [value, setValue] = React.useState('');
 
-  return <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider} />;
+  return (
+    <AddressInput
+      value={value}
+      onChange={(e) => setValue(e)}
+      provider={provider}
+      placeholder='Input address'
+    />
+  );
 };
 
 describe('AddressInput', () => {

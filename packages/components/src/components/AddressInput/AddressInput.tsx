@@ -17,7 +17,13 @@ export interface AddressInputProps {
    */
   value: string;
   /**
-   * @dev Change hanlder for the text input
+   * @dev The label for the input
+   * @type string
+   * @default null
+   */
+  label?: string;
+  /**
+   * @dev Change handler for the text input
    * @type (value: string) => void
    */
   onChange: (value: string) => void;
@@ -34,6 +40,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,
   value,
   onChange,
+  label,
   ...props
 }) => {
   const [inputValue, setInputValue] = useState('');
@@ -75,18 +82,14 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 
   return (
     <FormControl isInvalid={!!error}>
-      <FormLabel>Input address</FormLabel>
+      {label && <FormLabel>Input address</FormLabel>}
       <Input
         isInvalid={!!error}
-        mt={2}
-        mb={2}
-        {...props}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder='Input address'
+        {...props}
       />
       <FormErrorMessage>{error ? ' ' + error : ''}</FormErrorMessage>
-      {}
     </FormControl>
   );
 };
