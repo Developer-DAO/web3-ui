@@ -6,35 +6,25 @@ import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider
 
 export interface AddressInputProps {
   /**
-   * @dev The provider or signer to fetch the address from the ens
-   * @type JsonRpcSigner or ethers.providers.Web3Provider
+   * The provider or signer to fetch the address from the ens
    */
   provider: ethers.providers.Web3Provider | JsonRpcSigner;
   /**
-   * @dev The value for the input
-   * @type string
-   * @default ''
+   * The value for the input
    */
   value: string;
   /**
-   * @dev The label for the input
-   * @type string
-   * @default null
+   * The label for the input
    */
   label?: string;
   /**
-   * @dev Change handler for the text input
-   * @type (value: string) => void
+   * Change handler for the text input
    */
   onChange: (value: string) => void;
 }
 
 /**
- * @dev A text input component that is used to get the address of the user from the ens. You can also pass all the styling props of the Chakra UI Input component.
- * @param provider The provider or signer to fetch the address from the ens
- * @param value The value for the input
- * @param onChange Change hanlder for the text input
- * @returns JSX.Element
+ * A text input component that is used to get the address of the user from the ens. You can also pass all the styling props of the Chakra UI Input component.
  */
 export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,

@@ -29,5 +29,6 @@ export function useWallet() {
       ens,
     },
     connected: context?.connected,
+    provider: context?.provider,
   };
 }

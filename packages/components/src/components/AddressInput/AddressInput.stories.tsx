@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 import { AddressInput } from '.';
 import { ethers } from 'ethers';
 import { Provider, useWallet } from '@web3-ui/hooks';
 import { Text } from '@chakra-ui/layout';
 
-const WithUseWallet = () => {
-  const { connectWallet, connection } = useWallet();
-  const [value, setValue] = React.useState('');
+export default {
+  title: 'Components/AddressInput',
+  component: AddressInput,
+};
 
-  useEffect(() => {
-    connectWallet!();
-  }, []);
+const WithUseWallet = () => {
+  const { provider } = useWallet();
+  const [value, setValue] = React.useState('');
 
   return (
     <>
-      <AddressInput value={value} onChange={(e) => setValue(e)} provider={connection.signer!} />
+      <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider!} />
       <Text>value: {value}</Text>
     </>
   );
@@ -38,17 +38,12 @@ const Component = ({ ...props }) => {
   );
 };
 
-storiesOf('Components/AddressInput', module)
-  .add('Default', () => {
-    return <Component />;
-  })
-  .add('Using @web3-hook', () => {
-    return (
-      <Provider network='mainnet'>
-        <WithUseWallet />
-      </Provider>
-    );
-  })
-  .add('With label', () => {
-    return <Component label='Address' />;
-  });
+export const Default = () => <Component />;
+export const UsingWeb3Hooks = () => {
+  return (
+    <Provider network='mainnet'>
+      <WithUseWallet />
+    </Provider>
+  );
+};
+export const Label = () => <Component label='Address' />;
