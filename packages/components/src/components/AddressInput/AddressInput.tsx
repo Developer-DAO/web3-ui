@@ -38,14 +38,12 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState('');
   const deboucedValued = useDebounce(inputValue, 700);
-  const [, setEnsValue] = useState('');
   const [error, setError] = useState<null | string>(null);
   const regex = /^0x[a-fA-F0-9]{40}$/;
 
   const getAddressFromEns = async () => {
     try {
       let address = await provider.resolveName(deboucedValued);
-      console.log({ address });
       if (!address) {
         setError('Invalid Input');
       }
@@ -58,13 +56,11 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 
   useEffect(() => {
     if (deboucedValued) {
-      setEnsValue('');
       onChange('');
       setError(null);
       if (regex.test(deboucedValued)) {
         onChange(deboucedValued);
       } else if (deboucedValued.endsWith('.eth') || deboucedValued.endsWith('.xyz')) {
-        setEnsValue(deboucedValued);
         getAddressFromEns().then((address) => onChange(address ? address : ''));
       }
     }
