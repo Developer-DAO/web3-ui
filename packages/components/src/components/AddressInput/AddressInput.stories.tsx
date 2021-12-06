@@ -1,7 +1,7 @@
 import React from 'react';
 import { AddressInput } from '.';
 import { ethers } from 'ethers';
-import { Provider, useWallet } from '@web3-ui/hooks';
+import { NETWORKS, Provider, useWallet } from '@web3-ui/hooks';
 import { Text } from '@chakra-ui/layout';
 
 export default {
@@ -41,7 +41,7 @@ const Component = ({ ...props }) => {
 export const Default = () => <Component />;
 export const UsingWeb3Hooks = () => {
   return (
-    <Provider network='mainnet'>
+    <Provider network={NETWORKS.mainnet}>
       <WithUseWallet />
     </Provider>
   );
