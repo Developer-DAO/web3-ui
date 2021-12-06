@@ -1,5 +1,5 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ethers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
