@@ -1,16 +1,46 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { AddressInput } from '.';
-import { MockProvider } from 'ethereum-waffle';
+import { ethers } from 'ethers';
+import 'regenerator-runtime/runtime';
+
+const WALLET_ADDRESS = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266';
+const SIGNED_MESSAGE =
+  '0xa2162955fbfbac44ad895441a3501465861435d6615053a64fc9622d98061f1556e47c6655d0ea02df00ed6f6050298eea381b4c46f8148ecb617b32695bdc451c';
+
+const WINDOW_ETHEREUM = {
+  isMetaMask: true,
+  request: async (request: { method: string; params?: Array<unknown> }) => {
+    if (['eth_accounts', 'eth_requestAccounts'].includes(request.method)) {
+      return [WALLET_ADDRESS];
+    } else if (['personal_sign'].includes(request.method)) {
+      return SIGNED_MESSAGE;
+    }
+
+    throw Error(`Unknown request: ${request.method}`);
+  },
+};
+
+jest.mock('ethers', () => {
+  const original = jest.requireActual('ethers');
+  return {
+    ...original,
+    ethers: {
+      ...original.ethers,
+    },
+  };
+});
+
+const Component = () => {
+  const provider = new ethers.providers.Web3Provider(WINDOW_ETHEREUM);
+  const [value, setValue] = React.useState('');
+
+  return <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider} />;
+};
 
 describe('AddressInput', () => {
-  it('renders', () => {
-    const provider = new MockProvider();
-    const [value, setValue] = React.useState('');
-
-    const { container } = render(
-      <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider} />
-    );
+  it('renders AddressInput correctly', () => {
+    const { container } = render(<Component />);
     expect(container);
   });
 });
