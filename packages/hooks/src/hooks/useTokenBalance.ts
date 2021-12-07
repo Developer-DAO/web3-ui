@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 import { useContext, useEffect, useState } from 'react';
-import { Web3Context } from '../..';
-import ERC20ABI from './ERC20ABI.json';
+import { Web3Context } from '..';
+import { ERC20ABI } from '../constants';
 import { BigNumber } from '@ethersproject/bignumber';
 
 interface Props {

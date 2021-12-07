@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-import { Provider, useTokenBalance, useWallet } from '..';
+import { NETWORKS, Provider, useTokenBalance, useWallet } from '..';
 
 const GTC_ADDRESS = '0xde30da39c46104798bb5aa3fe8b9e0e1f348163f';
 
@@ -33,8 +33,8 @@ const Default = () => {
   return <button onClick={connectWallet}>Connect Wallet</button>;
 };
 
-storiesOf('UseTokenBalance', module).add('Default', () => (
-  <Provider network='mainnet'>
+storiesOf('Hooks/useTokenBalance', module).add('Default', () => (
+  <Provider network={NETWORKS.mainnet}>
     <Default />
   </Provider>
 ));
