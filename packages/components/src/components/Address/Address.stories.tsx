@@ -1,7 +1,7 @@
 import React from 'react';
 import { Address } from '.';
 
-import { useWallet, Provider } from '@web3-ui/hooks';
+import { useWallet, Provider, NETWORKS } from '@web3-ui/hooks';
 import { Button } from '@chakra-ui/react';
 
 export default {
@@ -25,7 +25,7 @@ const AddressUsingProvider = () => {
 };
 
 export const WithWallet = () => (
-  <Provider network='rinkeby'>
+  <Provider network={NETWORKS.rinkeby}>
     <AddressUsingProvider />
   </Provider>
 );

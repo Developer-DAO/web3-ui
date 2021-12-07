@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
-import { Provider, useWallet } from '..';
+import { NETWORKS, Provider, useWallet } from '..';
 
 export default {
   title: 'Hooks/useWallet',
 };
 
 const DefaultUsingProvider = () => {
-  const { connection, connectWallet, disconnectWallet, connected } = useWallet();
+  const { connection, connectWallet, disconnectWallet, connected, correctNetwork } = useWallet();
+
+  useEffect(() => {
+    if (!correctNetwork) {
+      alert('Please connect to the correct network');
+    }
+  }, [correctNetwork]);
 
   if (connected) {
     return (
       <div>
         <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <p>{connection.ens || connection.userAddress}</p>
+        <p>Connected to the correct network: {correctNetwork ? 'Yes' : 'no'}</p>
       </div>
     );
   }
@@ -22,7 +29,7 @@ const DefaultUsingProvider = () => {
 };
 
 export const Default = () => (
-  <Provider network='rinkeby'>
+  <Provider network={NETWORKS.rinkeby}>
     <DefaultUsingProvider />
   </Provider>
 );
