@@ -9,7 +9,8 @@
   },
   "author": "Developer DAO",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "example"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -22,7 +23,8 @@
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors",
     "storybook": "start-storybook -p 9001 -s ./packages/components/src/assets -c .storybook",
-    "postinstall": "preconstruct dev"
+    "postinstall": "preconstruct dev",
+    "example": "yarn workspace example dev"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
