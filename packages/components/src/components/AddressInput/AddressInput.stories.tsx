@@ -7,6 +7,10 @@ import { Text } from '@chakra-ui/layout';
 export default {
   title: 'Components/AddressInput',
   component: AddressInput,
+  parameters: {
+    // TODO: Fix window.ethereum is undefined breaking chromatic
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const WithUseWallet = () => {
