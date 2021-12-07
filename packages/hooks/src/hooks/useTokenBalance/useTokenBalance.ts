@@ -1,52 +1,51 @@
-import React, { useContext } from 'react';
 import { ethers } from 'ethers';
-import { Web3Context } from '../../Provider';
-import ERC20 from './ERC20ABI.json';
+import { useContext, useEffect, useState } from 'react';
+import { Web3Context } from '../..';
+import ERC20ABI from './ERC20ABI.json';
+import { BigNumber } from '@ethersproject/bignumber';
 
-/**
- * @param contractAddress -> the address of the ERC20 token contract
- * @param ownerAddress -> the address of the owner which balance should be fetched
+interface Props {
+  tokenAddress: string;
+  accountAddress: string;
+}
 
- */
-export const useTokenBalance = (contractAddress: string, ownerAddress: string) => {
-  const [balance, setBalance] = React.useState<string>();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
+export function useTokenBalance({ tokenAddress, accountAddress }: Props) {
+  const context = useContext(Web3Context);
+  const provider = context?.provider;
 
-  const { provider } = useContext(Web3Context);
+  const [balance, setBalance] = useState<BigNumber>();
+  const [decimals, setDecimals] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  React.useEffect(() => {
-    getTokenBalance();
-  });
-
-  const getTokenBalance = async () => {
-    if (provider === undefined) {
-      setError(
-        'provider is undefined. Please make sure to you the hook within the Web3Context Provider '
-      );
-      setLoading(false);
-      return;
-    }
-    try {
-      const contract = new ethers.Contract(contractAddress, ERC20, provider);
-      const balanceFuture = contract.balanceOf(ownerAddress);
-      const decimalsFuture = contract.decimals();
-
-      const [resolvedBalance, resolvedDecimals] = await Promise.all([
-        balanceFuture,
-        decimalsFuture,
-      ]);
-
-      const balanceAsNumber = Number.parseInt(resolvedBalance);
-      const displayBalance = (balanceAsNumber / 10 ** resolvedDecimals).toFixed(3);
-
-      setBalance(displayBalance);
-      setLoading(false);
-    } catch (e) {
-      setError(e);
-      setLoading(false);
-    }
+  const getBalance = async () => {
+    const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
+    const balance = await contract.balanceOf(accountAddress);
+    const decimals = await contract.decimals();
+    setBalance(balance);
+    setDecimals(decimals);
   };
 
-  return [balance, loading, error];
-};
+  useEffect(() => {
+    if (tokenAddress && accountAddress && provider) {
+      setError(false);
+      setLoading(true);
+      try {
+        getBalance();
+      } catch (error) {
+        console.error(error);
+        setError(true);
+      }
+      setLoading(false);
+    }
+  }, [tokenAddress, accountAddress]);
+
+  return {
+    balance: balance?.toString(), // The balance in wei
+    loading,
+    error,
+    decimals,
+    formattedBalance: balance && ethers.utils.formatUnits(balance, decimals), // The balance in ethers eg. 0.01 ETH, 20 GTC, etc.
+    balanceInBigNumber: balance,
+  };
+}
