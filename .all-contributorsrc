@@ -79,6 +79,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "swellander",
+      "name": "Sam Wellander",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22231097?v=4",
+      "profile": "https://github.com/swellander",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
