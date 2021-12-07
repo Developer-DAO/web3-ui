@@ -26,7 +26,7 @@
     "postinstall": "preconstruct dev",
     "example": "yarn workspace example dev",
     "build-storybook": "build-storybook",
-    "chromatic": "chromatic  --exit-zero-on-changes",
+    "chromatic": "chromatic  --exit-zero-on-changes"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
