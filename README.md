@@ -31,7 +31,7 @@ This project is built with the following open source libraries, frameworks and l
 
 3. Ask other contributors to see if no one has taken the issue yet. If you're interested in tackling such a feature and it's still available, we will assign you to the task.
 
-4. Fork the repo and create your own branch using `git checkout -b your_branch_name`. Remember to use a branch name that describes WHAT you're doing/fixing.
+4. Clone the repo and create your own branch using `git checkout -b your_branch_name`. Remember to use a branch name that describes WHAT you're doing/fixing.
 
 5. Setup your local development environment. Instructions [here](/CONTRIBUTING.md#installation)
 
