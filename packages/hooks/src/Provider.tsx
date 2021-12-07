@@ -9,10 +9,10 @@ export interface Web3ContextType {
   signer?: JsonRpcSigner | null;
   userAddress?: string | null;
   disconnectWallet?: () => void;
-  network: string;
-  chainId?: number;
+  chainId?: number | null;
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
+  correctNetwork: boolean;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(undefined);
@@ -20,10 +20,10 @@ export const Web3Context = React.createContext<Web3ContextType | undefined>(unde
 export interface ProviderProps {
   /**
    * @dev The network you want to connect to.
-   * @example 'mainnet'
+   * @example NETWORKS.mainnet
    * @type string
    */
-  network: string;
+  network: number;
   /**
    * @dev Your Infura project ID. This is required if you want to support WalletConnect.
    * @type string
@@ -39,15 +39,16 @@ export interface ProviderProps {
  */
 export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId }) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
-  const [provider, setProvider] = React.useState<ethers.providers.Web3Provider>();
+  const [provider, setProvider] = React.useState<ethers.providers.Web3Provider | null>();
   const [userAddress, setUserAddress] = React.useState<null | string>();
   const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
-  const [chainId, setChainId] = React.useState<number>();
+  const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
+  const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
+  const [connection, setConnection] = React.useState<any>();
 
   const connectWallet = React.useCallback(async () => {
     const web3Modal = new Web3Modal({
-      network,
       providerOptions: {
         walletconnect: {
           package: WalletConnectProvider,
@@ -57,16 +58,61 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
         },
       },
     });
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
     setWeb3Modal(web3Modal);
-    setSigner(signer);
+    const connection = await web3Modal.connect();
+    setConnection(connection);
+    const provider = new ethers.providers.Web3Provider(connection);
     setProvider(provider);
+    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    setChainId(chainId);
+    setCorrectNetwork(chainId === network);
+    const signer = provider.getSigner();
+    setSigner(signer);
     setUserAddress(await signer.getAddress());
-    setChainId(await signer.getChainId());
     setConnected(true);
-  }, [Web3Modal, web3Modal, WalletConnectProvider, network, infuraId, ethers]);
+
+    connection.on('chainChanged', onNetworkChange);
+    connection.on('accountsChanged', onAccountsChanged);
+    connection.on('disconnect', onDisconnect);
+  }, [
+    Web3Modal,
+    web3Modal,
+    WalletConnectProvider,
+    network,
+    infuraId,
+    ethers,
+    correctNetwork,
+    connection,
+  ]);
+
+  const onNetworkChange = async (newChainId: string) => {
+    const formattedChainId = +newChainId.split('0x')[1];
+    setChainId(formattedChainId);
+    setCorrectNetwork(formattedChainId === network);
+    const provider = new ethers.providers.Web3Provider(connection);
+    setProvider(provider);
+    const signer = provider.getSigner();
+    setSigner(signer);
+    setUserAddress(await signer.getAddress());
+    setConnected(true);
+  };
+
+  const onAccountsChanged = async () => {
+    const provider = new ethers.providers.Web3Provider(connection);
+    setProvider(provider);
+    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    setChainId(chainId);
+    setCorrectNetwork(chainId === network);
+    const signer = provider.getSigner();
+    setSigner(signer);
+    setUserAddress(await signer.getAddress());
+    setConnected(true);
+  };
+
+  const onDisconnect = async () => {
+    web3Modal?.clearCachedProvider();
+    disconnectWallet();
+  };
 
   const disconnectWallet = React.useCallback(() => {
     web3Modal?.clearCachedProvider();
@@ -85,8 +131,19 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
       provider,
       network,
       chainId,
+      correctNetwork,
     }),
-    [connectWallet, signer, userAddress, web3Modal, connected, provider, network, chainId]
+    [
+      connectWallet,
+      signer,
+      userAddress,
+      web3Modal,
+      connected,
+      provider,
+      network,
+      chainId,
+      correctNetwork,
+    ]
   );
 
   return <Web3Context.Provider value={{ ...value }}>{children}</Web3Context.Provider>;

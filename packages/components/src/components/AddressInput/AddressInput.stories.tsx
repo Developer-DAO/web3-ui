@@ -1,12 +1,16 @@
 import React from 'react';
 import { AddressInput } from '.';
 import { ethers } from 'ethers';
-import { Provider, useWallet } from '@web3-ui/hooks';
+import { NETWORKS, Provider, useWallet } from '@web3-ui/hooks';
 import { Text } from '@chakra-ui/layout';
 
 export default {
   title: 'Components/AddressInput',
   component: AddressInput,
+  parameters: {
+    // TODO: Fix window.ethereum is undefined breaking chromatic
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const WithUseWallet = () => {
@@ -41,7 +45,7 @@ const Component = ({ ...props }) => {
 export const Default = () => <Component />;
 export const UsingWeb3Hooks = () => {
   return (
-    <Provider network='mainnet'>
+    <Provider network={NETWORKS.mainnet}>
       <WithUseWallet />
     </Provider>
   );

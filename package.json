@@ -24,7 +24,9 @@
     "test:coverage": "jest --coverage --colors",
     "storybook": "start-storybook -p 9001 -s ./packages/components/src/assets -c .storybook",
     "postinstall": "preconstruct dev",
-    "example": "yarn workspace example dev"
+    "example": "yarn workspace example dev",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic  --exit-zero-on-changes",
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -35,6 +37,7 @@
     "@preconstruct/cli": "^2.1.5",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
+    "chromatic": "^6.1.0",
     "jest": "^26.6.3",
     "msw": "^0.35.0",
     "ts-jest": "^26.4.4"

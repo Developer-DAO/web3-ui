@@ -1,4 +1,5 @@
 import React from 'react';
+import { CHAIN_ID_TO_NETWORK, NETWORKS } from '..';
 import { Web3Context } from '../Provider';
 
 /**
@@ -8,27 +9,40 @@ export function useWallet() {
   const context = React.useContext(Web3Context);
   const [ens, setEns] = React.useState<string>();
 
+  if (!context) {
+    throw new Error('No Web3Context found');
+  }
+
+  const {
+    connectWallet,
+    disconnectWallet,
+    userAddress,
+    chainId,
+    signer,
+    connected,
+    provider,
+    correctNetwork,
+  } = context;
+
   React.useEffect(() => {
-    if (context) {
-      const { userAddress, provider } = context;
-      if (userAddress && provider) {
-        provider.lookupAddress(userAddress).then((address) => {
-          setEns(address as string);
-        });
-      }
+    if (userAddress && provider && chainId === NETWORKS.mainnet) {
+      provider.lookupAddress(userAddress).then((address) => {
+        setEns(address as string);
+      });
     }
-  }, [context?.userAddress, context?.provider]);
+  }, [userAddress, provider]);
 
   return {
-    connectWallet: context?.connectWallet,
-    disconnectWallet: context?.disconnectWallet,
+    connectWallet,
+    disconnectWallet,
     connection: {
-      userAddress: context?.userAddress,
-      network: context?.network,
-      signer: context?.signer,
+      userAddress,
+      network: CHAIN_ID_TO_NETWORK[chainId as number],
+      signer,
       ens,
     },
-    connected: context?.connected,
-    provider: context?.provider,
+    connected,
+    provider,
+    correctNetwork,
   };
 }
