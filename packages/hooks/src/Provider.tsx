@@ -32,7 +32,7 @@ export interface ProviderProps {
    */
   infuraId?: string;
 
-  extraWalletProviders: [IProviderOptions];
+  extraWalletProviders?: [IProviderOptions];
 }
 
 /**
@@ -45,7 +45,7 @@ export const Provider: React.FC<ProviderProps> = ({
   children,
   network,
   infuraId,
-  extraWalletProviders,
+  extraWalletProviders = [],
 }) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
   const [provider, setProvider] = React.useState<ethers.providers.Web3Provider | null>();
@@ -68,37 +68,38 @@ export const Provider: React.FC<ProviderProps> = ({
       1
     );
 
-    const web3Modal = new Web3Modal({
-      providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            bridge: 'https://polygon.bridge.walletconnect.org',
-            infuraId,
-            rpc: {
-              1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
-              42: infuraId,
-              100: 'https://dai.poa.network', // xDai
-            },
+    const defaulProviderOptions = {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          bridge: 'https://polygon.bridge.walletconnect.org',
+          infuraId,
+          rpc: {
+            1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+            42: infuraId,
+            100: 'https://dai.poa.network', // xDai
           },
         },
-        'custom-walletlink': {
-          display: {
-            logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
-            name: 'Coinbase',
-            description: 'Connect to Coinbase Wallet',
-          },
-          package: walletLinkProvider,
-          connector: async (provider, options) => {
-            await provider.enable();
-            return provider;
-          },
-        },
-        'custom-ledger': {
-          ...ledgerProviderOptions,
-        },
-        ...extraWalletProviders[0],
       },
+      'custom-walletlink': {
+        display: {
+          logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
+          name: 'Coinbase',
+          description: 'Connect to Coinbase Wallet',
+        },
+        package: walletLinkProvider,
+        connector: async (provider, options) => {
+          await provider.enable();
+          return provider;
+        },
+      },
+      'custom-ledger': {
+        ...ledgerProviderOptions,
+      },
+    };
+
+    const web3Modal = new Web3Modal({
+      providerOptions: Object.assign(defaulProviderOptions, ...extraWalletProviders),
     });
     setWeb3Modal(web3Modal);
     const connection = await web3Modal.connect();
