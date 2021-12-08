@@ -3143,7 +3143,7 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
 
 export const MOCK_IMAGE_NFT = {
   token_id: 1,
-  image_url: 'x',
+  image_url: 'https://test.com/image.png',
   name: 'Dev #1',
   asset_contract: {
     name: 'Devs for Revolution',

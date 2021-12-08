@@ -1,3 +1,4 @@
+import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { NFT } from '.';
 
@@ -16,4 +17,5 @@ storiesOf('NFT', module)
   ))
   .add('Audio', () => (
     <NFT contractAddress='0x0eede4764cfdfcd5dac0e00b3b7f4778c0cc994e' tokenId='1' />
-  ));
+  ))
+  .add('Error', () => <NFT contractAddress='abcd' tokenId='1' />);

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import fetch from 'cross-fetch';
 import { ethers } from 'ethers';
 import { VStack, Heading, Grid, Alert, AlertIcon } from '@chakra-ui/react';
-import { NFT } from '../NFT';
+import { NFTCard } from '../NFT';
 
 export interface NFTGalleryProps {
   /**
@@ -47,7 +47,9 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
       fetch(`https://api.opensea.io/api/v1/assets?owner=${resolvedAddress}`)
         .then((res) => {
           if (!res.ok) {
-            throw Error(`OpenSea request failed with status: ${res.status}.`);
+            throw Error(
+              `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
+            );
           }
           return res.json();
         })
@@ -68,10 +70,15 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
       )}
       <Grid templateColumns={`repeat(${gridWidth}, 1fr)`} gap={6}>
         {nfts.map((nft) => (
-          <NFT
+          <NFTCard
             key={`${nft.asset_contract.symbol}-${nft.token_id}`}
-            tokenId={nft.token_id}
-            contractAddress={nft.asset_contract.address}
+            data={{
+              name: nft.name!,
+              imageUrl: nft.image_url,
+              tokenId: nft.token_id,
+              assetContractName: nft.asset_contract.name,
+              assetContractSymbol: nft.asset_contract.symbol,
+            }}
           />
         ))}
       </Grid>

@@ -1,5 +1,16 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { Box, Heading, Image, Flex, Tag, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Image,
+  Flex,
+  Tag,
+  Text,
+  VStack,
+  Skeleton,
+  Alert,
+  AlertIcon,
+} from '@chakra-ui/react';
 import fetch from 'cross-fetch';
 
 export interface NFTProps {
@@ -7,35 +18,44 @@ export interface NFTProps {
   tokenId: string;
 }
 
-interface NFTData {
+export interface NFTData {
   tokenId: string;
   imageUrl?: string;
-  name: string;
+  name: string | null;
   assetContractSymbol: string;
   assetContractName: string;
   animationUrl?: string;
 }
 
 /**
- * Component to display an NFT given render params
+ * Component to fetch and display NFT data
  */
 export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
   const _isMounted = useRef(true);
   const [nftData, setNftData] = React.useState<NFTData>();
+  const [errorMessage, setErrorMessage] = React.useState<string>();
 
   const fetchNFTData = useCallback(async () => {
-    const response = await (
-      await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`)
-    ).json();
-    if (_isMounted.current) {
-      setNftData({
-        tokenId: response.token_id,
-        imageUrl: response.image_url,
-        name: response.name,
-        assetContractName: response.asset_contract.name,
-        assetContractSymbol: response.asset_contract.symbol,
-        animationUrl: response.animation_url,
-      });
+    try {
+      const res = await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`);
+      if (!res.ok) {
+        throw Error(
+          `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
+        );
+      }
+      const data = await res.json();
+      if (_isMounted.current) {
+        setNftData({
+          tokenId: data.token_id,
+          imageUrl: data.image_url,
+          name: data.name,
+          assetContractName: data.asset_contract.name,
+          assetContractSymbol: data.asset_contract.symbol,
+          animationUrl: data.animation_url,
+        });
+      }
+    } catch (error: any) {
+      setErrorMessage(error.message);
     }
   }, [contractAddress, tokenId]);
 
@@ -47,43 +67,63 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
     };
   }, [contractAddress, tokenId]);
 
-  if (!nftData) {
-    return null;
+  return <NFTCard data={nftData} errorMessage={errorMessage} />;
+};
+
+/**
+ * Private component to display an NFT given the data
+ */
+export const NFTCard = ({
+  data,
+  errorMessage = '',
+}: {
+  data: NFTData | undefined | null;
+  errorMessage?: string | undefined;
+}) => {
+  const name = data?.name;
+  const imageUrl = data?.imageUrl;
+  const assetContractName = data?.assetContractName;
+  const assetContractSymbol = data?.assetContractSymbol;
+  const animationUrl = data?.animationUrl;
+  const tokenId = data?.tokenId;
+  const displayName = name || `${assetContractSymbol} #${tokenId}`;
+
+  if (errorMessage) {
+    return (
+      <Alert status='error'>
+        <AlertIcon />
+        {errorMessage}
+      </Alert>
+    );
   }
 
-  let {
-    name: displayName,
-    imageUrl,
-    assetContractName,
-    assetContractSymbol,
-    animationUrl,
-  } = nftData;
-
   return (
-    <Box maxW='xs' borderRadius='lg' borderWidth='1px' overflow='hidden'>
-      {animationUrl ? (
-        animationUrl.endsWith('.mp3') ? (
-          <VStack>
-            <Image src={imageUrl} alt={displayName} borderRadius='lg' />
-            <audio src={animationUrl} controls autoPlay muted style={{ borderRadius: '7px' }} />
-          </VStack>
+    <Skeleton isLoaded={!!data} maxW='xs' h='md'>
+      <Box maxW='xs' borderRadius='lg' borderWidth='1px' overflow='hidden'>
+        {animationUrl ? (
+          animationUrl.endsWith('.mp3') ? (
+            <VStack>
+              <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+              <audio src={animationUrl} controls autoPlay muted style={{ borderRadius: '7px' }} />
+            </VStack>
+          ) : (
+            <video src={animationUrl} controls autoPlay muted />
+          )
         ) : (
-          <video src={animationUrl} controls autoPlay muted />
-        )
-      ) : (
-        <Image src={imageUrl} alt={displayName} borderRadius='lg' />
-      )}
-      <Box p='6'>
-        <Flex alignItems='center' justifyContent='space-between' pb='2'>
-          <Heading as='h3' size='sm'>
-            {displayName}
-          </Heading>
-          {assetContractSymbol && <Tag size='sm'>{assetContractSymbol}</Tag>}
-        </Flex>
-        <Text fontSize='xs'>
-          {assetContractName} #{tokenId}
-        </Text>
+          <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+        )}
+        <Box p='6'>
+          <Flex alignItems='center' justifyContent='space-between' pb='2'>
+            <Heading as='h3' size='sm'>
+              {displayName}
+            </Heading>
+            {assetContractSymbol && <Tag size='sm'>{assetContractSymbol}</Tag>}
+          </Flex>
+          <Text fontSize='xs'>
+            {assetContractName} #{tokenId}
+          </Text>
+        </Box>
       </Box>
-    </Box>
+    </Skeleton>
   );
 };
