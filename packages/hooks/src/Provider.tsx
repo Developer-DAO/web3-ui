@@ -57,7 +57,7 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
 
     // WalletLink provider
     const walletLinkProvider = walletLink.makeWeb3Provider(
-      'https://eth-mainnet.alchemyapi.io/v2/qCdzfF9UqXcJYIle-Ff-BN0MII8LjLQs',
+      `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`,
       1
     );
 
@@ -69,7 +69,7 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
             bridge: 'https://polygon.bridge.walletconnect.org',
             infuraId,
             rpc: {
-              1: 'https://eth-mainnet.alchemyapi.io/v2/qCdzfF9UqXcJYIle-Ff-BN0MII8LjLQs', // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+              1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
               42: infuraId,
               100: 'https://dai.poa.network', // xDai
             },
@@ -79,10 +79,9 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
           display: {
             logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
             name: 'Coinbase',
-            description: 'Connect to Coinbase Wallet (not Coinbase App)',
+            description: 'Connect to Coinbase Wallet',
           },
           package: walletLinkProvider,
-          // @ts-ignore
           connector: async (provider, options) => {
             await provider.enable();
             return provider;
@@ -90,8 +89,6 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
         },
         'custom-ledger': {
           ...ledgerProviderOptions,
-          // rpc: { 31: 'https://public-node.testnet.rsk.co' },
-          // chainId: 31,
         },
       },
     });
