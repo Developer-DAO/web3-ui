@@ -1,10 +1,10 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
-import React from 'react';
-import { ethers } from 'ethers';
-import WalletLink from 'walletlink';
 import { ledgerProviderOptions } from '@rsksmart/rlogin-ledger-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import Web3Modal from 'web3modal';
+import { ethers } from 'ethers';
+import React from 'react';
+import WalletLink from 'walletlink';
+import Web3Modal, { IProviderOptions } from 'web3modal';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
@@ -31,6 +31,8 @@ export interface ProviderProps {
    * @type string
    */
   infuraId?: string;
+
+  extraWalletProviders: [IProviderOptions];
 }
 
 /**
@@ -39,7 +41,12 @@ export interface ProviderProps {
  * @param network The network you want to connect to.
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
  */
-export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId }) => {
+export const Provider: React.FC<ProviderProps> = ({
+  children,
+  network,
+  infuraId,
+  extraWalletProviders,
+}) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
   const [provider, setProvider] = React.useState<ethers.providers.Web3Provider | null>();
   const [userAddress, setUserAddress] = React.useState<null | string>();
@@ -90,6 +97,7 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
         'custom-ledger': {
           ...ledgerProviderOptions,
         },
+        ...extraWalletProviders[0],
       },
     });
     setWeb3Modal(web3Modal);

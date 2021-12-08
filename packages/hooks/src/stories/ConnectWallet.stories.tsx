@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
 import { NETWORKS, Provider, useWallet } from '..';
+import Authereum from 'authereum';
+import Portis from '@portis/web3';
 
 export default {
   title: 'Hooks/useWallet',
@@ -29,7 +31,39 @@ const DefaultUsingProvider = () => {
 };
 
 export const Default = () => (
-  <Provider network={NETWORKS.rinkeby}>
+  <Provider
+    network={NETWORKS.rinkeby}
+    extraWalletProviders={[
+      {
+        portis: {
+          display: {
+            logo: 'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
+            name: 'Portis',
+            description: 'Connect to Portis App',
+          },
+          package: Portis,
+          options: {
+            id: '6255fb2b-58c8-433b-a2c9-62098c05ddc9',
+          },
+        },
+      },
+    ]}
+  >
+    <DefaultUsingProvider />
+  </Provider>
+);
+
+export const WithAuthereumProvider = () => (
+  <Provider
+    network={NETWORKS.rinkeby}
+    extraWalletProviders={[
+      {
+        authereum: {
+          package: Authereum,
+        },
+      },
+    ]}
+  >
     <DefaultUsingProvider />
   </Provider>
 );
