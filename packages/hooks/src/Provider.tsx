@@ -31,7 +31,17 @@ export interface ProviderProps {
    * @type string
    */
   infuraId?: string;
-
+  /**
+   * @dev An array of extra Wallet Providers you want to support.
+   * @type [ 
+      [id: string]: {
+          package: any;
+          options?: any;
+          connector?: Connector;
+          display?: Partial<IProviderDisplay>;
+        }; 
+      ]
+   */
   extraWalletProviders?: [IProviderOptions];
 }
 

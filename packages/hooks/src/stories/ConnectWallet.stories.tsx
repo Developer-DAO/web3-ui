@@ -7,6 +7,7 @@ import Portis from '@portis/web3';
 export default {
   title: 'Hooks/useWallet',
 };
+const portisDappId = '512893f6-6436-44c3-b0dc-6caccab984bb';
 
 const DefaultUsingProvider = () => {
   const { connection, connectWallet, disconnectWallet, connected, correctNetwork } = useWallet();
@@ -64,7 +65,7 @@ export const WithPortisProvider = () => (
           },
           package: Portis,
           options: {
-            id: '6255fb2b-58c8-433b-a2c9-62098c05ddc9',
+            id: portisDappId,
           },
         },
       },
@@ -87,10 +88,9 @@ export const PortisAuthereumProvider = () => (
           },
           package: Portis,
           options: {
-            id: '6255fb2b-58c8-433b-a2c9-62098c05ddc9',
+            id: portisDappId,
           },
         },
-
         authereum: {
           package: Authereum,
         },
