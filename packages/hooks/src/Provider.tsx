@@ -50,6 +50,7 @@ export interface ProviderProps {
  * @param children Your app.
  * @param network The network you want to connect to.
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
+ * @param extraWalletProviders An array of extra Wallet Providers you want to support.
  */
 export const Provider: React.FC<ProviderProps> = ({
   children,
