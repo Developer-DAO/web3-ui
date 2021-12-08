@@ -24,4 +24,6 @@ describe('NFTGallery', () => {
       expect(container.textContent).toContain('OpenSea request failed');
     });
   });
+
+  //TODO: test for ENS
 });

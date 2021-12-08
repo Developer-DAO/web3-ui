@@ -31,8 +31,8 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "classnames": "^2.2.6",
     "cross-fetch": "^3.1.4",
+    "ethers": "^5.5.2",
     "framer-motion": "^4"
   },
   "peerDependencies": {
@@ -42,15 +42,12 @@
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@storybook/react": "^6.3.12",
-    "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
     "@web3-ui/hooks": "^0.1.0",
     "babel-loader": "^8.2.1",
-    "classnames": "^2.2.6",
-    "ethers": "^5.5.1",
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^12.1.2",

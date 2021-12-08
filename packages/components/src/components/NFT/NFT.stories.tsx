@@ -6,12 +6,23 @@ export default {
   component: NFT,
 };
 
-export const Default = () => (
+export const image = () => (
+  <NFT tokenId='1' contractAddress='0x25ed58c027921e14d86380ea2646e3a1b5c55a8b' />
+);
+
+export const GIF = () => (
   <NFT
-    tokenId='1'
-    name='Dev #1'
-    imageUrl='https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg'
-    assetContractName='Devs for Revolution'
-    assetContractSymbol='DEVS'
+    contractAddress='0x495f947276749ce646f68ac8c248420045cb7b5e'
+    tokenId='107788331033457039753851660026809005506934842002275129649229957686061111967745'
   />
 );
+
+export const Video = () => (
+  <NFT contractAddress='0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0' tokenId='29192' />
+);
+
+export const Audio = () => (
+  <NFT contractAddress='0x0eede4764cfdfcd5dac0e00b3b7f4778c0cc994e' tokenId='1' />
+);
+
+export const Error = () => <NFT contractAddress='abcd' tokenId='1' />;
