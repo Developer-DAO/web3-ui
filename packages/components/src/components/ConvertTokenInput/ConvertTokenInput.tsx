@@ -8,27 +8,33 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
+export interface ConvertTokenInputProps {
+  /**
+   * The value to be converted
+   */
+  value: string;
+}
+
 // A number input component with built-in conversion feature from wei <-> ether
-export const ConvertTokenInput: React.FC<InputProps> = ({ ...props }) => {
+export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = ({
+  value,
+  ...props
+}) => {
   const [currentUnit, setCurrentUnit] = useState('ether');
   const [targetUnit, setTargetUnit] = useState('wei');
-  const [val, setVal] = useState(1);
+  const [val, setVal] = useState(value);
 
   // The convert() function converts the current value into the unit selected by the user
   const convert = () => {
     if (targetUnit === 'wei') {
       setCurrentUnit('wei');
       setTargetUnit('ether');
-      setVal(val * 1000000000000000000);
+      setVal((parseFloat(val) * 1000000000000000000).toFixed(2));
     } else if (targetUnit === 'ether') {
       setCurrentUnit('ether');
       setTargetUnit('wei');
-      setVal(val / 1000000000000000000);
+      setVal((parseFloat(val) / 1000000000000000000).toFixed(18));
     }
-  };
-
-  const handleInputChange = (event) => {
-    setVal(event.target.value);
   };
 
   return (
@@ -38,7 +44,7 @@ export const ConvertTokenInput: React.FC<InputProps> = ({ ...props }) => {
         type='number'
         placeholder='Enter value'
         value={val}
-        onChange={handleInputChange}
+        onChange={(e) => setVal(e.target.value)}
         {...props}
       />
       <InputRightElement width='5rem'>
