@@ -87,7 +87,7 @@ export const Provider: React.FC<ProviderProps> = ({
           infuraId,
           rpc: {
             1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
-            42: infuraId,
+            42: `https://kovan.infura.io/v3/${infuraId}`,
             100: 'https://dai.poa.network', // xDai
           },
         },
