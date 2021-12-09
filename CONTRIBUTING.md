@@ -1,7 +1,10 @@
 # Contributing
 Contributions are welcome! Please see https://github.com/Developer-DAO/web3-ui/issues for tasks to pick up.
 
+If you developing on Windows see [this](/CONTRIBUTING_ON_WINDOWS.md) page for help on getting your environment setup
+
 ## Local development
+
 To setup your local dev environment:
 ```sh
 # Install `yarn`, alternatives at https://yarnpkg.com/en/docs/install

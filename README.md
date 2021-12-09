@@ -17,11 +17,12 @@ A library of UI components specifically crafted for web3 use cases.
 ## Technologies
 
 This project is built with the following open source libraries, frameworks and languages.
-| Tech                                          | Description                               |
-| --------------------------------------------- | ----------------------------------------- |
-| [React](https://reactjs.org/)                 | Front end user interface                  |
-| [ChakraUI](https://chakra-ui.com/)            | A simple & modular component library      |
-| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language |
+| Tech                                          | Description                                                        |
+| --------------------------------------------- | ------------------------------------------------------------------ |
+| [React](https://reactjs.org/)                 | Front end user interface                                           |
+| [ChakraUI](https://chakra-ui.com/)            | A simple & modular component library                               |
+| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language                          |
+| [Storybook](https://storybook.js.org/)        | Open source tool for building UI components and pages in isolation |
 
 ## How to Contribute
 
