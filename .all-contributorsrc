@@ -88,6 +88,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "txwkx",
+      "name": "Todor Tsankov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19361575?v=4",
+      "profile": "https://github.com/txwkx",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
