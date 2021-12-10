@@ -7,6 +7,7 @@ import {
   InputProps,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import Web3 from 'web3';
 
 export interface ConvertTokenInputProps {
   /**
@@ -29,11 +30,11 @@ export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = 
     if (targetUnit === 'wei') {
       setCurrentUnit('wei');
       setTargetUnit('ether');
-      setVal((parseFloat(val) * 1000000000000000000).toFixed(2));
+      setVal(Web3.utils.toWei(val));
     } else if (targetUnit === 'ether') {
       setCurrentUnit('ether');
       setTargetUnit('wei');
-      setVal((parseFloat(val) / 1000000000000000000).toFixed(18));
+      setVal(Web3.utils.fromWei(val));
     }
   };
 
@@ -41,7 +42,6 @@ export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = 
     <InputGroup>
       <InputLeftAddon children={currentUnit} />
       <Input
-        type='number'
         placeholder='Enter value'
         value={val}
         onChange={(e) => setVal(e.target.value)}
