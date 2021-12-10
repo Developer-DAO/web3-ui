@@ -1,8 +1,10 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
-import React from 'react';
-import { ethers } from 'ethers';
+import { ledgerProviderOptions } from '@rsksmart/rlogin-ledger-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import Web3Modal from 'web3modal';
+import { ethers } from 'ethers';
+import React from 'react';
+import WalletLink from 'walletlink';
+import Web3Modal, { IProviderOptions } from 'web3modal';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
@@ -29,6 +31,18 @@ export interface ProviderProps {
    * @type string
    */
   infuraId?: string;
+  /**
+   * @dev An array of extra Wallet Providers you want to support.
+   * @type [ 
+      [id: string]: {
+          package: any;
+          options?: any;
+          connector?: Connector;
+          display?: Partial<IProviderDisplay>;
+        }; 
+      ]
+   */
+  extraWalletProviders?: [IProviderOptions];
 }
 
 /**
@@ -36,8 +50,14 @@ export interface ProviderProps {
  * @param children Your app.
  * @param network The network you want to connect to.
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
+ * @param extraWalletProviders An array of extra Wallet Providers you want to support.
  */
-export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId }) => {
+export const Provider: React.FC<ProviderProps> = ({
+  children,
+  network,
+  infuraId,
+  extraWalletProviders = [],
+}) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
   const [provider, setProvider] = React.useState<ethers.providers.Web3Provider | null>();
   const [userAddress, setUserAddress] = React.useState<null | string>();
@@ -48,15 +68,49 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
   const [connection, setConnection] = React.useState<any>();
 
   const connectWallet = React.useCallback(async () => {
-    const web3Modal = new Web3Modal({
-      providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            infuraId,
+    // Coinbase walletLink init
+    const walletLink = new WalletLink({
+      appName: 'coinbase',
+    });
+
+    // WalletLink provider
+    const walletLinkProvider = walletLink.makeWeb3Provider(
+      `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`,
+      1
+    );
+
+    const defaulProviderOptions = {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          bridge: 'https://polygon.bridge.walletconnect.org',
+          infuraId,
+          rpc: {
+            1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+            42: `https://kovan.infura.io/v3/${infuraId}`,
+            100: 'https://dai.poa.network', // xDai
           },
         },
       },
+      'custom-walletlink': {
+        display: {
+          logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
+          name: 'Coinbase',
+          description: 'Connect to Coinbase Wallet',
+        },
+        package: walletLinkProvider,
+        connector: async (provider, options) => {
+          await provider.enable();
+          return provider;
+        },
+      },
+      'custom-ledger': {
+        ...ledgerProviderOptions,
+      },
+    };
+
+    const web3Modal = new Web3Modal({
+      providerOptions: Object.assign(defaulProviderOptions, ...extraWalletProviders),
     });
     setWeb3Modal(web3Modal);
     const connection = await web3Modal.connect();
