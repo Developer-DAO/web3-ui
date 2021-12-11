@@ -9,15 +9,22 @@ export default {
   component: Address,
 };
 
-export const Default = () => <Address value='testaddress.eth' />;
+export const Default = () => <Address value='testaddress.eth' shortened={false} />;
 
-const AddressUsingProvider = () => {
+export const DefaultShortenedWithENS = () => <Address value='testaddress.eth' shortened={true} />;
+
+export const DefaultShortenedWithHexAddress = () => (
+  <Address value='0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b' shortened={true} />
+);
+
+const AddressUsingProvider = ({ shortened }) => {
   const { connected, connectWallet, connection } = useWallet();
 
   return (
     <>
       <Address
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
+        shortened={shortened}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
     </>
@@ -26,6 +33,12 @@ const AddressUsingProvider = () => {
 
 export const WithWallet = () => (
   <Provider network={NETWORKS.rinkeby}>
-    <AddressUsingProvider />
+    <AddressUsingProvider shortened={false} />
+  </Provider>
+);
+
+export const WithWalletShortened = () => (
+  <Provider network={NETWORKS.rinkeby}>
+    <AddressUsingProvider shortened={true} />
   </Provider>
 );
