@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import { TokenLogo } from './components/Logo';
 import { useTokenBalance } from '@web3-ui/hooks/src';
 
@@ -38,7 +38,7 @@ export const TokenBalance = (props: TokenBalanceProps) => {
   return (
     <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2'>
       <Box w='50px' pr='4'>
-        <TokenLogo tokenContractAddress={tokenAddress} />
+        {imgUrl ? <Image src={imgUrl} /> : <TokenLogo tokenContractAddress={tokenAddress} />}
       </Box>
       <Box flex='2'>
         {Headline(symbol)}
