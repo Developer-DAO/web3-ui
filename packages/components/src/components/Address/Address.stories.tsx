@@ -39,6 +39,6 @@ export const WithWallet = () => (
 
 export const WithWalletShortened = () => (
   <Provider network={NETWORKS.rinkeby}>
-    <AddressUsingProvider shortened={true} />
+    <AddressUsingProvider shortened />
   </Provider>
 );
