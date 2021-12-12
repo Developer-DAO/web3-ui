@@ -33,3 +33,9 @@ Below are some helpful resources.
 * If you run into 'EACCESS' permissions issues:
 	* double check your directory permissions with `ls -la` 
 	* If the owner is root, you may have problems when running `yarn install`.  You can modify the permissions with the following command `sudo chown -R [yourUsername] [yourProjectDir]`. The `-R` is to recurse into each of the files and directories.
+
+## Creating a pull request
+
+When you create a pull request a `changeset-bot` will tell you that you need to create a changeset, if your change has an effect on the published packages
+all you need to do is run `yarn changeset` at the root. This will ask you whether your change is a patch (fixes a bug), a minor (adds a feature) or a major (breaking change)
+select the one that applies and describe the change you did. This is used to automate our changelogging.
