@@ -17,3 +17,5 @@ yarn-error.log
 /coverage
 
 dist
+/storybook-static
+build-storybook.log

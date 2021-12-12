@@ -1,18 +1,20 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
-import React from 'react';
-import { ethers } from 'ethers';
+import { ledgerProviderOptions } from '@rsksmart/rlogin-ledger-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import Web3Modal from 'web3modal';
+import { ethers } from 'ethers';
+import React from 'react';
+import WalletLink from 'walletlink';
+import Web3Modal, { IProviderOptions } from 'web3modal';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
   signer?: JsonRpcSigner | null;
   userAddress?: string | null;
   disconnectWallet?: () => void;
-  network: string;
-  chainId?: number;
+  chainId?: number | null;
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
+  correctNetwork: boolean;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(undefined);
@@ -20,15 +22,27 @@ export const Web3Context = React.createContext<Web3ContextType | undefined>(unde
 export interface ProviderProps {
   /**
    * @dev The network you want to connect to.
-   * @example 'mainnet'
+   * @example NETWORKS.mainnet
    * @type string
    */
-  network: string;
+  network: number;
   /**
    * @dev Your Infura project ID. This is required if you want to support WalletConnect.
    * @type string
    */
   infuraId?: string;
+  /**
+   * @dev An array of extra Wallet Providers you want to support.
+   * @type [ 
+      [id: string]: {
+          package: any;
+          options?: any;
+          connector?: Connector;
+          display?: Partial<IProviderDisplay>;
+        }; 
+      ]
+   */
+  extraWalletProviders?: [IProviderOptions];
 }
 
 /**
@@ -36,37 +50,123 @@ export interface ProviderProps {
  * @param children Your app.
  * @param network The network you want to connect to.
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
+ * @param extraWalletProviders An array of extra Wallet Providers you want to support.
  */
-export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId }) => {
+export const Provider: React.FC<ProviderProps> = ({
+  children,
+  network,
+  infuraId,
+  extraWalletProviders = [],
+}) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
-  const [provider, setProvider] = React.useState<ethers.providers.Web3Provider>();
+  const [provider, setProvider] = React.useState<ethers.providers.Web3Provider | null>();
   const [userAddress, setUserAddress] = React.useState<null | string>();
   const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
-  const [chainId, setChainId] = React.useState<number>();
+  const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
+  const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
+  const [connection, setConnection] = React.useState<any>();
 
   const connectWallet = React.useCallback(async () => {
-    const web3Modal = new Web3Modal({
-      network,
-      providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            infuraId,
+    // Coinbase walletLink init
+    const walletLink = new WalletLink({
+      appName: 'coinbase',
+    });
+
+    // WalletLink provider
+    const walletLinkProvider = walletLink.makeWeb3Provider(
+      `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`,
+      1
+    );
+
+    const defaulProviderOptions = {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          bridge: 'https://polygon.bridge.walletconnect.org',
+          infuraId,
+          rpc: {
+            1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+            42: `https://kovan.infura.io/v3/${infuraId}`,
+            100: 'https://dai.poa.network', // xDai
           },
         },
       },
+      'custom-walletlink': {
+        display: {
+          logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
+          name: 'Coinbase',
+          description: 'Connect to Coinbase Wallet',
+        },
+        package: walletLinkProvider,
+        connector: async (provider, options) => {
+          await provider.enable();
+          return provider;
+        },
+      },
+      'custom-ledger': {
+        ...ledgerProviderOptions,
+      },
+    };
+
+    const web3Modal = new Web3Modal({
+      providerOptions: Object.assign(defaulProviderOptions, ...extraWalletProviders),
     });
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
     setWeb3Modal(web3Modal);
-    setSigner(signer);
+    const connection = await web3Modal.connect();
+    setConnection(connection);
+    const provider = new ethers.providers.Web3Provider(connection);
     setProvider(provider);
+    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    setChainId(chainId);
+    setCorrectNetwork(chainId === network);
+    const signer = provider.getSigner();
+    setSigner(signer);
     setUserAddress(await signer.getAddress());
-    setChainId(await signer.getChainId());
     setConnected(true);
-  }, [Web3Modal, web3Modal, WalletConnectProvider, network, infuraId, ethers]);
+
+    connection.on('chainChanged', onNetworkChange);
+    connection.on('accountsChanged', onAccountsChanged);
+    connection.on('disconnect', onDisconnect);
+  }, [
+    Web3Modal,
+    web3Modal,
+    WalletConnectProvider,
+    network,
+    infuraId,
+    ethers,
+    correctNetwork,
+    connection,
+  ]);
+
+  const onNetworkChange = async (newChainId: string) => {
+    const formattedChainId = +newChainId.split('0x')[1];
+    setChainId(formattedChainId);
+    setCorrectNetwork(formattedChainId === network);
+    const provider = new ethers.providers.Web3Provider(connection);
+    setProvider(provider);
+    const signer = provider.getSigner();
+    setSigner(signer);
+    setUserAddress(await signer.getAddress());
+    setConnected(true);
+  };
+
+  const onAccountsChanged = async () => {
+    const provider = new ethers.providers.Web3Provider(connection);
+    setProvider(provider);
+    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    setChainId(chainId);
+    setCorrectNetwork(chainId === network);
+    const signer = provider.getSigner();
+    setSigner(signer);
+    setUserAddress(await signer.getAddress());
+    setConnected(true);
+  };
+
+  const onDisconnect = async () => {
+    web3Modal?.clearCachedProvider();
+    disconnectWallet();
+  };
 
   const disconnectWallet = React.useCallback(() => {
     web3Modal?.clearCachedProvider();
@@ -85,8 +185,19 @@ export const Provider: React.FC<ProviderProps> = ({ children, network, infuraId 
       provider,
       network,
       chainId,
+      correctNetwork,
     }),
-    [connectWallet, signer, userAddress, web3Modal, connected, provider, network, chainId]
+    [
+      connectWallet,
+      signer,
+      userAddress,
+      web3Modal,
+      connected,
+      provider,
+      network,
+      chainId,
+      correctNetwork,
+    ]
   );
 
   return <Web3Context.Provider value={{ ...value }}>{children}</Web3Context.Provider>;

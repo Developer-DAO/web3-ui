@@ -1,11 +1,33 @@
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import { ethers } from 'ethers';
+import React, { useEffect, useState } from 'react';
 import { NFTGallery } from '.';
 
-storiesOf('NFTGallery', module).add('Renders a list of nfts owned by an account', () => (
-  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
-));
+export default {
+  title: 'Components/NFTGallery',
+  component: NFTGallery,
+  parameters: {
+    // TODO: Fix window.ethereum is undefined breaking chromatic
+    chromatic: { disableSnapshot: true },
+  },
+};
 
-storiesOf('NFTGallery', module).add('Renders an error when OpenSea fails', () => (
-  <NFTGallery address='bad_address' />
-));
+export const nftsOwnedByAnAccount = () => (
+  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
+);
+
+export const nftsOwnedByAnENS = () => {
+  const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
+
+  useEffect(() => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    setProvider(provider);
+  }, []);
+
+  if (!provider) {
+    return <>Loading...</>;
+  }
+
+  return <NFTGallery address='dhaiwat.eth' web3Provider={provider} />;
+};
+
+export const WithAnError = () => <NFTGallery address='bad_address' />;

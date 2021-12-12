@@ -1,14 +1,17 @@
 # Contributing
 Contributions are welcome! Please see https://github.com/Developer-DAO/web3-ui/issues for tasks to pick up.
 
+If you developing on Windows see [this](/CONTRIBUTING_ON_WINDOWS.md) page for help on getting your environment setup
+
 ## Local development
+
 To setup your local dev environment:
 ```sh
 # Install `yarn`, alternatives at https://yarnpkg.com/en/docs/install
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
-# Fork web3-ui in the Github UI and clone it
-git clone git@github.com:<GITHUB_USERNAME>/web3-ui.git
+# Clone the repo
+git clone git@github.com:Developer-DAO/web3-ui.git
 cd web3-ui
 
 # web3-ui uses Node 16. We recommend using nvm to locally manage node versions.

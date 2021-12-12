@@ -8,3 +8,8 @@ export const decorators = [
     </ChakraProvider>
   ),
 ];
+
+export const parameters = {
+  controls: { expanded: true },
+  viewMode: 'docs',
+};
