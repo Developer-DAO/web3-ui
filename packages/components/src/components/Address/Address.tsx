@@ -1,5 +1,5 @@
 import { Input } from '@chakra-ui/react';
-import React from 'react';
+import React, { FC } from 'react';
 
 export interface AddressProps {
   /**
@@ -15,18 +15,22 @@ export interface AddressProps {
 /**
  * A component to display an address
  */
-export const Address: React.FC<AddressProps> = ({ value, shortened }) => {
+export const Address: FC<AddressProps> = ({ value, shortened = false }) => {
+  let displayAddress: string;
+
   if (shortened) {
     if (value.includes('.eth')) {
-      return <Input value={value} />;
+      displayAddress = value;
     } else if (value === '' || value === 'Not connected') {
-      return <Input value={value} />;
+      displayAddress = value;
     } else {
-      let address: string;
-      address = `${value.substring(0, 4)}...${value.substring(value.length - 4)}`;
-      return <Input value={address.toLowerCase()} />;
+      displayAddress = `${value.substring(0, 4)}...${value.substring(
+        value.length - 4
+      )}`.toLowerCase();
     }
   } else {
-    return <Input value={value} />;
+    displayAddress = value;
   }
+
+  return <Input value={displayAddress} />;
 };
