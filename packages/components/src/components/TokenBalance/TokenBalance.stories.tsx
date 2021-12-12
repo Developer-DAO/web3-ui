@@ -3,6 +3,11 @@ import React, { useContext } from 'react';
 import { TokenBalance, TokenBalanceProps } from './TokenBalance';
 import { Button } from '@chakra-ui/react';
 
+export default {
+  title: 'Components/TokenBalance',
+  component: TokenBalance,
+};
+
 const exampleProps: TokenBalanceProps = {
   value: 0.9955,
   accountAddress: '0x503828976D22510aad0201ac7EC88293211D23Da',
@@ -14,11 +19,6 @@ export const TokeBalance = () => (
     <WalletContextTestWrapper child={<TokenBalance {...exampleProps} />} />
   </Provider>
 );
-
-export default {
-  title: 'Components/TokenBalance',
-  component: TokenBalance,
-};
 
 const WalletContextTestWrapper = ({ child }): JSX.Element => {
   const { connected, connectWallet } = useContext(Web3Context);
