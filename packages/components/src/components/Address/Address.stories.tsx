@@ -17,14 +17,18 @@ export const DefaultShortenedWithHexAddress = () => (
   <Address shortened value='0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b' />
 );
 
-const AddressUsingProvider = ({ shortened }) => {
+type AddressProps = {
+  shortened?: boolean;
+};
+
+const AddressUsingProvider = (props: AddressProps) => {
   const { connected, connectWallet, connection } = useWallet();
 
   return (
     <>
       <Address
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
-        shortened={shortened}
+        shortened={props.shortened}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
     </>
