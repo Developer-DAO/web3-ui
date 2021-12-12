@@ -7,7 +7,7 @@ export interface AddressProps {
    */
   value: string;
   /**
-   * boolean to shorten the address if addresses does not resolve to an ENS name
+   * Shorten the address if it does not resolve to an ENS name
    */
   shortened?: boolean;
 }
