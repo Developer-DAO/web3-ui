@@ -20,6 +20,12 @@ export const TokeBalance = () => (
   </Provider>
 );
 
+export const InvalidContract = () => (
+  <Provider network='mainnet'>
+    <WalletContextTestWrapper child={<TokenBalance {...exampleProps} tokenAddress={'0x0'} />} />
+  </Provider>
+);
+
 const WalletContextTestWrapper = ({ child }): JSX.Element => {
   const { connected, connectWallet } = useContext(Web3Context);
   return !connected ? <Button onClick={connectWallet}>Connect with Wallet</Button> : child;
