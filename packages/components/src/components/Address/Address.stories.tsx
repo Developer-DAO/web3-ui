@@ -14,7 +14,7 @@ export const Default = () => <Address value='testaddress.eth' />;
 export const DefaultShortenedWithENS = () => <Address shortened value='testaddress.eth' />;
 
 export const DefaultShortenedWithHexAddress = () => (
-  <Address value='0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b' shortened={true} />
+  <Address shortened value='0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b' />
 );
 
 const AddressUsingProvider = ({ shortened }) => {
