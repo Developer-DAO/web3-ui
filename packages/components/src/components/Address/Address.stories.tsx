@@ -9,7 +9,7 @@ export default {
   component: Address,
 };
 
-export const Default = () => <Address value='testaddress.eth' shortened={false} />;
+export const Default = () => <Address value='testaddress.eth' />;
 
 export const DefaultShortenedWithENS = () => <Address value='testaddress.eth' shortened={true} />;
 
