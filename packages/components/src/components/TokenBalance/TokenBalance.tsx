@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import { TokenLogo } from './components/Logo';
-import { useTokenBalance } from '@web3-ui/hooks/src';
+import { useTokenBalance, Web3Context } from '@web3-ui/hooks/src';
+import { ethers } from 'ethers';
+import { ERC20ABI } from '@web3-ui/hooks/src/constants';
 
 export interface TokenBalanceProps {
-  name: string;
-  symbol: string;
   tokenAddress: string;
   accountAddress: string;
   value: number;
@@ -13,14 +13,19 @@ export interface TokenBalanceProps {
 }
 
 export const TokenBalance = (props: TokenBalanceProps) => {
-  const { name, symbol, tokenAddress, accountAddress, value, imgUrl } = props;
-  const Headline = (name: string) => (
-    <Heading as='h3' size='sm'>
-      {name}
-    </Heading>
-  );
+  const { tokenAddress, accountAddress, value, imgUrl } = props;
+
+  const web3Context = useContext(Web3Context);
+  const provider = web3Context?.provider;
+
+  const [name, setName] = useState('');
+  const [symbol, setSymbol] = useState('');
 
   const { balance, decimals } = useTokenBalance({ tokenAddress, accountAddress });
+
+  useEffect(() => {
+    getTokenNameAndSymbol();
+  }, []);
 
   const calcBalance = () => {
     if (balance === undefined || decimals === undefined) {
@@ -31,9 +36,23 @@ export const TokenBalance = (props: TokenBalanceProps) => {
 
   const calcValue = () => {
     const balance = calcBalance();
-
     return (balance * value).toFixed(3);
   };
+
+  const getTokenNameAndSymbol = async () => {
+    const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
+    const name = await contract.name();
+    const symbol = await contract.symbol();
+
+    setName(name);
+    setSymbol(symbol);
+  };
+
+  const Headline = (name: string) => (
+    <Heading as='h3' size='sm'>
+      {name}
+    </Heading>
+  );
 
   return (
     <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2'>
