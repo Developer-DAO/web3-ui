@@ -18,7 +18,8 @@
     "format": "prettier --write",
     "build:components": "yarn workspace @web3-ui/components build",
     "build:hooks": "yarn workspace @web3-ui/hooks build",
-    "build": "yarn build:components && yarn build:hooks",
+    "build:core": "yarn workspace @web3-ui/core build",
+    "build": "yarn build:components && yarn build:hooks && yarn build:core",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors",
@@ -27,7 +28,7 @@
     "example": "yarn workspace example dev",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic  --exit-zero-on-changes",
-    "publish": "yarn changeset publish"
+    "publish:npm": "yarn build && yarn changeset publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
