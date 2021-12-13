@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.2.1
+
+### Patch Changes
+
+- [#111](https://github.com/Developer-DAO/web3-ui/pull/111) [`d5c3358`](https://github.com/Developer-DAO/web3-ui/commit/d5c3358e0a487359619c4fe234d573b0940b34a8) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - move build to prepublishOnly so we also build when someone manually publishes
+
 ## 0.2.0
 
 ### Minor Changes
