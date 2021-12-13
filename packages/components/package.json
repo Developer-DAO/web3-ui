@@ -29,6 +29,7 @@
   "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
     "@chakra-ui/react": "^1.7.2",
+    "@davatar/react": "^1.8.1",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
