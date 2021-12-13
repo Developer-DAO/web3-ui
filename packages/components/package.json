@@ -30,6 +30,8 @@
     "@babel/runtime": "^7.16.3",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
+    "@davatar/react": "^1.8.1",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "ethers": "^5.5.2",
