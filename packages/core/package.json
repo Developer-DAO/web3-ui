@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -35,8 +35,8 @@
     "classnames": "^2.2.6",
     "cross-fetch": "^3.1.4",
     "framer-motion": "^4",
-    "@web3-ui/components": "^0.1.1",
-    "@web3-ui/hooks": "^0.2.0"
+    "@web3-ui/components": "^0.2.0",
+    "@web3-ui/hooks": "^0.3.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -50,7 +50,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.2.0",
+    "@web3-ui/hooks": "^0.3.0",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "ethers": "^5.5.1",
