@@ -1,5 +1,15 @@
 # @web3-ui/hooks
 
+## 0.4.0
+
+### Minor Changes
+
+- [#114](https://github.com/Developer-DAO/web3-ui/pull/114) [`a893f34`](https://github.com/Developer-DAO/web3-ui/commit/a893f34036844b8b7100bac98eea8b62036c8491) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Remove Ledger and Coinbase wallet providers
+
+### Patch Changes
+
+- [#111](https://github.com/Developer-DAO/web3-ui/pull/111) [`d5c3358`](https://github.com/Developer-DAO/web3-ui/commit/d5c3358e0a487359619c4fe234d573b0940b34a8) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - move build to prepublishOnly so we also build when someone manually publishes
+
 ## 0.3.0
 
 ### Minor Changes
