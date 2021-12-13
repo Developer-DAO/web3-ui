@@ -22,7 +22,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "pre-commit-hook": "yarn lint-staged",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
+    "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
   },
   "main": "dist/web3-ui-core.cjs.js",
   "module": "dist/web3-ui-core.esm.js",

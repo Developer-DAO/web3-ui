@@ -28,7 +28,7 @@
     "example": "yarn workspace example dev",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic  --exit-zero-on-changes",
-    "publish:npm": "yarn build && yarn changeset publish"
+    "publish:npm": "yarn changeset publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
