@@ -32,7 +32,7 @@ export const TokenGate: React.FC<TokenGateProps> = ({
   message,
 }) => {
   const erc20Abi = ['function balanceOf(address owner) view returns (uint256)'];
-  const [tokenQuantity, setTokenQuantity] = useState<number>();
+  const [tokenQuantity, setTokenQuantity] = useState<number>(0);
   const [loadedStatus, setloadedStatus] = useState<boolean>(false);
   // connect to contract address to get balance
   async function getTokenBalance() {
