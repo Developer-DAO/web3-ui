@@ -1,9 +1,7 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
-import { ledgerProviderOptions } from '@rsksmart/rlogin-ledger-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { ethers } from 'ethers';
 import React from 'react';
-import WalletLink from 'walletlink';
 import Web3Modal, { IProviderOptions } from 'web3modal';
 
 export interface Web3ContextType {
@@ -68,17 +66,6 @@ export const Provider: React.FC<ProviderProps> = ({
   const [connection, setConnection] = React.useState<any>();
 
   const connectWallet = React.useCallback(async () => {
-    // Coinbase walletLink init
-    const walletLink = new WalletLink({
-      appName: 'coinbase',
-    });
-
-    // WalletLink provider
-    const walletLinkProvider = walletLink.makeWeb3Provider(
-      `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`,
-      1
-    );
-
     const defaulProviderOptions = {
       walletconnect: {
         package: WalletConnectProvider,
@@ -91,21 +78,6 @@ export const Provider: React.FC<ProviderProps> = ({
             100: 'https://dai.poa.network', // xDai
           },
         },
-      },
-      'custom-walletlink': {
-        display: {
-          logo: 'https://play-lh.googleusercontent.com/PjoJoG27miSglVBXoXrxBSLveV6e3EeBPpNY55aiUUBM9Q1RCETKCOqdOkX2ZydqVf0',
-          name: 'Coinbase',
-          description: 'Connect to Coinbase Wallet',
-        },
-        package: walletLinkProvider,
-        connector: async (provider, options) => {
-          await provider.enable();
-          return provider;
-        },
-      },
-      'custom-ledger': {
-        ...ledgerProviderOptions,
       },
     };
 

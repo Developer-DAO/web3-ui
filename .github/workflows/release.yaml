@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install
+        run: yarn --frozen-lockfile
+
+      - name: Create Release Pull Request
+        uses: changesets/action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -21,7 +21,8 @@
     "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "pre-commit-hook": "yarn lint-staged"
+    "pre-commit-hook": "yarn lint-staged",
+    "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
   },
   "main": "dist/web3-ui-core.cjs.js",
   "module": "dist/web3-ui-core.esm.js",
@@ -33,7 +34,9 @@
     "@emotion/styled": "^11",
     "classnames": "^2.2.6",
     "cross-fetch": "^3.1.4",
-    "framer-motion": "^4"
+    "framer-motion": "^4",
+    "@web3-ui/components": "^0.2.1",
+    "@web3-ui/hooks": "^0.4.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -47,7 +50,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.1.0",
+    "@web3-ui/hooks": "^0.4.0",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "ethers": "^5.5.1",

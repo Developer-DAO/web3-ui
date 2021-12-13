@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -63,6 +63,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/AlexNi245"><img src="https://avatars.githubusercontent.com/u/26583503?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=AlexNi245" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/swellander"><img src="https://avatars.githubusercontent.com/u/22231097?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sam Wellander</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=swellander" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/txwkx"><img src="https://avatars.githubusercontent.com/u/19361575?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Todor Tsankov</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=txwkx" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.jovidecroock.com/"><img src="https://avatars.githubusercontent.com/u/17125876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jovi De Croock</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=JoviDeCroock" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -3,4 +3,6 @@
 export * from './Provider';
 export * from './Address';
 export * from './NFTGallery';
+export * from './NFT';
+export * from './AddressInput';
 export * from './TokenBalance';
