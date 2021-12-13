@@ -31,10 +31,8 @@
   "module": "dist/web3-ui-hooks.esm.js",
   "types": "dist/web3-ui-hooks.cjs.d.ts",
   "dependencies": {
-    "@rsksmart/rlogin-ledger-provider": "^1.0.1",
     "@walletconnect/web3-provider": "^1.6.6",
     "ethers": "^5.5.1",
-    "walletlink": "^2.2.10",
     "web3modal": "^1.9.4"
   },
   "peerDependencies": {
