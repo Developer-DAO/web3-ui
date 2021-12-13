@@ -17,6 +17,7 @@ const AddressUsingProvider = () => {
   return (
     <>
       <Address
+        copiable
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
@@ -29,3 +30,5 @@ export const WithWallet = () => (
     <AddressUsingProvider />
   </Provider>
 );
+
+export const CanBeCopied = () => <Address value='0x00000000000000' copiable />;
