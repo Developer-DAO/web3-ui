@@ -25,7 +25,7 @@
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "pre-commit-hook": "yarn lint-staged",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
+    "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",
