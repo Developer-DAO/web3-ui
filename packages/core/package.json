@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -48,7 +48,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.1.0",
+    "@web3-ui/hooks": "^0.1.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "ethers": "^5.5.1",
