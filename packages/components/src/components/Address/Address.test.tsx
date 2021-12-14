@@ -4,6 +4,12 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 
 import { Address } from './Address';
 
+/**
+ * We need to mock the Clipboard API by creating a global navigator object.
+ * 
+ * We're assigning an empty function to `writeText`
+ * as we're only testing if it has been called with specific argument.
+ */
 Object.assign(navigator, {
   clipboard: {
     writeText: () => {},
