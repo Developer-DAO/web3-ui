@@ -39,10 +39,16 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   const [copied, setCopied] = useState<boolean>(false);
   let displayAddress: string;
 
-  if (shortened && !value.includes('.eth') && !value.includes('Not connected')) {
-    displayAddress = `${value.substring(0, 4)}...${value.substring(
+  if (shortened) {
+    if (value.includes('.eth')) {
+      displayAddress = value;
+    } else if (value === '' || value === 'Not connected') {
+      displayAddress = value;
+    } else {
+      displayAddress = `${value.substring(0, 4)}...${value.substring(
         value.length - 4
       )}`.toLowerCase();
+    }
   } else {
     displayAddress = value;
   }
@@ -72,7 +78,7 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
             children={copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
           />
         )}
-        <Input value={displayAddress} onClick={handleClick} readOnly />
+        <Input value={displayAddress} onClick={handleClick} />
       </InputGroup>
       <FormErrorMessage>{error}</FormErrorMessage>
     </FormControl>
