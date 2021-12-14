@@ -55,8 +55,6 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   }
 
   const handleClick = async (event: SyntheticEvent): Promise<void> => {
-    const value = event.currentTarget.value as string;
-
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
