@@ -6,7 +6,7 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export interface AddressProps {
   /**
@@ -14,7 +14,7 @@ export interface AddressProps {
    */
   value: string;
   /**
-   * Wheter the address can be copied or not
+   * Whether the address can be copied or not
    */
   copiable?: boolean;
   /**
@@ -37,6 +37,7 @@ interface SyntheticEvent {
 export const Address: React.FC<AddressProps> = ({ value, copiable = false, shortened = false }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
+  let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string;
 
   if (shortened) {
@@ -56,18 +57,24 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   const handleClick = async (event: SyntheticEvent): Promise<void> => {
     const value = event.currentTarget.value as string;
 
-    setError(null);
-    setCopied(false);
-
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
+        setError(null);
         setCopied(true);
+
+        feedbackTimeOut = setTimeout(() => {
+          setCopied(false);
+        }, 2000);
       } catch (error) {
         setError(error as string);
       }
     }
   };
+
+  useEffect(() => {
+    return () => clearTimeout(feedbackTimeOut);
+  }, []);
 
   return (
     <FormControl isInvalid={!!error}>
