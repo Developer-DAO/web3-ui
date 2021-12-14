@@ -22,6 +22,9 @@ export interface TokenGateProps {
    * Optional message if access denied
    */
   deniedMessage?: ReactNode;
+  /**
+   * Optional spinner during loading
+   */
   loader?: boolean;
 }
 export const TokenGate: React.FC<TokenGateProps> = ({

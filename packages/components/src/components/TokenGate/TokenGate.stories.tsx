@@ -29,11 +29,12 @@ const WithUseWallet = ({ ...props }) => {
         provider={provider!}
         requiredQuantity={props.requiredQuantity}
         contractAddress='0x25ed58c027921e14d86380ea2646e3a1b5c55a8b'
+        {...props}
       >
         <Text>
-          You were able to access this component because you hold at least{' '}
-          {props.requiredQuantity == 0 ? 0 : props.requiredQuantity ? props.requiredQuantity : 1}{' '}
-          DeveloperDAO genesis NFT(s)
+          {`You were able to access this component because you hold at least ${
+            props.requiredQuantity == 0 ? 0 : props.requiredQuantity ? props.requiredQuantity : 1
+          } DeveloperDAO genesis NFT(s)`}
         </Text>
       </TokenGate>
     </>
@@ -42,7 +43,11 @@ const WithUseWallet = ({ ...props }) => {
 
 const Component = ({ ...props }) => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-
+  /**
+   * requiredQuantity was done this way because when requiredQuantity is not passed to the component, the required quantity
+   * should default to 1 not 0
+   */
+  const requiredQuantity = props.requiredQuantity === undefined ? 1 : props.requiredQuantity;
   return (
     <>
       <TokenGate
@@ -51,14 +56,29 @@ const Component = ({ ...props }) => {
         {...props}
       >
         <Text>
-          You were able to access this component because you hold at least{' '}
-          {props.requiredQuantity == 0 ? 0 : props.requiredQuantity ? props.requiredQuantity : 1}{' '}
-          DeveloperDAO genesis NFT(s)
+          {`You were able to access this component because you hold at least ${requiredQuantity} DeveloperDAO genesis NFT(s)`}
         </Text>
       </TokenGate>
     </>
   );
 };
+
+/**
+ * Example of custom access denied node for the deniedMessage prop
+ */
+const DeniedAccess = props => (
+  <div>
+    <h1>This is a custom component for when access is denied</h1>
+    <ul>
+      <li>Make sure your wallet is connected</li>
+      <li>Verify you are connected to the correct address</li>
+      <li>
+        {`Make sure you hold the number of tokens required to access this component: 
+        ${props.requiredQuantity && props.requiredQuantity}`}
+      </li>
+    </ul>
+  </div>
+);
 
 export const AccessGranted = () => <Component requiredQuantity={0} />;
 
@@ -66,9 +86,7 @@ export const UsingWeb3Hooks = () => {
   return (
     <Provider network={NETWORKS.mainnet}>
       <WalletContextTestWrapper>
-        <WithUseWallet
-          deniedMessage={'Must have 1 DeveloperDAO genesis NFT to access this content'}
-        />
+        <WithUseWallet deniedMessage={<DeniedAccess />} />
       </WalletContextTestWrapper>
     </Provider>
   );
@@ -76,26 +94,8 @@ export const UsingWeb3Hooks = () => {
 
 export const WithLoader = () => <Component loader={true} label='Loader' />;
 
-export const AccessDeniedDefault = () => <Component requiredQuantity={10000} label='Denied' />;
-
-const DeniedAccess = ({ requiredQuantity }) => (
-  <div>
-    <h1>This is a custom component for when access is denied</h1>
-    <ul>
-      <li>Make sure your wallet is connected</li>
-      <li>Verify you are connected to the correct address</li>
-      <li>
-        Make sure you hold the number of tokens required to access this component:{' '}
-        {requiredQuantity}
-      </li>
-    </ul>
-  </div>
-);
+export const AccessDeniedDefault = () => <Component requiredQuantity={1000} label='Denied' />;
 
 export const AccessDeniedWithCustomMessage = () => (
-  <Component
-    requiredQuantity={10000}
-    deniedMessage={<DeniedAccess requiredQuantity={100000} />}
-    label='Denied With Message'
-  />
+  <Component requiredQuantity={1000} deniedMessage={<DeniedAccess />} label='Denied With Message' />
 );
