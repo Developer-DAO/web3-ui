@@ -1,5 +1,25 @@
 # @web3-ui/core
 
+## 0.1.2
+
+### Patch Changes
+
+- [#116](https://github.com/Developer-DAO/web3-ui/pull/116) [`c843555`](https://github.com/Developer-DAO/web3-ui/commit/c843555369f56c01653f0486e54a31a382353ed4) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - Add babel-runtime to deps so we can have regenerator runtime at runtime
+
+- Updated dependencies [[`c843555`](https://github.com/Developer-DAO/web3-ui/commit/c843555369f56c01653f0486e54a31a382353ed4)]:
+  - @web3-ui/components@0.2.2
+  - @web3-ui/hooks@0.4.1
+
+## 0.1.1
+
+### Patch Changes
+
+- [#111](https://github.com/Developer-DAO/web3-ui/pull/111) [`d5c3358`](https://github.com/Developer-DAO/web3-ui/commit/d5c3358e0a487359619c4fe234d573b0940b34a8) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - move build to prepublishOnly so we also build when someone manually publishes
+
+- Updated dependencies [[`a893f34`](https://github.com/Developer-DAO/web3-ui/commit/a893f34036844b8b7100bac98eea8b62036c8491), [`d5c3358`](https://github.com/Developer-DAO/web3-ui/commit/d5c3358e0a487359619c4fe234d573b0940b34a8)]:
+  - @web3-ui/hooks@0.4.0
+  - @web3-ui/components@0.2.1
+
 ## 0.1.0
 
 ### Minor Changes
