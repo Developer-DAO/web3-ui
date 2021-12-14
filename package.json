@@ -47,7 +47,10 @@
     "ts-jest": "^26.4.4"
   },
   "dependencies": {
-    "@web3-ui/hooks": "0.1.0"
+    "@web3-ui/hooks": "0.4.0"
+  },
+  "peerDependencies": {
+    "@web3-ui/hooks": "0.4.0"
   },
   "lint-staged": {
     "*.{ts,tsx,json,js,jsx}": "yarn format"
