@@ -85,7 +85,7 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
             children={copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
           />
         )}
-        <Input value={displayAddress} onClick={handleClick} />
+        <Input value={displayAddress} onClick={handleClick} readOnly />
       </InputGroup>
       <FormErrorMessage>{error}</FormErrorMessage>
     </FormControl>
