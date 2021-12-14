@@ -56,8 +56,7 @@ export const TokenBalance = (props: TokenBalanceProps) => {
   //Maybe it would make sense to provide them as props to avoid loading time ?
   const getTokenNameAndSymbol = async () => {
     const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
-    const name = await contract.name();
-    const symbol = await contract.symbol();
+    const [name, symbol] = await Promise.all([contract.name(), contract.symbol()]);
 
     setName(name);
     setSymbol(symbol);
