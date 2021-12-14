@@ -1,5 +1,11 @@
 # @web3-ui/hooks
 
+## 0.4.1
+
+### Patch Changes
+
+- [#116](https://github.com/Developer-DAO/web3-ui/pull/116) [`c843555`](https://github.com/Developer-DAO/web3-ui/commit/c843555369f56c01653f0486e54a31a382353ed4) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - Add babel-runtime to deps so we can have regenerator runtime at runtime
+
 ## 0.4.0
 
 ### Minor Changes

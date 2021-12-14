@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/components",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -48,7 +48,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.4.0",
+    "@web3-ui/hooks": "^0.4.1",
     "babel-loader": "^8.2.1",
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
