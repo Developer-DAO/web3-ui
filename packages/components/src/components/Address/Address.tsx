@@ -17,6 +17,10 @@ export interface AddressProps {
    * Wheter the address can be copied or not
    */
   copiable?: boolean;
+  /**
+   * Shorten the address if it does not resolve to an ENS name
+   */
+  shortened?: boolean;
 }
 
 interface EventTarget {
@@ -30,9 +34,18 @@ interface SyntheticEvent {
 /**
  * A component to display an address
  */
-export const Address: React.FC<AddressProps> = ({ value, copiable = false }) => {
+export const Address: React.FC<AddressProps> = ({ value, copiable = false, shortened = false }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
+  let displayAddress: string;
+
+  if (shortened && !value.includes('.eth') && !value.includes('Not connected')) {
+    displayAddress = `${value.substring(0, 4)}...${value.substring(
+        value.length - 4
+      )}`.toLowerCase();
+  } else {
+    displayAddress = value;
+  }
 
   const handleClick = async (event: SyntheticEvent): Promise<void> => {
     const value = event.currentTarget.value as string;
@@ -59,7 +72,7 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false }) => 
             children={copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
           />
         )}
-        <Input value={value} onClick={handleClick} />
+        <Input value={displayAddress} onClick={handleClick} readOnly />
       </InputGroup>
       <FormErrorMessage>{error}</FormErrorMessage>
     </FormControl>

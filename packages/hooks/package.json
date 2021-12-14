@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/hooks",
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.4.1",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -25,16 +25,15 @@
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
     "pre-commit-hook": "yarn lint-staged",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
+    "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",
   "types": "dist/web3-ui-hooks.cjs.d.ts",
   "dependencies": {
-    "@rsksmart/rlogin-ledger-provider": "^1.0.1",
+    "@babel/runtime": "^7.16.3",
     "@walletconnect/web3-provider": "^1.6.6",
     "ethers": "^5.5.1",
-    "walletlink": "^2.2.10",
     "web3modal": "^1.9.4"
   },
   "peerDependencies": {
