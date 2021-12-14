@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Box, Flex, Heading, Image } from '@chakra-ui/react';
-import { TokenLogo } from './components/Logo';
-import { useTokenBalance, Web3Context } from '@web3-ui/hooks/src';
-import { ethers } from 'ethers';
-import { ERC20ABI } from '@web3-ui/hooks/src/constants';
-import { Headline } from './components/Headline';
+import React, {useContext, useEffect, useState} from 'react';
+import {Box, Flex, Image} from '@chakra-ui/react';
+import {TokenLogo} from './components/Logo';
+import {useTokenBalance, Web3Context} from '@web3-ui/hooks';
+import {ethers} from 'ethers';
+import {ERC20ABI} from '@web3-ui/hooks';
+import {Headline} from './components/Headline';
 
 export interface TokenBalanceProps {
   /**
