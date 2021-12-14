@@ -4,6 +4,7 @@ import { TokenLogo } from './components/Logo';
 import { useTokenBalance, Web3Context } from '@web3-ui/hooks/src';
 import { ethers } from 'ethers';
 import { ERC20ABI } from '@web3-ui/hooks/src/constants';
+import { Headline } from './components/Headline';
 
 export interface TokenBalanceProps {
   /**
@@ -61,12 +62,6 @@ export const TokenBalance = (props: TokenBalanceProps) => {
     setName(name);
     setSymbol(symbol);
   };
-
-  const Headline = (name: string) => (
-    <Heading as='h3' size='sm'>
-      {name}
-    </Heading>
-  );
 
   return (
     <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2'>
