@@ -21,7 +21,8 @@ export interface TokenGateProps {
   /**
    * Optional message if access denied
    */
-  deniedMessage?: string;
+  deniedMessage?: ReactNode;
+  loader?: boolean;
 }
 export const TokenGate: React.FC<TokenGateProps> = ({
   contractAddress,
@@ -29,6 +30,7 @@ export const TokenGate: React.FC<TokenGateProps> = ({
   requiredQuantity = 1,
   children,
   deniedMessage,
+  loader = false,
 }) => {
   const erc20Abi = ['function balanceOf(address owner) view returns (uint256)'];
   const [tokenQuantity, setTokenQuantity] = useState<number>(0);
@@ -70,9 +72,9 @@ export const TokenGate: React.FC<TokenGateProps> = ({
         {deniedMessage}
       </div>
     ) : null
-  ) : (
+  ) : loader ? (
     <div>
       <Spinner></Spinner>
     </div>
-  );
+  ) : null;
 };
