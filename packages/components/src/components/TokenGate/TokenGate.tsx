@@ -1,6 +1,5 @@
 import React, { useEffect, useState, ReactNode } from 'react';
 import { ethers } from 'ethers';
-import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
 import { Spinner } from '@chakra-ui/react';
 export interface TokenGateProps {
   /**
@@ -14,7 +13,7 @@ export interface TokenGateProps {
   /**
    * The token quantity required to access child component. Default=1
    */
-  requiredQuantity: number;
+  requiredQuantity?: number;
   /**
    * Child nodes
    */
@@ -37,14 +36,16 @@ export const TokenGate: React.FC<TokenGateProps> = ({
   // connect to contract address to get balance
   async function getTokenBalance() {
     const signer = provider!.getSigner();
-    const address = await signer.getAddress();
-    const contract = new ethers.Contract(contractAddress, erc20Abi, signer);
     try {
+      const address = await signer.getAddress();
+      const contract = new ethers.Contract(contractAddress, erc20Abi, signer);
       const balance = await contract.balanceOf(address);
-      console.log('BALANCE: ', parseInt(balance, 16));
+      setloadedStatus(!loadedStatus);
+
       return balance;
     } catch (error) {
       console.log('ERROR: ', error);
+      setloadedStatus(!loadedStatus);
     }
 
     return;
@@ -54,9 +55,7 @@ export const TokenGate: React.FC<TokenGateProps> = ({
     async function setBalance() {
       const balance = await getTokenBalance();
       setTokenQuantity(parseInt(balance, 16));
-      setloadedStatus(!loadedStatus);
     }
-    console.log(loadedStatus);
     setBalance();
   }, []);
 

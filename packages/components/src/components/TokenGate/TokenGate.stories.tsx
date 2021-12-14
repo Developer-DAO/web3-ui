@@ -5,10 +5,6 @@ import { NETWORKS, Provider, useWallet, Web3Context } from '@web3-ui/hooks';
 import { Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
 
-const WalletContextTestWrapper = ({ children }): JSX.Element => {
-  const { connected, connectWallet } = useContext(Web3Context);
-  return !connected ? <Button onClick={connectWallet}>Connect wallet</Button> : children;
-};
 export default {
   title: 'Components/TokenGate',
   component: TokenGate,
@@ -16,6 +12,12 @@ export default {
     // TODO: Fix window.ethereum is undefined breaking chromatic
     chromatic: { disableSnapshot: true },
   },
+};
+
+const WalletContextTestWrapper = ({ children }): JSX.Element => {
+  const { connected, connectWallet } = useContext(Web3Context);
+
+  return !connected ? <Button onClick={connectWallet}>Connect wallet</Button> : children;
 };
 
 const WithUseWallet = ({ ...props }) => {
@@ -40,6 +42,7 @@ const WithUseWallet = ({ ...props }) => {
 
 const Component = ({ ...props }) => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
+
   return (
     <>
       <TokenGate
