@@ -6,13 +6,13 @@ export interface TokenGateProps {
   /**
    * The provider or signer to fetch the address from the ens
    */
-  provider: ethers.providers.Web3Provider | JsonRpcSigner;
+  provider: ethers.providers.Web3Provider;
   /**
    * The token contract address
    */
   contractAddress: string;
   /**
-   * The required number of tokens
+   * The token quantity required to access child component. Default=1
    */
   requiredQuantity: number;
   /**
@@ -22,21 +22,21 @@ export interface TokenGateProps {
   /**
    * Optional message if access denied
    */
-  message?: string;
+  deniedMessage?: string;
 }
 export const TokenGate: React.FC<TokenGateProps> = ({
   contractAddress,
   provider,
-  requiredQuantity,
+  requiredQuantity = 1,
   children,
-  message,
+  deniedMessage,
 }) => {
   const erc20Abi = ['function balanceOf(address owner) view returns (uint256)'];
   const [tokenQuantity, setTokenQuantity] = useState<number>(0);
   const [loadedStatus, setloadedStatus] = useState<boolean>(false);
   // connect to contract address to get balance
   async function getTokenBalance() {
-    const signer = provider.getSigner();
+    const signer = provider!.getSigner();
     const address = await signer.getAddress();
     const contract = new ethers.Contract(contractAddress, erc20Abi, signer);
     try {
@@ -65,10 +65,10 @@ export const TokenGate: React.FC<TokenGateProps> = ({
     // verify token quantity in wallet is greater than required amount(optional, defaults to 1)
     tokenQuantity >= requiredQuantity ? (
       <div>{children}</div>
-    ) : message ? (
+    ) : deniedMessage ? (
       <div>
         {/* maybe make the below line an optional message? If left out returns null or empty div */}
-        {message}
+        {deniedMessage}
       </div>
     ) : null
   ) : (
