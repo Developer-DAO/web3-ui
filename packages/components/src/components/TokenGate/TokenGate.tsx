@@ -1,7 +1,7 @@
 import React, { useEffect, useState, ReactNode } from 'react';
 import { ethers } from 'ethers';
 import { Spinner } from '@chakra-ui/react';
-import { ERC20ABI } from '@web3-ui/hooks';
+import { ERC20ABI } from '@web3-ui/hooks/src/constants';
 export interface TokenGateProps {
   /**
    * The provider or signer to fetch the address from the ens
@@ -36,7 +36,6 @@ export const TokenGate: React.FC<TokenGateProps> = ({
   deniedMessage,
   loader = false,
 }) => {
-  const erc20Abi = ['function balanceOf(address owner) view returns (uint256)'];
   const [tokenQuantity, setTokenQuantity] = useState<number>(0);
   const [loadedStatus, setloadedStatus] = useState<boolean>(false);
   // connect to contract address to get balance
