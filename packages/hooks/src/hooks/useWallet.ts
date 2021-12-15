@@ -43,8 +43,10 @@ export function useWallet() {
           params: [{ chainId: `0x${requiredNetwork}` }], // chainId must be in hexadecimal numbers
         });
       } catch (error) {
-        // This error code indicates that the chain has not been added to MetaMask
-        // if it is not, then install it into the user MetaMask
+        console.error(error);
+        // This error code indicates that the chain has not been added to MetaMask.
+        // If it is not, then install it into the user MetaMask
+        // @ts-ignore
         if (error.code === 4902) {
           try {
             await window.ethereum.request({
@@ -60,7 +62,6 @@ export function useWallet() {
             console.error(addError);
           }
         }
-        console.error(error);
       }
     } else {
       // if no window.ethereum then MetaMask is not installed
