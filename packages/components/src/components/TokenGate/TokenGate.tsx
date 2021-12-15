@@ -1,6 +1,7 @@
 import React, { useEffect, useState, ReactNode } from 'react';
 import { ethers } from 'ethers';
 import { Spinner } from '@chakra-ui/react';
+import { ERC20ABI } from '@web3-ui/hooks';
 export interface TokenGateProps {
   /**
    * The provider or signer to fetch the address from the ens
@@ -43,7 +44,7 @@ export const TokenGate: React.FC<TokenGateProps> = ({
     const signer = provider!.getSigner();
     try {
       const address = await signer.getAddress();
-      const contract = new ethers.Contract(contractAddress, erc20Abi, signer);
+      const contract = new ethers.Contract(contractAddress, ERC20ABI, signer);
       const balance = await contract.balanceOf(address);
       setloadedStatus(!loadedStatus);
 
