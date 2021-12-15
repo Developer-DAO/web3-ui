@@ -89,7 +89,7 @@ export const Provider: React.FC<ProviderProps> = ({
     setConnection(connection);
     const provider = new ethers.providers.Web3Provider(connection);
     setProvider(provider);
-    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    const chainId = await provider.getNetwork().then(network => network.chainId);
     setChainId(chainId);
     setCorrectNetwork(chainId === network);
     const signer = provider.getSigner();
@@ -126,7 +126,7 @@ export const Provider: React.FC<ProviderProps> = ({
   const onAccountsChanged = async () => {
     const provider = new ethers.providers.Web3Provider(connection);
     setProvider(provider);
-    const chainId = await provider.getNetwork().then((network) => network.chainId);
+    const chainId = await provider.getNetwork().then(network => network.chainId);
     setChainId(chainId);
     setCorrectNetwork(chainId === network);
     const signer = provider.getSigner();
