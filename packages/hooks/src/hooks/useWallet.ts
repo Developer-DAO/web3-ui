@@ -22,7 +22,7 @@ export function useWallet() {
     connected,
     provider,
     correctNetwork,
-    requiredNetwork,
+    network,
   } = context;
 
   React.useEffect(() => {
@@ -37,10 +37,11 @@ export function useWallet() {
     if (window.ethereum) {
       try {
         console.log('chainId', { chainId });
+        console.log('requiredNetwork', { network });
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: `0x${requiredNetwork}` }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: `0x${network}` }], // chainId must be in hexadecimal numbers
         });
       } catch (error) {
         console.error(error);

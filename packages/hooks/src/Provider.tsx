@@ -13,7 +13,7 @@ export interface Web3ContextType {
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
   correctNetwork: boolean;
-  requiredNetwork: number;
+  network: number;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(undefined);
@@ -159,7 +159,6 @@ export const Provider: React.FC<ProviderProps> = ({
       network,
       chainId,
       correctNetwork,
-      requiredNetwork: network,
     }),
     [
       connectWallet,
