@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Flex, Heading, Image } from '@chakra-ui/react';
-import { TokenLogo } from './components/Logo';
-import { useTokenBalance, Web3Context } from '@web3-ui/hooks';
+import { Box, Flex, Heading, Image, InputProps } from '@chakra-ui/react';
+import { ERC20ABI, useTokenBalance, Web3Context } from '@web3-ui/hooks';
 import { ethers } from 'ethers';
-import { ERC20ABI } from '@web3-ui/hooks';
-import { Headline } from './components/Headline';
 
 export interface TokenBalanceProps {
   /**
@@ -25,7 +22,7 @@ export interface TokenBalanceProps {
   imgUrl?: string | undefined;
 }
 
-export const TokenBalance = (props: TokenBalanceProps) => {
+export const TokenBalance: React.FC<TokenBalanceProps & InputProps> = props => {
   const { tokenAddress, accountAddress, value, imgUrl } = props;
 
   const web3Context = useContext(Web3Context);
@@ -75,7 +72,7 @@ export const TokenBalance = (props: TokenBalanceProps) => {
   );
 
   return (
-    <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2'>
+    <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2' {...props}>
       <Box w='50px' pr='4'>
         {imgUrl ? <Image src={imgUrl} /> : <TokenLogo tokenContractAddress={tokenAddress} />}
       </Box>
