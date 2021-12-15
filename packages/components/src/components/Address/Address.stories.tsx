@@ -27,6 +27,7 @@ const AddressUsingProvider = (props: AddressProps) => {
   return (
     <>
       <Address
+        copiable
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
         shortened={props.shortened}
       />
@@ -46,3 +47,5 @@ export const WithWalletShortened = () => (
     <AddressUsingProvider shortened />
   </Provider>
 );
+
+export const CanBeCopied = () => <Address value='0x00000000000000' copiable />;
