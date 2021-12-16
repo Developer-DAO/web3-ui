@@ -4,7 +4,7 @@ import {
   InputRightElement,
   InputLeftAddon,
   Button,
-  InputProps,
+  InputGroupProps,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
@@ -17,7 +17,7 @@ export interface ConvertTokenInputProps {
 }
 
 // A number input component with built-in conversion feature from wei <-> ether
-export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = ({
+export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputGroupProps> = ({
   value,
   ...props
 }) => {
@@ -40,15 +40,10 @@ export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = 
   };
 
   return (
-    <InputGroup>
+    <InputGroup {...props}>
       <InputLeftAddon children={currentUnit} />
-      <Input
-        placeholder='Enter value'
-        value={val}
-        onChange={(e) => setVal(e.target.value)}
-        {...props}
-      />
-      <InputRightElement width='5rem'>
+      <Input placeholder='Enter value' value={val} onChange={(e) => setVal(e.target.value)} />
+      <InputRightElement width='4.5rem'>
         <Button h='1.75rem' size='sm' onClick={convert}>
           To {targetUnit}
         </Button>
