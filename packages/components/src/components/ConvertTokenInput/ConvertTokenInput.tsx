@@ -7,7 +7,7 @@ import {
   InputProps,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import Web3 from 'web3';
+import { ethers } from 'ethers';
 
 export interface ConvertTokenInputProps {
   /**
@@ -30,11 +30,12 @@ export const ConvertTokenInput: React.FC<ConvertTokenInputProps & InputProps> = 
     if (targetUnit === 'wei') {
       setCurrentUnit('wei');
       setTargetUnit('ether');
-      setVal(Web3.utils.toWei(val));
+      setVal(ethers.utils.parseEther(val).toString());
     } else if (targetUnit === 'ether') {
       setCurrentUnit('ether');
       setTargetUnit('wei');
-      setVal(Web3.utils.fromWei(val));
+      let wei = ethers.BigNumber.from(val);
+      setVal(ethers.utils.formatEther(wei));
     }
   };
 
