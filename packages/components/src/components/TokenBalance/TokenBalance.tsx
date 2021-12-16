@@ -59,11 +59,13 @@ export const TokenBalance: React.FC<TokenBalanceProps & FlexProps> = props => {
     setSymbol(symbol);
   };
 
-  const Headline = (name: string) => (
-    <Heading as='h3' size='sm'>
-      {name}
-    </Heading>
-  );
+  const Headline = (name: string) => {
+    return (
+      <Heading as='h3' size='sm'>
+        {name}
+      </Heading>
+    );
+  };
 
   const TokenLogo = ({ tokenContractAddress }) => (
     <Image
