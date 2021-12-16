@@ -46,8 +46,8 @@ export function useWallet() {
       } catch (error) {
         console.error(error);
         // This error code indicates that the chain has not been added to MetaMask.
-        // If it is not, then install it into the user MetaMask
-        // @ts-ignore
+        // If it is not, then install it into the user's MetaMask
+        // @ts-expect-error
         if (error.code === 4902) {
           try {
             await window.ethereum.request({
@@ -65,9 +65,9 @@ export function useWallet() {
         }
       }
     } else {
-      // if no window.ethereum then MetaMask is not installed
+      // if window.ethereum is undefined then MetaMask is not installed
       alert(
-        'MetaMask is not installed. Please consider installing it: https://metamask.io/download.html'
+        'Switching networks automatically is only supported in MetaMask. Please consider installing it: https://metamask.io/download.html'
       );
     }
   };

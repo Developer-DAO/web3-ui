@@ -1,8 +1,8 @@
-import { Button } from '@chakra-ui/react';
-import Portis from '@portis/web3';
-import Authereum from 'authereum';
 import React, { useEffect } from 'react';
+import { Button } from '@chakra-ui/react';
 import { NETWORKS, Provider, useWallet } from '..';
+import Authereum from 'authereum';
+import Portis from '@portis/web3';
 
 export default {
   title: 'Hooks/useWallet',
