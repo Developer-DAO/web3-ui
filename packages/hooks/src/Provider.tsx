@@ -13,6 +13,7 @@ export interface Web3ContextType {
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
   correctNetwork: boolean;
+  network: number;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(undefined);

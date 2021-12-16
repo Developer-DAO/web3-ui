@@ -10,7 +10,14 @@ export default {
 const portisDappId = '512893f6-6436-44c3-b0dc-6caccab984bb';
 
 const DefaultUsingProvider = () => {
-  const { connection, connectWallet, disconnectWallet, connected, correctNetwork } = useWallet();
+  const {
+    connection,
+    connectWallet,
+    disconnectWallet,
+    connected,
+    correctNetwork,
+    switchToCorrectNetwork,
+  } = useWallet();
 
   useEffect(() => {
     if (!correctNetwork) {
@@ -24,6 +31,11 @@ const DefaultUsingProvider = () => {
         <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <p>{connection.ens || connection.userAddress}</p>
         <p>Connected to the correct network: {correctNetwork ? 'Yes' : 'no'}</p>
+        {!correctNetwork && (
+          <Button colorScheme='teal' mt={2} onClick={switchToCorrectNetwork}>
+            Switch to correct network
+          </Button>
+        )}
       </div>
     );
   }
@@ -59,7 +71,8 @@ export const WithPortisProvider = () => (
       {
         portis: {
           display: {
-            logo: 'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
+            logo:
+              'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
             name: 'Portis',
             description: 'Connect to Portis App',
           },
@@ -82,7 +95,8 @@ export const PortisAuthereumProvider = () => (
       {
         portis: {
           display: {
-            logo: 'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
+            logo:
+              'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
             name: 'Portis',
             description: 'Connect to Portis App',
           },
