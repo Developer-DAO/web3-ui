@@ -29,6 +29,7 @@
   "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.16.3",
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
