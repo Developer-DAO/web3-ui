@@ -2,7 +2,7 @@ import React from 'react';
 import { Address } from '.';
 
 import { useWallet, Provider, NETWORKS } from '@web3-ui/hooks';
-import { Button } from '@chakra-ui/react';
+import { Button, VStack } from '@chakra-ui/react';
 
 export default {
   title: 'Components/Address',
@@ -25,14 +25,14 @@ const AddressUsingProvider = (props: AddressProps) => {
   const { connected, connectWallet, connection } = useWallet();
 
   return (
-    <>
+    <VStack>
       <Address
         copiable
         value={connected ? connection.ens || connection.userAddress || '' : 'Not connected'}
         shortened={props.shortened}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
-    </>
+    </VStack>
   );
 };
 

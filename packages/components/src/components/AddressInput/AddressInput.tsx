@@ -24,7 +24,7 @@ export interface AddressInputProps {
 }
 
 /**
- * A text input component that is used to get the address of the user from the ens. You can also pass all the styling props of the Chakra UI Input component.
+ * A text input component that is used to get ETH addresses. ENS support included. You can also pass all the styling props of the Chakra UI Input component.
  */
 export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,
@@ -58,7 +58,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
       if (regex.test(debouncedValue)) {
         onChange(debouncedValue);
       } else if (debouncedValue.endsWith('.eth') || debouncedValue.endsWith('.xyz')) {
-        getAddressFromEns().then((address) => onChange(address ? address : ''));
+        getAddressFromEns().then(address => onChange(address ? address : ''));
       }
     }
   }, [debouncedValue]);
@@ -76,7 +76,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
       <Input
         isInvalid={!!error}
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={e => setInputValue(e.target.value)}
         {...props}
       />
       <FormErrorMessage>{error ? ' ' + error : ''}</FormErrorMessage>

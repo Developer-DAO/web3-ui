@@ -21,7 +21,7 @@ const DefaultUsingProvider = () => {
 
   useEffect(() => {
     if (!correctNetwork) {
-      alert('Please connect to the correct network');
+      alert('Please connect to Rinkeby.');
     }
   }, [correctNetwork]);
 
