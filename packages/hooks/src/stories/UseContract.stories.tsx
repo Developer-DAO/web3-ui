@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Provider, useWallet, useContract } from '..';
-import { Button, Input, Grid, GridItem } from '@chakra-ui/react';
+import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 
 const ADDRESS = '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135'; // Rinkeby
@@ -68,11 +68,9 @@ const Default = () => {
   });
 
   const handleGreet = async () => alert(await contract.greet());
-  const handleChangeState =
-    (stateName: string) =>
-    ({ target: { value } }) => {
-      setState({ ...state, [stateName]: value });
-    };
+  const handleChangeState = (stateName: string) => ({ target: { value } }) => {
+    setState({ ...state, [stateName]: value });
+  };
   const handleSetGreeting = async () => {
     await contract.setGreeting(state.newGreeting);
     setState({ ...state, newGreeting: '' });
@@ -84,36 +82,30 @@ const Default = () => {
 
   if (connected) {
     return (
-      <div>
+      <VStack>
         <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <h3>Contract Methods</h3>
-        <Grid templateColumns='repeat(5, 1fr)' columnGap={5}>
-          <GridItem colSpan={5}>
-            <Button onClick={handleGreet}>greet</Button>
-          </GridItem>
-          <GridItem colSpan={5}>
-            <Button disabled={!state.newGreeting} onClick={handleSetGreeting}>
-              setGreeting
-            </Button>
-            <Input
-              value={state.newGreeting}
-              placeholder='New Greeting!'
-              onChange={handleChangeState('newGreeting')}
-            />
-          </GridItem>
-          <GridItem colSpan={5}>
-            <Button disabled={!(state.toAddress && state.amount)} onClick={handleTransferTo}>
-              transferTo
-            </Button>
-            <Input
-              value={state.toAddress}
-              placeholder='0xjA123....'
-              onChange={handleChangeState('toAddress')}
-            />
-            <Input placeholder='0.2' value={state.amount} onChange={handleChangeState('amount')} />
-          </GridItem>
-        </Grid>
-      </div>
+        <Button onClick={handleGreet}>greet</Button>
+        <Divider />
+        <Button disabled={!state.newGreeting} onClick={handleSetGreeting}>
+          setGreeting
+        </Button>
+        <Input
+          value={state.newGreeting}
+          placeholder='New Greeting!'
+          onChange={handleChangeState('newGreeting')}
+        />
+        <Divider />
+        <Button disabled={!(state.toAddress && state.amount)} onClick={handleTransferTo}>
+          transferTo
+        </Button>
+        <Input
+          value={state.toAddress}
+          placeholder='0xjA123....'
+          onChange={handleChangeState('toAddress')}
+        />
+        <Input placeholder='0.2' value={state.amount} onChange={handleChangeState('amount')} />
+      </VStack>
     );
   }
 

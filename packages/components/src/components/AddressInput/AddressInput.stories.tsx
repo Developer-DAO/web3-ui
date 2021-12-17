@@ -2,7 +2,7 @@ import React from 'react';
 import { AddressInput } from '.';
 import { ethers } from 'ethers';
 import { NETWORKS, Provider, useWallet } from '@web3-ui/hooks';
-import { Text } from '@chakra-ui/layout';
+import { Text, VStack } from '@chakra-ui/react';
 
 export default {
   title: 'Components/AddressInput',
@@ -18,10 +18,14 @@ const WithUseWallet = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <>
-      <AddressInput value={value} onChange={(e) => setValue(e)} provider={provider!} />
-      <Text>value: {value}</Text>
-    </>
+    <VStack>
+      <AddressInput value={value} onChange={e => setValue(e)} provider={provider!} />
+      <Text>Value: {value}</Text>
+      <Text fontSize='sm'>
+        You need to be connected to the Ethereum mainnet for ENS to work right now. We are working
+        on adding better support for ENS.
+      </Text>
+    </VStack>
   );
 };
 
@@ -29,16 +33,20 @@ const Component = ({ ...props }) => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const [value, setValue] = React.useState('');
   return (
-    <>
+    <VStack>
       <AddressInput
         value={value}
-        onChange={(e) => setValue(e)}
+        onChange={e => setValue(e)}
         provider={provider}
         placeholder='Enter input address'
         {...props}
       />
-      <Text>value: {value}</Text>
-    </>
+      <Text>Value: {value}</Text>
+      <Text fontSize='sm'>
+        You need to be connected to the Ethereum mainnet for ENS to work right now. We are working
+        on adding better support for ENS.
+      </Text>
+    </VStack>
   );
 };
 
