@@ -13,7 +13,7 @@ export interface AvatarProps {
 }
 
 /**
- * An image component that is used to get the display the avator of the user's ens name. You can specify the size -- default is 50px.
+ * An image component that is used to display the avatar of the user's ens name. You can specify the size -- default is 50px.
  */
 export const Avatar: React.FC<AvatarProps> = ({ address, size = 50 }) => {
   return <Davatar size={size} address={address} />;
