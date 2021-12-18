@@ -14,8 +14,18 @@ import {
 import fetch from 'cross-fetch';
 
 export interface NFTProps {
+  /**
+   * The address of the NFT contract.
+   */
   contractAddress: string;
+  /**
+   * The id of the NFT.
+   */
   tokenId: string;
+  /**
+   * The size of the NFT card.
+   */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 export interface NFTData {
@@ -30,7 +40,7 @@ export interface NFTData {
 /**
  * Component to fetch and display NFT data
  */
-export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
+export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
   const _isMounted = useRef(true);
   const [nftData, setNftData] = React.useState<NFTData>();
   const [errorMessage, setErrorMessage] = React.useState<string>();
@@ -54,8 +64,12 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
           animationUrl: data.animation_url,
         });
       }
-    } catch (error: any) {
-      setErrorMessage(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setErrorMessage(error.message);
+      } else {
+        setErrorMessage('An unknown error occurred');
+      }
     }
   }, [contractAddress, tokenId]);
 
@@ -67,7 +81,7 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
     };
   }, [contractAddress, tokenId]);
 
-  return <NFTCard data={nftData} errorMessage={errorMessage} />;
+  return <NFTCard data={nftData} errorMessage={errorMessage} size={size} />;
 };
 
 /**
@@ -76,9 +90,11 @@ export const NFT = ({ contractAddress, tokenId }: NFTProps) => {
 export const NFTCard = ({
   data,
   errorMessage = '',
+  size,
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }) => {
   const name = data?.name;
   const imageUrl = data?.imageUrl;
@@ -98,23 +114,25 @@ export const NFTCard = ({
   }
 
   return (
-    <Skeleton isLoaded={!!data} maxW='xs' h='md'>
-      <Box maxW='xs' borderRadius='lg' borderWidth='1px' overflow='hidden'>
+    <Skeleton isLoaded={!!data} maxW={size} h='md'>
+      <Box maxW={size} borderRadius='lg' borderWidth='1px' overflow='hidden'>
         {animationUrl ? (
           animationUrl.endsWith('.mp3') ? (
             <VStack>
-              <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+              <Image src={imageUrl} alt={displayName} borderRadius='lg' w={size} />
               <audio src={animationUrl} controls autoPlay muted style={{ borderRadius: '7px' }} />
             </VStack>
           ) : (
-            <video src={animationUrl} controls autoPlay muted />
+            <Flex w={size} h={size} bg='black' justifyContent='center'>
+              <video src={animationUrl} controls autoPlay muted />
+            </Flex>
           )
         ) : (
-          <Image src={imageUrl} alt={displayName} borderRadius='lg' />
+          <Image src={imageUrl} alt={displayName} borderRadius='lg' w={size} />
         )}
         <Box p='6'>
           <Flex alignItems='center' justifyContent='space-between' pb='2'>
-            <Heading as='h3' size='sm'>
+            <Heading as='h3' size='sm' style={{ overflowWrap: 'anywhere' }}>
               {displayName}
             </Heading>
             {assetContractSymbol && <Tag size='sm'>{assetContractSymbol}</Tag>}

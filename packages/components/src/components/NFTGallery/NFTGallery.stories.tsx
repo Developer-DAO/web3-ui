@@ -12,7 +12,7 @@ export default {
 };
 
 export const nftsOwnedByAnAccount = () => (
-  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
+  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' gridWidth={2} />
 );
 
 export const nftsOwnedByAnENS = () => {
