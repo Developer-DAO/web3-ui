@@ -1,12 +1,12 @@
 import React from 'react';
 import { jest } from '@jest/globals';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, getByTestId } from '@testing-library/react';
 
 import { Address } from './Address';
 
 /**
  * We need to mock the Clipboard API by creating a global navigator object.
- * 
+ *
  * We're assigning an empty function to `writeText`
  * as we're only testing if it has been called with specific argument.
  */
@@ -38,20 +38,19 @@ describe('Address copiable prop true', () => {
 
   it('uses writeText from Clipboard API', async () => {
     const { container } = render(<Address copiable value='taylorswift.eth' />);
-    const input = container.querySelector('input') as HTMLElement;
+    const addressContainer = getByTestId(container, 'address-container');
 
     jest.spyOn(navigator.clipboard, 'writeText');
 
-    fireEvent.click(input);
+    fireEvent.click(addressContainer);
 
     await waitFor(() => {
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith('taylorswift.eth');
     });
   });
-  
+
   it('checks the length of the address when shortened', () => {
     const { container } = render(<Address value='0x00000000000000' shortened />);
-    const addressInput = container.querySelector('input') as HTMLInputElement;
-    expect(addressInput).toHaveValue('0x00...0000');
+    expect(container.textContent).toContain('0x00...0000');
   });
 });
