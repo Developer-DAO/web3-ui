@@ -58,7 +58,12 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
 
   return (
     <FormControl isInvalid={!!error}>
-      <Flex alignItems='center' cursor={copiable ? 'pointer' : 'initial'} onClick={handleClick}>
+      <Flex
+        data-testid='address-container'
+        alignItems='center'
+        cursor={copiable ? 'pointer' : 'initial'}
+        onClick={handleClick}
+      >
         <Text>{displayAddress}</Text>
         {copiable && (
           <Box ml='auto'>
