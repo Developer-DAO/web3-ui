@@ -38,11 +38,11 @@ describe('Address copiable prop true', () => {
 
   it('uses writeText from Clipboard API', async () => {
     const { container } = render(<Address copiable value='taylorswift.eth' />);
-    const input = getByTestId(container, 'address-container');
+    const addressContainer = getByTestId(container, 'address-container');
 
     jest.spyOn(navigator.clipboard, 'writeText');
 
-    fireEvent.click(input);
+    fireEvent.click(addressContainer);
 
     await waitFor(() => {
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith('taylorswift.eth');
