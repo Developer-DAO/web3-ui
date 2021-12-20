@@ -66,8 +66,8 @@ const UsingUseContract = () => {
   const contract = useContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
-  // @ts-expect-error
   const [greet, greetLoading, greetError] = useTransaction(async () =>
+    // @ts-expect-error
     alert(await contract.greet())
   );
 
