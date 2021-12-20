@@ -34,5 +34,5 @@ export function useTransaction(method, args: any[] = []) {
     }
   };
 
-  return { execute, loading, error };
+  return [execute, loading, error];
 }
