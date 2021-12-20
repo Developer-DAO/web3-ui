@@ -25,4 +25,8 @@ export const Audio = () => (
   <NFT contractAddress='0x0eede4764cfdfcd5dac0e00b3b7f4778c0cc994e' tokenId='1' />
 );
 
+export const Big = () => (
+  <NFT contractAddress='0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D' tokenId='1' size='lg' />
+);
+
 export const Error = () => <NFT contractAddress='abcd' tokenId='1' />;

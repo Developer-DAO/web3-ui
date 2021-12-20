@@ -6,13 +6,17 @@ import { NFTCard } from '../NFT';
 
 export interface NFTGalleryProps {
   /**
-   * The owner of the NFTs
+   * The owner of the NFTs. Can be a wallet address, or an ENS name. If the address is an ENS
+   * name, then you must also provide the provider.
    */
   address: string;
   /**
    * The number of columns in the grid
    */
   gridWidth?: number;
+  /**
+   * A Web3Provider. Only needed if the address will be an ENS name.
+   */
   web3Provider?: ethers.providers.Web3Provider;
 }
 
@@ -45,7 +49,7 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
         resolvedAddress = await web3Provider.resolveName(address);
       }
       fetch(`https://api.opensea.io/api/v1/assets?owner=${resolvedAddress}`)
-        .then((res) => {
+        .then(res => {
           if (!res.ok) {
             throw Error(
               `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
@@ -53,8 +57,8 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
           }
           return res.json();
         })
-        .then((data) => setNfts(data.assets))
-        .catch((err) => setErrorMessage(err.message));
+        .then(data => setNfts(data.assets))
+        .catch(err => setErrorMessage(err.message));
     }
     exec();
   }, [address, web3Provider]);
@@ -69,7 +73,7 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
         </Alert>
       )}
       <Grid templateColumns={`repeat(${gridWidth}, 1fr)`} gap={6}>
-        {nfts.map((nft) => (
+        {nfts.map(nft => (
           <NFTCard
             key={`${nft.asset_contract.symbol}-${nft.token_id}`}
             data={{
@@ -79,6 +83,7 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
               assetContractName: nft.asset_contract.name,
               assetContractSymbol: nft.asset_contract.symbol,
             }}
+            size='xs'
           />
         ))}
       </Grid>
