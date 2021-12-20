@@ -5,17 +5,13 @@ import { NFTGallery } from '.';
 export default {
   title: 'Components/NFTGallery',
   component: NFTGallery,
-  parameters: {
-    // TODO: Fix window.ethereum is undefined breaking chromatic
-    chromatic: { disableSnapshot: true },
-  },
 };
 
 export const nftsOwnedByAnAccount = () => (
   <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
 );
 
-export const nftsOwnedByAnENS = () => {
+const nftsOwnedByAnENSStory = () => {
   const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
 
   useEffect(() => {
@@ -28,6 +24,13 @@ export const nftsOwnedByAnENS = () => {
   }
 
   return <NFTGallery address='dhaiwat.eth' web3Provider={provider} />;
+};
+
+export const nftsOwnedByAnENS = nftsOwnedByAnENSStory.bind({});
+// @ts-expect-error
+nftsOwnedByAnENS.parameters = {
+  // disables Chromatic's snapshotting on a story level
+  chromatic: { disableSnapshot: true },
 };
 
 export const WithAnError = () => <NFTGallery address='bad_address' />;
