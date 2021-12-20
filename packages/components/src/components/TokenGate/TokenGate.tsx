@@ -1,16 +1,9 @@
-import React, { useEffect, useState, ReactNode } from 'react';
-import { ethers } from 'ethers';
-import { Spinner } from '@chakra-ui/react';
-import { ERC20ABI } from '@web3-ui/hooks/src/constants';
+import React, { ReactNode } from 'react';
 export interface TokenGateProps {
   /**
    * The provider or signer to fetch the address from the ens
    */
-  provider: ethers.providers.Web3Provider;
-  /**
-   * The token contract address
-   */
-  contractAddress: string;
+  walletBalance: number;
   /**
    * The token quantity required to access child component. Default=1
    */
@@ -23,61 +16,22 @@ export interface TokenGateProps {
    * Optional message if access denied
    */
   deniedMessage?: ReactNode;
-  /**
-   * Optional spinner during loading
-   */
-  loader?: boolean;
 }
 export const TokenGate: React.FC<TokenGateProps> = ({
-  contractAddress,
-  provider,
+  walletBalance,
   requiredQuantity = 1,
   children,
   deniedMessage,
-  loader = false,
 }) => {
-  const [tokenQuantity, setTokenQuantity] = useState<number>(0);
-  const [loadedStatus, setloadedStatus] = useState<boolean>(false);
-  // connect to contract address to get balance
-  async function getTokenBalance() {
-    const signer = provider!.getSigner();
-    try {
-      const address = await signer.getAddress();
-      const contract = new ethers.Contract(contractAddress, ERC20ABI, signer);
-      const balance = await contract.balanceOf(address);
-      setloadedStatus(!loadedStatus);
-
-      return balance;
-    } catch (error) {
-      console.log('ERROR: ', error);
-      setloadedStatus(!loadedStatus);
-    }
-
-    return;
-  }
-
-  useEffect(() => {
-    async function setBalance() {
-      const balance = await getTokenBalance();
-      setTokenQuantity(parseInt(balance, 16));
-    }
-    setBalance();
-  }, []);
+  console.log(walletBalance);
 
   // return children within simple container(className optional)
-  return loadedStatus ? (
+  return (
     // verify token quantity in wallet is greater than required amount(optional, defaults to 1)
-    tokenQuantity >= requiredQuantity ? (
-      <div>{children}</div>
+    walletBalance >= requiredQuantity ? (
+      <>{children}</>
     ) : deniedMessage ? (
-      <div>
-        {/* maybe make the below line an optional message? If left out returns null or empty div */}
-        {deniedMessage}
-      </div>
+      <>{deniedMessage}</>
     ) : null
-  ) : loader ? (
-    <div>
-      <Spinner></Spinner>
-    </div>
-  ) : null;
+  );
 };
