@@ -1,10 +1,4 @@
-import {
-  FormControl,
-  FormErrorMessage,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from '@chakra-ui/react';
+import { Box, Flex, FormControl, FormErrorMessage, Text } from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 
@@ -23,14 +17,6 @@ export interface AddressProps {
   shortened?: boolean;
 }
 
-interface EventTarget {
-  value: string;
-}
-
-interface SyntheticEvent {
-  currentTarget: EventTarget;
-}
-
 /**
  * A component to display an address
  */
@@ -38,23 +24,19 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
-  let displayAddress: string;
+  let displayAddress: string = value;
 
   if (shortened) {
-    if (value.includes('.eth')) {
-      displayAddress = value;
-    } else if (value === '' || value === 'Not connected') {
+    if (value.includes('.eth') || value === '' || value === 'Not connected') {
       displayAddress = value;
     } else {
       displayAddress = `${value.substring(0, 4)}...${value.substring(
         value.length - 4
       )}`.toLowerCase();
     }
-  } else {
-    displayAddress = value;
   }
 
-  const handleClick = async (event: SyntheticEvent): Promise<void> => {
+  const handleClick = async (): Promise<void> => {
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
@@ -76,20 +58,19 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
 
   return (
     <FormControl isInvalid={!!error}>
-      <InputGroup>
+      <Flex
+        data-testid='address-container'
+        alignItems='center'
+        cursor={copiable ? 'pointer' : 'initial'}
+        onClick={handleClick}
+      >
+        <Text>{displayAddress}</Text>
         {copiable && (
-          <InputRightElement
-            pointerEvents='none'
-            children={copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
-          />
+          <Box ml='auto'>
+            {copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
+          </Box>
         )}
-        <Input
-          onClick={handleClick}
-          value={displayAddress}
-          cursor={copiable ? 'pointer' : 'initial'}
-          readOnly
-        />
-      </InputGroup>
+      </Flex>
       <FormErrorMessage>{error}</FormErrorMessage>
     </FormControl>
   );
