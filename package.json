@@ -14,7 +14,6 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "pre-commit-hook": "yarn lint-staged",
     "format": "prettier --write",
     "build:components": "yarn workspace @web3-ui/components build",
     "build:hooks": "yarn workspace @web3-ui/hooks build",
