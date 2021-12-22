@@ -107,6 +107,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "maximebonhomme",
+      "name": "Bonhomme",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5518357?v=4",
+      "profile": "https://bonhomme.lol",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
