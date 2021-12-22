@@ -29,11 +29,8 @@
   "dependencies": {
     "@babel/runtime": "^7.16.3",
     "@chakra-ui/react": "^1.7.2",
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "classnames": "^2.2.6",
-    "cross-fetch": "^3.1.4",
     "framer-motion": "^4",
     "@web3-ui/components": "^0.3.0",
     "@web3-ui/hooks": "^0.5.0"
