@@ -30,7 +30,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE"

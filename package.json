@@ -15,10 +15,7 @@
   "scripts": {
     "prepare": "husky install",
     "format": "prettier --write",
-    "build:components": "yarn workspace @web3-ui/components build",
-    "build:hooks": "yarn workspace @web3-ui/hooks build",
-    "build:core": "yarn workspace @web3-ui/core build",
-    "build": "yarn build:components && yarn build:hooks && yarn build:core",
+    "build": "preconstruct build",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors",
