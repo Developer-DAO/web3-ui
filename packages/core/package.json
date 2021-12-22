@@ -54,7 +54,6 @@
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "ethers": "^5.5.1",
-    "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.0",
     "react": "^17.0.2",
