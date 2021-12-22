@@ -40,7 +40,6 @@
   "module": "dist/web3-ui-hooks.esm.js",
   "types": "dist/web3-ui-hooks.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
     "@walletconnect/web3-provider": "^1.6.6",
     "ethers": "^5.5.1",
     "web3modal": "^1.9.4"
@@ -50,7 +49,6 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
     "@portis/web3": "^4.0.6",
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
