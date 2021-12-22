@@ -1,7 +1,9 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -17,12 +19,12 @@ A library of UI components specifically crafted for web3 use cases.
 ## Technologies
 
 This project is built with the following open source libraries, frameworks and languages.
-| Tech                                          | Description                                                        |
+| Tech | Description |
 | --------------------------------------------- | ------------------------------------------------------------------ |
-| [React](https://reactjs.org/)                 | Front end user interface                                           |
-| [ChakraUI](https://chakra-ui.com/)            | A simple & modular component library                               |
-| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language                          |
-| [Storybook](https://storybook.js.org/)        | Open source tool for building UI components and pages in isolation |
+| [React](https://reactjs.org/) | Front end user interface |
+| [ChakraUI](https://chakra-ui.com/) | A simple & modular component library |
+| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language |
+| [Storybook](https://storybook.js.org/) | Open source tool for building UI components and pages in isolation |
 
 ## How to Contribute
 
@@ -65,6 +67,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/txwkx"><img src="https://avatars.githubusercontent.com/u/19361575?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Todor Tsankov</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=txwkx" title="Code">💻</a></td>
     <td align="center"><a href="https://www.jovidecroock.com/"><img src="https://avatars.githubusercontent.com/u/17125876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jovi De Croock</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=JoviDeCroock" title="Code">💻</a></td>
     <td align="center"><a href="https://bonhomme.lol"><img src="https://avatars.githubusercontent.com/u/5518357?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bonhomme</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=maximebonhomme" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/hone1er"><img src="https://avatars.githubusercontent.com/u/24376928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hone1er</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=hone1er" title="Code">💻</a></td>
   </tr>
 </table>
 
