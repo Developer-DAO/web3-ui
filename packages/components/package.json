@@ -30,10 +30,8 @@
     "@babel/runtime": "^7.16.3",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "cross-fetch": "^3.1.4",
     "ethers": "^5.5.2",
     "framer-motion": "^4"
   },
