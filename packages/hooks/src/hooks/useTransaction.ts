@@ -24,6 +24,8 @@ export function useTransaction(method, args: any[] = []) {
     setError(null);
     try {
       const response = await method(...args);
+      // wait for the transaction to be confirmed
+      await response.wait();
       setError(null);
       setLoading(false);
       return response;

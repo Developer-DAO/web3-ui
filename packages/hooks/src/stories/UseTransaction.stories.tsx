@@ -1,4 +1,12 @@
-import { Button, Text, VStack, Input } from '@chakra-ui/react';
+import {
+  Button,
+  Text,
+  VStack,
+  Input,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+} from '@chakra-ui/react';
 import React from 'react';
 import { NETWORKS, Provider, useWallet, useContract } from '..';
 import { useTransaction } from '../hooks';
@@ -66,10 +74,11 @@ const UsingUseContract = () => {
   const contract = useContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
-  const [greet, greetLoading, greetError] = useTransaction(async () =>
+  const greet = async () => {
     // @ts-expect-error
-    alert(await contract.greet())
-  );
+    const greeting = await contract.greet();
+    alert(greeting);
+  };
 
   // @ts-expect-error
   const [setGreeting, loading, error] = useTransaction(contract.setGreeting, [value]);
@@ -77,17 +86,23 @@ const UsingUseContract = () => {
   if (connected) {
     return (
       <VStack>
-        <Button isLoading={greetLoading} onClick={greet}>
-          Greet
-        </Button>
-        {greetError && <Text color='red'>Error while greeting: {greetError.message}</Text>}
+        <Button onClick={greet}>Greet</Button>
         <Button onClick={disconnectWallet}>Disconnect Wallet</Button>
-        <Text fontSize='lg'>Set Greeting</Text>
-        <Input isDisabled={loading} value={value} onChange={e => setValue(e.target.value)} />
-        <Button isLoading={loading} onClick={setGreeting}>
-          Set Greeting
-        </Button>
-        {error && <Text color='red'>Error while setting greeting: {error.message}</Text>}
+        <FormControl isInvalid={!!error}>
+          <VStack>
+            <FormLabel htmlFor='setGreeting'>Set greeting</FormLabel>
+            <Input
+              id='setGreeting'
+              isDisabled={loading}
+              value={value}
+              onChange={e => setValue(e.target.value)}
+            />
+            <Button type='submit' isLoading={loading} onClick={setGreeting}>
+              Set Greeting
+            </Button>
+            <FormErrorMessage>{error && error.message}</FormErrorMessage>
+          </VStack>
+        </FormControl>
       </VStack>
     );
   }
