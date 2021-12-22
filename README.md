@@ -1,9 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -68,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.jovidecroock.com/"><img src="https://avatars.githubusercontent.com/u/17125876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jovi De Croock</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=JoviDeCroock" title="Code">💻</a></td>
     <td align="center"><a href="https://bonhomme.lol"><img src="https://avatars.githubusercontent.com/u/5518357?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bonhomme</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=maximebonhomme" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/hone1er"><img src="https://avatars.githubusercontent.com/u/24376928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hone1er</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=hone1er" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/emanueltimlopez"><img src="https://avatars.githubusercontent.com/u/25184000?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emanuel López</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=emanueltimlopez" title="Code">💻</a></td>
   </tr>
 </table>
 
