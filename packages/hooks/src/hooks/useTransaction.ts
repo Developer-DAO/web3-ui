@@ -2,16 +2,16 @@ import React from 'react';
 
 /**
  * @dev Hook to get the loading status, error, and data of a function call.
- * @param method Function to call
- * @param args an array of arguments to pass to the function
+ * @param method The contract function you want to call
+ * @param args an array of arguments to pass to the function.
  * @returns {
  *  execute: () => Promise<any>,
  *  loading: boolean,
  *  error: null | Error,
  * } {
- *  execute: On calling this method, the function is executed with the passed arguments and the loading status is set to true.
- *  loading: this is true while the function is executing and will be false when the function has finished executing.,
- *  error: this will be null when there is no error and in case of error, it will contain the error object.
+ *  execute: Executes the transaction.
+ *  loading: True until the the transaction is confirmed, false otherwise.
+ *  error: Contains the error object if the transaction failed, null otherwise.
  * }
  */
 
@@ -24,6 +24,8 @@ export function useTransaction(method, args: any[] = []) {
     setError(null);
     try {
       const response = await method(...args);
+      // wait for the transaction to be confirmed
+      await response.wait();
       setError(null);
       setLoading(false);
       return response;
