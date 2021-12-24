@@ -34,9 +34,9 @@ export const Address: React.FC<AddressProps> = ({
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
-  let displayAddress: string = value;
+  let displayAddress: string = value || '';
 
-  if (shortened) {
+  if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
       displayAddress = value;
     } else {
