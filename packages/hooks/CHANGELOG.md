@@ -1,5 +1,11 @@
 # @web3-ui/hooks
 
+## 0.6.0
+
+### Minor Changes
+
+- [#163](https://github.com/Developer-DAO/web3-ui/pull/163) [`01ce580`](https://github.com/Developer-DAO/web3-ui/commit/01ce5809debb2284545620861d11893e4f9675f0) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Add missing exports
+
 ## 0.5.1
 
 ### Patch Changes

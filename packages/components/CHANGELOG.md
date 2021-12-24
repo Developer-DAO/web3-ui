@@ -1,5 +1,15 @@
 # @web3-ui/components
 
+## 0.4.0
+
+### Minor Changes
+
+- [#150](https://github.com/Developer-DAO/web3-ui/pull/150) [`f0c96df`](https://github.com/Developer-DAO/web3-ui/commit/f0c96df7468fbe0993b8e90979407c27ba7a22bd) Thanks [@Ibby-devv](https://github.com/Ibby-devv)! - Accept any ChakraProvider-compatible props in our Provider
+
+* [#163](https://github.com/Developer-DAO/web3-ui/pull/163) [`01ce580`](https://github.com/Developer-DAO/web3-ui/commit/01ce5809debb2284545620861d11893e4f9675f0) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Add missing exports
+
+- [#164](https://github.com/Developer-DAO/web3-ui/pull/164) [`184ec43`](https://github.com/Developer-DAO/web3-ui/commit/184ec43e0542a0057f7847a9c696eb0479f96438) Thanks [@hone1er](https://github.com/hone1er)! - Bug fix. Added null check to address component for value prop
+
 ## 0.3.1
 
 ### Patch Changes
