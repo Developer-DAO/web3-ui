@@ -1,5 +1,17 @@
 # @web3-ui/core
 
+## 0.2.0
+
+### Minor Changes
+
+- [#166](https://github.com/Developer-DAO/web3-ui/pull/166) [`1a33c80`](https://github.com/Developer-DAO/web3-ui/commit/1a33c8097a2608e029336301a0082e1d240b65df) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Export all the hooks from the core package too
+
+### Patch Changes
+
+- Updated dependencies [[`f0c96df`](https://github.com/Developer-DAO/web3-ui/commit/f0c96df7468fbe0993b8e90979407c27ba7a22bd), [`01ce580`](https://github.com/Developer-DAO/web3-ui/commit/01ce5809debb2284545620861d11893e4f9675f0), [`184ec43`](https://github.com/Developer-DAO/web3-ui/commit/184ec43e0542a0057f7847a9c696eb0479f96438)]:
+  - @web3-ui/components@0.4.0
+  - @web3-ui/hooks@0.6.0
+
 ## 0.1.4
 
 ### Patch Changes
