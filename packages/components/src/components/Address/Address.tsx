@@ -1,4 +1,10 @@
-import { Box, Flex, FormControl, FormErrorMessage, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  Text
+} from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 
@@ -20,11 +26,15 @@ export interface AddressProps {
 /**
  * A component to display an address
  */
-export const Address: React.FC<AddressProps> = ({ value, copiable = false, shortened = false }) => {
+export const Address: React.FC<AddressProps> = ({
+  value,
+  copiable = false,
+  shortened = false
+}) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
-  let displayAddress: string = value;
+  let displayAddress: string = value || '';
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
@@ -59,15 +69,19 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   return (
     <FormControl isInvalid={!!error}>
       <Flex
-        data-testid='address-container'
-        alignItems='center'
+        data-testid="address-container"
+        alignItems="center"
         cursor={copiable ? 'pointer' : 'initial'}
         onClick={handleClick}
       >
         <Text>{displayAddress}</Text>
         {copiable && (
-          <Box ml='auto'>
-            {copied ? <CheckIcon color='green.500' /> : <CopyIcon color='gray.300' />}
+          <Box ml="auto">
+            {copied ? (
+              <CheckIcon color="green.500" />
+            ) : (
+              <CopyIcon color="gray.300" />
+            )}
           </Box>
         )}
       </Flex>
