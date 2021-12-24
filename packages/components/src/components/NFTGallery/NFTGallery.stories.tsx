@@ -4,11 +4,14 @@ import { NFTGallery } from '.';
 
 export default {
   title: 'Components/NFTGallery',
-  component: NFTGallery,
+  component: NFTGallery
 };
 
 export const nftsOwnedByAnAccount = () => (
-  <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' gridWidth={2} />
+  <NFTGallery
+    address="0x1A16c87927570239FECD343ad2654fD81682725e"
+    gridWidth={2}
+  />
 );
 
 const nftsOwnedByAnENSStory = () => {
@@ -23,14 +26,14 @@ const nftsOwnedByAnENSStory = () => {
     return <>Loading...</>;
   }
 
-  return <NFTGallery address='dhaiwat.eth' web3Provider={provider} />;
+  return <NFTGallery address="dhaiwat.eth" web3Provider={provider} />;
 };
 
 export const nftsOwnedByAnENS = nftsOwnedByAnENSStory.bind({});
 // @ts-expect-error
 nftsOwnedByAnENS.parameters = {
   // disables Chromatic's snapshotting on a story level
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
-export const WithAnError = () => <NFTGallery address='bad_address' />;
+export const WithAnError = () => <NFTGallery address="bad_address" />;

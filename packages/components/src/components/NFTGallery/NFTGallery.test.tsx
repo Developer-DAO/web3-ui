@@ -6,7 +6,7 @@ import { NFTGallery } from './NFTGallery';
 describe('NFTGallery', () => {
   it('displays the grid of NFTs', async () => {
     const { container } = render(
-      <NFTGallery address='0x1A16c87927570239FECD343ad2654fD81682725e' />
+      <NFTGallery address="0x1A16c87927570239FECD343ad2654fD81682725e" />
     );
 
     expect(container.textContent).toContain('NFT Gallery');
@@ -17,7 +17,7 @@ describe('NFTGallery', () => {
   });
 
   it('renders an error', async () => {
-    const { container } = render(<NFTGallery address='bad_address' />);
+    const { container } = render(<NFTGallery address="bad_address" />);
 
     expect(container.textContent).toContain('NFT Gallery');
     await waitFor(() => {

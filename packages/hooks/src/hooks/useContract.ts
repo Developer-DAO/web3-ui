@@ -7,13 +7,19 @@ export function useContract(address: string, abi) {
   const [contract, setContract] = React.useState({});
   React.useEffect(() => {
     if (context) {
-      const newContract = new Contract(address, abi, context.signer || undefined);
-      const contractInterface = Object.values(newContract.interface.functions).reduce(
-        (accumulator, funcFragment) => {
-          return { ...accumulator, [funcFragment.name]: newContract[funcFragment.name] };
-        },
-        {}
+      const newContract = new Contract(
+        address,
+        abi,
+        context.signer || undefined
       );
+      const contractInterface = Object.values(
+        newContract.interface.functions
+      ).reduce((accumulator, funcFragment) => {
+        return {
+          ...accumulator,
+          [funcFragment.name]: newContract[funcFragment.name]
+        };
+      }, {});
       setContract(contractInterface);
     }
   }, [context]);

@@ -18,7 +18,7 @@ const WINDOW_ETHEREUM = {
     }
 
     throw Error(`Unknown request: ${request.method}`);
-  },
+  }
 };
 
 jest.mock('ethers', () => {
@@ -26,8 +26,8 @@ jest.mock('ethers', () => {
   return {
     ...original,
     ethers: {
-      ...original.ethers,
-    },
+      ...original.ethers
+    }
   };
 });
 
@@ -38,9 +38,9 @@ const Component = () => {
   return (
     <AddressInput
       value={value}
-      onChange={(e) => setValue(e)}
+      onChange={e => setValue(e)}
       provider={provider}
-      placeholder='Input address'
+      placeholder="Input address"
     />
   );
 };
