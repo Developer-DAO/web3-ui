@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.3.1
+
+### Patch Changes
+
+- [#149](https://github.com/Developer-DAO/web3-ui/pull/149) [`4c2056d`](https://github.com/Developer-DAO/web3-ui/commit/4c2056d9c8b2c1eebdd7135a5581447941a65ad8) Thanks [@JoviDeCroock](https://github.com/JoviDeCroock)! - Remove the `cross-fetch` polyfill
+
 ## 0.3.0
 
 ### Minor Changes
