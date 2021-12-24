@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/components",
   "license": "MIT",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -21,7 +21,6 @@
     "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "pre-commit-hook": "yarn lint-staged",
     "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE && cp ../../README.md ./README.md"
   },
   "main": "dist/web3-ui-components.cjs.js",
@@ -31,10 +30,8 @@
     "@babel/runtime": "^7.16.3",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "cross-fetch": "^3.1.4",
     "ethers": "^5.5.2",
     "framer-motion": "^4"
   },
@@ -49,19 +46,14 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.4.1",
+    "@web3-ui/hooks": "^0.5.0",
     "babel-loader": "^8.2.1",
-    "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "lint-staged": "^12.1.2",
     "prettier": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.0",
     "webpack": "^4.42.1"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,json,js,jsx}": "yarn format"
   }
 }

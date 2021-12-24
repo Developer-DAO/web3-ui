@@ -9,9 +9,8 @@ import {
   VStack,
   Skeleton,
   Alert,
-  AlertIcon,
+  AlertIcon
 } from '@chakra-ui/react';
-import fetch from 'cross-fetch';
 
 export interface NFTProps {
   /**
@@ -47,7 +46,9 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
 
   const fetchNFTData = useCallback(async () => {
     try {
-      const res = await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`);
+      const res = await fetch(
+        `https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
+      );
       if (!res.ok) {
         throw Error(
           `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
@@ -61,7 +62,7 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
           name: data.name,
           assetContractName: data.asset_contract.name,
           assetContractSymbol: data.asset_contract.symbol,
-          animationUrl: data.animation_url,
+          animationUrl: data.animation_url
         });
       }
     } catch (error) {
@@ -90,7 +91,7 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
 export const NFTCard = ({
   data,
   errorMessage = '',
-  size,
+  size
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;
@@ -106,7 +107,7 @@ export const NFTCard = ({
 
   if (errorMessage) {
     return (
-      <Alert status='error'>
+      <Alert status="error">
         <AlertIcon />
         {errorMessage}
       </Alert>
@@ -114,30 +115,41 @@ export const NFTCard = ({
   }
 
   return (
-    <Skeleton isLoaded={!!data} maxW={size} h='md'>
-      <Box maxW={size} borderRadius='lg' borderWidth='1px' overflow='hidden'>
+    <Skeleton isLoaded={!!data} maxW={size} h="md">
+      <Box maxW={size} borderRadius="lg" borderWidth="1px" overflow="hidden">
         {animationUrl ? (
           animationUrl.endsWith('.mp3') ? (
             <VStack>
-              <Image src={imageUrl} alt={displayName} borderRadius='lg' w={size} />
-              <audio src={animationUrl} controls autoPlay muted style={{ borderRadius: '7px' }} />
+              <Image
+                src={imageUrl}
+                alt={displayName}
+                borderRadius="lg"
+                w={size}
+              />
+              <audio
+                src={animationUrl}
+                controls
+                autoPlay
+                muted
+                style={{ borderRadius: '7px' }}
+              />
             </VStack>
           ) : (
-            <Flex w={size} h={size} bg='black' justifyContent='center'>
+            <Flex w={size} h={size} bg="black" justifyContent="center">
               <video src={animationUrl} controls autoPlay muted />
             </Flex>
           )
         ) : (
-          <Image src={imageUrl} alt={displayName} borderRadius='lg' w={size} />
+          <Image src={imageUrl} alt={displayName} borderRadius="lg" w={size} />
         )}
-        <Box p='6'>
-          <Flex alignItems='center' justifyContent='space-between' pb='2'>
-            <Heading as='h3' size='sm' style={{ overflowWrap: 'anywhere' }}>
+        <Box p="6">
+          <Flex alignItems="center" justifyContent="space-between" pb="2">
+            <Heading as="h3" size="sm" style={{ overflowWrap: 'anywhere' }}>
               {displayName}
             </Heading>
-            {assetContractSymbol && <Tag size='sm'>{assetContractSymbol}</Tag>}
+            {assetContractSymbol && <Tag size="sm">{assetContractSymbol}</Tag>}
           </Flex>
-          <Text fontSize='xs'>
+          <Text fontSize="xs">
             {assetContractName} #{tokenId}
           </Text>
         </Box>

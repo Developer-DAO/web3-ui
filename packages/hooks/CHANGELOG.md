@@ -1,5 +1,13 @@
 # @web3-ui/hooks
 
+## 0.5.0
+
+### Minor Changes
+
+- [#134](https://github.com/Developer-DAO/web3-ui/pull/134) [`da536ed`](https://github.com/Developer-DAO/web3-ui/commit/da536ed8df37c768764ca616a9bb83fc91a01d5e) Thanks [@Nazeeh21](https://github.com/Nazeeh21)! - Add useTransaction hook
+
+* [#125](https://github.com/Developer-DAO/web3-ui/pull/125) [`3f0bc64`](https://github.com/Developer-DAO/web3-ui/commit/3f0bc640cc4d0d4ee4e656afd16c6fc2fbfc9cbd) Thanks [@Nazeeh21](https://github.com/Nazeeh21)! - Added a new method "switchToCorrectNetwork" to the useWallet hook. This method allows the user to switch to the required network without manually heading over to the MetaMask and switching the network. Users can use this function by directly passing this method in the click handler of a button.
+
 ## 0.4.1
 
 ### Patch Changes
