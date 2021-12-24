@@ -9,8 +9,8 @@ export default {
   component: AddressInput,
   parameters: {
     // TODO: Fix window.ethereum is undefined breaking chromatic
-    chromatic: { disableSnapshot: true },
-  },
+    chromatic: { disableSnapshot: true }
+  }
 };
 
 const WithUseWallet = () => {
@@ -19,11 +19,15 @@ const WithUseWallet = () => {
 
   return (
     <VStack>
-      <AddressInput value={value} onChange={e => setValue(e)} provider={provider!} />
+      <AddressInput
+        value={value}
+        onChange={e => setValue(e)}
+        provider={provider!}
+      />
       <Text>Value: {value}</Text>
-      <Text fontSize='sm'>
-        You need to be connected to the Ethereum mainnet for ENS to work right now. We are working
-        on adding better support for ENS.
+      <Text fontSize="sm">
+        You need to be connected to the Ethereum mainnet for ENS to work right
+        now. We are working on adding better support for ENS.
       </Text>
     </VStack>
   );
@@ -38,13 +42,13 @@ const Component = ({ ...props }) => {
         value={value}
         onChange={e => setValue(e)}
         provider={provider}
-        placeholder='Enter input address'
+        placeholder="Enter input address"
         {...props}
       />
       <Text>Value: {value}</Text>
-      <Text fontSize='sm'>
-        You need to be connected to the Ethereum mainnet for ENS to work right now. We are working
-        on adding better support for ENS.
+      <Text fontSize="sm">
+        You need to be connected to the Ethereum mainnet for ENS to work right
+        now. We are working on adding better support for ENS.
       </Text>
     </VStack>
   );
@@ -58,4 +62,4 @@ export const UsingWeb3Hooks = () => {
     </Provider>
   );
 };
-export const Label = () => <Component label='Address' />;
+export const Label = () => <Component label="Address" />;

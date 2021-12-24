@@ -11,11 +11,11 @@ const ABI = [
       {
         internalType: 'string',
         name: '_greeting',
-        type: 'string',
-      },
+        type: 'string'
+      }
     ],
     stateMutability: 'nonpayable',
-    type: 'constructor',
+    type: 'constructor'
   },
   {
     inputs: [],
@@ -24,38 +24,38 @@ const ABI = [
       {
         internalType: 'string',
         name: '',
-        type: 'string',
-      },
+        type: 'string'
+      }
     ],
     stateMutability: 'view',
-    type: 'function',
+    type: 'function'
   },
   {
     inputs: [
       {
         internalType: 'string',
         name: '_greeting',
-        type: 'string',
-      },
+        type: 'string'
+      }
     ],
     name: 'setGreeting',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function',
+    type: 'function'
   },
   {
     inputs: [
       {
         internalType: 'address payable',
         name: '_to',
-        type: 'address',
-      },
+        type: 'address'
+      }
     ],
     name: 'transferTo',
     outputs: [],
     stateMutability: 'payable',
-    type: 'function',
-  },
+    type: 'function'
+  }
 ];
 
 const Default = () => {
@@ -64,7 +64,7 @@ const Default = () => {
   const [state, setState] = React.useState({
     newGreeting: '',
     toAddress: '',
-    amount: '0',
+    amount: '0'
   });
 
   const handleGreet = async () => alert(await contract.greet());
@@ -76,7 +76,9 @@ const Default = () => {
     setState({ ...state, newGreeting: '' });
   };
   const handleTransferTo = async () => {
-    await contract.transferTo(state.toAddress, { value: ethers.utils.parseEther(state.amount) });
+    await contract.transferTo(state.toAddress, {
+      value: ethers.utils.parseEther(state.amount)
+    });
     setState({ ...state, toAddress: '', amount: '0' });
   };
 
@@ -92,19 +94,26 @@ const Default = () => {
         </Button>
         <Input
           value={state.newGreeting}
-          placeholder='New Greeting!'
+          placeholder="New Greeting!"
           onChange={handleChangeState('newGreeting')}
         />
         <Divider />
-        <Button disabled={!(state.toAddress && state.amount)} onClick={handleTransferTo}>
+        <Button
+          disabled={!(state.toAddress && state.amount)}
+          onClick={handleTransferTo}
+        >
           transferTo
         </Button>
         <Input
           value={state.toAddress}
-          placeholder='0xjA123....'
+          placeholder="0xjA123...."
           onChange={handleChangeState('toAddress')}
         />
-        <Input placeholder='0.2' value={state.amount} onChange={handleChangeState('amount')} />
+        <Input
+          placeholder="0.2"
+          value={state.amount}
+          onChange={handleChangeState('amount')}
+        />
       </VStack>
     );
   }
@@ -117,7 +126,7 @@ const Default = () => {
 };
 
 storiesOf('Hooks/useContract', module).add('Default', () => (
-  <Provider network='rinkeby'>
+  <Provider network="rinkeby">
     <Default />
   </Provider>
 ));

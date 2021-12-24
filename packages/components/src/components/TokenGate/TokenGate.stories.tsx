@@ -8,8 +8,8 @@ export default {
   component: TokenGate,
   parameters: {
     // TODO: Fix window.ethereum is undefined breaking chromatic
-    chromatic: { disableSnapshot: true },
-  },
+    chromatic: { disableSnapshot: true }
+  }
 };
 
 const Component = ({ ...props }) => {
@@ -17,7 +17,8 @@ const Component = ({ ...props }) => {
    * requiredQuantity was done this way because when requiredQuantity is not passed to the component, the required quantity
    * should default to 1 not 0
    */
-  const requiredQuantity = props.requiredQuantity === undefined ? 1 : props.requiredQuantity;
+  const requiredQuantity =
+    props.requiredQuantity === undefined ? 1 : props.requiredQuantity;
   return (
     <>
       <TokenGate walletBalance={props.walletBalance} {...props}>
@@ -34,7 +35,7 @@ const WithUseWallet = ({ ...props }) => {
   const { formattedBalance, error } = useTokenBalance({
     // GTC token contract address
     tokenAddress: '0xde30da39c46104798bb5aa3fe8b9e0e1f348163f',
-    accountAddress: connection.userAddress!,
+    accountAddress: connection.userAddress!
   });
   // TokenGate only returned if there is a connection and a balance. Done this way to accomplish rendering the loading state.
   // Using the loading state from useTokenBalance would not work because loading status changes simultaneously with connected status
@@ -77,10 +78,12 @@ export const UsingWeb3Hooks = () => {
   );
 };
 
-export const AccessGrantedDefault = () => <Component walletBalance={150} requiredQuantity={100} />;
+export const AccessGrantedDefault = () => (
+  <Component walletBalance={150} requiredQuantity={100} />
+);
 
 export const AccessDeniedDefault = () => (
-  <Component walletBalance={0} requiredQuantity={1000} label='Denied' />
+  <Component walletBalance={0} requiredQuantity={1000} label="Denied" />
 );
 
 /**
@@ -96,7 +99,9 @@ const DeniedAccess = props => (
         {`Make sure you hold the number of tokens required to access this component: 
         ${props.requiredQuantity === undefined ? 1 : props.requiredQuantity}`}
       </li>
-      <li>Not providing a "deniedMessage" will return null when access is denied</li>
+      <li>
+        Not providing a "deniedMessage" will return null when access is denied
+      </li>
     </ul>
   </div>
 );
@@ -105,6 +110,6 @@ export const AccessDeniedWithCustomMessage = () => (
   <Component
     requiredQuantity={1000}
     deniedMessage={<DeniedAccess requiredQuantity={1000} />}
-    label='Denied With Message'
+    label="Denied With Message"
   />
 );

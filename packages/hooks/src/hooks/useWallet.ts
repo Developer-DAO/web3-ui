@@ -22,7 +22,7 @@ export function useWallet() {
     connected,
     provider,
     correctNetwork,
-    network,
+    network
   } = context;
 
   React.useEffect(() => {
@@ -41,7 +41,7 @@ export function useWallet() {
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: `0x${network}` }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: `0x${network}` }] // chainId must be in hexadecimal numbers
         });
       } catch (error) {
         console.error(error);
@@ -55,9 +55,9 @@ export function useWallet() {
               params: [
                 {
                   chainId: '0x61',
-                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-                },
-              ],
+                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
+                }
+              ]
             });
           } catch (addError) {
             console.error(addError);
@@ -79,11 +79,11 @@ export function useWallet() {
       userAddress,
       network: CHAIN_ID_TO_NETWORK[chainId as number],
       signer,
-      ens,
+      ens
     },
     connected,
     provider,
     correctNetwork,
-    switchToCorrectNetwork,
+    switchToCorrectNetwork
   };
 }

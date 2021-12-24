@@ -1,4 +1,10 @@
-import { FormControl, FormLabel, Input, FormErrorMessage, InputProps } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  FormErrorMessage,
+  InputProps
+} from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
@@ -57,7 +63,10 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
       setError(null);
       if (regex.test(debouncedValue)) {
         onChange(debouncedValue);
-      } else if (debouncedValue.endsWith('.eth') || debouncedValue.endsWith('.xyz')) {
+      } else if (
+        debouncedValue.endsWith('.eth') ||
+        debouncedValue.endsWith('.xyz')
+      ) {
         getAddressFromEns().then(address => onChange(address ? address : ''));
       }
     }
