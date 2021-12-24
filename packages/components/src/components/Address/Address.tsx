@@ -26,7 +26,7 @@ export const Address: React.FC<AddressProps> = ({ value, copiable = false, short
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value;
 
-  if (shortened) {
+  if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
       displayAddress = value;
     } else {
