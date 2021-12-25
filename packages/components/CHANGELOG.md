@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.4.1
+
+### Patch Changes
+
+- [#170](https://github.com/Developer-DAO/web3-ui/pull/170) [`53da320`](https://github.com/Developer-DAO/web3-ui/commit/53da320bdaeb28ac4b82152b7c289f7aa9d7b695) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Add README for the components package
+
 ## 0.4.0
 
 ### Minor Changes
