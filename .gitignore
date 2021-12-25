@@ -1,6 +1,5 @@
 .DS_STORE
 packages/**/LICENSE
-packages/**/README.md
 
 node_modules
 .rpt2_cache
