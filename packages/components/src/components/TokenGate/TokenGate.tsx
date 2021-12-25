@@ -17,11 +17,15 @@ export interface TokenGateProps {
    */
   deniedMessage?: ReactNode;
 }
+
+/**
+ * A 'token gate' that renders some content depending on whether the user has the required quantity of a token or not.
+ */
 export const TokenGate: React.FC<TokenGateProps> = ({
   walletBalance,
   requiredQuantity = 1,
   children,
-  deniedMessage,
+  deniedMessage
 }) => {
   // return children within simple container
   return (
