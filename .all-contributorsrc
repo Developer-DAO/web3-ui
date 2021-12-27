@@ -134,6 +134,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "gjsyme",
+      "name": "Greg Syme",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4706001?v=4",
+      "profile": "http://www.dezinersoftware.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
