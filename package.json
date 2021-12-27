@@ -40,6 +40,7 @@
     "@preconstruct/cli": "^2.1.5",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
     "chromatic": "^6.1.0",
     "husky": "^7.0.4",
     "jest": "^26.6.3",
