@@ -1,5 +1,11 @@
 # @web3-ui/hooks
 
+## 0.7.0
+
+### Minor Changes
+
+- [#185](https://github.com/Developer-DAO/web3-ui/pull/185) [`2b39709`](https://github.com/Developer-DAO/web3-ui/commit/2b3970987eff7c9aeabbce027477079a43a61220) Thanks [@CatalinCsnMaster](https://github.com/CatalinCsnMaster)! - useContract status indicator
+
 ## 0.6.0
 
 ### Minor Changes
