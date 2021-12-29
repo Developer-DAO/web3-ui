@@ -71,7 +71,7 @@ const ABI = [
 
 const UsingUseContract = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const contract = useContract(ADDRESS, ABI);
+  const [contract, _] = useContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
   const greet = async () => {
@@ -123,42 +123,3 @@ export const WithUseContract = () => {
     </Provider>
   );
 };
-
-const UsingProvider = () => {
-  const { connectWallet, connected, disconnectWallet } = useWallet();
-
-  const [execute, loading, error] = useTransaction(connectWallet);
-  const [
-    executeDisconnectWallet,
-    disconnectWalletLoading,
-    disconnectWalletError
-  ] = useTransaction(disconnectWallet);
-
-  if (connected) {
-    return (
-      <div>
-        <Button onClick={executeDisconnectWallet}>Disconnect Wallet</Button>
-        <Text>Loading: {disconnectWalletLoading.toString()}</Text>
-        <Text color={disconnectWalletError ? 'red' : 'black'}>
-          Error: {disconnectWalletError ? disconnectWalletError : 'No error'}
-        </Text>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <Button onClick={execute}>Connect Wallet</Button>
-      <Text>Loading: {loading.toString()}</Text>
-      <Text color={error ? 'red' : 'black'}>
-        Error: {error ? error : 'No error'}
-      </Text>
-    </div>
-  );
-};
-
-export const ConnectWallet = () => (
-  <Provider network={NETWORKS.mainnet}>
-    <UsingProvider />
-  </Provider>
-);

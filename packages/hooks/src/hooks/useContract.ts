@@ -5,6 +5,7 @@ import { Contract } from 'ethers';
 export function useContract(address: string, abi) {
   const context = React.useContext(Web3Context);
   const [contract, setContract] = React.useState({});
+  const [isReady, setIsReady] = React.useState(false);
   React.useEffect(() => {
     if (context) {
       const newContract = new Contract(
@@ -21,7 +22,8 @@ export function useContract(address: string, abi) {
         };
       }, {});
       setContract(contractInterface);
+      setIsReady(true);
     }
   }, [context]);
-  return contract;
+  return [contract, isReady];
 }
