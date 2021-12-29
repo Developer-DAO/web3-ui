@@ -60,7 +60,7 @@ const ABI = [
 
 const Default = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const contract = useContract(ADDRESS, ABI);
+  const [contract, isReady] = useContract(ADDRESS, ABI);
   const [state, setState] = React.useState({
     newGreeting: '',
     toAddress: '',
@@ -89,7 +89,10 @@ const Default = () => {
         <h3>Contract Methods</h3>
         <Button onClick={handleGreet}>greet</Button>
         <Divider />
-        <Button disabled={!state.newGreeting} onClick={handleSetGreeting}>
+        <Button
+          disabled={!state.newGreeting || !isReady}
+          onClick={handleSetGreeting}
+        >
           setGreeting
         </Button>
         <Input
