@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Provider, useWallet, useContract } from '..';
+import { Provider, useWallet, useContract, NETWORKS } from '..';
 import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 
@@ -129,7 +129,7 @@ const Default = () => {
 };
 
 storiesOf('Hooks/useContract', module).add('Default', () => (
-  <Provider network="rinkeby">
+  <Provider network={NETWORKS.rinkeby}>
     <Default />
   </Provider>
 ));
