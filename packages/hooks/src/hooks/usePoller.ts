@@ -21,5 +21,3 @@ export const usePoller = (func: () => void, delay: number): void => {
     func();
   }, []);
 };
-
-export default usePoller;
