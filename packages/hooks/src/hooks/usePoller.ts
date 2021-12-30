@@ -1,22 +1,20 @@
 import { useEffect, useRef } from "react";
 
 const usePoller = (func: () => void, delay: number): void => {
-  const savedCbFunc = useRef<() => void>();
+  const savedCbFunc = useRef(func);
 
   // Remember the latest fn.
-  useEffect((): void => {
+  useEffect(() => {
     savedCbFunc.current = func;
   }, [func]);
 
-  useEffect((): void | (() => void) => {
-    function tick() {
-      if (savedCbFunc.current) savedCbFunc.current();
+  useEffect(() => {
+    if (!delay) {
+      return;
     }
-
-    if (delay !== null) {
-      const id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
+    
+    const id = setInterval(savedCbFunc.current, delay);
+    return () => clearInterval(id);
   }, [delay]);
 
   useEffect(() => {
