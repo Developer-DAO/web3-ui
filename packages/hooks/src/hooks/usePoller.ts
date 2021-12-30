@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const usePoller = (func: () => void, delay: number): void => {
+export const usePoller = (func: () => void, delay: number): void => {
   const savedCbFunc = useRef(func);
 
   // Remember the latest fn.
