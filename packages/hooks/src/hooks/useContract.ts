@@ -7,7 +7,7 @@ export function useContract(address: string, abi) {
   const [contract, setContract] = React.useState({});
   const [isReady, setIsReady] = React.useState(false);
   React.useEffect(() => {
-    if (context && context.connected) {
+    if (context?.connected) {
       const newContract = new Contract(
         address,
         abi,
