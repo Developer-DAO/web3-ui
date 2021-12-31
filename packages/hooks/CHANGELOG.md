@@ -1,5 +1,13 @@
 # @web3-ui/hooks
 
+## 0.7.1
+
+### Patch Changes
+
+- [#192](https://github.com/Developer-DAO/web3-ui/pull/192) [`90d43df`](https://github.com/Developer-DAO/web3-ui/commit/90d43df64873e6a35c1d0b1deabbfc1fe594f62c) Thanks [@Nazeeh21](https://github.com/Nazeeh21)! - Add README
+
+* [#189](https://github.com/Developer-DAO/web3-ui/pull/189) [`0914840`](https://github.com/Developer-DAO/web3-ui/commit/0914840b6081b1e4b6ab14afb36064d6666b40e3) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - `useContract` now initializes the contract only after the user has connected their wallet. This helps prevent errors from calling contracts without a connection.
+
 ## 0.7.0
 
 ### Minor Changes
