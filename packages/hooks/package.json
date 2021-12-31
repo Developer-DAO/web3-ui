@@ -8,6 +8,14 @@
     "yarn": "^1.5"
   },
   "description": "React hooks for web3",
+  "keywords": [
+    "web3",
+    "ui",
+    "react",
+    "hooks",
+    "web3-ui",
+    "components"
+  ],
   "author": "Developer DAO",
   "homepage": "https://github.com/Developer-DAO/web3-ui/",
   "bugs": {
