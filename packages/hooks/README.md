@@ -2,7 +2,7 @@
 
 A set of React hooks developed for web3 use cases.
 
-```shell
+```bash
 yarn add @web3-ui/hooks
 ```
 
@@ -10,14 +10,13 @@ yarn add @web3-ui/hooks
 
 At the root of your React app, wrap your app in the <Provider> component:
 
-```javascript
+```tsx
 // _app.tsx (or the root of your app)
 import { Provider } from '@web3-ui/hooks';
 
-// Passing in a theme is optional
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider theme={yourChakraTheme}>
+    <Provider>
       <Component {...pageProps} />
     </Provider>
   );
@@ -28,7 +27,7 @@ function MyApp({ Component, pageProps }) {
 
 ## Hooks
 
-The list of hooks package currently provides:
+The following hooks are available:
 
 - [useWallet](#usewallet)
 - [useContract](#usecontract)
@@ -39,29 +38,23 @@ The list of hooks package currently provides:
 
 ### useWallet
 
-The `useWallet` hook can be used to get the current web3 context including information about the connection. This hook will return an object with the following properties.
+The `useWallet` hook lets you request and interact with the active wallet connection.
 
-- connectWallet: A function that will open the web3modal and will allow the user to connect using different web3 providers.
-- disconnectWallet: A function that will clear the connected user cache from the web3modal.
-- connection: This object contains the following properties:
-  - userAddress: currently connected wallet address
-  - network: current network
-  - signer: signer object
-  - ens: provide ENS of current wallet address if exists
-- connected: a boolean indicating if the wallet is connected to the website
-- provider: the provider object
-- correctNetwork: a boolean indicating if the current network is the correct network
-- switchToCorrectNetwork: a function that will switch to the correct network
+- `connectWallet`: Calling this function will open up a modal that will let the user connect their wallet.
+- `disconnectWallet`
+- `connection`: This object contains the following properties:
+  - `userAddress`
+  - `network`
+  - `signer`
+  - `ens`
+- `connected`: a boolean indicating if the user has connected their wallet
+- `provider`
+- `correctNetwork`: a boolean indicating if the user is connected to the correct network
+- `switchToCorrectNetwork`: a function that will switch to the correct network. (only MetaMask supported)
 
-For using the `useWallet` hook, you need to import the hook by adding the following import statement:
-
-```javascript
+```tsx
 import { useWallet } from '@web3-ui/hooks';
-```
 
-After importing, you can use the hook by adding the following line in your React component.
-
-```javascript
 const {
   connection,
   connectWallet,
@@ -76,70 +69,61 @@ const {
 
 ### useContract
 
-The `useContract` hook takes the ABI and address of a contract and returns the contract instance. Thus, user will no longer need to manually initialize the contract using `ethers`.
+The `useContract` hook takes the ABI and address of a contract and returns the contract instance.
 
-For using the `useContract` hook, you need to import the hook by adding the following import statement:
-
-```javascript
+```tsx
 import { useContract } from '@web3-ui/hooks';
-```
 
-After importing, you can use the hook by adding the following line in your React component.
+const [contract, isReady] = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
 
-```javascript
-const contract = useContract('YOUR_CONTRACT_ADDRESS', 'YOUR_CONTRACT_ABI');
+//check that the contract has been loaded
+if (isReady) {
+  await contract.greeting();
+}
 ```
 
 ---
 
 ### useTransaction
 
-The `useTransaction` hook takes the function and an array of arguments to pass to the function as an argument to the hook and will return an array.
+The `useTransaction` hook takes in a contract function and a list of arguments to pass to it. It returns an array of three elements:
 
-This array will contain `execute` method, `loading` state and `error` state.
+- `execute`: Calling this function will execute the transaction.
 
-- `execute` method will execute the function and return the result.
+- `loading`: Will be true when the transaction is executing and will be false once the transaction has been confirmed.
 
-- `loading` state will be true while the function is executing and will be false when execution gets completed.
+- `error`
 
-- `error` state will contain an **error** if there is an error while executing the function, otherwise it will be _null_.
+```tsx
+import { useTransaction, useContract } from '@web3-ui/hooks';
 
-For using the `useTransaction` hook, you need to import the hook by adding the following import statement:
-
-```javascript
-import { useTransaction } from '@web3-ui/hooks';
-```
-
-After importing, you can use the hook by adding the following line in your React component.
-
-```javascript
-const [execute, loading, error] = useTransaction(FUNCTION_TO_EXECUTE, [
-  FUNCTION_ARGUMENTS
+const greeterContract = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
+const [execute, loading, error] = useTransaction(greeter.setGreeting, [
+  'Hello, world!',
+  {
+    value: ethers.utils.parseEther('0.1') // you can also use this for payable transactions
+  }
 ]);
+
+execute(); // will execute the transaction
 ```
 
 ---
 
 ### useTokenBalance
 
-The `useTokenBalance` hook takes the tokenAddress and accountAddress as arguments and returns an object with the following properties:
+The `useTokenBalance` hook takes in a ERC20 token contract address and an account address as arguments and returns an object with the following properties:
 
-- balance: The balance of the token in the user account in wei.
-- loading: A boolean value to indicate if the balance is being fetched.
-- error: An error if there is any.
-- decimals: The number of decimals of the token.
-- formattedBalance: The balance of the token in the user account in ethers.
-- balanceInBigNumber: The balance of the token in the user account in BigNumber.
+- `balance`: The balance of the token for the given account in wei.
+- `loading`
+- `error`
+- `decimals`: The number of decimals the token contract is using.
+- `formattedBalance`: Balance in ethers. eg. 20 GTC, 31.2 USDT, etc.
+- `balanceInBigNumber`
 
-For using the `useTokenBalance` hook, you need to import the hook by adding the following import statement:
-
-```javascript
+```tsx
 import { useTokenBalance } from '@web3-ui/hooks';
-```
 
-After importing, you can use the hook by adding the following line in your React component.
-
-```javascript
 const {
   balance,
   loading,
@@ -147,5 +131,5 @@ const {
   decimals,
   formattedBalance,
   balanceInBigNumber
-} = useTokenBalance('YOUR_TOKEN_ADDRESS', 'YOUR_ACCOUNT_ADDRESS');
+} = useTokenBalance('TOKEN_CONTRACT_ADDRESS', 'ACCOUNT_ADDRESS');
 ```
