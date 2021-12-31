@@ -1,9 +1,9 @@
 import '../styles/globals.css';
-import { Provider } from '@web3-ui/core';
+import { Provider, NETWORKS } from '@web3-ui/core';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider network={4}>
+    <Provider network={NETWORKS.mainnet}>
       <Component {...pageProps} />
     </Provider>
   );

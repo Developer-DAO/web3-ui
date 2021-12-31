@@ -24,7 +24,7 @@
     "test:coverage": "jest --coverage --colors",
     "storybook": "start-storybook -p 9001 -s ./packages/components/src/assets -c .storybook",
     "postinstall": "preconstruct dev",
-    "example": "yarn workspace example dev",
+    "example": "yarn build && yarn workspace example dev",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic  --exit-zero-on-changes",
     "publish:npm": "yarn changeset publish"
