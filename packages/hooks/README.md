@@ -53,9 +53,13 @@ The `useWallet` hook can be used to get the current web3 context including infor
 - correctNetwork: a boolean indicating if the current network is the correct network
 - switchToCorrectNetwork: a function that will switch to the correct network
 
+---
+
 ### useContract
 
 The `useContract` hook takes the ABI and address of a contract and returns the contract instance. Thus, user will no longer need to manually initialize the contract using `ethers`.
+
+---
 
 ### useTransaction
 
@@ -68,6 +72,8 @@ This array will contain `execute` method, `loading` state and `error` state.
 - `loading` state will be true while the function is executing and will be false when execution gets completed.
 
 - `error` state will contain an **error** if there is an error while executing the function, otherwise it will be _null_.
+
+---
 
 ### useTokenBalance
 
