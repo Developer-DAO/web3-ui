@@ -6,16 +6,13 @@ import { Contract, ContractInterface } from 'ethers';
  * @description
  * Defines the contract instance on `useState` hook
  */
-export type ContractInstance<T extends Contract> = T | null | undefined;
+export type ContractInstance<T extends Contract> = T | null;
 
 /**
  * @description
  * The return type of the `useContract` hook
  */
-export type UseContractHook<T extends Contract> = [
-  T | null | undefined,
-  boolean
-];
+export type UseContractHook<T extends Contract> = [T | null, boolean];
 
 export function useContract<T extends Contract>(
   address: string,
