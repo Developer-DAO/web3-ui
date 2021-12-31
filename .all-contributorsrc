@@ -153,6 +153,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jwarshack",
+      "name": "Jake Warren",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54959624?v=4",
+      "profile": "http://jwar.xyz",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -77,6 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://www.dezinersoftware.com"><img src="https://avatars.githubusercontent.com/u/4706001?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Greg Syme</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=gjsyme" title="Code">💻</a></td>
     <td align="center"><a href="http://jay-software.com"><img src="https://avatars.githubusercontent.com/u/25109595?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Casuneanu Catalin</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=CatalinCsnMaster" title="Code">💻</a></td>
+    <td align="center"><a href="http://jwar.xyz"><img src="https://avatars.githubusercontent.com/u/54959624?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jake Warren</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=jwarshack" title="Code">💻</a></td>
   </tr>
 </table>
 
