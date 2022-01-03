@@ -172,6 +172,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "akshatamohanty",
+      "name": "Akshata Mohanty",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6915805?v=4",
+      "profile": "https://iamaatoh.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
