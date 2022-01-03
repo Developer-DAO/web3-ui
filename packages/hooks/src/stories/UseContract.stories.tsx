@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider, useWallet, useContract, NETWORKS } from '..';
 import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
+import { useReadOnlyContract } from '../hooks/useReadOnlyContract';
 
 const ADDRESS = '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135'; // Rinkeby
 const ABI = [
@@ -131,5 +132,34 @@ const Default = () => {
 storiesOf('Hooks/useContract', module).add('Default', () => (
   <Provider network={NETWORKS.rinkeby}>
     <Default />
+  </Provider>
+));
+
+const ReadContract = () => {
+  const [contract, isReady] = useReadOnlyContract(ADDRESS, ABI);
+  const [greeting, setGreeting] = React.useState('');
+
+  useEffect(() => {
+    async function exec() {
+      setGreeting(await contract.greet());
+    }
+    if (isReady) {
+      exec();
+    }
+  }, [contract, isReady]);
+
+  return (
+    <VStack>
+      <h3>Greeting: {greeting}</h3>
+    </VStack>
+  );
+};
+
+storiesOf('Hooks/useReadContract', module).add('Default', () => (
+  <Provider
+    network={NETWORKS.rinkeby}
+    readOnlyProviderUrl="https://rinkeby.infura.io/v3/INFURA_ID"
+  >
+    <ReadContract />
   </Provider>
 ));
