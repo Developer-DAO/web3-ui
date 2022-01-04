@@ -16,7 +16,7 @@ export interface Web3ContextType {
   provider?: ethers.providers.Web3Provider | null;
   correctNetwork: boolean;
   network: number;
-  staticProvider?: StaticJsonRpcProvider;
+  readOnlyProvider?: StaticJsonRpcProvider;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(
@@ -78,7 +78,7 @@ export const Provider: React.FC<ProviderProps> = ({
   const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
   const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
-  const staticProvider = useReadOnlyProvider(rpcUrl);
+  const readOnlyProvider = useReadOnlyProvider(rpcUrl);
 
   const connectWallet = React.useCallback(async () => {
     const defaulProviderOptions = {
@@ -180,7 +180,7 @@ export const Provider: React.FC<ProviderProps> = ({
       network,
       chainId,
       correctNetwork,
-      staticProvider
+      readOnlyProvider
     }),
     [
       connectWallet,
@@ -192,7 +192,7 @@ export const Provider: React.FC<ProviderProps> = ({
       network,
       chainId,
       correctNetwork,
-      staticProvider
+      readOnlyProvider
     ]
   );
 

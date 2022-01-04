@@ -23,7 +23,7 @@ export function useWallet() {
     provider,
     correctNetwork,
     network,
-    staticProvider
+    readOnlyProvider
   } = context;
 
   React.useEffect(() => {
@@ -86,6 +86,6 @@ export function useWallet() {
     provider,
     correctNetwork,
     switchToCorrectNetwork,
-    staticProvider
+    readOnlyProvider
   };
 }

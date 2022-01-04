@@ -10,14 +10,14 @@ import { Web3Context } from '..';
  */
 export function useReadOnlyContract(address: string, abi: ContractInterface) {
   const context = useContext(Web3Context);
-  const staticProvider = context?.staticProvider;
+  const readOnlyProvider = context?.readOnlyProvider;
 
   const [contract, setContract] = React.useState<any>();
   const [isReady, setIsReady] = React.useState(false);
 
   useEffect(() => {
-    if (staticProvider) {
-      const contract = new Contract(address, abi, staticProvider);
+    if (readOnlyProvider) {
+      const contract = new Contract(address, abi, readOnlyProvider);
       const contractInterface = Object.values(
         contract.interface.functions
       ).reduce((accumulator, funcFragment) => {
@@ -29,7 +29,7 @@ export function useReadOnlyContract(address: string, abi: ContractInterface) {
       setContract(contractInterface);
       setIsReady(true);
     }
-  }, [address, abi, staticProvider]);
+  }, [address, abi, readOnlyProvider]);
 
   return [contract, isReady];
 }
