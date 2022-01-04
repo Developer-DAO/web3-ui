@@ -13,12 +13,16 @@ const createProvider = async (url: string) => {
  * @param url - The url of the JSON RPC provider
  * @credits scaffold-eth (https://github.com/scaffold-eth/scaffold-eth/blob/master/packages/react-app/src/hooks/useStaticJsonRPC.js)
  */
-export function useReadOnlyProvider(url: string | undefined) {
+export function useReadOnlyProvider(url: string) {
   const [provider, setProvider] = useState<StaticJsonRpcProvider>();
 
   useEffect(() => {
-    async function exec() {
+    async function createAndSetProvider() {
+      if (url === '') {
+        return;
+      }
       if (!url) {
+        console.error('Please pass in a valid RPC url');
         return;
       }
       try {
@@ -28,7 +32,7 @@ export function useReadOnlyProvider(url: string | undefined) {
         console.error(error);
       }
     }
-    exec();
+    createAndSetProvider();
   }, [url]);
 
   return provider;

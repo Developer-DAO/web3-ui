@@ -142,10 +142,10 @@ const {
 
 The `useReadOnlyContract` hook takes in a contract address and an ABI and returns a read-only contract instance. This is especially useful when you want to read data from a function without asking the user to connect their wallet. eg. When you are only 'reading' from a contract and not interacting with it.
 
-In order for this hook to work, you need to pass in a `readOnlyProviderUrl` to the `<Provider />`. eg. `https://rinkeby.infura.io/v3/YOUR_INFURA_ID`
+In order for this hook to work, you need to pass in a `rpcUrl` to the `<Provider />`. eg. `https://rinkeby.infura.io/v3/YOUR_INFURA_ID`
 
 ```tsx
-<Provider network={NETWORKS.rinkeby} readOnlyProviderUrl='https://rinkeby.infura.io/v3/YOUR_INFURA_ID'>
+<Provider network={NETWORKS.rinkeby} rpcUrl='https://rinkeby.infura.io/v3/YOUR_INFURA_ID'>
 ```
 
 ```tsx

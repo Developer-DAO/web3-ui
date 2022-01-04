@@ -51,7 +51,7 @@ export interface ProviderProps {
    * @dev The JSON RPC provider URL you want to use for read only operations. eg. https://mainnet.infura.io/v3/YOUR_INFURA_KEY
    * @type string
    */
-  readOnlyProviderUrl?: string;
+  rpcUrl?: string;
 }
 
 /**
@@ -66,7 +66,7 @@ export const Provider: React.FC<ProviderProps> = ({
   network,
   infuraId,
   extraWalletProviders = [],
-  readOnlyProviderUrl
+  rpcUrl = ''
 }) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
   const [
@@ -78,7 +78,7 @@ export const Provider: React.FC<ProviderProps> = ({
   const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
   const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
-  const staticProvider = useReadOnlyProvider(readOnlyProviderUrl);
+  const staticProvider = useReadOnlyProvider(rpcUrl);
 
   const connectWallet = React.useCallback(async () => {
     const defaulProviderOptions = {
