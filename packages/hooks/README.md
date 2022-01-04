@@ -33,6 +33,8 @@ The following hooks are available:
 - [useContract](#usecontract)
 - [useTransaction](#usetransaction)
 - [useTokenBalance](#usetokenbalance)
+- [useReadOnlyContract](#usereadonlycontract)
+- [useReadOnlyProvider](#usereadonlyprovider)
 
 ---
 
@@ -69,7 +71,7 @@ const {
 
 ### useContract
 
-The `useContract` hook takes the ABI and address of a contract and returns the contract instance.
+The `useContract` hook takes the ABI and address of a contract and returns the contract instance. This hook requires the user to have connected their wallet. If you don't want to force your users to connect their wallet in order to read from a contract, use [`useReadOnlyContract`](#usereadonlycontract) instead.
 
 ```tsx
 import { useContract } from '@web3-ui/hooks';
@@ -132,4 +134,39 @@ const {
   formattedBalance,
   balanceInBigNumber
 } = useTokenBalance('TOKEN_CONTRACT_ADDRESS', 'ACCOUNT_ADDRESS');
+```
+
+---
+
+### useReadOnlyContract
+
+The `useReadOnlyContract` hook takes in a contract address and an ABI and returns a read-only contract instance. This is especially useful when you want to read data from a function without asking the user to connect their wallet. eg. When you are only 'reading' from a contract and not interacting with it.
+
+In order for this hook to work, you need to pass in a `rpcUrl` to the `<Provider />`. eg. `https://rinkeby.infura.io/v3/YOUR_INFURA_ID`
+
+```tsx
+<Provider network={NETWORKS.rinkeby} rpcUrl='https://rinkeby.infura.io/v3/YOUR_INFURA_ID'>
+```
+
+```tsx
+import { useReadOnlyContract } from '@web3-ui/hooks';
+
+const [contract, isReady] = useReadOnlyContract(
+  'CONTRACT_ADDRESS',
+  'CONTRACT_ABI'
+);
+```
+
+---
+
+### useReadOnlyProvider
+
+The `useReadOnlyProvider` takes in a RPC URL (think Infura, Alchemy, etc.) and returns a provider. This provider can be used to read data from the blockchain and from any contract.
+
+```tsx
+import { useReadOnlyProvider } from '@web3-ui/hooks';
+
+const provider = useReadOnlyProvider(
+  'https://rinkeby.infura.io/v3/YOUR_INFURA_ID'
+);
 ```

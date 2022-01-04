@@ -22,7 +22,8 @@ export function useWallet() {
     connected,
     provider,
     correctNetwork,
-    network
+    network,
+    readOnlyProvider
   } = context;
 
   React.useEffect(() => {
@@ -84,6 +85,7 @@ export function useWallet() {
     connected,
     provider,
     correctNetwork,
-    switchToCorrectNetwork
+    switchToCorrectNetwork,
+    readOnlyProvider
   };
 }
