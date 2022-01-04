@@ -42,7 +42,7 @@ export const Address: React.FC<AddressProps> = ({
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
   let [ens, setEns] = useState<string | null | undefined>(null);
-  const provider = rpcURL
+  const provider: ethers.providers.JsonRpcProvider | null = rpcURL
     ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
     : null;
 
@@ -50,7 +50,7 @@ export const Address: React.FC<AddressProps> = ({
     if (value.includes('.eth') || value === '' || value === 'Not connected')
       return;
 
-    async function provide() {
+    async function fetchEns() {
       if (provider && value) {
         try {
           const ensResponse = await provider?.lookupAddress(value);
@@ -61,7 +61,7 @@ export const Address: React.FC<AddressProps> = ({
         }
       }
     }
-    provide();
+    fetchEns();
   }, [value, provider]);
 
   if (shortened && value) {
