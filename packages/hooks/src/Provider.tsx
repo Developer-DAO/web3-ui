@@ -4,7 +4,7 @@ import { ethers } from 'ethers';
 import React from 'react';
 import Web3Modal, { IProviderOptions } from 'web3modal';
 import { StaticJsonRpcProvider } from '@ethersproject/providers';
-import { useStaticProvider } from './hooks';
+import { useReadOnlyProvider } from './hooks';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
@@ -78,7 +78,7 @@ export const Provider: React.FC<ProviderProps> = ({
   const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
   const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
-  const staticProvider = useStaticProvider(readOnlyProviderUrl);
+  const staticProvider = useReadOnlyProvider(readOnlyProviderUrl);
 
   const connectWallet = React.useCallback(async () => {
     const defaulProviderOptions = {

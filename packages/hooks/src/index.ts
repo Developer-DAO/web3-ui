@@ -3,7 +3,7 @@ export {
   useContract,
   useTokenBalance,
   useTransaction,
-  useStaticProvider,
+  useReadOnlyProvider,
   useReadOnlyContract
 } from './hooks';
 export { Provider, Web3Context } from './Provider';

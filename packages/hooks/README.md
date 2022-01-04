@@ -34,7 +34,7 @@ The following hooks are available:
 - [useTransaction](#usetransaction)
 - [useTokenBalance](#usetokenbalance)
 - [useReadOnlyContract](#usereadonlycontract)
-- [useStaticProvider](#usestaticprovider)
+- [useReadOnlyProvider](#usereadonlyprovider)
 
 ---
 
@@ -159,14 +159,14 @@ const [contract, isReady] = useReadOnlyContract(
 
 ---
 
-### useStaticProvider
+### useReadOnlyProvider
 
-The `useStaticProvider` takes in a RPC URL (think Infura, Alchemy, etc.) and returns a provider. This provider can be used to read data from the blockchain and from any contract.
+The `useReadOnlyProvider` takes in a RPC URL (think Infura, Alchemy, etc.) and returns a provider. This provider can be used to read data from the blockchain and from any contract.
 
 ```tsx
-import { useStaticProvider } from '@web3-ui/hooks';
+import { useReadOnlyProvider } from '@web3-ui/hooks';
 
-const provider = useStaticProvider(
+const provider = useReadOnlyProvider(
   'https://rinkeby.infura.io/v3/YOUR_INFURA_ID'
 );
 ```
