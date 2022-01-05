@@ -167,7 +167,7 @@ const ReadContract = () => {
 storiesOf('Hooks/useReadContract', module).add('Default', () => (
   <Provider
     network={NETWORKS.rinkeby}
-    readOnlyProviderUrl="https://rinkeby.infura.io/v3/INFURA_ID"
+    rpcUrl="https://rinkeby.infura.io/v3/21bc321f21a54c528dc084f5ed7f8df7"
   >
     <ReadContract />
   </Provider>

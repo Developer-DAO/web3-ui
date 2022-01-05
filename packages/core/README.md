@@ -33,6 +33,7 @@ This is the list of components the package currently provides:
 
 - [Provider](#provider)
 - [ConnectWallet](#connectwallet)
+- [TokenGate](#tokengate)
 
 ---
 
@@ -48,7 +49,7 @@ See [Getting Started](#getting-started) for an example.
 
 ### ConnectWallet
 
-The `ConnectWallet` is a `Button` based component with the following behaviour:
+`ConnectWallet` is a `Button` based component with the following behaviour:
 
 When wallet is connected,
 
@@ -65,6 +66,28 @@ When wallet is not connected,
 import { ConnectWallet } from '@web3-ui/core';
 
 <ConnectWallet />;
+```
+
+---
+
+### TokenGate
+
+`TokenGate` lets you conditionally render some content depending on whether the current connected user has enough amount of a specific token. The component only supports ERC20 tokens at the moment but support for other standards is coming soon.
+
+#### Usage
+
+```tsx
+import { TokenGate } from '@web3-ui/core';
+
+<TokenGate
+  tokenContractAddress="0x08149745590e9025b52b6801e9dd3E752e60F3A2"
+  requiredQuantity={+ethers.utils.parseEther('1')} // the component expects the amount in wei.
+  deniedContent={
+    <p>This message will show up if the user doesn't have enough tokens.</p>
+  }
+>
+  <h1>This message will be visible if the user has enough tokens.</h1>
+</TokenGate>;
 ```
 
 ---
