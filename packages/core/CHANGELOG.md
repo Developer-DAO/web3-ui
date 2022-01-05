@@ -1,5 +1,11 @@
 # @web3-ui/core
 
+## 0.3.0
+
+### Minor Changes
+
+- [#214](https://github.com/Developer-DAO/web3-ui/pull/214) [`e204d49`](https://github.com/Developer-DAO/web3-ui/commit/e204d49bd8ff8c29015b63d33df44fab0b302c84) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The core package now has a TokenGate that lets you conditionally render some content depending on whether a user owns some amount of a token or not.
+
 ## 0.2.2
 
 ### Patch Changes
