@@ -35,6 +35,7 @@ The following hooks are available:
 - [useTokenBalance](#usetokenbalance)
 - [useReadOnlyContract](#usereadonlycontract)
 - [useReadOnlyProvider](#usereadonlyprovider)
+- [usePoller](#usepoller)
 
 ---
 
@@ -169,4 +170,16 @@ import { useReadOnlyProvider } from '@web3-ui/hooks';
 const provider = useReadOnlyProvider(
   'https://rinkeby.infura.io/v3/YOUR_INFURA_ID'
 );
+```
+
+---
+
+### usePoller
+
+The `usePoller` hook takes in a function and a delay in milliseconds. It will call the function in every delay.
+
+```tsx
+import { usePoller } from '@web3-ui/hooks';
+
+usePoller(() => console.log(contract.balanceOf(account)), 1000); // will log the balance every second
 ```
