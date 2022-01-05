@@ -1,5 +1,13 @@
 # @web3-ui/hooks
 
+## 0.8.0
+
+### Minor Changes
+
+- [#168](https://github.com/Developer-DAO/web3-ui/pull/168) [`000c2f8`](https://github.com/Developer-DAO/web3-ui/commit/000c2f8a8f15e963d090f305f7d6e6073ec41e4c) Thanks [@Ibby-devv](https://github.com/Ibby-devv)! - A new hook usePoller has been added. This hook can be used to call a function at a certain interval repeatedly
+
+* [#205](https://github.com/Developer-DAO/web3-ui/pull/205) [`674078c`](https://github.com/Developer-DAO/web3-ui/commit/674078c28ea2b32229b119dd2f01bfa9a6b9e8af) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The `hooks` package now has two new hooks: `useReadOnlyProvider` which gives you a read-only provider and `useReadOnlyContract` which lets you interact with a smart contract without needing a signer.
+
 ## 0.7.1
 
 ### Patch Changes
