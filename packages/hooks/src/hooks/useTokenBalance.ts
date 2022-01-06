@@ -9,6 +9,20 @@ interface Props {
   accountAddress: string;
 }
 
+/**
+ * @dev Hook to use account token balance
+ * @param {string} tokenAddress Address of the token
+ * @param {string} accountAddress Address of the account
+ * @returns {
+ * balance {string}:  balance in Wei converted to string.
+ * loading {boolean}: True until transaction is undergoing, false when error is caught.
+ * error {object}: Contains the error object if the transaction failed, null otherwise.
+ * decimals {number}: decimal digits of balance.
+ * formattedBalance {number}: Balance in ethers eg. 0.01 ETH, 20 GTC, etc.
+ * balanceInBigNumber {number}: Balance
+ * }
+ */
+
 export function useTokenBalance({ tokenAddress, accountAddress }: Props) {
   const context = useContext(Web3Context);
   const provider = context?.provider;
@@ -46,6 +60,6 @@ export function useTokenBalance({ tokenAddress, accountAddress }: Props) {
     error,
     decimals,
     formattedBalance: balance && ethers.utils.formatUnits(balance, decimals), // The balance in ethers eg. 0.01 ETH, 20 GTC, etc.
-    balanceInBigNumber: balance,
+    balanceInBigNumber: balance
   };
 }
