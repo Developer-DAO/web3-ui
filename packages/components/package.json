@@ -37,6 +37,7 @@
   "module": "dist/web3-ui-components.esm.js",
   "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.16.7",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
