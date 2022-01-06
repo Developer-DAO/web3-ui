@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
