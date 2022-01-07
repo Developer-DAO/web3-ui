@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -45,7 +45,7 @@
     "@emotion/styled": "^11",
     "framer-motion": "^4",
     "@web3-ui/components": "^0.4.0",
-    "@web3-ui/hooks": "^0.8.0"
+    "@web3-ui/hooks": "^0.8.1"
   },
   "peerDependencies": {
     "react": "*",
@@ -60,7 +60,7 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.8.0",
+    "@web3-ui/hooks": "^0.8.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
     "identity-obj-proxy": "^3.0.0",

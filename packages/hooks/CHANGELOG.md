@@ -1,5 +1,11 @@
 # @web3-ui/hooks
 
+## 0.8.1
+
+### Patch Changes
+
+- [#223](https://github.com/Developer-DAO/web3-ui/pull/223) [`d52e750`](https://github.com/Developer-DAO/web3-ui/commit/d52e75078af16aa851c834624e5130a741d66556) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The TokenGate component in the core package now supports ERC721 tokens. The hooks package now also exports the ERC721 ABI
+
 ## 0.8.0
 
 ### Minor Changes
