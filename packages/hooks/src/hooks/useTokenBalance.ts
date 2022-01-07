@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * @dev Hook to get the token balance of the account
+ * Gets the token balance of the provided account.
  * @param tokenAddress Address of the token
  * @param accountAddress Address of the account
  * @returns {
