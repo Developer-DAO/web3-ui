@@ -3,12 +3,12 @@ import { Web3Context } from '../Provider';
 import { Contract } from 'ethers';
 
 /**
- * @dev Hook to use a contract
- * @param {string} address contract address
- * @param {string} accountAddress contract ABI
+ * @dev Hook to get the contract instance from ABI and contract address
+ * @param address contract address
+ * @param abi contract ABI
  * @returns {
- * contract {string}: Current contract in use
- * isReady {boolean}: True when contract is set, false otherwise.
+ * contract: An instance of the current contract
+ * isReady: True when the contract is ready to use, false otherwise.
  * }
  */
 
