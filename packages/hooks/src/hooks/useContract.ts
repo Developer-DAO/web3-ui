@@ -7,12 +7,15 @@ import { Contract } from 'ethers';
  * @param address contract address
  * @param abi contract ABI
  * @returns {
- * contract: An instance of the current contract
- * isReady: True when the contract is ready to use, false otherwise.
+ *   contract: An instance of the current contract
+ *   isReady: True when the contract is ready to use, false otherwise.
  * }
  */
 
-export function useContract(address: string, abi) {
+export function useContract(
+  address: string, 
+  abi
+): [contract: any, isReady: boolean] {
   const context = React.useContext(Web3Context);
   const [contract, setContract] = React.useState({});
   const [isReady, setIsReady] = React.useState(false);
