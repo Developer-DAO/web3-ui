@@ -72,7 +72,7 @@ import { ConnectWallet } from '@web3-ui/core';
 
 ### TokenGate
 
-`TokenGate` lets you conditionally render some content depending on whether the current connected user has enough amount of a specific token. The component only supports ERC20 tokens at the moment but support for other standards is coming soon.
+`TokenGate` lets you conditionally render some content depending on whether the current connected user has enough amount of a specific token. The component only supports ERC20 and ERC721 (NFTs) tokens at the moment but support for other standards is coming soon.
 
 #### Usage
 
@@ -85,6 +85,7 @@ import { TokenGate } from '@web3-ui/core';
   deniedContent={
     <p>This message will show up if the user doesn't have enough tokens.</p>
   }
+  tokenType="ERC721" // optional, defaults to ERC20
 >
   <h1>This message will be visible if the user has enough tokens.</h1>
 </TokenGate>;
