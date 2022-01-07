@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/hooks",
   "license": "MIT",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -25,6 +25,9 @@
     "type": "git",
     "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
