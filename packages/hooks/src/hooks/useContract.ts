@@ -3,7 +3,7 @@ import { Web3Context } from '../Provider';
 import { Contract } from 'ethers';
 
 /**
- * @dev Hook to get the contract instance from ABI and contract address
+ * Gets an instance of a contract from its ABI and address.
  * @param address contract address
  * @param abi contract ABI
  * @returns {
