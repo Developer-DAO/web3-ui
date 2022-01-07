@@ -12,7 +12,7 @@ interface Props {
 /**
  * @dev Hook to get the token balance of the account
  * @param tokenAddress Address of the token
- * param accountAddress Address of the account
+ * @param accountAddress Address of the account
  * @returns {
  * balance: gives account balance for the token in Wei as a string
  * loading: True until the transaction is executing, false otherwise
