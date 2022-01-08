@@ -12,7 +12,10 @@ export type ContractInstance<T extends Contract> = T | null;
  * @description
  * The return type of the `useContract` hook
  */
-export type UseContractHook<T extends Contract> = [T | null, boolean];
+export type UseContractHook<T extends Contract> = [
+  ContractInstance<T> | null,
+  boolean
+];
 
 export function useContract<T extends Contract>(
   address: string,
