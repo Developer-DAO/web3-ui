@@ -30,7 +30,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE"
@@ -39,21 +38,20 @@
   "module": "dist/web3-ui-core.esm.js",
   "types": "dist/web3-ui-core.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.16.7",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "framer-motion": "^4",
     "@web3-ui/components": "^0.4.0",
-    "@web3-ui/hooks": "^0.8.1"
+    "@web3-ui/hooks": "^0.8.1",
+    "framer-motion": "^4"
   },
   "peerDependencies": {
+    "ethers": "^5.5.1",
     "react": "*",
-    "react-dom": "*",
-    "ethers": "^5.5.1"
+    "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
     "@storybook/react": "^6.3.12",
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
