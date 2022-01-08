@@ -25,8 +25,10 @@
     "type": "git",
     "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE"
@@ -35,7 +37,7 @@
   "module": "dist/web3-ui-components.esm.js",
   "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.16.7",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
@@ -48,13 +50,12 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
     "@storybook/react": "^6.3.12",
     "@types/jest": "^26.0.15",
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.7.0",
+    "@web3-ui/hooks": "^0.8.0",
     "babel-loader": "^8.2.1",
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.0",

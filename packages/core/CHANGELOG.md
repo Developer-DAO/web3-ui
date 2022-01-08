@@ -1,5 +1,29 @@
 # @web3-ui/core
 
+## 0.4.0
+
+### Minor Changes
+
+- [#223](https://github.com/Developer-DAO/web3-ui/pull/223) [`d52e750`](https://github.com/Developer-DAO/web3-ui/commit/d52e75078af16aa851c834624e5130a741d66556) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The TokenGate component in the core package now supports ERC721 tokens. The hooks package now also exports the ERC721 ABI
+
+### Patch Changes
+
+- Updated dependencies [[`d52e750`](https://github.com/Developer-DAO/web3-ui/commit/d52e75078af16aa851c834624e5130a741d66556)]:
+  - @web3-ui/hooks@0.8.1
+
+## 0.3.0
+
+### Minor Changes
+
+- [#214](https://github.com/Developer-DAO/web3-ui/pull/214) [`e204d49`](https://github.com/Developer-DAO/web3-ui/commit/e204d49bd8ff8c29015b63d33df44fab0b302c84) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The core package now has a TokenGate that lets you conditionally render some content depending on whether a user owns some amount of a token or not.
+
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [[`000c2f8`](https://github.com/Developer-DAO/web3-ui/commit/000c2f8a8f15e963d090f305f7d6e6073ec41e4c), [`674078c`](https://github.com/Developer-DAO/web3-ui/commit/674078c28ea2b32229b119dd2f01bfa9a6b9e8af)]:
+  - @web3-ui/hooks@0.8.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -3,6 +3,8 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import { ethers } from 'ethers';
 import React from 'react';
 import Web3Modal, { IProviderOptions } from 'web3modal';
+import { StaticJsonRpcProvider } from '@ethersproject/providers';
+import { useReadOnlyProvider } from './hooks';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
@@ -14,6 +16,7 @@ export interface Web3ContextType {
   provider?: ethers.providers.Web3Provider | null;
   correctNetwork: boolean;
   network: number;
+  readOnlyProvider?: StaticJsonRpcProvider;
 }
 
 export const Web3Context = React.createContext<Web3ContextType | undefined>(
@@ -44,6 +47,11 @@ export interface ProviderProps {
       ]
    */
   extraWalletProviders?: [IProviderOptions];
+  /**
+   * @dev The JSON RPC provider URL you want to use for read only operations. eg. https://mainnet.infura.io/v3/YOUR_INFURA_KEY
+   * @type string
+   */
+  rpcUrl?: string;
 }
 
 /**
@@ -57,7 +65,8 @@ export const Provider: React.FC<ProviderProps> = ({
   children,
   network,
   infuraId,
-  extraWalletProviders = []
+  extraWalletProviders = [],
+  rpcUrl = ''
 }) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
   const [
@@ -69,6 +78,7 @@ export const Provider: React.FC<ProviderProps> = ({
   const [chainId, setChainId] = React.useState<number | null>();
   const [connected, setConnected] = React.useState<boolean>(false);
   const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
+  const readOnlyProvider = useReadOnlyProvider(rpcUrl);
 
   const connectWallet = React.useCallback(async () => {
     const defaulProviderOptions = {
@@ -78,14 +88,14 @@ export const Provider: React.FC<ProviderProps> = ({
           bridge: 'https://polygon.bridge.walletconnect.org',
           infuraId,
           rpc: {
-            1: `https://eth-mainnet.alchemyapi.io/v2/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+            1: `https://mainnet.infura.io/v3/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+            4: `https://rinkeby.infura.io/v3/${infuraId}`,
             42: `https://kovan.infura.io/v3/${infuraId}`,
             100: 'https://dai.poa.network' // xDai
           }
         }
       }
     };
-
     const web3Modal = new Web3Modal({
       providerOptions: Object.assign(
         defaulProviderOptions,
@@ -169,7 +179,8 @@ export const Provider: React.FC<ProviderProps> = ({
       provider,
       network,
       chainId,
-      correctNetwork
+      correctNetwork,
+      readOnlyProvider
     }),
     [
       connectWallet,
@@ -180,7 +191,8 @@ export const Provider: React.FC<ProviderProps> = ({
       provider,
       network,
       chainId,
-      correctNetwork
+      correctNetwork,
+      readOnlyProvider
     ]
   );
 

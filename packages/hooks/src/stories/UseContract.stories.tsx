@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/react';
-import React from 'react';
-import { Provider, useWallet, useContract, NETWORKS } from '..';
+import React, { useEffect } from 'react';
+import { Provider, useWallet, useContract, NETWORKS, usePoller } from '..';
 import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
+import { useReadOnlyContract } from '../hooks/useReadOnlyContract';
 
 const ADDRESS = '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135'; // Rinkeby
 const ABI = [
@@ -66,6 +67,15 @@ const Default = () => {
     toAddress: '',
     amount: '0'
   });
+
+  usePoller(async () => {
+    try {
+      const greeting = await contract.greet();
+      console.log(greeting); // logs the greeting every second
+    } catch (error) {
+      console.log(error);
+    }
+  }, 1000);
 
   const handleGreet = async () => alert(await contract.greet());
   const handleChangeState = (stateName: string) => ({ target: { value } }) => {
@@ -131,5 +141,34 @@ const Default = () => {
 storiesOf('Hooks/useContract', module).add('Default', () => (
   <Provider network={NETWORKS.rinkeby}>
     <Default />
+  </Provider>
+));
+
+const ReadContract = () => {
+  const [contract, isReady] = useReadOnlyContract(ADDRESS, ABI);
+  const [greeting, setGreeting] = React.useState('');
+
+  useEffect(() => {
+    async function exec() {
+      setGreeting(await contract.greet());
+    }
+    if (isReady) {
+      exec();
+    }
+  }, [contract, isReady]);
+
+  return (
+    <VStack>
+      <h3>Greeting: {greeting}</h3>
+    </VStack>
+  );
+};
+
+storiesOf('Hooks/useReadContract', module).add('Default', () => (
+  <Provider
+    network={NETWORKS.rinkeby}
+    rpcUrl="https://rinkeby.infura.io/v3/21bc321f21a54c528dc084f5ed7f8df7"
+  >
+    <ReadContract />
   </Provider>
 ));

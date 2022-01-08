@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "private": false,
   "engines": {
     "node": ">=16.0.0",
@@ -26,8 +26,10 @@
     "type": "git",
     "url": "git+https://github.com/Developer-DAO/web3-ui/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "preconstruct build",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE"
@@ -36,30 +38,29 @@
   "module": "dist/web3-ui-core.esm.js",
   "types": "dist/web3-ui-core.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.16.7",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "framer-motion": "^4",
     "@web3-ui/components": "^0.4.0",
-    "@web3-ui/hooks": "^0.7.0"
+    "@web3-ui/hooks": "^0.8.1",
+    "framer-motion": "^4"
   },
   "peerDependencies": {
+    "ethers": "^5.5.1",
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
     "@storybook/react": "^6.3.12",
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^16.9.10",
-    "@web3-ui/hooks": "^0.7.0",
+    "@web3-ui/hooks": "^0.8.1",
     "babel-loader": "^8.2.1",
     "classnames": "^2.2.6",
-    "ethers": "^5.5.1",
     "identity-obj-proxy": "^3.0.0",
     "prettier": "^2.2.0",
     "react": "^17.0.2",
