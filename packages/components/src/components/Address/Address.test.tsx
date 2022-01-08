@@ -4,7 +4,7 @@ import {
   render,
   fireEvent,
   waitFor,
-  getByTestId
+  getByTestId,
 } from '@testing-library/react';
 
 import { Address } from './Address';
@@ -12,13 +12,13 @@ import { Address } from './Address';
 /**
  * We need to mock the Clipboard API by creating a global navigator object.
  *
- * We're assigning an empty function to `writeText`
- * as we're only testing if it has been called with specific argument.
+ * We're assigning a mocked jest function to `writeText` as we're only testing
+ * if it has been called with specific argument.
  */
 Object.assign(navigator, {
   clipboard: {
-    writeText: () => {}
-  }
+    writeText: jest.fn(),
+  },
 });
 
 describe('Address', () => {
@@ -45,8 +45,6 @@ describe('Address copiable prop true', () => {
     const { container } = render(<Address copiable value="taylorswift.eth" />);
     const addressContainer = getByTestId(container, 'address-container');
 
-    jest.spyOn(navigator.clipboard, 'writeText');
-
     fireEvent.click(addressContainer);
 
     await waitFor(() => {
@@ -60,6 +58,6 @@ describe('Address copiable prop true', () => {
     const { container } = render(
       <Address value="0x00000000000000" shortened />
     );
-    expect(container.textContent).toContain('0x00...0000');
+    expect(container).toHaveTextContent('0x00...0000');
   });
 });

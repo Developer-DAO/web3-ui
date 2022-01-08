@@ -6,5 +6,5 @@ export {
   useWallet,
   useTokenBalance,
   useTransaction,
-  useContract
+  useContract,
 } from '@web3-ui/hooks';

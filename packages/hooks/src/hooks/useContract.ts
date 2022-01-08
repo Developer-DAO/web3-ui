@@ -18,7 +18,7 @@ export function useContract(address: string, abi) {
       ).reduce((accumulator, funcFragment) => {
         return {
           ...accumulator,
-          [funcFragment.name]: newContract[funcFragment.name]
+          [funcFragment.name]: newContract[funcFragment.name],
         };
       }, {});
       setContract(contractInterface);

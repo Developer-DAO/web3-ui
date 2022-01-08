@@ -5,7 +5,7 @@ import Authereum from 'authereum';
 import Portis from '@portis/web3';
 
 export default {
-  title: 'Hooks/useWallet'
+  title: 'Hooks/useWallet',
 };
 const portisDappId = '512893f6-6436-44c3-b0dc-6caccab984bb';
 
@@ -16,7 +16,7 @@ const DefaultUsingProvider = () => {
     disconnectWallet,
     connected,
     correctNetwork,
-    switchToCorrectNetwork
+    switchToCorrectNetwork,
   } = useWallet();
 
   useEffect(() => {
@@ -55,9 +55,9 @@ export const WithAuthereumProvider = () => (
     extraWalletProviders={[
       {
         authereum: {
-          package: Authereum
-        }
-      }
+          package: Authereum,
+        },
+      },
     ]}
   >
     <DefaultUsingProvider />
@@ -71,17 +71,16 @@ export const WithPortisProvider = () => (
       {
         portis: {
           display: {
-            logo:
-              'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
+            logo: 'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
             name: 'Portis',
-            description: 'Connect to Portis App'
+            description: 'Connect to Portis App',
           },
           package: Portis,
           options: {
-            id: portisDappId
-          }
-        }
-      }
+            id: portisDappId,
+          },
+        },
+      },
     ]}
   >
     <DefaultUsingProvider />
@@ -95,20 +94,19 @@ export const PortisAuthereumProvider = () => (
       {
         portis: {
           display: {
-            logo:
-              'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
+            logo: 'https://user-images.githubusercontent.com/9419140/128913641-d025bc0c-e059-42de-a57b-422f196867ce.png',
             name: 'Portis',
-            description: 'Connect to Portis App'
+            description: 'Connect to Portis App',
           },
           package: Portis,
           options: {
-            id: portisDappId
-          }
+            id: portisDappId,
+          },
         },
         authereum: {
-          package: Authereum
-        }
-      }
+          package: Authereum,
+        },
+      },
     ]}
   >
     <DefaultUsingProvider />

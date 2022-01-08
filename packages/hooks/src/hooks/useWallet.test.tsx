@@ -43,10 +43,10 @@ describe('useWallet tests', () => {
     // those are checked at the end
     windowSpy.mockImplementation(() => ({
       ethereum: {
-        request: arg => {
+        request: (arg) => {
           requestArgs = arg;
-        }
-      }
+        },
+      },
     }));
 
     result.current.switchToCorrectNetwork();
@@ -54,7 +54,7 @@ describe('useWallet tests', () => {
     expect(requestArgs).toStrictEqual({
       method: 'wallet_switchEthereumChain',
       // this passes (for high number networks)
-      params: [{ chainId: `0x${testNetwork}` }]
+      params: [{ chainId: `0x${testNetwork}` }],
       // The test should probably look like this
       // if we are in fact converting network numbers to hex
       // but fails with the current implementation

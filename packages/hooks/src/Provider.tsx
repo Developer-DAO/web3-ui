@@ -66,13 +66,11 @@ export const Provider: React.FC<ProviderProps> = ({
   network,
   infuraId,
   extraWalletProviders = [],
-  rpcUrl = ''
+  rpcUrl = '',
 }) => {
   const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
-  const [
-    provider,
-    setProvider
-  ] = React.useState<ethers.providers.Web3Provider | null>();
+  const [provider, setProvider] =
+    React.useState<ethers.providers.Web3Provider | null>();
   const [userAddress, setUserAddress] = React.useState<null | string>();
   const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
   const [chainId, setChainId] = React.useState<number | null>();
@@ -91,16 +89,16 @@ export const Provider: React.FC<ProviderProps> = ({
             1: `https://mainnet.infura.io/v3/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
             4: `https://rinkeby.infura.io/v3/${infuraId}`,
             42: `https://kovan.infura.io/v3/${infuraId}`,
-            100: 'https://dai.poa.network' // xDai
-          }
-        }
-      }
+            100: 'https://dai.poa.network', // xDai
+          },
+        },
+      },
     };
     const web3Modal = new Web3Modal({
       providerOptions: Object.assign(
         defaulProviderOptions,
         ...extraWalletProviders
-      )
+      ),
     });
     setWeb3Modal(web3Modal);
     const connection = await web3Modal.connect();
@@ -108,7 +106,7 @@ export const Provider: React.FC<ProviderProps> = ({
     setProvider(provider);
     const chainId = await provider
       .getNetwork()
-      .then(network => network.chainId);
+      .then((network) => network.chainId);
     setChainId(chainId);
     setCorrectNetwork(chainId === network);
     const signer = provider.getSigner();
@@ -139,7 +137,7 @@ export const Provider: React.FC<ProviderProps> = ({
       setProvider(provider);
       const chainId = await provider
         .getNetwork()
-        .then(network => network.chainId);
+        .then((network) => network.chainId);
       setChainId(chainId);
       setCorrectNetwork(chainId === network);
       const signer = provider.getSigner();
@@ -159,7 +157,7 @@ export const Provider: React.FC<ProviderProps> = ({
     network,
     infuraId,
     ethers,
-    correctNetwork
+    correctNetwork,
   ]);
 
   const disconnectWallet = React.useCallback(() => {
@@ -180,7 +178,7 @@ export const Provider: React.FC<ProviderProps> = ({
       network,
       chainId,
       correctNetwork,
-      readOnlyProvider
+      readOnlyProvider,
     }),
     [
       connectWallet,
@@ -192,7 +190,7 @@ export const Provider: React.FC<ProviderProps> = ({
       network,
       chainId,
       correctNetwork,
-      readOnlyProvider
+      readOnlyProvider,
     ]
   );
 
