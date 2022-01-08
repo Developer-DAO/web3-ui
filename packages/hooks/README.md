@@ -93,13 +93,14 @@ A generic type argument can be passed down to the hook to create the type defini
 Install [typechain](https://www.npmjs.com/package/typechain)
 
 ```bash
-yarn add typechain --dev # or `npm i -D typechain`
+yarn add typechain @typechain/ethers-v5 --dev # or `npm i -D typechain`
 ```
 
-Add a script to your `package.json` file
+Add a "typechain" script to your `package.json` file as well as a "postinstall" script that executes the script after installing dependencies.
 
 ```json
 "scripts": {
+    "postinstall": "yarn typechain",
     "typechain": "typechain --target=ethers-v5 <ABI_DIRECTORY_PATH> --out-dir=<OUTPUT_DIRECTORY_PATH>",
 }
 ```
@@ -112,6 +113,7 @@ For an actual example check below,
 
 ```json
 "scripts": {
+    "postinstall": "yarn typechain",
     "typechain": "typechain --target=ethers-v5 src/abis/**/*.json --out-dir=src/types/contracts",
 }
 ```
@@ -130,19 +132,29 @@ yarn typechain # or `npm run typechain`
 Example usage in utilizing the generic type argument for `useContract` hook
 
 ```tsx
+import React from 'react';
 import { useContract } from '@web3-ui/hooks';
 import { ERC20Token } from 'types/contracts/ERC20Token';
 import ERC20TokenABI from 'abis/ERC20Token/ERC20Token.json';
 
-const [contract, isReady] = useContract<ERC20Token>(
-  'CONTRACT_ADDRESS',
-  ERC20TokenABI
-);
+function App() {
+  const [contract, isReady] = useContract<ERC20Token>(
+    'CONTRACT_ADDRESS',
+    ERC20TokenABI
+  );
 
-// check that the contract has been loaded
-if (isReady) {
-  await contract.balanceOf('0x...');
+  async function checkBalance() {
+    const response = await contract.balanceOf('0x...');
+
+    console.log('checkBalance', response);
+  }
+
+  return (
+    <>{isReady ? <button onClick={checkBalance}></button> : 'Connect Wallet'}</>
+  );
 }
+
+export default App;
 ```
 
 ---
