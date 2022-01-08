@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
-
-import { NFTGallery } from '@web3-ui/components';
-import { Stack, Input, Button, Heading, Text } from '@chakra-ui/react';
+import {
+  Container,
+  Stack,
+  Input,
+  Button,
+  Heading,
+  Text
+} from '@chakra-ui/react';
 import { useWallet, ConnectWallet } from '@web3-ui/core';
-import { Container } from '@chakra-ui/react';
+import { NFTGallery } from '@web3-ui/components';
+import { useContract } from '@web3-ui/hooks';
+import { Greeter } from '../types/contracts';
+import GreeterABI from '../abis/Greeter.json';
+
 export default function Home() {
   const [address, setAddress] = useState('');
   const [nftGallery, setNftGallery] = useState(null);
@@ -13,16 +22,43 @@ export default function Home() {
     connected,
     provider
   } = useWallet();
+  const [greeterContract, isReady] = useContract<Greeter>(
+    // Rinkeby
+    '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135',
+    GreeterABI
+  );
 
   useEffect(() => {
     console.log('correctNetwork', correctNetwork);
   }, [correctNetwork]);
+
+  async function setGreeting() {
+    console.log(greeterContract);
+
+    const response = await greeterContract.setGreeting('Hello World');
+
+    console.log('setGreeting', response);
+  }
+
+  async function greet() {
+    const response = await greeterContract.greet();
+
+    console.log('greet', response);
+  }
 
   return (
     <Container>
       <ConnectWallet />
       {!correctNetwork && (
         <Button onClick={switchToCorrectNetwork}>Switch to Mainnet.</Button>
+      )}
+      {isReady ? (
+        <Stack my={5}>
+          <Button onClick={setGreeting}>Set Greeting</Button>
+          <Button onClick={greet}>Greet</Button>
+        </Stack>
+      ) : (
+        <> </>
       )}
       <Stack p={3}>
         <Heading>Demo</Heading>
