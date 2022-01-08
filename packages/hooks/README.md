@@ -29,16 +29,13 @@ function MyApp({ Component, pageProps }) {
 
 The following hooks are available:
 
-- [@web3-ui/hooks](#web3-uihooks)
-  - [Getting started](#getting-started)
-  - [Hooks](#hooks)
-    - [useWallet](#usewallet)
-    - [useContract](#usecontract)
-    - [useTransaction](#usetransaction)
-    - [useTokenBalance](#usetokenbalance)
-    - [useReadOnlyContract](#usereadonlycontract)
-    - [useReadOnlyProvider](#usereadonlyprovider)
-    - [usePoller](#usepoller)
+- [useWallet](#usewallet)
+- [useContract](#usecontract)
+- [useTransaction](#usetransaction)
+- [useTokenBalance](#usetokenbalance)
+- [useReadOnlyContract](#usereadonlycontract)
+- [useReadOnlyProvider](#usereadonlyprovider)
+- [usePoller](#usepoller)
 
 ---
 
