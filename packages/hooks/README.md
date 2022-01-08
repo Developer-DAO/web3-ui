@@ -90,7 +90,7 @@ A generic type argument can be passed down to the hook to create the type defini
 Install [typechain](https://www.npmjs.com/package/typechain)
 
 ```bash
-yarn add typechain @typechain/ethers-v5 --dev # or `npm i -D typechain`
+yarn add typechain @typechain/ethers-v5 --dev # or `npm i -D typechain @typechain/ethers-v5`
 ```
 
 Add a "typechain" script to your `package.json` file as well as a "postinstall" script that executes the script after installing dependencies.
