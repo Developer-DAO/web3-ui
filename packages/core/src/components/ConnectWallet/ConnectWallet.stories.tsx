@@ -7,12 +7,12 @@ export default {
   component: ConnectWallet,
   title: 'Core/ConnectWallet',
   decorators: [
-    Story => (
+    (Story) => (
       <Provider network={NETWORKS.rinkeby}>
         <Story />
       </Provider>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Default = () => <ConnectWallet />;

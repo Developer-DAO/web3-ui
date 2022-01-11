@@ -9,7 +9,7 @@ export default {
   component: TokenGate,
   title: 'Core/TokenGate',
   decorators: [
-    Story => {
+    (Story) => {
       return (
         <Provider
           network={NETWORKS.mainnet}
@@ -19,8 +19,8 @@ export default {
           <Story />
         </Provider>
       );
-    }
-  ]
+    },
+  ],
 };
 
 export const ERC20 = () => {

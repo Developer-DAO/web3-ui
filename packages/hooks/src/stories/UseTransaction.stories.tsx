@@ -1,18 +1,17 @@
 import {
   Button,
-  Text,
   VStack,
   Input,
   FormControl,
   FormLabel,
-  FormErrorMessage
+  FormErrorMessage,
 } from '@chakra-ui/react';
 import React from 'react';
 import { NETWORKS, Provider, useWallet, useContract } from '..';
 import { useTransaction } from '../hooks';
 
 export default {
-  title: 'Hooks/useTransaction'
+  title: 'Hooks/useTransaction',
 };
 
 const ADDRESS = '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135'; // Rinkeby
@@ -22,11 +21,11 @@ const ABI = [
       {
         internalType: 'string',
         name: '_greeting',
-        type: 'string'
-      }
+        type: 'string',
+      },
     ],
     stateMutability: 'nonpayable',
-    type: 'constructor'
+    type: 'constructor',
   },
   {
     inputs: [],
@@ -35,52 +34,52 @@ const ABI = [
       {
         internalType: 'string',
         name: '',
-        type: 'string'
-      }
+        type: 'string',
+      },
     ],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
       {
         internalType: 'string',
         name: '_greeting',
-        type: 'string'
-      }
+        type: 'string',
+      },
     ],
     name: 'setGreeting',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
       {
         internalType: 'address payable',
         name: '_to',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'transferTo',
     outputs: [],
     stateMutability: 'payable',
-    type: 'function'
-  }
+    type: 'function',
+  },
 ];
 
 const UsingUseContract = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const [contract, _] = useContract(ADDRESS, ABI);
+  const [contract] = useContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
   const greet = async () => {
-    // @ts-expect-error
+    // @ts-expect-error untyped contract
     const greeting = await contract.greet();
     alert(greeting);
   };
 
-  // @ts-expect-error
+  // @ts-expect-error untyped contract
   const [setGreeting, loading, error] = useTransaction(contract.setGreeting);
 
   if (connected) {
@@ -95,7 +94,7 @@ const UsingUseContract = () => {
               id="setGreeting"
               isDisabled={loading}
               value={value}
-              onChange={e => setValue(e.target.value)}
+              onChange={(e) => setValue(e.target.value)}
             />
             <Button
               type="submit"

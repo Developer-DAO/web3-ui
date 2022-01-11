@@ -35,7 +35,7 @@ export const TokenGate = ({
   tokenContractAddress,
   requiredQuantity = +ethers.utils.parseEther('1'),
   deniedContent = null,
-  tokenType = 'ERC20'
+  tokenType = 'ERC20',
 }: TokenGateProps) => {
   const contractAbi = tokenType === 'ERC20' ? ERC20ABI : ERC721ABI;
   const { connection } = useWallet();

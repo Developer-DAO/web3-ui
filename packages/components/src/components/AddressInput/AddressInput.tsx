@@ -3,7 +3,7 @@ import {
   FormLabel,
   Input,
   FormErrorMessage,
-  InputProps
+  InputProps,
 } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
@@ -34,7 +34,7 @@ export interface AddressInputProps {
  */
 export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,
-  value,
+  value: _value,
   onChange,
   label,
   ...props
@@ -46,7 +46,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 
   const getAddressFromEns = async () => {
     try {
-      let address = await provider.resolveName(debouncedValue);
+      const address = await provider.resolveName(debouncedValue);
       if (!address) {
         setError('Invalid Input');
       }
@@ -67,7 +67,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
         debouncedValue.endsWith('.eth') ||
         debouncedValue.endsWith('.xyz')
       ) {
-        getAddressFromEns().then(address => onChange(address ? address : ''));
+        getAddressFromEns().then((address) => onChange(address ? address : ''));
       }
     }
   }, [debouncedValue]);
@@ -85,7 +85,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
       <Input
         isInvalid={!!error}
         value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)}
         {...props}
       />
       <FormErrorMessage>{error ? ' ' + error : ''}</FormErrorMessage>

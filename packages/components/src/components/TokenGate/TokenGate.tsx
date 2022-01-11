@@ -25,7 +25,7 @@ export const TokenGate: React.FC<TokenGateProps> = ({
   walletBalance,
   requiredQuantity = 1,
   children,
-  deniedMessage
+  deniedMessage,
 }) => {
   // return children within simple container
   return (

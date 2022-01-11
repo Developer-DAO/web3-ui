@@ -31,7 +31,6 @@ export function useContract<T extends Contract>(
         abi,
         context.signer || undefined
       ) as T;
-
       setContract(newContract);
       setIsReady(true);
     }

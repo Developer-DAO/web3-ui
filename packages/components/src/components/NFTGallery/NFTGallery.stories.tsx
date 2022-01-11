@@ -4,7 +4,7 @@ import { NFTGallery } from '.';
 
 export default {
   title: 'Components/NFTGallery',
-  component: NFTGallery
+  component: NFTGallery,
 };
 
 export const nftsOwnedByAnAccount = () => (
@@ -30,10 +30,10 @@ const nftsOwnedByAnENSStory = () => {
 };
 
 export const nftsOwnedByAnENS = nftsOwnedByAnENSStory.bind({});
-// @ts-expect-error
+// @ts-expect-error attaching parameters is fine when binding stories
 nftsOwnedByAnENS.parameters = {
   // disables Chromatic's snapshotting on a story level
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 export const WithAnError = () => <NFTGallery address="bad_address" />;

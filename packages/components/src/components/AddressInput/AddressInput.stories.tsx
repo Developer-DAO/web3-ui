@@ -9,8 +9,8 @@ export default {
   component: AddressInput,
   parameters: {
     // TODO: Fix window.ethereum is undefined breaking chromatic
-    chromatic: { disableSnapshot: true }
-  }
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const WithUseWallet = () => {
@@ -21,7 +21,7 @@ const WithUseWallet = () => {
     <VStack>
       <AddressInput
         value={value}
-        onChange={e => setValue(e)}
+        onChange={(e) => setValue(e)}
         provider={provider!}
       />
       <Text>Value: {value}</Text>
@@ -40,7 +40,7 @@ const Component = ({ ...props }) => {
     <VStack>
       <AddressInput
         value={value}
-        onChange={e => setValue(e)}
+        onChange={(e) => setValue(e)}
         provider={provider}
         placeholder="Enter input address"
         {...props}

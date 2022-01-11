@@ -6,7 +6,7 @@ import { Button, VStack } from '@chakra-ui/react';
 
 export default {
   title: 'Components/Address',
-  component: Address
+  component: Address,
 };
 
 export const Default = () => <Address value="testaddress.eth" />;
