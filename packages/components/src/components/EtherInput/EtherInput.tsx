@@ -5,7 +5,7 @@ import {
   FormErrorMessage,
   InputGroupProps,
   FormLabel,
-  FormControl
+  FormControl,
 } from '@chakra-ui/react';
 import React from 'react';
 import { ethers } from 'ethers';
@@ -67,7 +67,7 @@ export const EtherInput: React.FC<EtherInputProps & InputGroupProps> = ({
         <Input
           placeholder={_placeholder}
           value={plainValue}
-          onChange={e => {
+          onChange={(e) => {
             setPlainValue(e.target.value);
             if (unit === 'ether') {
               onChange(ethers.utils.parseEther(e.target.value).toString());

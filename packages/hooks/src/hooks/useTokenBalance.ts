@@ -60,6 +60,6 @@ export function useTokenBalance({ tokenAddress, accountAddress }: Props) {
     error,
     decimals,
     formattedBalance: balance && ethers.utils.formatUnits(balance, decimals), // The balance in ethers eg. 0.01 ETH, 20 GTC, etc.
-    balanceInBigNumber: balance
+    balanceInBigNumber: balance,
   };
 }

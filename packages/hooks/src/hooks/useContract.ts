@@ -2,7 +2,6 @@ import React from 'react';
 import { Web3Context } from '../Provider';
 import { Contract, ContractInterface } from 'ethers';
 
-
 /**
  * @description
  * Defines the contract instance on `useState` hook

@@ -4,7 +4,7 @@ import { EtherInput } from '.';
 
 export default {
   title: 'Components/EtherInput',
-  component: EtherInput
+  component: EtherInput,
 };
 
 const Component = ({ ...props }) => {
@@ -14,7 +14,7 @@ const Component = ({ ...props }) => {
     <>
       <EtherInput
         value={value}
-        onChange={val => setValue(val)}
+        onChange={(val) => setValue(val)}
         {...props}
         width="300px"
       />
