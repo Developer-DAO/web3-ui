@@ -35,13 +35,13 @@ export const Address: React.FC<AddressProps> = ({
   value,
   copiable = false,
   shortened = false,
-  rpcURL
+  rpcURL,
 }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  let [ens, setEns] = useState<string | null | undefined>(null);
+  const [ens, setEns] = useState<string | null | undefined>(null);
   const provider: ethers.providers.JsonRpcProvider | null = rpcURL
     ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
     : null;
