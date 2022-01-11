@@ -19,7 +19,7 @@ interface Props {
  * error: Contains the error object if the transaction failed, null otherwise.
  * decimals: number of decimals the token contract is using
  * formattedBalance: Balance in ethers eg. 0.01 ETH, 20 GTC, etc.
- * balanceInBigNumber: Balance
+ * balanceInBigNumber: Balance in BigNumber
  * }
  */
 
