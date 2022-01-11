@@ -8,8 +8,6 @@ describe('NFTGallery', () => {
     const { container } = render(
       <NFTGallery address="0x1A16c87927570239FECD343ad2654fD81682725e" />
     );
-
-    expect(container).toHaveTextContent('NFT Gallery');
     await waitFor(() => {
       expect(container).toHaveTextContent('MutantApeYachtClub #29501');
       expect(container).toHaveTextContent('Dev #1');
@@ -18,8 +16,6 @@ describe('NFTGallery', () => {
 
   it('renders an error', async () => {
     const { container } = render(<NFTGallery address="bad_address" />);
-
-    expect(container).toHaveTextContent('NFT Gallery');
     await waitFor(() => {
       expect(container).toHaveTextContent('OpenSea request failed');
     });
