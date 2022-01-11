@@ -1,5 +1,13 @@
-import { Input, InputGroup, InputLeftAddon, Text, InputGroupProps } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import {
+  Input,
+  InputGroup,
+  InputRightAddon,
+  FormErrorMessage,
+  InputGroupProps,
+  FormLabel,
+  FormControl
+} from '@chakra-ui/react';
+import React from 'react';
 import { ethers } from 'ethers';
 
 export interface EtherInputProps {
@@ -21,50 +29,58 @@ export interface EtherInputProps {
   /**
    * Accepts a function that would be triggered when the value inside EtherInput changes.
    */
-  onChange: (event: Event) => void;
+  onChange: (value: string) => void;
+
+  /**
+   * Whether you want to display the unit on the right side of the input field or not.
+   * @default true
+   */
+  showUnit?: boolean;
+
+  placeholder?: string;
+
+  /**
+   * In case of an error, this prop would be used to display the error message. The component does not validate the input for you.
+   */
+  error?: string;
 }
 /**
- * A number input component with built-in conversion feature from wei <-> ether
+ * An input field that accepts ether values. Always returns the value in wei so that you can directly use it in transactions without any conversion.
  */
 export const EtherInput: React.FC<EtherInputProps & InputGroupProps> = ({
   value,
   unit = 'ether',
   label,
   onChange,
+  showUnit = true,
+  placeholder,
+  error,
   ...props
 }) => {
-  // const [currentUnit, setCurrentUnit] = useState(unit);
-
-  /**
-   * The convert(unit) function converts the current value into the unit passed to the function
-   * @param unit
-   */
-
-  // const convert = (unit: string) => {
-  //   if (unit === 'wei') {
-  //     setValue(ethers.utils.parseEther(value).toString());
-  //   } else if (unit === 'ether') {
-  //     let wei = ethers.BigNumber.from(value);
-  //     setValue(ethers.utils.formatEther(wei));
-  //   }
-  // };
+  const [plainValue, setPlainValue] = React.useState<string>();
+  const _placeholder = placeholder || `Enter value in ${unit}`;
 
   return (
-    <>
-      {label ? <Text mb='8px'>{label}: </Text> : ''}
+    <FormControl isInvalid={!!error}>
+      {label ? <FormLabel mb="8px">{label}: </FormLabel> : ''}
       <InputGroup {...props}>
-        {/* <InputLeftAddon style={{ cursor: "pointer" }} children={currentUnit} onClick={() => {
-          if (currentUnit === "wei") {
-            convert("wei");
-            setCurrentUnit("ether");
-          } else {
-            convert("ether");
-            setCurrentUnit("wei");
-          }
-        }} /> */}
-        <InputLeftAddon children={unit} />
-        <Input placeholder={`Enter value in ${unit}`} value={value} onChange={onChange} />
+        <Input
+          placeholder={_placeholder}
+          value={plainValue}
+          onChange={e => {
+            setPlainValue(e.target.value);
+            if (unit === 'ether') {
+              onChange(ethers.utils.parseEther(e.target.value).toString());
+            } else {
+              onChange(e.target.value);
+            }
+          }}
+        />
+        {showUnit && (
+          <InputRightAddon>{unit === 'ether' ? 'Ξ' : 'wei'}</InputRightAddon>
+        )}
       </InputGroup>
-    </>
+      {error && <FormErrorMessage>{error}</FormErrorMessage>}
+    </FormControl>
   );
 };
