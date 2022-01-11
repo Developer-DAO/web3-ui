@@ -1,5 +1,15 @@
 # @web3-ui/hooks
 
+## 0.9.0
+
+### Minor Changes
+
+- [#217](https://github.com/Developer-DAO/web3-ui/pull/217) [`0c5209b`](https://github.com/Developer-DAO/web3-ui/commit/0c5209b987665a3875b297733e6dde8205cd3965) Thanks [@with-heart](https://github.com/with-heart)! - Added `ERC20ABI` as an export of `@web3-ui/hooks` in order to resolve an incorrect import in the `@web3-ui/core` package.
+
+* [#216](https://github.com/Developer-DAO/web3-ui/pull/216) [`ece14b2`](https://github.com/Developer-DAO/web3-ui/commit/ece14b2ea025772eef0251432dc43e41e3e219c0) Thanks [@Redarcher9](https://github.com/Redarcher9)! - Added docstring to the `useContract` and `useTokenBalance` hooks
+
+- [#234](https://github.com/Developer-DAO/web3-ui/pull/234) [`b66e93a`](https://github.com/Developer-DAO/web3-ui/commit/b66e93a97f9c260b903ba0545fd368ec4842f349) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - You can now pass in your arguments directly to the execute function in useTransaction.
+
 ## 0.8.1
 
 ### Patch Changes

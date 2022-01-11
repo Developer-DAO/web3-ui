@@ -1,5 +1,15 @@
 # @web3-ui/core
 
+## 0.4.1
+
+### Patch Changes
+
+- [#217](https://github.com/Developer-DAO/web3-ui/pull/217) [`0c5209b`](https://github.com/Developer-DAO/web3-ui/commit/0c5209b987665a3875b297733e6dde8205cd3965) Thanks [@with-heart](https://github.com/with-heart)! - Added `ERC20ABI` as an export of `@web3-ui/hooks` in order to resolve an incorrect import in the `@web3-ui/core` package.
+
+- Updated dependencies [[`0c5209b`](https://github.com/Developer-DAO/web3-ui/commit/0c5209b987665a3875b297733e6dde8205cd3965), [`16b8481`](https://github.com/Developer-DAO/web3-ui/commit/16b8481995f3f934f94305fbae5f3a6370e4fb20), [`ece14b2`](https://github.com/Developer-DAO/web3-ui/commit/ece14b2ea025772eef0251432dc43e41e3e219c0), [`b66e93a`](https://github.com/Developer-DAO/web3-ui/commit/b66e93a97f9c260b903ba0545fd368ec4842f349)]:
+  - @web3-ui/hooks@0.9.0
+  - @web3-ui/components@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes
