@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.5.0
+
+### Minor Changes
+
+- [#90](https://github.com/Developer-DAO/web3-ui/pull/90) [`16b8481`](https://github.com/Developer-DAO/web3-ui/commit/16b8481995f3f934f94305fbae5f3a6370e4fb20) Thanks [@swetshaw](https://github.com/swetshaw)! - Added a EtherInput component that supports input in wei or ether and automatically converts it to wei for you!
+
 ## 0.4.1
 
 ### Patch Changes
