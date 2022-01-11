@@ -34,6 +34,7 @@ This is the list of components the package currently provides:
 - [Provider](#provider)
 - [ConnectWallet](#connectwallet)
 - [TokenGate](#tokengate)
+- [TokenBalance](#tokenbalance)
 
 ---
 
@@ -89,6 +90,22 @@ import { TokenGate } from '@web3-ui/core';
 >
   <h1>This message will be visible if the user has enough tokens.</h1>
 </TokenGate>;
+```
+
+---
+
+### TokenBalance
+
+`TokeBalance` is a component that fetches and renders the balance of an ERC20 token for a given address.
+
+```tsx
+import { TokenBalance } from '@web3-ui/core';
+
+<TokenBalance
+  accountAddress="0x503828976D22510aad0201ac7EC88293211D23Da"
+  tokenAddress="0x6B175474E89094C44Da98b954EedeAC495271d0F"
+  usdRate={0.9955}
+/>;
 ```
 
 ---
