@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": false,
   "description": "React UI components for web3",
   "keywords": [
@@ -38,7 +38,7 @@
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@web3-ui/components": "^0.6.0",
+    "@web3-ui/components": "^0.7.0",
     "@web3-ui/hooks": "^0.9.0",
     "framer-motion": "^4"
   },
