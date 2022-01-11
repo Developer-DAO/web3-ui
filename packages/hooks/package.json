@@ -30,7 +30,7 @@
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
-    "prepublishOnly": "yarn build && cp ../../LICENSE ./LICENSE"
+    "prepublishOnly": "cp ../../LICENSE ./LICENSE"
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",
