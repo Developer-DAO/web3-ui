@@ -40,7 +40,7 @@ const Component = () => {
       value={value}
       onChange={(e) => setValue(e)}
       provider={provider}
-      placeholder='Input address'
+      placeholder="Input address"
     />
   );
 };
@@ -48,7 +48,7 @@ const Component = () => {
 describe('AddressInput', () => {
   it('renders AddressInput correctly', () => {
     const { container } = render(<Component />);
-    expect(container);
+    expect(container).toBeTruthy();
   });
 
   it('changes Input value correctly', () => {

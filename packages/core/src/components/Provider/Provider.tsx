@@ -2,10 +2,18 @@ import React from 'react';
 import { Provider as HooksProvider } from '@web3-ui/hooks';
 import { Provider as ComponentsProvider } from '@web3-ui/components';
 
-export const Provider = ({ network, children }) => {
+interface ProviderProps {
+  children: React.ReactNode;
+  network: number;
+  rpcUrl?: string;
+}
+
+export const Provider = ({ network, children, rpcUrl }: ProviderProps) => {
   return (
     <ComponentsProvider>
-      <HooksProvider network={network}>{children}</HooksProvider>
+      <HooksProvider network={network} rpcUrl={rpcUrl}>
+        {children}
+      </HooksProvider>
     </ComponentsProvider>
   );
 };

@@ -1,21 +1,48 @@
 import React from 'react';
 import { Web3Context } from '../Provider';
-import { Contract } from 'ethers';
+import { Contract, ContractInterface } from 'ethers';
 
-export function useContract(address: string, abi) {
+/**
+ * @description
+ * Defines the contract instance on `useState` hook
+ */
+export type ContractInstance<T extends Contract> = T | null;
+
+/**
+ * @description
+ * The return type of the `useContract` hook
+ */
+export type UseContractHook<T extends Contract> = [
+  ContractInstance<T> | null,
+  boolean
+];
+
+/**
+ * Gets an instance of a contract from its ABI and address.
+ * @param address contract address
+ * @param abi contract ABI
+ * @returns {
+ *   contract: An instance of the current contract
+ *   isReady: True when the contract is ready to use, false otherwise.
+ * }
+ */
+export function useContract<T extends Contract>(
+  address: string,
+  abi: ContractInterface
+): UseContractHook<T> {
   const context = React.useContext(Web3Context);
-  const [contract, setContract] = React.useState({});
+  const [contract, setContract] = React.useState<ContractInstance<T>>(null);
+  const [isReady, setIsReady] = React.useState(false);
   React.useEffect(() => {
-    if (context) {
-      const newContract = new Contract(address, abi, context.signer || undefined);
-      const contractInterface = Object.values(newContract.interface.functions).reduce(
-        (accumulator, funcFragment) => {
-          return { ...accumulator, [funcFragment.name]: newContract[funcFragment.name] };
-        },
-        {}
-      );
-      setContract(contractInterface);
+    if (context?.connected) {
+      const newContract = new Contract(
+        address,
+        abi,
+        context.signer || undefined
+      ) as T;
+      setContract(newContract);
+      setIsReady(true);
     }
   }, [context]);
-  return contract;
+  return [contract, isReady];
 }

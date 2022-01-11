@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/react';
-import React from 'react';
-import { Provider, useWallet, useContract } from '..';
-import { Button, Input, Grid, GridItem } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import { Provider, useWallet, useContract, NETWORKS, usePoller } from '..';
+import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
+import { useReadOnlyContract } from '../hooks/useReadOnlyContract';
 
 const ADDRESS = '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135'; // Rinkeby
 const ABI = [
@@ -60,12 +61,21 @@ const ABI = [
 
 const Default = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const contract = useContract(ADDRESS, ABI);
+  const [contract, isReady] = useContract(ADDRESS, ABI);
   const [state, setState] = React.useState({
     newGreeting: '',
     toAddress: '',
     amount: '0',
   });
+
+  usePoller(async () => {
+    try {
+      const greeting = await contract.greet();
+      console.log(greeting); // logs the greeting every second
+    } catch (error) {
+      console.log(error);
+    }
+  }, 1000);
 
   const handleGreet = async () => alert(await contract.greet());
   const handleChangeState =
@@ -78,42 +88,48 @@ const Default = () => {
     setState({ ...state, newGreeting: '' });
   };
   const handleTransferTo = async () => {
-    await contract.transferTo(state.toAddress, { value: ethers.utils.parseEther(state.amount) });
+    await contract.transferTo(state.toAddress, {
+      value: ethers.utils.parseEther(state.amount),
+    });
     setState({ ...state, toAddress: '', amount: '0' });
   };
 
   if (connected) {
     return (
-      <div>
+      <VStack>
         <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <h3>Contract Methods</h3>
-        <Grid templateColumns='repeat(5, 1fr)' columnGap={5}>
-          <GridItem colSpan={5}>
-            <Button onClick={handleGreet}>greet</Button>
-          </GridItem>
-          <GridItem colSpan={5}>
-            <Button disabled={!state.newGreeting} onClick={handleSetGreeting}>
-              setGreeting
-            </Button>
-            <Input
-              value={state.newGreeting}
-              placeholder='New Greeting!'
-              onChange={handleChangeState('newGreeting')}
-            />
-          </GridItem>
-          <GridItem colSpan={5}>
-            <Button disabled={!(state.toAddress && state.amount)} onClick={handleTransferTo}>
-              transferTo
-            </Button>
-            <Input
-              value={state.toAddress}
-              placeholder='0xjA123....'
-              onChange={handleChangeState('toAddress')}
-            />
-            <Input placeholder='0.2' value={state.amount} onChange={handleChangeState('amount')} />
-          </GridItem>
-        </Grid>
-      </div>
+        <Button onClick={handleGreet}>greet</Button>
+        <Divider />
+        <Button
+          disabled={!state.newGreeting || !isReady}
+          onClick={handleSetGreeting}
+        >
+          setGreeting
+        </Button>
+        <Input
+          value={state.newGreeting}
+          placeholder="New Greeting!"
+          onChange={handleChangeState('newGreeting')}
+        />
+        <Divider />
+        <Button
+          disabled={!(state.toAddress && state.amount)}
+          onClick={handleTransferTo}
+        >
+          transferTo
+        </Button>
+        <Input
+          value={state.toAddress}
+          placeholder="0xjA123...."
+          onChange={handleChangeState('toAddress')}
+        />
+        <Input
+          placeholder="0.2"
+          value={state.amount}
+          onChange={handleChangeState('amount')}
+        />
+      </VStack>
     );
   }
 
@@ -125,7 +141,36 @@ const Default = () => {
 };
 
 storiesOf('Hooks/useContract', module).add('Default', () => (
-  <Provider network='rinkeby'>
+  <Provider network={NETWORKS.rinkeby}>
     <Default />
+  </Provider>
+));
+
+const ReadContract = () => {
+  const [contract, isReady] = useReadOnlyContract(ADDRESS, ABI);
+  const [greeting, setGreeting] = React.useState('');
+
+  useEffect(() => {
+    async function exec() {
+      setGreeting(await contract.greet());
+    }
+    if (isReady) {
+      exec();
+    }
+  }, [contract, isReady]);
+
+  return (
+    <VStack>
+      <h3>Greeting: {greeting}</h3>
+    </VStack>
+  );
+};
+
+storiesOf('Hooks/useReadContract', module).add('Default', () => (
+  <Provider
+    network={NETWORKS.rinkeby}
+    rpcUrl="https://rinkeby.infura.io/v3/21bc321f21a54c528dc084f5ed7f8df7"
+  >
+    <ReadContract />
   </Provider>
 ));

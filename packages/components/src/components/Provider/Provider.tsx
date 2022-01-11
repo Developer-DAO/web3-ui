@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ChakraProviderProps } from '@chakra-ui/react';
 
-export interface ProviderProps {}
+export interface ProviderProps extends ChakraProviderProps {}
 
-export const Provider: React.FC<ProviderProps> = ({ children }) => {
-  return <ChakraProvider>{children}</ChakraProvider>;
+export const Provider: React.FC<ProviderProps> = ({ children, ...props }) => {
+  return <ChakraProvider {...props}>{children}</ChakraProvider>;
 };

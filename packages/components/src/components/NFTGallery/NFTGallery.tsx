@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
-import fetch from 'cross-fetch';
 import { ethers } from 'ethers';
 import { VStack, Heading, Grid, Alert, AlertIcon } from '@chakra-ui/react';
 import { NFTCard } from '../NFT';
 
 export interface NFTGalleryProps {
   /**
-   * The owner of the NFTs
+   * The owner of the NFTs. Can be a wallet address, or an ENS name. If the address is an ENS
+   * name, then you must also provide the provider.
    */
   address: string;
   /**
    * The number of columns in the grid
    */
   gridWidth?: number;
+  /**
+   * A Web3Provider. Only needed if the address will be an ENS name.
+   */
   web3Provider?: ethers.providers.Web3Provider;
 }
 
@@ -31,7 +34,11 @@ export interface OpenSeaAsset {
  * Component to display a grid of NFTs owned by an address. It uses the OpenSea API to fetch
  * the NFTs.
  */
-export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryProps) => {
+export const NFTGallery = ({
+  address,
+  gridWidth = 4,
+  web3Provider,
+}: NFTGalleryProps) => {
   const [nfts, setNfts] = React.useState<OpenSeaAsset[]>([]);
   const [errorMessage, setErrorMessage] = React.useState();
 
@@ -61,9 +68,9 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
 
   return (
     <VStack>
-      <Heading size='lg'>NFT Gallery</Heading>
+      <Heading size="lg">NFT Gallery</Heading>
       {errorMessage && (
-        <Alert status='error'>
+        <Alert status="error">
           <AlertIcon />
           {errorMessage}
         </Alert>
@@ -79,6 +86,7 @@ export const NFTGallery = ({ address, gridWidth = 4, web3Provider }: NFTGalleryP
               assetContractName: nft.asset_contract.name,
               assetContractSymbol: nft.asset_contract.symbol,
             }}
+            size="xs"
           />
         ))}
       </Grid>

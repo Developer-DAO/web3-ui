@@ -1,4 +1,10 @@
-import { FormControl, FormLabel, Input, FormErrorMessage, InputProps } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  FormErrorMessage,
+  InputProps,
+} from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
@@ -24,11 +30,11 @@ export interface AddressInputProps {
 }
 
 /**
- * A text input component that is used to get the address of the user from the ens. You can also pass all the styling props of the Chakra UI Input component.
+ * A text input component that is used to get ETH addresses. ENS support included. You can also pass all the styling props of the Chakra UI Input component.
  */
 export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   provider,
-  value,
+  value: _value,
   onChange,
   label,
   ...props
@@ -40,7 +46,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 
   const getAddressFromEns = async () => {
     try {
-      let address = await provider.resolveName(debouncedValue);
+      const address = await provider.resolveName(debouncedValue);
       if (!address) {
         setError('Invalid Input');
       }
@@ -57,7 +63,10 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
       setError(null);
       if (regex.test(debouncedValue)) {
         onChange(debouncedValue);
-      } else if (debouncedValue.endsWith('.eth') || debouncedValue.endsWith('.xyz')) {
+      } else if (
+        debouncedValue.endsWith('.eth') ||
+        debouncedValue.endsWith('.xyz')
+      ) {
         getAddressFromEns().then((address) => onChange(address ? address : ''));
       }
     }

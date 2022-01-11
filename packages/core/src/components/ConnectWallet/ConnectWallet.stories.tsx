@@ -1,3 +1,4 @@
+import { NETWORKS } from '@web3-ui/hooks';
 import React from 'react';
 import { ConnectWallet } from '.';
 import { Provider } from '..';
@@ -7,7 +8,7 @@ export default {
   title: 'Core/ConnectWallet',
   decorators: [
     (Story) => (
-      <Provider network={4}>
+      <Provider network={NETWORKS.rinkeby}>
         <Story />
       </Provider>
     ),

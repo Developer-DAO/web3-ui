@@ -1,12 +1,20 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
 
 A library of UI components specifically crafted for web3 use cases.
+
+| Package name                                                                                    | Current version                                                                                                      |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| [`@web3-ui/core`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/core)             | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcore.svg)](https://badge.fury.io/js/@web3-ui%2Fcore)             |
+| [`@web3-ui/components`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/components) | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcomponents.svg)](https://badge.fury.io/js/@web3-ui%2Fcomponents) |
+| [`@web3-ui/hooks`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/hooks)           | [![npm version](https://badge.fury.io/js/@web3-ui%2Fhooks.svg)](https://badge.fury.io/js/@web3-ui%2Fhooks)           |
 
 ## The Motive
 
@@ -17,12 +25,12 @@ A library of UI components specifically crafted for web3 use cases.
 ## Technologies
 
 This project is built with the following open source libraries, frameworks and languages.
-| Tech                                          | Description                                                        |
+| Tech | Description |
 | --------------------------------------------- | ------------------------------------------------------------------ |
-| [React](https://reactjs.org/)                 | Front end user interface                                           |
-| [ChakraUI](https://chakra-ui.com/)            | A simple & modular component library                               |
-| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language                          |
-| [Storybook](https://storybook.js.org/)        | Open source tool for building UI components and pages in isolation |
+| [React](https://reactjs.org/) | Front end user interface |
+| [ChakraUI](https://chakra-ui.com/) | A simple & modular component library |
+| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language |
+| [Storybook](https://storybook.js.org/) | Open source tool for building UI components and pages in isolation |
 
 ## How to Contribute
 
@@ -54,9 +62,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://erikritter.io"><img src="https://avatars.githubusercontent.com/u/7409244?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Erik Ritter</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=etr2460" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Aetr2460" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/crondinini"><img src="https://avatars.githubusercontent.com/u/21973269?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camila Rondinini</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=crondinini" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Acrondinini" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="http://dhaiwat.com"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://nazeeh.dev/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Code">💻</a></td>
+    <td align="center"><a href="https://nazeeh.dev/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/commits?author=Nazeeh21" title="Documentation">📖</a></td>
     <td align="center"><a href="https://zanzeta.com"><img src="https://avatars.githubusercontent.com/u/48886275?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jose L. Velez</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=joselvelez" title="Documentation">📖</a> <a href="https://github.com/Developer-DAO/web3-ui/commits?author=joselvelez" title="Code">💻</a></td>
-    <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Awith-heart" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/pulls?q=is%3Apr+reviewed-by%3Awith-heart" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/Developer-DAO/web3-ui/commits?author=with-heart" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/christiananese"><img src="https://avatars.githubusercontent.com/u/6060101?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Christian</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=christiananese" title="Code">💻</a></td>
   </tr>
   <tr>
@@ -64,6 +72,21 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/swellander"><img src="https://avatars.githubusercontent.com/u/22231097?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sam Wellander</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=swellander" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/txwkx"><img src="https://avatars.githubusercontent.com/u/19361575?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Todor Tsankov</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=txwkx" title="Code">💻</a></td>
     <td align="center"><a href="https://www.jovidecroock.com/"><img src="https://avatars.githubusercontent.com/u/17125876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jovi De Croock</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=JoviDeCroock" title="Code">💻</a></td>
+    <td align="center"><a href="https://bonhomme.lol"><img src="https://avatars.githubusercontent.com/u/5518357?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bonhomme</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=maximebonhomme" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/hone1er"><img src="https://avatars.githubusercontent.com/u/24376928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hone1er</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=hone1er" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/emanueltimlopez"><img src="https://avatars.githubusercontent.com/u/25184000?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emanuel López</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=emanueltimlopez" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.dezinersoftware.com"><img src="https://avatars.githubusercontent.com/u/4706001?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Greg Syme</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=gjsyme" title="Code">💻</a></td>
+    <td align="center"><a href="http://jay-software.com"><img src="https://avatars.githubusercontent.com/u/25109595?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Casuneanu Catalin</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=CatalinCsnMaster" title="Code">💻</a></td>
+    <td align="center"><a href="http://jwar.xyz"><img src="https://avatars.githubusercontent.com/u/54959624?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jake Warren</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=jwarshack" title="Code">💻</a></td>
+    <td align="center"><a href="https://linktr.ee/carlomigueldy"><img src="https://avatars.githubusercontent.com/u/45052332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carlo Miguel Dy</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=carlomigueldy" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/commits?author=carlomigueldy" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://iamaatoh.com"><img src="https://avatars.githubusercontent.com/u/6915805?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Akshata Mohanty</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=akshatamohanty" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.ibby.dev"><img src="https://avatars.githubusercontent.com/u/23090443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ibby E</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Ibby-devv" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/swetshaw"><img src="https://avatars.githubusercontent.com/u/26214362?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sweta Shaw</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=swetshaw" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Redarcher9"><img src="https://avatars.githubusercontent.com/u/19843336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Snehit Paunikar</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Redarcher9" title="Documentation">📖</a></td>
   </tr>
 </table>
 
