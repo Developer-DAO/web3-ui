@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
+import { ethers } from 'ethers';
 
 export interface AddressProps {
   /**
@@ -21,6 +22,10 @@ export interface AddressProps {
    * Shorten the address if it does not resolve to an ENS name
    */
   shortened?: boolean;
+  /**
+   * RPC URL for provider, required for ens lookup
+   */
+  rpcURL?: string;
 }
 
 /**
@@ -30,11 +35,34 @@ export const Address: React.FC<AddressProps> = ({
   value,
   copiable = false,
   shortened = false,
+  rpcURL,
 }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
+  const [ens, setEns] = useState<string | null | undefined>(null);
+  const provider: ethers.providers.JsonRpcProvider | null = rpcURL
+    ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
+    : null;
+
+  useEffect(() => {
+    if (value.includes('.eth') || value === '' || value === 'Not connected')
+      return;
+
+    async function fetchEns() {
+      if (provider && value) {
+        try {
+          const ensResponse = await provider?.lookupAddress(value);
+          setEns(ensResponse);
+          return;
+        } catch (error) {
+          return;
+        }
+      }
+    }
+    fetchEns();
+  }, [value, provider]);
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
@@ -74,7 +102,7 @@ export const Address: React.FC<AddressProps> = ({
         cursor={copiable ? 'pointer' : 'initial'}
         onClick={handleClick}
       >
-        <Text>{displayAddress}</Text>
+        <Text>{ens || displayAddress}</Text>
         {copiable && (
           <Box ml="auto">
             {copied ? (
