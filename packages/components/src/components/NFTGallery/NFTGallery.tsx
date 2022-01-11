@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ethers } from 'ethers';
-import { VStack, Heading, Grid, Alert, AlertIcon } from '@chakra-ui/react';
+import { VStack, Grid, Alert, AlertIcon } from '@chakra-ui/react';
 import { NFTCard } from '../NFT';
 
 export interface NFTGalleryProps {
@@ -68,7 +68,6 @@ export const NFTGallery = ({
 
   return (
     <VStack>
-      <Heading size="lg">NFT Gallery</Heading>
       {errorMessage && (
         <Alert status="error">
           <AlertIcon />
