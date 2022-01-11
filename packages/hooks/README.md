@@ -89,9 +89,9 @@ if (isReady) {
 
 ### useTransaction
 
-The `useTransaction` hook takes in a contract function and a list of arguments to pass to it. It returns an array of three elements:
+The `useTransaction` hook takes in a contract function. It returns an array of three elements:
 
-- `execute`: Calling this function will execute the transaction.
+- `execute`: Calling this function will execute the transaction. You should pass your arguments/parameters to this function as an array.
 
 - `loading`: Will be true when the transaction is executing and will be false once the transaction has been confirmed.
 
@@ -101,14 +101,14 @@ The `useTransaction` hook takes in a contract function and a list of arguments t
 import { useTransaction, useContract } from '@web3-ui/hooks';
 
 const greeterContract = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
-const [execute, loading, error] = useTransaction(greeter.setGreeting, [
+const [execute, loading, error] = useTransaction(greeter.setGreeting);
+
+await execute([
   'Hello, world!',
   {
     value: ethers.utils.parseEther('0.1') // you can also use this for payable transactions
   }
-]);
-
-execute(); // will execute the transaction
+]); // will execute the transaction
 ```
 
 ---
