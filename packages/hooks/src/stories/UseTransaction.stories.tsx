@@ -80,9 +80,7 @@ const UsingUseContract = () => {
   };
 
   // @ts-expect-error untyped contract
-  const [setGreeting, loading, error] = useTransaction(contract.setGreeting, [
-    value,
-  ]);
+  const [setGreeting, loading, error] = useTransaction(contract.setGreeting);
 
   if (connected) {
     return (
@@ -98,7 +96,11 @@ const UsingUseContract = () => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
-            <Button type="submit" isLoading={loading} onClick={setGreeting}>
+            <Button
+              type="submit"
+              isLoading={loading}
+              onClick={() => setGreeting([value])}
+            >
               Set Greeting
             </Button>
             <FormErrorMessage>{error && error.message}</FormErrorMessage>
