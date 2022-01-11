@@ -1,10 +1,28 @@
 import React from 'react';
 import { Web3Context } from '../Provider';
-import { Contract } from 'ethers';
+import { Contract, ContractInterface } from 'ethers';
 
-export function useContract(address: string, abi) {
+/**
+ * @description
+ * Defines the contract instance on `useState` hook
+ */
+export type ContractInstance<T extends Contract> = T | null;
+
+/**
+ * @description
+ * The return type of the `useContract` hook
+ */
+export type UseContractHook<T extends Contract> = [
+  ContractInstance<T> | null,
+  boolean
+];
+
+export function useContract<T extends Contract>(
+  address: string,
+  abi: ContractInterface
+): UseContractHook<T> {
   const context = React.useContext(Web3Context);
-  const [contract, setContract] = React.useState({});
+  const [contract, setContract] = React.useState<ContractInstance<T>>(null);
   const [isReady, setIsReady] = React.useState(false);
   React.useEffect(() => {
     if (context?.connected) {
@@ -12,16 +30,9 @@ export function useContract(address: string, abi) {
         address,
         abi,
         context.signer || undefined
-      );
-      const contractInterface = Object.values(
-        newContract.interface.functions
-      ).reduce((accumulator, funcFragment) => {
-        return {
-          ...accumulator,
-          [funcFragment.name]: newContract[funcFragment.name]
-        };
-      }, {});
-      setContract(contractInterface);
+      ) as T;
+
+      setContract(newContract);
       setIsReady(true);
     }
   }, [context]);

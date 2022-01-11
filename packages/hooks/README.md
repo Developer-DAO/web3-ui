@@ -79,10 +79,79 @@ import { useContract } from '@web3-ui/hooks';
 
 const [contract, isReady] = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
 
-//check that the contract has been loaded
+// check that the contract has been loaded
 if (isReady) {
   await contract.greeting();
 }
+```
+
+A generic type argument can be passed down to the hook to create the type definitions based on the ABIs stored in a directory. To auto-generate the types it is highly recommended to use [typechain](https://www.npmjs.com/package/typechain) package.
+
+Install [typechain](https://www.npmjs.com/package/typechain)
+
+```bash
+yarn add typechain @typechain/ethers-v5 --dev # or `npm i -D typechain @typechain/ethers-v5`
+```
+
+Add a "typechain" script to your `package.json` file as well as a "postinstall" script that executes the script after installing dependencies.
+
+```json
+"scripts": {
+    "postinstall": "yarn typechain",
+    "typechain": "typechain --target=ethers-v5 <ABI_DIRECTORY_PATH> --out-dir=<OUTPUT_DIRECTORY_PATH>",
+}
+```
+
+- The `<ABI_DIRECTORY_PATH>` should be the path to where all of the ABIs are stored. e.g. `src/abis/*.json` (This depends on your preferred file structure)
+- The `<OUTPUT_DIRECTORY_PATH>` will be your preferred path to where the generated type definitions should be placed. e.g. `src/types/contracts`
+- For the `<OUTPUT_DIRECTORY_PATH>` it is also recommended to add the directory path on `.gitignore` since these can be generated via `typechain` script
+
+For an actual example check below,
+
+```json
+"scripts": {
+    "postinstall": "yarn typechain",
+    "typechain": "typechain --target=ethers-v5 src/abis/**/*.json --out-dir=src/types/contracts",
+}
+```
+
+Next is to put all of your ABI JSON files stored to the defined `ABI_DIRECTORY_PATH` directory.
+
+- `src/abis/ERC20Token/ERC20Token.json`
+- `src/abis/CoolProtocol/CoolProtocolLendingPool.json`
+
+Then finally run the script to generate the type definitions.
+
+```bash
+yarn typechain # or `npm run typechain`
+```
+
+Example usage in utilizing the generic type argument for `useContract` hook
+
+```tsx
+import React from 'react';
+import { useContract } from '@web3-ui/hooks';
+import { ERC20Token } from 'types/contracts/ERC20Token';
+import ERC20TokenABI from 'abis/ERC20Token/ERC20Token.json';
+
+function App() {
+  const [contract, isReady] = useContract<ERC20Token>(
+    'CONTRACT_ADDRESS',
+    ERC20TokenABI
+  );
+
+  async function checkBalance() {
+    const response = await contract.balanceOf('0x...');
+
+    console.log('checkBalance', response);
+  }
+
+  return (
+    <>{isReady ? <button onClick={checkBalance}></button> : 'Connect Wallet'}</>
+  );
+}
+
+export default App;
 ```
 
 ---
