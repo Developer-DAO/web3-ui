@@ -70,17 +70,15 @@ const ABI = [
 
 const UsingUseContract = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const [contract] = useContract(ADDRESS, ABI);
+  const [contract, isReady] = useContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
   const greet = async () => {
-    // @ts-expect-error untyped contract
-    const greeting = await contract.greet();
+    const greeting = await contract?.greet();
     alert(greeting);
   };
 
-  // @ts-expect-error untyped contract
-  const [setGreeting, loading, error] = useTransaction(contract.setGreeting);
+  const [setGreeting, loading, error] = useTransaction(contract?.setGreeting);
 
   if (connected) {
     return (
