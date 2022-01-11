@@ -3,9 +3,8 @@ import React from 'react';
 /**
  * @dev Hook to get the loading status, error, and data of a function call.
  * @param method The contract function you want to call
- * @param args an array of arguments to pass to the function.
  * @returns {
- *  execute: () => Promise<any>,
+ *  execute: (args: any[]) => Promise<any>,
  *  loading: boolean,
  *  error: null | Error,
  * } {
@@ -15,11 +14,13 @@ import React from 'react';
  * }
  */
 
-export function useTransaction(method, args: any[] = []) {
+export function useTransaction(
+  method
+): [(args: any[]) => Promise<any>, boolean, any] {
   const [loading, setLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<any>(null);
 
-  const execute = async () => {
+  const execute = async (args: any[]) => {
     setLoading(true);
     setError(null);
     try {

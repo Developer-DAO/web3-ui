@@ -3,10 +3,6 @@
   "license": "MIT",
   "version": "0.4.0",
   "private": false,
-  "engines": {
-    "node": ">=16.0.0",
-    "yarn": "^1.5"
-  },
   "description": "React UI components for web3",
   "keywords": [
     "web3",

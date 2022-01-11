@@ -23,12 +23,12 @@ export function useWallet() {
     provider,
     correctNetwork,
     network,
-    readOnlyProvider
+    readOnlyProvider,
   } = context;
 
   React.useEffect(() => {
     if (userAddress && provider && chainId === NETWORKS.mainnet) {
-      provider.lookupAddress(userAddress).then(address => {
+      provider.lookupAddress(userAddress).then((address) => {
         setEns(address as string);
       });
     }
@@ -42,13 +42,13 @@ export function useWallet() {
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: `0x${network}` }] // chainId must be in hexadecimal numbers
+          params: [{ chainId: `0x${network}` }], // chainId must be in hexadecimal numbers
         });
       } catch (error) {
         console.error(error);
         // This error code indicates that the chain has not been added to MetaMask.
         // If it is not, then install it into the user's MetaMask
-        // @ts-expect-error
+        // @ts-expect-error unknown error type
         if (error.code === 4902) {
           try {
             await window.ethereum.request({
@@ -56,9 +56,9 @@ export function useWallet() {
               params: [
                 {
                   chainId: '0x61',
-                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
-                }
-              ]
+                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+                },
+              ],
             });
           } catch (addError) {
             console.error(addError);
@@ -80,12 +80,12 @@ export function useWallet() {
       userAddress,
       network: CHAIN_ID_TO_NETWORK[chainId as number],
       signer,
-      ens
+      ens,
     },
     connected,
     provider,
     correctNetwork,
     switchToCorrectNetwork,
-    readOnlyProvider
+    readOnlyProvider,
   };
 }

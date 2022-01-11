@@ -3,7 +3,7 @@ import { NFT } from '.';
 
 export default {
   title: 'Components/NFT',
-  component: NFT
+  component: NFT,
 };
 
 export const image = () => (

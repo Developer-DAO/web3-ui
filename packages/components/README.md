@@ -36,6 +36,7 @@ This is the list of components the package currently provides:
 - [NFTGallery](#nftgallery)
 - [Provider](#provider)
 - [TokenGate](#tokengate)
+- [EtherInput](#etherinput)
 
 ---
 
@@ -108,4 +109,16 @@ The TokenGate component lets you conditionally render some content depending on 
   <h1>You're eligible!</h1>
   <p>This will be rendered if walletBalance is greater than or equal to 10.</p>
 </TokenGate>
+```
+
+---
+
+### EtherInput
+
+EtherInput is an input field that accepts values in _wei_ or _ether_. It always returns the value to you in _wei_ so that you can easily use it to interact with contracts without any conversions.
+
+```tsx
+const [value, setValue] = useState();
+
+<EtherInput value={value} setValue={setValue} unit="ether" />; // value will always be in wei. eg. if someone enters 1 in the input, value will be 10^18
 ```

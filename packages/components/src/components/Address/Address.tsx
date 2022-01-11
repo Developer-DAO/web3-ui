@@ -3,7 +3,7 @@ import {
   Flex,
   FormControl,
   FormErrorMessage,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
@@ -29,7 +29,7 @@ export interface AddressProps {
 export const Address: React.FC<AddressProps> = ({
   value,
   copiable = false,
-  shortened = false
+  shortened = false,
 }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);

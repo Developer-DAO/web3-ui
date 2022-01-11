@@ -9,7 +9,7 @@ import {
   VStack,
   Skeleton,
   Alert,
-  AlertIcon
+  AlertIcon,
 } from '@chakra-ui/react';
 
 export interface NFTProps {
@@ -62,7 +62,7 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
           name: data.name,
           assetContractName: data.asset_contract.name,
           assetContractSymbol: data.asset_contract.symbol,
-          animationUrl: data.animation_url
+          animationUrl: data.animation_url,
         });
       }
     } catch (error) {
@@ -91,7 +91,7 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
 export const NFTCard = ({
   data,
   errorMessage = '',
-  size
+  size,
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;

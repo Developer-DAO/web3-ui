@@ -19,7 +19,7 @@ export const NETWORKS = {
   fantom: 250,
   avalanche: 43114,
   songbird: 19,
-  moonbaseAlpha: 1287
+  moonbaseAlpha: 1287,
 };
 
 export const CHAIN_ID_TO_NETWORK = {
@@ -43,7 +43,7 @@ export const CHAIN_ID_TO_NETWORK = {
   250: 'fantom',
   43114: 'avalanche',
   19: 'songbird',
-  1287: 'moonbaseAlpha'
+  1287: 'moonbaseAlpha',
 };
 
 export const ERC20ABI = [
@@ -54,35 +54,35 @@ export const ERC20ABI = [
     outputs: [
       {
         name: '',
-        type: 'string'
-      }
+        type: 'string',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: '_spender',
-        type: 'address'
+        type: 'address',
       },
       {
         name: '_value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'approve',
     outputs: [
       {
         name: '',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
@@ -91,39 +91,39 @@ export const ERC20ABI = [
     outputs: [
       {
         name: '',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: '_from',
-        type: 'address'
+        type: 'address',
       },
       {
         name: '_to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: '_value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'transferFrom',
     outputs: [
       {
         name: '',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
@@ -132,31 +132,31 @@ export const ERC20ABI = [
     outputs: [
       {
         name: '',
-        type: 'uint8'
-      }
+        type: 'uint8',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
     inputs: [
       {
         name: '_owner',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'balanceOf',
     outputs: [
       {
         name: 'balance',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
@@ -165,63 +165,63 @@ export const ERC20ABI = [
     outputs: [
       {
         name: '',
-        type: 'string'
-      }
+        type: 'string',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: '_to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: '_value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'transfer',
     outputs: [
       {
         name: '',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
     inputs: [
       {
         name: '_owner',
-        type: 'address'
+        type: 'address',
       },
       {
         name: '_spender',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'allowance',
     outputs: [
       {
         name: '',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     payable: true,
     stateMutability: 'payable',
-    type: 'fallback'
+    type: 'fallback',
   },
   {
     anonymous: false,
@@ -229,21 +229,21 @@ export const ERC20ABI = [
       {
         indexed: true,
         name: 'owner',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'spender',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         name: 'value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Approval',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -251,22 +251,22 @@ export const ERC20ABI = [
       {
         indexed: true,
         name: 'from',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         name: 'value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Transfer',
-    type: 'event'
-  }
+    type: 'event',
+  },
 ];
 
 export const ERC721ABI = [
@@ -275,25 +275,25 @@ export const ERC721ABI = [
     inputs: [
       {
         name: 'interfaceId',
-        type: 'bytes4'
-      }
+        type: 'bytes4',
+      },
     ],
     name: 'supportsInterface',
     outputs: [
       {
         name: '',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'constructor'
+    type: 'constructor',
   },
   {
     anonymous: false,
@@ -301,21 +301,21 @@ export const ERC721ABI = [
       {
         indexed: true,
         name: 'from',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Transfer',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -323,21 +323,21 @@ export const ERC721ABI = [
       {
         indexed: true,
         name: 'owner',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'approved',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Approval',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -345,224 +345,224 @@ export const ERC721ABI = [
       {
         indexed: true,
         name: 'owner',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         name: 'operator',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         name: 'approved',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     name: 'ApprovalForAll',
-    type: 'event'
+    type: 'event',
   },
   {
     constant: true,
     inputs: [
       {
         name: 'owner',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'balanceOf',
     outputs: [
       {
         name: '',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
     inputs: [
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'ownerOf',
     outputs: [
       {
         name: '',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'approve',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
     inputs: [
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'getApproved',
     outputs: [
       {
         name: '',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'approved',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     name: 'setApprovalForAll',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: true,
     inputs: [
       {
         name: 'owner',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'operator',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'isApprovedForAll',
     outputs: [
       {
         name: '',
-        type: 'bool'
-      }
+        type: 'bool',
+      },
     ],
     payable: false,
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'transfer',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'from',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'transferFrom',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'from',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'tokenId',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'safeTransferFrom',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     constant: false,
     inputs: [
       {
         name: 'from',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         name: 'tokenId',
-        type: 'uint256'
+        type: 'uint256',
       },
       {
         name: '_data',
-        type: 'bytes'
-      }
+        type: 'bytes',
+      },
     ],
     name: 'safeTransferFrom',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'function'
-  }
+    type: 'function',
+  },
 ];

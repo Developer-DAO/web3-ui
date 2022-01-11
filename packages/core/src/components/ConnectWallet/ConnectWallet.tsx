@@ -3,12 +3,8 @@ import { useWallet } from '@web3-ui/hooks';
 import React from 'react';
 
 export const ConnectWallet = () => {
-  const {
-    connectWallet,
-    connection,
-    connected,
-    disconnectWallet
-  } = useWallet();
+  const { connectWallet, connection, connected, disconnectWallet } =
+    useWallet();
 
   return (
     <>
