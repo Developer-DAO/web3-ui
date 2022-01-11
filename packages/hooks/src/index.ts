@@ -8,4 +8,9 @@ export {
   usePoller
 } from './hooks';
 export { Provider, Web3Context } from './Provider';
-export { NETWORKS, CHAIN_ID_TO_NETWORK, ERC721ABI } from './constants';
+export {
+  NETWORKS,
+  CHAIN_ID_TO_NETWORK,
+  ERC20ABI,
+  ERC721ABI,
+} from './constants';

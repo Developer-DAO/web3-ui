@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -83,6 +83,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://linktr.ee/carlomigueldy"><img src="https://avatars.githubusercontent.com/u/45052332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carlo Miguel Dy</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=carlomigueldy" title="Code">💻</a> <a href="https://github.com/Developer-DAO/web3-ui/commits?author=carlomigueldy" title="Documentation">📖</a></td>
     <td align="center"><a href="https://iamaatoh.com"><img src="https://avatars.githubusercontent.com/u/6915805?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Akshata Mohanty</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=akshatamohanty" title="Documentation">📖</a></td>
     <td align="center"><a href="http://www.ibby.dev"><img src="https://avatars.githubusercontent.com/u/23090443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ibby E</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Ibby-devv" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/swetshaw"><img src="https://avatars.githubusercontent.com/u/26214362?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sweta Shaw</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=swetshaw" title="Code">💻</a></td>
   </tr>
 </table>
 

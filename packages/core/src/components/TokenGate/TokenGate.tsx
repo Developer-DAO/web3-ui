@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { TokenGate as PrivTokenGate } from '@web3-ui/components';
 import { useReadOnlyContract, useWallet } from '@web3-ui/hooks';
-import { ERC20ABI, ERC721ABI } from '@web3-ui/hooks/src/constants';
+import { ERC20ABI, ERC721ABI } from '@web3-ui/hooks';
 import { BigNumber, ethers } from 'ethers';
 
 export interface TokenGateProps {
