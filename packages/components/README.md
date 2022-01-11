@@ -37,6 +37,7 @@ This is the list of components the package currently provides:
 - [Provider](#provider)
 - [TokenGate](#tokengate)
 - [EtherInput](#etherinput)
+- [TokenBalance](#tokenbalance)
 
 ---
 
@@ -121,4 +122,20 @@ EtherInput is an input field that accepts values in _wei_ or _ether_. It always 
 const [value, setValue] = useState();
 
 <EtherInput value={value} setValue={setValue} unit="ether" />; // value will always be in wei. eg. if someone enters 1 in the input, value will be 10^18
+```
+
+---
+
+### TokenBalance
+
+TokenBalance is a stateless component that displays the name, symbol, balance, and USD value of an ERC20 token.
+
+```tsx
+<TokenBalance
+  name="Devs 4 Revolution"
+  symbol="$CODE"
+  balance={200}
+  usdValue={100}
+  imgUrl={D_D_LOGO}
+/>
 ```

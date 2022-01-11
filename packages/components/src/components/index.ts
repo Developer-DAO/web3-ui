@@ -7,3 +7,4 @@ export * from './NFT';
 export * from './AddressInput';
 export * from './TokenGate';
 export * from './EtherInput';
+export * from './TokenBalance';
