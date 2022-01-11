@@ -1,5 +1,16 @@
 # @web3-ui/core
 
+## 0.5.0
+
+### Minor Changes
+
+- [#237](https://github.com/Developer-DAO/web3-ui/pull/237) [`6cd020e`](https://github.com/Developer-DAO/web3-ui/commit/6cd020ea5f8d492cdad178a8bc4544b8b8ab1335) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The components and core packages now have a TokenBalance component. TokenBalance can be used to fetch and render the balance of an ERC20 token for a given account address.
+
+### Patch Changes
+
+- Updated dependencies [[`6cd020e`](https://github.com/Developer-DAO/web3-ui/commit/6cd020ea5f8d492cdad178a8bc4544b8b8ab1335)]:
+  - @web3-ui/components@0.6.0
+
 ## 0.4.1
 
 ### Patch Changes
