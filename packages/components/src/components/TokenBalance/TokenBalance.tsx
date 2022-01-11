@@ -1,94 +1,65 @@
-import React, { useContext, useEffect, useState } from 'react';
 import { Box, Flex, FlexProps, Heading, Image } from '@chakra-ui/react';
-import { ERC20ABI, useTokenBalance, Web3Context } from '@web3-ui/hooks';
-import { ethers } from 'ethers';
+import React from 'react';
 
 export interface TokenBalanceProps {
   /**
-   * The contract address of the ERC20 Token
+   * The name of the ERC20 Token
    */
-  tokenAddress: string;
+  name: string;
   /**
-   * The owners address
+   * The symbol of the ERC20 Token
    */
-  accountAddress: string;
+  symbol: string;
   /**
-   * The value of one token in USD
+   * The users balance
    */
-  value: number;
+  balance: number;
+  /**
+   * The balance USD value
+   */
+  value: string;
   /**
    * Image of the token (optional)
    */
   imgUrl?: string | undefined;
 }
 
-export const TokenBalance: React.FC<TokenBalanceProps & FlexProps> = props => {
-  const { tokenAddress, accountAddress, value, imgUrl } = props;
-
-  const web3Context = useContext(Web3Context);
-  const provider = web3Context?.provider;
-
-  const [name, setName] = useState('');
-  const [symbol, setSymbol] = useState('');
-
-  const { balance, decimals } = useTokenBalance({ tokenAddress, accountAddress });
-
-  useEffect(() => {
-    getTokenNameAndSymbol();
-  }, []);
-
-  //Just display the first 3 decimal places of the balance
-  const calcBalance = () => {
-    if (balance === undefined || decimals === undefined) {
-      return 0;
-    }
-    return Number.parseFloat((Number.parseInt(balance) / 10 ** decimals).toFixed(3));
-  };
-  //Just display the first 3 decimal places of the value
-  const calcValue = () => {
-    const balance = calcBalance();
-    return (balance * value).toFixed(3);
-  };
-  //Fetch name and symbol from the smart contract
-  //Maybe it would make sense to provide them as props to avoid loading time ?
-  const getTokenNameAndSymbol = async () => {
-    const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
-    const [name, symbol] = await Promise.all([contract.name(), contract.symbol()]);
-
-    setName(name);
-    setSymbol(symbol);
-  };
+export const TokenBalance: React.FC<TokenBalanceProps & FlexProps> = (
+  props
+) => {
+  const { name, symbol, balance, value, imgUrl } = props;
 
   const Headline = (name: string) => {
     return (
-      <Heading as='h3' size='sm'>
+      <Heading as="h3" size="sm">
         {name}
       </Heading>
     );
   };
 
-  const TokenLogo = ({ tokenContractAddress }) => (
-    <Image
-      src={`https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${tokenContractAddress}/logo.png`}
-    />
-  );
-
   return (
-    <Flex borderRadius='lg' borderWidth='1px' overflow='hidden' px='4' py='2' {...props}>
-      <Box w='50px' pr='4'>
-        {imgUrl ? <Image src={imgUrl} /> : <TokenLogo tokenContractAddress={tokenAddress} />}
+    <Flex
+      borderRadius="lg"
+      borderWidth="1px"
+      overflow="hidden"
+      px="4"
+      py="2"
+      {...props}
+    >
+      <Box w="50px" pr="4">
+        <Image src={imgUrl} />
       </Box>
-      <Box flex='2'>
+      <Box flex="2">
         {Headline(symbol)}
         <p>{name}</p>
       </Box>
-      <Box flex='1'>
+      <Box flex="1">
         {Headline('Balance')}
-        <p>{calcBalance()}</p>
+        <p>{balance}</p>
       </Box>
-      <Box flex='1'>
+      <Box flex="1">
         {Headline('Value')}
-        <p>{calcValue()}</p>
+        <p>{value}</p>
       </Box>
     </Flex>
   );
