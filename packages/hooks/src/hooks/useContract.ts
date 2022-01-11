@@ -2,6 +2,7 @@ import React from 'react';
 import { Web3Context } from '../Provider';
 import { Contract, ContractInterface } from 'ethers';
 
+
 /**
  * @description
  * Defines the contract instance on `useState` hook
@@ -17,6 +18,15 @@ export type UseContractHook<T extends Contract> = [
   boolean
 ];
 
+/**
+ * Gets an instance of a contract from its ABI and address.
+ * @param address contract address
+ * @param abi contract ABI
+ * @returns {
+ *   contract: An instance of the current contract
+ *   isReady: True when the contract is ready to use, false otherwise.
+ * }
+ */
 export function useContract<T extends Contract>(
   address: string,
   abi: ContractInterface
