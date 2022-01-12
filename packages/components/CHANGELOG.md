@@ -1,5 +1,15 @@
 # @web3-ui/components
 
+## 0.7.0
+
+### Minor Changes
+
+- [#207](https://github.com/Developer-DAO/web3-ui/pull/207) [`4bfc16a`](https://github.com/Developer-DAO/web3-ui/commit/4bfc16afc6c47781acdc69d103d0cb1ae7888ac5) Thanks [@hone1er](https://github.com/hone1er)! - Added ENS lookup directly to Address component
+
+### Patch Changes
+
+- [#239](https://github.com/Developer-DAO/web3-ui/pull/239) [`5e46f38`](https://github.com/Developer-DAO/web3-ui/commit/5e46f384589defc6c5034ef857370bf45bb0991a) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The unnecessary static heading at the top of the NFTGallery component has been removed.
+
 ## 0.6.0
 
 ### Minor Changes

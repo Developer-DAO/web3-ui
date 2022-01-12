@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/components",
   "license": "MIT",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": false,
   "description": "React UI components for web3",
   "keywords": [
