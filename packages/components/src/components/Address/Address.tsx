@@ -41,7 +41,7 @@ export const Address: React.FC<AddressProps> = ({
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  const [ensName, setEnsName] = useState<string | null | undefined>(null);
+  const [ensName, setEnsName] = useState<string | null>(null);
   const provider: ethers.providers.JsonRpcProvider =
     new ethers.providers.Web3Provider(window.ethereum, 'any');
   useEffect(() => {
@@ -49,9 +49,9 @@ export const Address: React.FC<AddressProps> = ({
       return;
 
     async function fetchEns() {
-      if (ens == true && value) {
+      if (ens && value) {
         try {
-          const ensResponse = await provider?.lookupAddress(value);
+          const ensResponse = await provider.lookupAddress(value);
           setEnsName(ensResponse);
           return;
         } catch (error) {
