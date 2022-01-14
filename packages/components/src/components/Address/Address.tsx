@@ -49,8 +49,6 @@ export const Address: React.FC<AddressProps> = ({
       return;
 
     async function fetchEns() {
-      console.log(ens, value);
-
       if (ens == true && value) {
         try {
           const ensResponse = await provider?.lookupAddress(value);
