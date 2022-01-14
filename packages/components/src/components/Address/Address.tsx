@@ -23,9 +23,9 @@ export interface AddressProps {
    */
   shortened?: boolean;
   /**
-   * RPC URL for provider, required for ens lookup
+   * Set to true for ENS lookup
    */
-  rpcURL?: string;
+  ens?: boolean;
 }
 
 /**
@@ -35,26 +35,26 @@ export const Address: React.FC<AddressProps> = ({
   value,
   copiable = false,
   shortened = false,
-  rpcURL,
+  ens = false,
 }) => {
   const [error, setError] = useState<null | string>(null);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  const [ens, setEns] = useState<string | null | undefined>(null);
-  const provider: ethers.providers.JsonRpcProvider | null = rpcURL
-    ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
-    : null;
-
+  const [ensName, setEnsName] = useState<string | null | undefined>(null);
+  const provider: ethers.providers.JsonRpcProvider =
+    new ethers.providers.Web3Provider(window.ethereum, 'any');
   useEffect(() => {
     if (value.includes('.eth') || value === '' || value === 'Not connected')
       return;
 
     async function fetchEns() {
-      if (provider && value) {
+      console.log(ens, value);
+
+      if (ens == true && value) {
         try {
           const ensResponse = await provider?.lookupAddress(value);
-          setEns(ensResponse);
+          setEnsName(ensResponse);
           return;
         } catch (error) {
           return;
@@ -62,7 +62,7 @@ export const Address: React.FC<AddressProps> = ({
       }
     }
     fetchEns();
-  }, [value, provider]);
+  }, [value]);
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
@@ -102,7 +102,7 @@ export const Address: React.FC<AddressProps> = ({
         cursor={copiable ? 'pointer' : 'initial'}
         onClick={handleClick}
       >
-        <Text>{ens || displayAddress}</Text>
+        <Text>{ensName || displayAddress}</Text>
         {copiable && (
           <Box ml="auto">
             {copied ? (

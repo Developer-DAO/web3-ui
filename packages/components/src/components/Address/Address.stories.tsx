@@ -11,8 +11,12 @@ export default {
 
 export const Default = () => <Address value="testaddress.eth" />;
 
-export const DefaultShortenedWithENS = () => (
+export const DefaultShortenedWithProvidedENS = () => (
   <Address shortened value="testaddress.eth" />
+);
+
+export const DefaultShortenedWithENSLookup = () => (
+  <Address shortened value="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" ens />
 );
 
 export const DefaultShortenedWithHexAddress = () => (
