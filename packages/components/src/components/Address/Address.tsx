@@ -42,17 +42,18 @@ export const Address: React.FC<AddressProps> = ({
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
   const [ensName, setEnsName] = useState<string | null>(null);
-  const provider: ethers.providers.JsonRpcProvider =
-    new ethers.providers.Web3Provider(window.ethereum, 'any');
+  const provider: ethers.providers.Web3Provider | null = window.ethereum
+    ? new ethers.providers.Web3Provider(window.ethereum, 'any')
+    : null;
   useEffect(() => {
     if (value.includes('.eth') || value === '' || value === 'Not connected')
       return;
 
     async function fetchEns() {
-      if (ens && value) {
+      if (ens && value && provider) {
         try {
-          const ensResponse = await provider.lookupAddress(value);
-          setEnsName(ensResponse);
+          const ensResponse = await provider?.lookupAddress(value);
+          setEnsName(ensResponse || null);
           return;
         } catch (error) {
           return;
@@ -60,7 +61,7 @@ export const Address: React.FC<AddressProps> = ({
       }
     }
     fetchEns();
-  }, [value]);
+  }, [value, provider]);
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
