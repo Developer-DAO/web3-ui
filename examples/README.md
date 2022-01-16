@@ -4,7 +4,7 @@ These are different implementations of web3-ui in different libraries and framew
 
 ## Requirements
 
-- NVM or NodeJS `v14.17.6`
+- NVM or NodeJS `v16.13.0`
 
 ## Getting started
 
