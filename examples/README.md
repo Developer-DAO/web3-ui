@@ -9,8 +9,7 @@ These are different implementations of web3-ui in different libraries and framew
 ## Getting started
 
 1. `cd` into the example directory of your choice.
-2. Run `yarn`.
-3. Run `yarn dev` to start the dev server.
+2. Run `yarn dev` to start the dev server.
 
 ## Example Conventions Criteria
 

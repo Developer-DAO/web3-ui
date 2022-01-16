@@ -4,7 +4,7 @@ This is a default scaffolded React TypeScript project from [ViteJS](https://vite
 
 ## Requirements
 
-- NVM or NodeJS `v14.17.6`
+- NVM or NodeJS `v16.13.0`
 
 ## Required Adjustment
 

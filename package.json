@@ -5,7 +5,8 @@
   "private": true,
   "author": "Developer DAO",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "prepare": "husky install",
