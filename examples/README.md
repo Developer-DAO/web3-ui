@@ -33,12 +33,12 @@ TBD
 ### NextJS
 
 **Example:**
-[NextJS Web3-UI Example](/nextjs)
+[NextJS Web3-UI Example](nextjs)
 
 ### ViteJS
 
 **Example:**
-[ViteJS Web3-UI Example](/vitejs)
+[ViteJS Web3-UI Example](vitejs)
 
 ### Create React App
 
