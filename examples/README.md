@@ -6,6 +6,12 @@ These are different implementations of web3-ui in different libraries and framew
 
 - NVM or NodeJS `v14.17.6`
 
+## Getting started
+
+1. `cd` into the example directory of your choice.
+2. Run `yarn`.
+3. Run `yarn dev` to start the dev server.
+
 ## Example Conventions Criteria
 
 ### Scenario 1 - Not Connected
