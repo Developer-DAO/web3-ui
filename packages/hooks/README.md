@@ -29,13 +29,16 @@ function MyApp({ Component, pageProps }) {
 
 The following hooks are available:
 
-- [useWallet](#usewallet)
-- [useContract](#usecontract)
-- [useTransaction](#usetransaction)
-- [useTokenBalance](#usetokenbalance)
-- [useReadOnlyContract](#usereadonlycontract)
-- [useReadOnlyProvider](#usereadonlyprovider)
-- [usePoller](#usepoller)
+- [@web3-ui/hooks](#web3-uihooks)
+  - [Getting started](#getting-started)
+  - [Hooks](#hooks)
+    - [useWallet](#usewallet)
+    - [useWriteContract](#usewritecontract)
+    - [useTransaction](#usetransaction)
+    - [useTokenBalance](#usetokenbalance)
+    - [useReadOnlyContract](#usereadonlycontract)
+    - [useReadOnlyProvider](#usereadonlyprovider)
+    - [usePoller](#usepoller)
 
 ---
 
@@ -64,20 +67,23 @@ const {
   disconnectWallet,
   connected,
   correctNetwork,
-  switchToCorrectNetwork
+  switchToCorrectNetwork,
 } = useWallet();
 ```
 
 ---
 
-### useContract
+### useWriteContract
 
-The `useContract` hook takes the ABI and address of a contract and returns the contract instance. This hook requires the user to have connected their wallet. If you don't want to force your users to connect their wallet in order to read from a contract, use [`useReadOnlyContract`](#usereadonlycontract) instead.
+The `useWriteContract` hook takes the ABI and address of a contract and returns the contract instance. This hook requires the user to have connected their wallet. If you don't want to force your users to connect their wallet in order to read from a contract, use [`useReadOnlyContract`](#usereadonlycontract) instead.
 
 ```tsx
-import { useContract } from '@web3-ui/hooks';
+import { useWriteContract } from '@web3-ui/hooks';
 
-const [contract, isReady] = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
+const [contract, isReady] = useWriteContract(
+  'CONTRACT_ADDRESS',
+  'CONTRACT_ABI'
+);
 
 // check that the contract has been loaded
 if (isReady) {
@@ -126,16 +132,16 @@ Then finally run the script to generate the type definitions.
 yarn typechain # or `npm run typechain`
 ```
 
-Example usage in utilizing the generic type argument for `useContract` hook
+Example usage in utilizing the generic type argument for `useWriteContract` hook
 
 ```tsx
 import React from 'react';
-import { useContract } from '@web3-ui/hooks';
+import { useWriteContract } from '@web3-ui/hooks';
 import { ERC20Token } from 'types/contracts/ERC20Token';
 import ERC20TokenABI from 'abis/ERC20Token/ERC20Token.json';
 
 function App() {
-  const [contract, isReady] = useContract<ERC20Token>(
+  const [contract, isReady] = useWriteContract<ERC20Token>(
     'CONTRACT_ADDRESS',
     ERC20TokenABI
   );
@@ -167,16 +173,16 @@ The `useTransaction` hook takes in a contract function. It returns an array of t
 - `error`
 
 ```tsx
-import { useTransaction, useContract } from '@web3-ui/hooks';
+import { useTransaction, useWriteContract } from '@web3-ui/hooks';
 
-const greeterContract = useContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
+const greeterContract = useWriteContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
 const [execute, loading, error] = useTransaction(greeter.setGreeting);
 
 await execute([
   'Hello, world!',
   {
-    value: ethers.utils.parseEther('0.1') // you can also use this for payable transactions
-  }
+    value: ethers.utils.parseEther('0.1'), // you can also use this for payable transactions
+  },
 ]); // will execute the transaction
 ```
 
@@ -202,7 +208,7 @@ const {
   error,
   decimals,
   formattedBalance,
-  balanceInBigNumber
+  balanceInBigNumber,
 } = useTokenBalance('TOKEN_CONTRACT_ADDRESS', 'ACCOUNT_ADDRESS');
 ```
 

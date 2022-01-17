@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React, { useEffect } from 'react';
-import { Provider, useWallet, useContract, NETWORKS, usePoller } from '..';
+import { Provider, useWallet, useWriteContract, NETWORKS, usePoller } from '..';
 import { Button, Input, Divider, VStack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import { useReadOnlyContract } from '../hooks/useReadOnlyContract';
@@ -61,7 +61,7 @@ const ABI = [
 
 const Default = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const [contract, isReady] = useContract(ADDRESS, ABI);
+  const [contract, isReady] = useWriteContract(ADDRESS, ABI);
   const [state, setState] = React.useState({
     newGreeting: '',
     toAddress: '',
@@ -70,25 +70,25 @@ const Default = () => {
 
   usePoller(async () => {
     try {
-      const greeting = await contract.greet();
+      const greeting = await contract?.greet();
       console.log(greeting); // logs the greeting every second
     } catch (error) {
       console.log(error);
     }
   }, 1000);
 
-  const handleGreet = async () => alert(await contract.greet());
+  const handleGreet = async () => alert(await contract?.greet());
   const handleChangeState =
     (stateName: string) =>
     ({ target: { value } }) => {
       setState({ ...state, [stateName]: value });
     };
   const handleSetGreeting = async () => {
-    await contract.setGreeting(state.newGreeting);
+    await contract?.setGreeting(state.newGreeting);
     setState({ ...state, newGreeting: '' });
   };
   const handleTransferTo = async () => {
-    await contract.transferTo(state.toAddress, {
+    await contract?.transferTo(state.toAddress, {
       value: ethers.utils.parseEther(state.amount),
     });
     setState({ ...state, toAddress: '', amount: '0' });
@@ -140,7 +140,7 @@ const Default = () => {
   );
 };
 
-storiesOf('Hooks/useContract', module).add('Default', () => (
+storiesOf('Hooks/useWriteContract', module).add('Default', () => (
   <Provider network={NETWORKS.rinkeby}>
     <Default />
   </Provider>

@@ -7,7 +7,7 @@ import {
   FormErrorMessage,
 } from '@chakra-ui/react';
 import React from 'react';
-import { NETWORKS, Provider, useWallet, useContract } from '..';
+import { NETWORKS, Provider, useWallet, useWriteContract } from '..';
 import { useTransaction } from '../hooks';
 
 export default {
@@ -68,9 +68,9 @@ const ABI = [
   },
 ];
 
-const UsingUseContract = () => {
+const UsingUseWriteContract = () => {
   const { connectWallet, disconnectWallet, connected } = useWallet();
-  const [contract, isReady] = useContract(ADDRESS, ABI);
+  const [contract] = useWriteContract(ADDRESS, ABI);
   const [value, setValue] = React.useState('');
 
   const greet = async () => {
@@ -115,10 +115,10 @@ const UsingUseContract = () => {
   );
 };
 
-export const WithUseContract = () => {
+export const WithUseWriteContract = () => {
   return (
     <Provider network={NETWORKS.rinkeby}>
-      <UsingUseContract />
+      <UsingUseWriteContract />
     </Provider>
   );
 };
