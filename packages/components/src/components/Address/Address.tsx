@@ -17,7 +17,7 @@ export interface AddressProps {
   /**
    * Provider, required for ENS lookup
    */
-  provider: ethers.providers.Web3Provider;
+  provider?: ethers.providers.Web3Provider;
   /**
    * Whether the address can be copied or not
    */
