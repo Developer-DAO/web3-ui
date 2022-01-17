@@ -37,7 +37,7 @@ export interface OpenSeaAsset {
 export const NFTGallery = ({
   address,
   gridWidth = 4,
-  web3Provider
+  web3Provider,
 }: NFTGalleryProps) => {
   const [nfts, setNfts] = React.useState<OpenSeaAsset[]>([]);
   const [errorMessage, setErrorMessage] = React.useState(null);
@@ -52,7 +52,7 @@ export const NFTGallery = ({
         resolvedAddress = await web3Provider.resolveName(address);
       }
       fetch(`https://api.opensea.io/api/v1/assets?owner=${resolvedAddress}`)
-        .then(res => {
+        .then((res) => {
           if (!res.ok) {
             throw Error(
               `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
@@ -60,10 +60,10 @@ export const NFTGallery = ({
           }
           return res.json();
         })
-        .then(data => {
+        .then((data) => {
           setNfts(data.assets), setErrorMessage(null);
         })
-        .catch(err => setErrorMessage(err.message));
+        .catch((err) => setErrorMessage(err.message));
     }
     exec();
   }, [address, web3Provider]);
@@ -77,7 +77,7 @@ export const NFTGallery = ({
         </Alert>
       )}
       <Grid templateColumns={`repeat(${gridWidth}, 1fr)`} gap={6}>
-        {nfts.map(nft => (
+        {nfts.map((nft) => (
           <NFTCard
             key={`${nft.asset_contract.symbol}-${nft.token_id}`}
             data={{
@@ -85,7 +85,7 @@ export const NFTGallery = ({
               imageUrl: nft.image_url,
               tokenId: nft.token_id,
               assetContractName: nft.asset_contract.name,
-              assetContractSymbol: nft.asset_contract.symbol
+              assetContractSymbol: nft.asset_contract.symbol,
             }}
             size="xs"
           />
