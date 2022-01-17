@@ -17,7 +17,7 @@ export interface AddressProps {
   /**
    * Provider, required for ENS lookup
    */
-  provider?: ethers.providers.Web3Provider;
+  provider: ethers.providers.Web3Provider;
   /**
    * Whether the address can be copied or not
    */
@@ -47,19 +47,19 @@ export const Address: React.FC<AddressProps> = ({
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
   const [ensName, setEnsName] = useState<string | null>(null);
-  const provider: ethers.providers.Web3Provider | null = provider
+  const rpcProvider: ethers.providers.Web3Provider | null = provider
+    ? provider
     : null;
   useEffect(() => {
-    
     if (value) {
       if (value.includes('.eth') || value === '' || value === 'Not connected')
         return;
+      return;
     }
-
     async function fetchEns() {
-      if (ens && value && provider) {
+      if (ens && value && rpcProvider) {
         try {
-          const ensResponse = await provider?.lookupAddress(value);
+          const ensResponse = await rpcProvider?.lookupAddress(value);
           setEnsName(ensResponse || null);
           return;
         } catch (error) {
@@ -68,7 +68,7 @@ export const Address: React.FC<AddressProps> = ({
       }
     }
     fetchEns();
-  }, [value, provider]);
+  }, [value, rpcProvider]);
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
