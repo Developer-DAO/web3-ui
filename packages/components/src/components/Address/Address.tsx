@@ -42,25 +42,24 @@ export const Address: React.FC<AddressProps> = ({
   shortened = false,
   ens = false,
 }) => {
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<undefined | string>(undefined);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  const [ensName, setEnsName] = useState<string | null>(null);
-  const rpcProvider: ethers.providers.Web3Provider | null = provider
+  const [ensName, setEnsName] = useState<string | undefined>(undefined);
+  const rpcProvider: ethers.providers.Web3Provider | undefined = provider
     ? provider
-    : null;
+    : undefined;
   useEffect(() => {
     if (value) {
       if (value.includes('.eth') || value === '' || value === 'Not connected')
         return;
-      return;
     }
     async function fetchEns() {
       if (ens && value && rpcProvider) {
         try {
           const ensResponse = await rpcProvider?.lookupAddress(value);
-          setEnsName(ensResponse || null);
+          setEnsName(ensResponse || undefined);
           return;
         } catch (error) {
           return;
@@ -84,7 +83,7 @@ export const Address: React.FC<AddressProps> = ({
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
-        setError(null);
+        setError(undefined);
         setCopied(true);
 
         feedbackTimeOut = setTimeout(() => {
