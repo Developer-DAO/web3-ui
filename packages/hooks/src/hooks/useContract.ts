@@ -10,9 +10,9 @@ export type ContractInstance<T extends Contract> = T | null;
 
 /**
  * @description
- * The return type of the `useWriteContract` hook
+ * The return type of the `useContract` hook
  */
-export type UseWriteContractHook<T extends Contract> = [
+export type UseContractHook<T extends Contract> = [
   ContractInstance<T> | null,
   boolean
 ];
@@ -26,10 +26,10 @@ export type UseWriteContractHook<T extends Contract> = [
  *   isReady: True when the contract is ready to use, false otherwise.
  * }
  */
-export function useWriteContract<T extends Contract>(
+export function useContract<T extends Contract>(
   address: string,
   abi: ContractInterface
-): UseWriteContractHook<T> {
+): UseContractHook<T> {
   const context = React.useContext(Web3Context);
   const [contract, setContract] = React.useState<ContractInstance<T>>(null);
   const [isReady, setIsReady] = React.useState(false);

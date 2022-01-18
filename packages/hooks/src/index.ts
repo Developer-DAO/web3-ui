@@ -1,6 +1,6 @@
 export {
   useWallet,
-  useWriteContract,
+  useContract,
   useTokenBalance,
   useTransaction,
   useReadOnlyProvider,
