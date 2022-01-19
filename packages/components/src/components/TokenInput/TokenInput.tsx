@@ -6,7 +6,7 @@ import {
   InputProps,
   InputRightElement,
   Select,
-  SelectFieldProps
+  SelectFieldProps,
 } from '@chakra-ui/react';
 import React from 'react';
 import { defaultTokens } from './tokens';
@@ -88,13 +88,13 @@ export const TokenInput: React.FC<TokenInputProps> = ({
           type="number"
           {...inputProps}
           value={value}
-          onChange={e => onValueChange(e.target.value)}
+          onChange={(e) => onValueChange(e.target.value)}
         />
         <InputRightElement w="7rem">
           <Select
             {...selectProps}
             value={selectedToken}
-            onChange={e => onTokenChange(e.target.value)}
+            onChange={(e) => onTokenChange(e.target.value)}
           >
             {finalTokens.map(({ symbol, address }) => (
               <option key={symbol} value={address}>
