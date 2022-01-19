@@ -47,7 +47,7 @@ export const Address: React.FC<AddressProps> = ({
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
   const [ensName, setEnsName] = useState<string | undefined>(undefined);
-  
+
   useEffect(() => {
     if (value) {
       if (value.includes('.eth') || value === '' || value === 'Not connected')
