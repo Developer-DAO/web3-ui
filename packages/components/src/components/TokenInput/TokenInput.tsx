@@ -97,7 +97,7 @@ export const TokenInput: React.FC<TokenInputProps> = ({
             onChange={e => onTokenChange(e.target.value)}
           >
             {finalTokens.map(({ symbol, address }) => (
-              <option key={sybmol} value={address}>
+              <option key={symbol} value={address}>
                 {symbol.toUpperCase()}
               </option>
             ))}
