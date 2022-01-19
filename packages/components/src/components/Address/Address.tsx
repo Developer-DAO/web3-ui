@@ -47,18 +47,16 @@ export const Address: React.FC<AddressProps> = ({
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
   const [ensName, setEnsName] = useState<string | undefined>(undefined);
-  const rpcProvider: ethers.providers.Web3Provider | undefined = provider
-    ? provider
-    : undefined;
+  
   useEffect(() => {
     if (value) {
       if (value.includes('.eth') || value === '' || value === 'Not connected')
         return;
     }
     async function fetchEns() {
-      if (ens && value && rpcProvider) {
+      if (ens && value && provider) {
         try {
-          const ensResponse = await rpcProvider?.lookupAddress(value);
+          const ensResponse = await provider?.lookupAddress(value);
           setEnsName(ensResponse || undefined);
           return;
         } catch (error) {
@@ -67,7 +65,7 @@ export const Address: React.FC<AddressProps> = ({
       }
     }
     fetchEns();
-  }, [value, rpcProvider]);
+  }, [value, provider]);
 
   if (shortened && value) {
     if (value.includes('.eth') || value === '' || value === 'Not connected') {
