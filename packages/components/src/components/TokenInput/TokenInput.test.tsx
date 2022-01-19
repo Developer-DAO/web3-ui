@@ -3,7 +3,7 @@ import React from 'react';
 import { TokenInput } from '.';
 
 describe('TokenInput', () => {
-  it('renders without throwing', () => {
+  it('renders correctly', () => {
     const [value, setValue] = React.useState('');
     const [token, setToken] = React.useState('');
     const { container } = render(

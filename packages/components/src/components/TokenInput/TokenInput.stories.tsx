@@ -3,7 +3,7 @@ import { TokenInput } from '.';
 
 export default {
   title: 'Components/TokenInput',
-  component: TokenInput
+  component: TokenInput,
 };
 
 const Component = () => {
@@ -40,8 +40,8 @@ const Component2 = () => {
         outline: 'none',
         rounded: 'none',
         _focus: {
-          borderLeft: '2px solid black'
-        }
+          borderLeft: '2px solid black',
+        },
       }}
     />
   );
