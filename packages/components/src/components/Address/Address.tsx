@@ -15,6 +15,10 @@ export interface AddressProps {
    */
   value: string;
   /**
+   * Provider, required for ENS lookup
+   */
+  provider?: ethers.providers.Web3Provider;
+  /**
    * Whether the address can be copied or not
    */
   copiable?: boolean;
@@ -23,9 +27,9 @@ export interface AddressProps {
    */
   shortened?: boolean;
   /**
-   * RPC URL for provider, required for ens lookup
+   * Set to true for ENS lookup
    */
-  rpcURL?: string;
+  ens?: boolean;
 }
 
 /**
@@ -33,28 +37,27 @@ export interface AddressProps {
  */
 export const Address: React.FC<AddressProps> = ({
   value,
+  provider,
   copiable = false,
   shortened = false,
-  rpcURL,
+  ens = false,
 }) => {
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<undefined | string>(undefined);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  const [ens, setEns] = useState<string | null | undefined>(null);
-  const provider: ethers.providers.JsonRpcProvider | null = rpcURL
-    ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
-    : null;
+  const [ensName, setEnsName] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    if (value.includes('.eth') || value === '' || value === 'Not connected')
-      return;
-
+    if (value) {
+      if (value.includes('.eth') || value === '' || value === 'Not connected')
+        return;
+    }
     async function fetchEns() {
-      if (provider && value) {
+      if (ens && value && provider) {
         try {
           const ensResponse = await provider?.lookupAddress(value);
-          setEns(ensResponse);
+          setEnsName(ensResponse || undefined);
           return;
         } catch (error) {
           return;
@@ -78,7 +81,7 @@ export const Address: React.FC<AddressProps> = ({
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
-        setError(null);
+        setError(undefined);
         setCopied(true);
 
         feedbackTimeOut = setTimeout(() => {
@@ -102,7 +105,7 @@ export const Address: React.FC<AddressProps> = ({
         cursor={copiable ? 'pointer' : 'initial'}
         onClick={handleClick}
       >
-        <Text>{ens || displayAddress}</Text>
+        <Text>{ensName || displayAddress}</Text>
         {copiable && (
           <Box ml="auto">
             {copied ? (
