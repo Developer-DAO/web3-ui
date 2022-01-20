@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useWallet, ConnectWallet } from '@web3-ui/core';
 import { NFTGallery } from '@web3-ui/components';
-import { useContract } from '@web3-ui/hooks';
+import { useWriteContract } from '@web3-ui/hooks';
 import { Greeter } from '../types/contracts';
 import GreeterABI from '../abis/Greeter.json';
 
@@ -18,7 +18,7 @@ export default function Home() {
   const [nftGallery, setNftGallery] = useState(null);
   const { correctNetwork, switchToCorrectNetwork, connected, provider } =
     useWallet();
-  const [greeterContract, isReady] = useContract<Greeter>(
+  const [greeterContract, isReady] = useWriteContract<Greeter>(
     // Rinkeby
     '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135',
     GreeterABI
