@@ -61,7 +61,8 @@ export const NFTGallery = ({
           return res.json();
         })
         .then((data) => {
-          setNfts(data.assets), setErrorMessage(null);
+          setNfts(data.assets);
+          setErrorMessage(null);
         })
         .catch((err) => setErrorMessage(err.message));
     }
