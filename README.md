@@ -16,7 +16,7 @@ A library of UI components specifically crafted for web3 use cases.
 | [`@web3-ui/components`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/components) | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcomponents.svg)](https://badge.fury.io/js/@web3-ui%2Fcomponents) |
 | [`@web3-ui/hooks`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/hooks)           | [![npm version](https://badge.fury.io/js/@web3-ui%2Fhooks.svg)](https://badge.fury.io/js/@web3-ui%2Fhooks)           |
 
-## Get started
+## Quick start
 
 1. Install the package
 
