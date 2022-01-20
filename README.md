@@ -1,7 +1,9 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -14,39 +16,54 @@ A library of UI components specifically crafted for web3 use cases.
 | [`@web3-ui/components`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/components) | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcomponents.svg)](https://badge.fury.io/js/@web3-ui%2Fcomponents) |
 | [`@web3-ui/hooks`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/hooks)           | [![npm version](https://badge.fury.io/js/@web3-ui%2Fhooks.svg)](https://badge.fury.io/js/@web3-ui%2Fhooks)           |
 
-## The Motive
+## Quick start
 
-## The RFC
+1. Install the package
 
-- [RFC: web3-ui (a web3-specific UI library)](https://forum.developerdao.com/t/rfc-web3-ui-a-web3-specific-ui-library/565)
+```bash
+$ yarn add @web3-ui/core
+```
 
-## Technologies
+2. Setup the Provider
 
-This project is built with the following open source libraries, frameworks and languages.
-| Tech | Description |
-| --------------------------------------------- | ------------------------------------------------------------------ |
-| [React](https://reactjs.org/) | Front end user interface |
-| [ChakraUI](https://chakra-ui.com/) | A simple & modular component library |
-| [TypeScript](https://www.typescriptlang.org/) | Static type-checking programming language |
-| [Storybook](https://storybook.js.org/) | Open source tool for building UI components and pages in isolation |
+```tsx
+import { Provider } from '@web3-ui/core';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Provider network={NETWORKS.mainnet}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+}
+```
+
+3. Use the components and hooks
+
+```tsx
+import { ConnectWallet, useWallet } from '@web3-ui/core';
+
+function Home() {
+  const { connection } = useWallet();
+
+  return (
+    <div>
+      <ConnectWallet />
+      <div>{connection.ens || connection.userAddress}</div>
+    </div>
+  );
+}
+```
+
+Do note that you can also install & use the `components` and `hooks` packages separately. They are completely independent. The `core` package is an opinionated combination of the `components` and `hooks` packages.
 
 ## How to Contribute
 
-1. Read the [CONTRIBUTING GUIDELINES](/CONTRIBUTING.md).
+Read the [CONTRIBUTING GUIDELINES](/CONTRIBUTING.md).
 
-2. Check the [ISSUES](https://github.com/Developer-DAO/web3-ui/issues) for a TO-DO list of problems to fix and things to add. Read every issue to understand what's needed and whether it's something you can help with.
+## The motive behind this package
 
-3. Ask other contributors to see if no one has taken the issue yet. If you're interested in tackling such a feature and it's still available, we will assign you to the task.
-
-4. Clone the repo and create your own branch using `git checkout -b your_branch_name`. Remember to use a branch name that describes WHAT you're doing/fixing.
-
-5. Setup your local development environment. Instructions [here](/CONTRIBUTING.md#installation)
-
-6. Once your work is done with the local copy of the repo, don't hesitate to draw a pull request. We'll gladly revise and push as deemed fit.
-
-7. Feel free to add new issues as you read the code and find inconsistencies and/or possible features that may add up to the website. Follow the labeling standards to make it easier to understand what you're proposing.
-
-8. Document changes and/or issues clearly. Make it easy for everyone involved to understand your ideas/changes.
+- [RFC: web3-ui (a web3-specific UI library)](https://forum.developerdao.com/t/rfc-web3-ui-a-web3-specific-ui-library/565)
 
 ## Contributors ✨
 
@@ -95,3 +112,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Special thanks
+
+This project would not have been possible without these wonderful projects:
+
+- [ethers](https://github.com/ethers-io/ethers.js/)
+- [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth)
+- [Chakra UI](https://github.com/chakra-ui/chakra-ui)
+- [web3modal](https://github.com/web3modal/web3modal)
+- [useDApp](https://github.com/EthWorks/useDapp)
+- [wagmi](https://github.com/tmm/wagmi)
+- [Storybook](https://github.com/storybookjs/storybook)
+- [Preconstruct](https://github.com/preconstruct/preconstruct)
