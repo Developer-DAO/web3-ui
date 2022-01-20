@@ -40,7 +40,7 @@ export const NFTGallery = ({
   web3Provider,
 }: NFTGalleryProps) => {
   const [nfts, setNfts] = React.useState<OpenSeaAsset[]>([]);
-  const [errorMessage, setErrorMessage] = React.useState();
+  const [errorMessage, setErrorMessage] = React.useState(null);
 
   useEffect(() => {
     async function exec() {
@@ -60,7 +60,10 @@ export const NFTGallery = ({
           }
           return res.json();
         })
-        .then((data) => setNfts(data.assets))
+        .then((data) => {
+          setNfts(data.assets);
+          setErrorMessage(null);
+        })
         .catch((err) => setErrorMessage(err.message));
     }
     exec();
