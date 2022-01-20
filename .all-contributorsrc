@@ -218,6 +218,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "codingwithmanny",
+      "name": "manny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/318082?v=4",
+      "profile": "https://medium.com/@codingwithmanny",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
