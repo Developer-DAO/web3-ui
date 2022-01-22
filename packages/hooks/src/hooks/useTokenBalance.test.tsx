@@ -102,7 +102,7 @@ describe('useTokenBalanceTest', () => {
     const { result, waitFor } = renderHook(
       () =>
         useTokenBalance({
-          //@ts-ignore
+          // @ts-expect-error testing that `tokenAddress` is `undefined`
           tokenAddress: undefined,
           accountAddress: '0x503828976D22510aad0201ac7EC88293211D23Da',
         }),
@@ -126,7 +126,7 @@ describe('useTokenBalanceTest', () => {
       () =>
         useTokenBalance({
           tokenAddress: '0xde30da39c46104798bb5aa3fe8b9e0e1f348163f',
-          //@ts-ignore
+          // @ts-expect-error testing that `accountAddress` is undefined
           accountAddress: undefined,
         }),
       { wrapper: Web3ContextTestProvider }
@@ -149,7 +149,6 @@ describe('useTokenBalanceTest', () => {
       () =>
         useTokenBalance({
           tokenAddress: '0xde30da39c46104798bb5aa3fe8b9e0e1f348163f',
-          //@ts-ignore
           accountAddress: 'bar',
         }),
       { wrapper: Web3ContextTestProvider }
