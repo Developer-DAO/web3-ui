@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { useTokenBalance } from './useTokenBalance';
-import { Web3Context } from '../Provider';
+import { Web3Context, Web3ContextType } from '../Provider';
 import { BigNumber, ethers } from 'ethers';
 
 jest.mock('ethers', () => ({
@@ -22,24 +22,34 @@ jest.mock('ethers', () => ({
   },
 }));
 
-describe('useTokenBalanceTest', () => {
-  test('happy path - returns accountsAddresses balance if both accountAddress and tokenAddress are defined  ', async () => {
-    const wrapper = ({ children }) => (
-      <>
-        {/* @ts-ignore */}
-        <Web3Context.Provider value={{ provider: {} }}>
-          {children}
-        </Web3Context.Provider>
-      </>
-    );
+/**
+ * A "mock" `Provider` for `Web3Context` that defaults to an empty object
+ * definition for `provider`. This allows us to avoid using `ethers` network
+ * calls while still executing the mocked contract methods.
+ */
+const Web3ContextTestProvider = ({
+  children,
+  provider = {},
+}: {
+  children: ReactNode;
+  provider?: Partial<ethers.providers.Web3Provider>;
+}) => {
+  return (
+    <Web3Context.Provider value={{ provider: provider } as Web3ContextType}>
+      {children}
+    </Web3Context.Provider>
+  );
+};
 
+describe('useTokenBalanceTest', () => {
+  test('happy path - returns accountsAddresses balance if both accountAddress and tokenAddress are defined', async () => {
     const { result, waitFor } = renderHook(
       () =>
         useTokenBalance({
           tokenAddress: '0xde30da39c46104798bb5aa3fe8b9e0e1f348163f',
           accountAddress: '0x503828976D22510aad0201ac7EC88293211D23Da',
         }),
-      { wrapper }
+      { wrapper: Web3ContextTestProvider }
     );
 
     await waitFor(() =>
@@ -55,17 +65,6 @@ describe('useTokenBalanceTest', () => {
   });
 
   test('tokenAddress is undefined - hook returns error; balance and decimals are undefined', async () => {
-    const wrapper = ({ children }) => (
-      <>
-        {/* pass an empty provider because we don't wan't to actually request an eth provider */}
-        {/* all web3 interaction should be mocked using the ContractSub above */}
-        {/* @ts-ignore */}
-        <Web3Context.Provider value={{ provider: {} }}>
-          {children}
-        </Web3Context.Provider>
-      </>
-    );
-
     const { result, waitFor } = renderHook(
       () =>
         useTokenBalance({
@@ -73,7 +72,7 @@ describe('useTokenBalanceTest', () => {
           tokenAddress: undefined,
           accountAddress: '0x503828976D22510aad0201ac7EC88293211D23Da',
         }),
-      { wrapper }
+      { wrapper: Web3ContextTestProvider }
     );
 
     await waitFor(() =>
@@ -89,15 +88,6 @@ describe('useTokenBalanceTest', () => {
   });
 
   test('accountAddress is undefined - hook returns error; balance and decimals are undefined', async () => {
-    const wrapper = ({ children }) => (
-      <>
-        {/* @ts-ignore */}
-        <Web3Context.Provider value={{ provider: {} }}>
-          {children}
-        </Web3Context.Provider>
-      </>
-    );
-
     const { result, waitFor } = renderHook(
       () =>
         useTokenBalance({
@@ -105,7 +95,7 @@ describe('useTokenBalanceTest', () => {
           //@ts-ignore
           accountAddress: undefined,
         }),
-      { wrapper }
+      { wrapper: Web3ContextTestProvider }
     );
 
     await waitFor(() =>
@@ -121,15 +111,6 @@ describe('useTokenBalanceTest', () => {
   });
 
   test('accountAddress is invalid - hook returns error; balance and decimals are undefined', async () => {
-    const wrapper = ({ children }) => (
-      <>
-        {/* @ts-ignore */}
-        <Web3Context.Provider value={{ provider: {} }}>
-          {children}
-        </Web3Context.Provider>
-      </>
-    );
-
     const { result, waitFor } = renderHook(
       () =>
         useTokenBalance({
@@ -137,7 +118,7 @@ describe('useTokenBalanceTest', () => {
           //@ts-ignore
           accountAddress: 'bar',
         }),
-      { wrapper }
+      { wrapper: Web3ContextTestProvider }
     );
 
     await waitFor(() =>
