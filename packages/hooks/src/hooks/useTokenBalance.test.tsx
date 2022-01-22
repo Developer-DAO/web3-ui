@@ -43,20 +43,14 @@ describe('useTokenBalanceTest', () => {
     );
 
     await waitFor(() =>
-      expect(result.current.balance).toEqual(
-        BigNumber.from(ethers.utils.parseEther('1.0')).toString()
-      )
-    );
-    await waitFor(() => expect(result.current.loading).toEqual(false));
-    await waitFor(() => expect(result.current.error).toEqual(false));
-    await waitFor(() =>
-      expect(result.current.decimals).toEqual(BigNumber.from('18'))
-    );
-    await waitFor(() => expect(result.current.formattedBalance).toEqual('1.0'));
-    await waitFor(() =>
-      expect(result.current.balanceInBigNumber).toEqual(
-        BigNumber.from(ethers.utils.parseEther('1.0'))
-      )
+      expect(result.current).toEqual({
+        balance: BigNumber.from(ethers.utils.parseEther('1.0')).toString(),
+        loading: false,
+        error: false,
+        decimals: BigNumber.from('18'),
+        formattedBalance: '1.0',
+        balanceInBigNumber: BigNumber.from(ethers.utils.parseEther('1.0')),
+      })
     );
   });
 
@@ -82,16 +76,15 @@ describe('useTokenBalanceTest', () => {
       { wrapper }
     );
 
-    await waitFor(() => expect(result.current.balance).toBeUndefined());
-
-    await waitFor(() => expect(result.current.loading).toEqual(false));
-    await waitFor(() => expect(result.current.error).toEqual(true));
-    await waitFor(() => expect(result.current.decimals).toBeUndefined());
     await waitFor(() =>
-      expect(result.current.formattedBalance).toBeUndefined()
-    );
-    await waitFor(() =>
-      expect(result.current.balanceInBigNumber).toBeUndefined()
+      expect(result.current).toEqual({
+        balance: undefined,
+        loading: false,
+        error: true,
+        decimals: undefined,
+        formattedBalance: undefined,
+        balanceInBigNumber: undefined,
+      })
     );
   });
 
@@ -115,15 +108,15 @@ describe('useTokenBalanceTest', () => {
       { wrapper }
     );
 
-    await waitFor(() => expect(result.current.balance).toBeUndefined());
-    await waitFor(() => expect(result.current.loading).toEqual(false));
-    await waitFor(() => expect(result.current.error).toEqual(true));
-    await waitFor(() => expect(result.current.decimals).toBeUndefined());
     await waitFor(() =>
-      expect(result.current.formattedBalance).toBeUndefined()
-    );
-    await waitFor(() =>
-      expect(result.current.balanceInBigNumber).toBeUndefined()
+      expect(result.current).toEqual({
+        balance: undefined,
+        loading: false,
+        error: true,
+        decimals: undefined,
+        formattedBalance: undefined,
+        balanceInBigNumber: undefined,
+      })
     );
   });
 
@@ -146,16 +139,16 @@ describe('useTokenBalanceTest', () => {
         }),
       { wrapper }
     );
-    await waitFor(() => expect(result.current.balance).toBeUndefined());
-    await waitFor(() => expect(result.current.loading).toEqual(false));
-    await waitFor(() => expect(result.current.error).toEqual(true));
-    await waitFor(() => expect(result.current.decimals).toBeUndefined());
+
     await waitFor(() =>
-      expect(result.current.formattedBalance).toBeUndefined()
+      expect(result.current).toEqual({
+        balance: undefined,
+        loading: false,
+        error: true,
+        decimals: undefined,
+        formattedBalance: undefined,
+        balanceInBigNumber: undefined,
+      })
     );
-    await waitFor(() =>
-      expect(result.current.balanceInBigNumber).toBeUndefined()
-    );
-    console.log(result.current);
   });
 });
