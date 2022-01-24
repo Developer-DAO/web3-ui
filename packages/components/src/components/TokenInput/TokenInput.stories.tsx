@@ -52,22 +52,22 @@ const Component3 = () => {
 
   return (
     <TokenInput
-      width='fit-content'
-      border='2 px solid black'
-      borderWidth='2px'
+      width="fit-content"
+      border="2 px solid black"
+      borderWidth="2px"
       p={2}
       selectedToken={token}
       onTokenChange={setToken}
       value={value}
       onValueChange={setValue}
       inputProps={{
-        width: '20rem'
+        width: '20rem',
       }}
       selectProps={{
         borderLeft: '2px solid black',
         fontSize: '1.2rem',
         fontWeight: 'bold',
-        w:'7rem',
+        w: '7rem',
         outline: 'none',
         rounded: 'none',
         _focus: {
@@ -82,4 +82,4 @@ export const Default = () => <Component />;
 
 export const WithSelectProps = () => <Component2 />;
 
-export const withCustomWidthAndBorder = () => <Component3 />
+export const withCustomWidthAndBorder = () => <Component3 />;

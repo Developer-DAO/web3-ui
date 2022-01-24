@@ -91,7 +91,7 @@ export const TokenInput: React.FC<TokenInputProps & BoxProps> = ({
           value={value}
           onChange={(e) => onValueChange(e.target.value)}
         />
-        <InputRightElement w='fit-content'>
+        <InputRightElement w="fit-content">
           <Select
             {...selectProps}
             value={selectedToken}
