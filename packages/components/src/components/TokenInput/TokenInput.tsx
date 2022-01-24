@@ -1,4 +1,5 @@
 import {
+  BoxProps,
   FormControl,
   FormLabel,
   Input,
@@ -61,7 +62,7 @@ export interface TokenInputProps {
  * A number input component that is used to enter number of tokens and also select the token from a list of tokens.
  */
 
-export const TokenInput: React.FC<TokenInputProps> = ({
+export const TokenInput: React.FC<TokenInputProps & BoxProps> = ({
   tokens = [],
   value,
   onValueChange,
@@ -90,7 +91,7 @@ export const TokenInput: React.FC<TokenInputProps> = ({
           value={value}
           onChange={(e) => onValueChange(e.target.value)}
         />
-        <InputRightElement w="7rem">
+        <InputRightElement w='fit-content'>
           <Select
             {...selectProps}
             value={selectedToken}
