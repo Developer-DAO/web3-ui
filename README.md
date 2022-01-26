@@ -25,7 +25,7 @@ $ yarn add @web3-ui/core
 2. Setup the Provider
 
 ```tsx
-import { Provider } from '@web3-ui/core';
+import { Provider, NETWORKS } from '@web3-ui/core';
 
 function MyApp({ Component, pageProps }) {
   return (
