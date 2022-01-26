@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -102,6 +102,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Redarcher9"><img src="https://avatars.githubusercontent.com/u/19843336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Snehit Paunikar</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=Redarcher9" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/ngnathan"><img src="https://avatars.githubusercontent.com/u/1150025?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nathan Ng</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=ngnathan" title="Code">💻</a></td>
     <td align="center"><a href="https://medium.com/@codingwithmanny"><img src="https://avatars.githubusercontent.com/u/318082?v=4?s=100" width="100px;" alt=""/><br /><sub><b>manny</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=codingwithmanny" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/fjun99"><img src="https://avatars.githubusercontent.com/u/943418?v=4?s=100" width="100px;" alt=""/><br /><sub><b>fangjun</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=fjun99" title="Documentation">📖</a></td>
   </tr>
 </table>
 
