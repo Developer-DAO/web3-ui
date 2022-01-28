@@ -17,6 +17,10 @@ export interface NFTGalleryProps {
    * A Web3Provider. Only needed if the address will be an ENS name.
    */
   web3Provider?: ethers.providers.Web3Provider;
+  /**
+   * Use testnet api instead of mainnet
+   */
+  isTestnet?: boolean;
 }
 
 export interface OpenSeaAsset {
@@ -38,6 +42,7 @@ export const NFTGallery = ({
   address,
   gridWidth = 4,
   web3Provider,
+  isTestnet = false,
 }: NFTGalleryProps) => {
   const [nfts, setNfts] = React.useState<OpenSeaAsset[]>([]);
   const [errorMessage, setErrorMessage] = React.useState(null);
@@ -45,13 +50,20 @@ export const NFTGallery = ({
   useEffect(() => {
     async function exec() {
       let resolvedAddress: string | null = address;
+      const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
+      if (isTestnet)
+        console.log(
+          `⚠️ OpenSea currently only supports Rinkedby with testnets.`
+        );
       if (address.endsWith('.eth')) {
         if (!web3Provider) {
           return console.error('Please provide a web3 provider');
         }
         resolvedAddress = await web3Provider.resolveName(address);
       }
-      fetch(`https://api.opensea.io/api/v1/assets?owner=${resolvedAddress}`)
+      fetch(
+        `https://${apiSubDomain}.opensea.io/api/v1/assets?owner=${resolvedAddress}`
+      )
         .then((res) => {
           if (!res.ok) {
             throw Error(
@@ -89,6 +101,7 @@ export const NFTGallery = ({
               assetContractSymbol: nft.asset_contract.symbol,
             }}
             size="xs"
+            hideIfError
           />
         ))}
       </Grid>
