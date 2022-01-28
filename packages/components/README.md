@@ -67,7 +67,7 @@ You need to pass in a `provider` prop if you want to use ENS names.
 
 ### NFT
 
-The NFT component takes in the contract address and the token ID of an NFT and displays it as a card.
+The NFT component takes in the contract address and the token ID of an NFT and displays it as a card. You can also pass in `isTestnet` to fetch the NFT data from the testnet API (only Rinkeby for now).
 
 ```tsx
 <NFT contractAddress="0xxxxx0x0x0x0x0x" tokenId={30} size="md" />
@@ -79,7 +79,7 @@ The `size` prop is optional.
 
 ### NFTGallery
 
-The NFTGallery component renders a grid of all the NFTs owned by an account. It accepts ENS names too.
+The NFTGallery component renders a grid of all the NFTs owned by an account. It accepts ENS names too. You can also pass in `isTestnet` to fetch the NFT data from the testnet API (only Rinkeby for now).
 
 ```tsx
 <NFTGallery address="vitalik.eth" web3Provider={provider} gridWidth={4} />
