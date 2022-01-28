@@ -236,6 +236,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "juliankrispel",
+      "name": "Julian Krispel-Samsel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1188186?v=4",
+      "profile": "http://jkrsp.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
