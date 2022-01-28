@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.8.0
+
+### Minor Changes
+
+- [#241](https://github.com/Developer-DAO/web3-ui/pull/241) [`b5d89eb`](https://github.com/Developer-DAO/web3-ui/commit/b5d89eb1a24b81b45c3f49034213f87eb1ad3ce8) Thanks [@hone1er](https://github.com/hone1er)! - Removed RPC Url from address component
+
 ## 0.7.0
 
 ### Minor Changes
