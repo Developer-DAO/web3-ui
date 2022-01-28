@@ -12,11 +12,11 @@ At the root of your React app, wrap your app in the <Provider> component:
 
 ```tsx
 // _app.tsx (or the root of your app)
-import { Provider } from '@web3-ui/hooks';
+import { Provider, NETWORKS } from '@web3-ui/hooks';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider>
+    <Provider network={NETWORKS.mainnet}>
       <Component {...pageProps} />
     </Provider>
   );
