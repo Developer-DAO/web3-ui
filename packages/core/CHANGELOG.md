@@ -1,5 +1,12 @@
 # @web3-ui/core
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [[`b5d89eb`](https://github.com/Developer-DAO/web3-ui/commit/b5d89eb1a24b81b45c3f49034213f87eb1ad3ce8)]:
+  - @web3-ui/components@0.8.0
+
 ## 0.5.1
 
 ### Patch Changes
