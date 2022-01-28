@@ -33,25 +33,29 @@ export function useTokenBalance({ tokenAddress, accountAddress }: Props) {
   const [error, setError] = useState(false);
 
   const getBalance = async () => {
-    const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
-    const balance = await contract.balanceOf(accountAddress);
-    const decimals = await contract.decimals();
-    setBalance(balance);
-    setDecimals(decimals);
+    try {
+      const contract = new ethers.Contract(tokenAddress, ERC20ABI, provider!);
+      const balance = await contract.balanceOf(accountAddress);
+      const decimals = await contract.decimals();
+      setBalance(balance);
+      setDecimals(decimals);
+    } catch (err) {
+      setError(true);
+      setLoading(false);
+      console.error(error);
+    }
   };
 
   useEffect(() => {
-    if (tokenAddress && accountAddress && provider) {
-      setError(false);
-      setLoading(true);
-      try {
-        getBalance();
-      } catch (error) {
-        console.error(error);
-        setError(true);
-      }
+    if (!(tokenAddress && accountAddress && provider)) {
       setLoading(false);
+      setError(true);
+      return;
     }
+    setError(false);
+    setLoading(true);
+    getBalance();
+    setLoading(false);
   }, [tokenAddress, accountAddress]);
 
   return {
