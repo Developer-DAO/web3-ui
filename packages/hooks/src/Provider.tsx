@@ -15,7 +15,7 @@ export interface Web3ContextType {
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
   correctNetwork: boolean;
-  network: number;
+  network?: number;
   readOnlyProvider?: StaticJsonRpcProvider;
 }
 
@@ -29,7 +29,7 @@ export interface ProviderProps {
    * @example NETWORKS.mainnet
    * @type string
    */
-  network: number;
+  network?: number;
   /**
    * @dev Your Infura project ID. This is required if you want to support WalletConnect.
    * @type string
