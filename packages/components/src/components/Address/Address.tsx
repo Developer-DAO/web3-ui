@@ -37,14 +37,14 @@ export const Address: React.FC<AddressProps> = ({
   shortened = false,
   rpcURL,
 }) => {
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<undefined | string>(undefined);
   const [copied, setCopied] = useState<boolean>(false);
   let feedbackTimeOut: ReturnType<typeof setTimeout>;
   let displayAddress: string = value || '';
-  const [ens, setEns] = useState<string | null | undefined>(null);
-  const provider: ethers.providers.JsonRpcProvider | null = rpcURL
+  const [ens, setEns] = useState<string | undefined>(undefined);
+  const provider: ethers.providers.JsonRpcProvider | undefined = rpcURL
     ? new ethers.providers.StaticJsonRpcProvider(rpcURL)
-    : null;
+    : undefined;
 
   useEffect(() => {
     if (value.includes('.eth') || value === '' || value === 'Not connected')
@@ -53,7 +53,8 @@ export const Address: React.FC<AddressProps> = ({
     async function fetchEns() {
       if (provider && value) {
         try {
-          const ensResponse = await provider?.lookupAddress(value);
+          const ensResponse =
+            (await provider?.lookupAddress(value)) || undefined;
           setEns(ensResponse);
           return;
         } catch (error) {
@@ -78,7 +79,7 @@ export const Address: React.FC<AddressProps> = ({
     if (copiable && value) {
       try {
         await navigator.clipboard.writeText(value);
-        setError(null);
+        setError(undefined);
         setCopied(true);
 
         feedbackTimeOut = setTimeout(() => {

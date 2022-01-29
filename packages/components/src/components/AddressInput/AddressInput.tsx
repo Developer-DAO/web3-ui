@@ -41,7 +41,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState('');
   const debouncedValue = useDebounce(inputValue, 700);
-  const [error, setError] = useState<null | string>(null);
+  const [error, setError] = useState<undefined | string>(undefined);
   const regex = /^0x[a-fA-F0-9]{40}$/;
 
   const getAddressFromEns = async () => {
@@ -60,7 +60,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   useEffect(() => {
     if (debouncedValue) {
       onChange('');
-      setError(null);
+      setError(undefined);
       if (regex.test(debouncedValue)) {
         onChange(debouncedValue);
       } else if (
@@ -75,7 +75,7 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   useEffect(() => {
     if (inputValue === '') {
       onChange('');
-      setError(null);
+      setError(undefined);
     }
   }, [inputValue]);
 
