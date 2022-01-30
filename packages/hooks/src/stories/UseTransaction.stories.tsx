@@ -97,7 +97,7 @@ const UsingUseWriteContract = () => {
             <Button
               type="submit"
               isLoading={loading}
-              onClick={() => setGreeting([value])}
+              onClick={() => setGreeting(value)}
             >
               Set Greeting
             </Button>
