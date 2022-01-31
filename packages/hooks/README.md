@@ -175,12 +175,9 @@ import { useTransaction, useWriteContract } from '@web3-ui/hooks';
 const greeterContract = useWriteContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
 const [execute, loading, error] = useTransaction(greeter.setGreeting);
 
-await execute([
-  'Hello, world!',
-  {
-    value: ethers.utils.parseEther('0.1'), // you can also use this for payable transactions
-  },
-]); // will execute the transaction
+await execute('Hello, world!', {
+  value: ethers.utils.parseEther('0.1'), // you can also use this for payable transactions
+}); // will execute the transaction
 ```
 
 ---
