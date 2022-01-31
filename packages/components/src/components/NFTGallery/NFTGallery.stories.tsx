@@ -36,4 +36,12 @@ nftsOwnedByAnENS.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
+export const rinkeby = () => (
+  <NFTGallery
+    address="0x0ED6Cec17F860fb54E21D154b49DAEFd9Ca04106"
+    gridWidth={2}
+    isTestnet
+  />
+);
+
 export const WithAnError = () => <NFTGallery address="bad_address" />;

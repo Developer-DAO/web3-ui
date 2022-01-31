@@ -42,4 +42,12 @@ export const Big = () => (
   />
 );
 
+export const Rinkeby = () => (
+  <NFT
+    contractAddress="0xd067fae3311a5daefe21b81ec17224c7b2652ca6"
+    tokenId="20"
+    isTestnet
+  />
+);
+
 export const Error = () => <NFT contractAddress="abcd" tokenId="1" />;

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Heading,
@@ -25,6 +25,10 @@ export interface NFTProps {
    * The size of the NFT card.
    */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  /**
+   * Use testnet API (Rinkeby) instead of mainnet
+   */
+  isTestnet?: boolean;
 }
 
 export interface NFTData {
@@ -39,16 +43,27 @@ export interface NFTData {
 /**
  * Component to fetch and display NFT data
  */
-export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
+export const NFT = ({
+  contractAddress,
+  tokenId,
+  size = 'xs',
+  isTestnet = false,
+}: NFTProps) => {
   const _isMounted = useRef(true);
   const [nftData, setNftData] = React.useState<NFTData>();
   const [errorMessage, setErrorMessage] = React.useState<string>();
 
   const fetchNFTData = useCallback(async () => {
+    const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
+
     try {
       const res = await fetch(
-        `https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
+        `https://${apiSubDomain}.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
       );
+      if (isTestnet)
+        console.log(
+          `⚠️ OpenSea currently only supports Rinkedby with testnets.`
+        );
       if (!res.ok) {
         throw Error(
           `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
@@ -92,11 +107,14 @@ export const NFTCard = ({
   data,
   errorMessage = '',
   size,
+  hideIfError = false,
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  hideIfError?: boolean;
 }) => {
+  const [error, setError] = useState(false);
   const name = data?.name;
   const imageUrl = data?.imageUrl;
   const assetContractName = data?.assetContractName;
@@ -105,7 +123,8 @@ export const NFTCard = ({
   const tokenId = data?.tokenId;
   const displayName = name || `${assetContractSymbol} #${tokenId}`;
 
-  if (errorMessage) {
+  if (errorMessage || error || imageUrl === '(unknown)' || !imageUrl) {
+    if (hideIfError) return null;
     return (
       <Alert status="error">
         <AlertIcon />
@@ -125,6 +144,7 @@ export const NFTCard = ({
                 alt={displayName}
                 borderRadius="lg"
                 w={size}
+                onError={() => setError(true)}
               />
               <audio
                 src={animationUrl}
