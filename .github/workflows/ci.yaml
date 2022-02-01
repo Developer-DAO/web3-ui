@@ -31,15 +31,11 @@ jobs:
         run: yarn test
       - name: Build
         run: yarn build
-  chromatic-deployment:
-    runs-on: ubuntu-latest
-    # Job steps
-    steps:
-      - uses: actions/checkout@v1
-      - name: Install dependencies
-        run: yarn
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        # don't run this step if project token secret not specified
+        # to prevent this workflow failing for any forked repositories
+        if: ${{ env.projectToken }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
