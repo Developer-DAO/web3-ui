@@ -23,12 +23,12 @@ export function useWallet() {
     provider,
     correctNetwork,
     network,
-    readOnlyProvider
+    readOnlyProvider,
   } = context;
 
   React.useEffect(() => {
     if (userAddress && provider && chainId === NETWORKS.mainnet) {
-      provider.lookupAddress(userAddress).then(address => {
+      provider.lookupAddress(userAddress).then((address) => {
         setEns(address as string);
       });
     }
@@ -42,7 +42,7 @@ export function useWallet() {
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: `0x${network}` }] // chainId must be in hexadecimal numbers
+          params: [{ chainId: `0x${network}` }], // chainId must be in hexadecimal numbers
         });
       } catch (error) {
         console.error(error);
@@ -68,12 +68,12 @@ export function useWallet() {
       userAddress,
       network: CHAIN_ID_TO_NETWORK[chainId as number],
       signer,
-      ens
+      ens,
     },
     connected,
     provider,
     correctNetwork,
     switchToCorrectNetwork,
-    readOnlyProvider
+    readOnlyProvider,
   };
 }
