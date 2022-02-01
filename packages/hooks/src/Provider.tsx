@@ -1,7 +1,7 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { ethers } from 'ethers';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 import Web3Modal, { IProviderOptions } from 'web3modal';
 import { StaticJsonRpcProvider } from '@ethersproject/providers';
 import { useReadOnlyProvider } from './hooks';
@@ -20,7 +20,7 @@ export interface Web3ContextType {
   readOnlyProvider?: StaticJsonRpcProvider;
 }
 
-export const Web3Context = React.createContext<Web3ContextType | undefined>(
+export const Web3Context = createContext<Web3ContextType | undefined>(
   undefined
 );
 
@@ -159,14 +159,14 @@ export const Provider: React.FC<ProviderProps> = ({
     }
   }, [network, correctNetwork, infuraId, extraWalletProviders]);
 
-  const disconnectWallet = React.useCallback(() => {
+  const disconnectWallet = useCallback(() => {
     web3Modal?.clearCachedProvider();
     setSigner(null);
     setUserAddress(null);
     setConnected(false);
   }, [web3Modal]);
 
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       connectWallet,
       signer,

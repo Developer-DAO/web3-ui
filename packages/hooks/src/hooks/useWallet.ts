@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CHAIN_ID_TO_NETWORK, NETWORKS } from '..';
 import { Web3Context } from '../Provider';
 
@@ -6,8 +6,8 @@ import { Web3Context } from '../Provider';
  * @dev Hook to get the current web3 context including information about the connection and other helper methods.
  */
 export function useWallet() {
-  const context = React.useContext(Web3Context);
-  const [ens, setEns] = React.useState<string>();
+  const context = useContext(Web3Context);
+  const [ens, setEns] = useState<string>();
 
   if (!context) {
     throw new Error('No Web3Context found');
@@ -27,7 +27,7 @@ export function useWallet() {
     readOnlyProvider,
   } = context;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (userAddress && provider && chainId === NETWORKS.mainnet) {
       provider.lookupAddress(userAddress).then((address) => {
         setEns(address as string);
