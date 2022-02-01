@@ -18,6 +18,7 @@ export function useWallet() {
     disconnectWallet,
     userAddress,
     chainId,
+    error,
     signer,
     connected,
     provider,
@@ -76,6 +77,7 @@ export function useWallet() {
   return {
     connectWallet,
     disconnectWallet,
+    error,
     connection: {
       userAddress,
       network: CHAIN_ID_TO_NETWORK[chainId as number],
