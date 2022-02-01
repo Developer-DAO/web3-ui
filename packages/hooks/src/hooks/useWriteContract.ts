@@ -6,14 +6,14 @@ import { Contract, ContractInterface } from 'ethers';
  * @description
  * Defines the contract instance on `useState` hook
  */
-export type ContractInstance<T extends Contract> = T | null;
+export type ContractInstance<T extends Contract> = T | undefined;
 
 /**
  * @description
  * The return type of the `useWriteContract` hook
  */
 export type UseWriteContractHook<T extends Contract> = [
-  ContractInstance<T> | null,
+  ContractInstance<T> | undefined,
   boolean
 ];
 
@@ -31,7 +31,8 @@ export function useWriteContract<T extends Contract>(
   abi: ContractInterface
 ): UseWriteContractHook<T> {
   const context = React.useContext(Web3Context);
-  const [contract, setContract] = React.useState<ContractInstance<T>>(null);
+  const [contract, setContract] =
+    React.useState<ContractInstance<T>>(undefined);
   const [isReady, setIsReady] = React.useState(false);
   React.useEffect(() => {
     if (context?.connected) {

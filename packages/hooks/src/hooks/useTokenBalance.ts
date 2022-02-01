@@ -16,7 +16,7 @@ interface Props {
  * @returns {
  * balance: gives account balance for the token in Wei as a string
  * loading: True until the transaction is executing, false otherwise
- * error: Contains the error object if the transaction failed, null otherwise.
+ * error: Contains the error object if the transaction failed, undefined otherwise.
  * decimals: number of decimals the token contract is using
  * formattedBalance: Balance in ethers eg. 0.01 ETH, 20 GTC, etc.
  * balanceInBigNumber: Balance in BigNumber

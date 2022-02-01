@@ -30,7 +30,7 @@ export interface NFTProps {
 export interface NFTData {
   tokenId: string;
   imageUrl?: string;
-  name: string | null;
+  name: string | undefined;
   assetContractSymbol: string;
   assetContractName: string;
   animationUrl?: string;
@@ -93,7 +93,7 @@ export const NFTCard = ({
   errorMessage = '',
   size,
 }: {
-  data: NFTData | undefined | null;
+  data: NFTData | undefined;
   errorMessage?: string | undefined;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }) => {

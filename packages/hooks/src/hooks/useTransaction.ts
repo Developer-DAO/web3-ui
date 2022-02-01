@@ -6,11 +6,11 @@ import React from 'react';
  * @returns {
  *  execute: (args: any[]) => Promise<any>,
  *  loading: boolean,
- *  error: null | Error,
+ *  error: undefined | Error,
  * } {
  *  execute: Executes the transaction.
  *  loading: True until the the transaction is confirmed, false otherwise.
- *  error: Contains the error object if the transaction failed, null otherwise.
+ *  error: Contains the error object if the transaction failed, undefined otherwise.
  * }
  */
 
@@ -18,16 +18,16 @@ export function useTransaction(
   method
 ): [(args: any[]) => Promise<any>, boolean, any] {
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState<any>(null);
+  const [error, setError] = React.useState<any>(undefined);
 
   const execute = async (args: any[]) => {
     setLoading(true);
-    setError(null);
+    setError(undefined);
     try {
       const response = await method(...args);
       // wait for the transaction to be confirmed
       await response.wait();
-      setError(null);
+      setError(undefined);
       setLoading(false);
       return response;
     } catch (error) {

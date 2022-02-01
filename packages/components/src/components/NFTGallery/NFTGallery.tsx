@@ -22,7 +22,7 @@ export interface NFTGalleryProps {
 export interface OpenSeaAsset {
   token_id: string;
   image_url: string;
-  name: string | null;
+  name: string | undefined;
   asset_contract: {
     name: string;
     address: string;
@@ -44,12 +44,13 @@ export const NFTGallery = ({
 
   useEffect(() => {
     async function exec() {
-      let resolvedAddress: string | null = address;
+      let resolvedAddress: string | undefined = address;
       if (address.endsWith('.eth')) {
         if (!web3Provider) {
           return console.error('Please provide a web3 provider');
         }
-        resolvedAddress = await web3Provider.resolveName(address);
+        resolvedAddress =
+          (await web3Provider.resolveName(address)) || undefined;
       }
       fetch(`https://api.opensea.io/api/v1/assets?owner=${resolvedAddress}`)
         .then((res) => {

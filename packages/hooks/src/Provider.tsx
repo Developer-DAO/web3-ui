@@ -8,12 +8,12 @@ import { useReadOnlyProvider } from './hooks';
 
 export interface Web3ContextType {
   connectWallet?: () => void;
-  signer?: JsonRpcSigner | null;
-  userAddress?: string | null;
+  signer?: JsonRpcSigner | undefined;
+  userAddress?: string | undefined;
   disconnectWallet?: () => void;
-  chainId?: number | null;
+  chainId?: number | undefined;
   connected: boolean;
-  provider?: ethers.providers.Web3Provider | null;
+  provider?: ethers.providers.Web3Provider | undefined;
   correctNetwork: boolean;
   network: number;
   readOnlyProvider?: StaticJsonRpcProvider;
@@ -68,12 +68,13 @@ export const Provider: React.FC<ProviderProps> = ({
   extraWalletProviders = [],
   rpcUrl = '',
 }) => {
-  const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
-  const [provider, setProvider] =
-    React.useState<ethers.providers.Web3Provider | null>();
-  const [userAddress, setUserAddress] = React.useState<null | string>();
+  const [signer, setSigner] = React.useState<undefined | JsonRpcSigner>();
+  const [provider, setProvider] = React.useState<
+    ethers.providers.Web3Provider | undefined
+  >();
+  const [userAddress, setUserAddress] = React.useState<undefined | string>();
   const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
-  const [chainId, setChainId] = React.useState<number | null>();
+  const [chainId, setChainId] = React.useState<number | undefined>();
   const [connected, setConnected] = React.useState<boolean>(false);
   const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
   const readOnlyProvider = useReadOnlyProvider(rpcUrl);
@@ -162,8 +163,8 @@ export const Provider: React.FC<ProviderProps> = ({
 
   const disconnectWallet = React.useCallback(() => {
     web3Modal?.clearCachedProvider();
-    setSigner(null);
-    setUserAddress(null);
+    setSigner(undefined);
+    setUserAddress(undefined);
     setConnected(false);
   }, [web3Modal]);
 
