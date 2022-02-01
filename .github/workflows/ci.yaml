@@ -33,6 +33,8 @@ jobs:
         run: yarn build
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        # don't run this step if project token secret not specified
+        # to prevent this workflow failing for any forked repositories
         if: ${{ env.projectToken }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
