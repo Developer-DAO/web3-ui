@@ -32,6 +32,7 @@ jobs:
       - name: Build
         run: yarn build
   chromatic-deployment:
+    if: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
     runs-on: ubuntu-latest
     # Job steps
     steps:
