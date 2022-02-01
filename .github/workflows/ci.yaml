@@ -31,16 +31,9 @@ jobs:
         run: yarn test
       - name: Build
         run: yarn build
-  chromatic-deployment:
-    if: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-    runs-on: ubuntu-latest
-    # Job steps
-    steps:
-      - uses: actions/checkout@v1
-      - name: Install dependencies
-        run: yarn
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        if: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
