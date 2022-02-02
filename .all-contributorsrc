@@ -263,6 +263,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "patcito",
+      "name": "Patrick Aljord",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26435?v=4",
+      "profile": "https://twitter.com/patcito",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
