@@ -7,7 +7,7 @@ import {
   InputProps,
   InputRightElement,
   Select,
-  SelectProps
+  SelectProps,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -41,7 +41,7 @@ TokenInput.Input = ({
       {...props}
       type="number"
       value={value}
-      onChange={e => setValue(e.target.value)}
+      onChange={(e) => setValue(e.target.value)}
     />
   );
 };
@@ -58,7 +58,11 @@ TokenInput.Select = ({
 } & SelectProps) => {
   return (
     <InputRightElement w="fit-content">
-      <Select {...props} value={token} onChange={e => setToken(e.target.value)}>
+      <Select
+        {...props}
+        value={token}
+        onChange={(e) => setToken(e.target.value)}
+      >
         {tokensList.map(({ symbol, address }) => (
           <option key={symbol} value={address}>
             {symbol.toUpperCase()}

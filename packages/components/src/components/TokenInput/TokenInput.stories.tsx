@@ -18,7 +18,7 @@ const Component = () => {
   );
 };
 
-const Component2 = props => {
+const Component2 = (props) => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
@@ -33,7 +33,7 @@ const Component2 = props => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black'
+          borderLeft: '2px solid black',
         }}
         token={token}
         setToken={setToken}
@@ -63,7 +63,7 @@ const Component3 = () => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black'
+          borderLeft: '2px solid black',
         }}
         token={token}
         setToken={setToken}
@@ -81,5 +81,5 @@ export const withCustomWidthAndBorder = () => <Component3 />;
 
 export default {
   title: 'Components/TokenInputComp',
-  component: Default
+  component: Default,
 };
