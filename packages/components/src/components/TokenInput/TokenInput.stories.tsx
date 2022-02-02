@@ -1,48 +1,45 @@
 import React from 'react';
-import { TokenInput } from '.';
-
-export default {
-  title: 'Components/TokenInput',
-  component: TokenInput,
-};
+import TokenInput from './TokenInput';
+import { defaultTokens } from './tokens';
 
 const Component = () => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
   return (
-    <TokenInput
-      selectedToken={token}
-      onTokenChange={setToken}
-      value={value}
-      onValueChange={setValue}
-    />
+    <TokenInput>
+      <TokenInput.Input value={value} setValue={setValue} />
+      <TokenInput.Select
+        token={token}
+        setToken={setToken}
+        tokensList={defaultTokens}
+      />
+    </TokenInput>
   );
 };
 
-const Component2 = (props) => {
+const Component2 = props => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
   return (
-    <TokenInput
-      {...props}
-      selectedToken={token}
-      onTokenChange={setToken}
-      value={value}
-      onValueChange={setValue}
-      selectProps={{
-        borderLeft: '2px solid black',
-        fontSize: '1.2rem',
-        fontWeight: 'bold',
-        border: 'none',
-        outline: 'none',
-        rounded: 'none',
-        _focus: {
-          borderLeft: '2px solid black',
-        },
-      }}
-    />
+    <TokenInput>
+      <TokenInput.Input value={value} setValue={setValue} />
+      <TokenInput.Select
+        borderLeft="2px solid black"
+        fontSize="1.2rem"
+        fontWeight="bold"
+        border="none"
+        outline="none"
+        rounded="none"
+        _focus={{
+          borderLeft: '2px solid black'
+        }}
+        token={token}
+        setToken={setToken}
+        tokensList={defaultTokens}
+      />
+    </TokenInput>
   );
 };
 
@@ -56,25 +53,23 @@ const Component3 = () => {
       border="2 px solid black"
       borderWidth="2px"
       p={2}
-      selectedToken={token}
-      onTokenChange={setToken}
-      value={value}
-      onValueChange={setValue}
-      inputProps={{
-        width: '20rem',
-      }}
-      selectProps={{
-        borderLeft: '2px solid black',
-        fontSize: '1.2rem',
-        fontWeight: 'bold',
-        w: '7rem',
-        outline: 'none',
-        rounded: 'none',
-        _focus: {
-          borderLeft: '2px solid black',
-        },
-      }}
-    />
+    >
+      <TokenInput.Input width="30rem" value={value} setValue={setValue} />
+      <TokenInput.Select
+        borderLeft="2px solid black"
+        fontSize="1.2rem"
+        fontWeight="bold"
+        w="7rem"
+        outline="none"
+        rounded="none"
+        _focus={{
+          borderLeft: '2px solid black'
+        }}
+        token={token}
+        setToken={setToken}
+        tokensList={defaultTokens}
+      />
+    </TokenInput>
   );
 };
 
@@ -83,3 +78,8 @@ export const Default = () => <Component />;
 export const WithSelectProps = () => <Component2 />;
 
 export const withCustomWidthAndBorder = () => <Component3 />;
+
+export default {
+  title: 'Components/TokenInputComp',
+  component: Default
+};

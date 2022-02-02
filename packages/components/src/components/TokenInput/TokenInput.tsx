@@ -7,10 +7,9 @@ import {
   InputProps,
   InputRightElement,
   Select,
-  SelectFieldProps,
+  SelectProps
 } from '@chakra-ui/react';
 import React from 'react';
-import { defaultTokens } from './tokens';
 
 export interface Token {
   // token sybmol
@@ -19,92 +18,55 @@ export interface Token {
   address: string;
 }
 
-export interface TokenInputProps {
-  /**
-   * an array of tokens to display
-   */
-  tokens?: Token[];
-  /**
-   * value of the input
-   */
-  value: string;
-  /**
-   * onChange handler
-   */
-  onValueChange: (value: string) => void;
-  /**
-   * label for the input
-   */
-  label?: string;
-  /**
-   * selected token
-   */
-  selectedToken: string;
-  /**
-   * token change hanlder
-   */
-  onTokenChange: (token: string) => void;
-  /**
-   * want to show default tokens
-   */
-  showDefualtTokens?: boolean;
-  /**
-   * style props for the input
-   */
-  inputProps?: InputProps;
-  /**
-   * style props for the select
-   */
-  selectProps?: SelectFieldProps;
-}
-
-/**
- * A number input component that is used to enter number of tokens and also select the token from a list of tokens.
- */
-
-export const TokenInput: React.FC<TokenInputProps & BoxProps> = ({
-  tokens = [],
-  value,
-  onValueChange,
+const TokenInput = ({
   label,
-  selectedToken,
-  onTokenChange,
-  showDefualtTokens = true,
-  inputProps,
-  selectProps,
+  children,
   ...props
-}) => {
-  const [finalTokens, setFinalTokens] = React.useState<Token[]>(tokens);
-  React.useEffect(() => {
-    if (showDefualtTokens) {
-      const newTokens = [...defaultTokens, ...tokens];
-      setFinalTokens(newTokens);
-    }
-  }, []);
+}: { label?: string; children: JSX.Element | JSX.Element[] } & BoxProps) => {
   return (
     <FormControl {...props}>
       {label && <FormLabel>{label}</FormLabel>}
-      <InputGroup>
-        <Input
-          type="number"
-          {...inputProps}
-          value={value}
-          onChange={(e) => onValueChange(e.target.value)}
-        />
-        <InputRightElement w="fit-content">
-          <Select
-            {...selectProps}
-            value={selectedToken}
-            onChange={(e) => onTokenChange(e.target.value)}
-          >
-            {finalTokens.map(({ symbol, address }) => (
-              <option key={symbol} value={address}>
-                {symbol.toUpperCase()}
-              </option>
-            ))}
-          </Select>
-        </InputRightElement>
-      </InputGroup>
+      <InputGroup w={'fit-content'}>{children}</InputGroup>
     </FormControl>
   );
 };
+
+TokenInput.Input = ({
+  value,
+  setValue,
+  ...props
+}: { value: string; setValue: (value: string) => void } & InputProps) => {
+  return (
+    <Input
+      {...props}
+      type="number"
+      value={value}
+      onChange={e => setValue(e.target.value)}
+    />
+  );
+};
+
+TokenInput.Select = ({
+  token,
+  setToken,
+  tokensList,
+  ...props
+}: {
+  token: string;
+  setToken: (token: string) => void;
+  tokensList: Token[];
+} & SelectProps) => {
+  return (
+    <InputRightElement w="fit-content">
+      <Select {...props} value={token} onChange={e => setToken(e.target.value)}>
+        {tokensList.map(({ symbol, address }) => (
+          <option key={symbol} value={address}>
+            {symbol.toUpperCase()}
+          </option>
+        ))}
+      </Select>
+    </InputRightElement>
+  );
+};
+
+export default TokenInput;
