@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -106,6 +106,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://jkrsp.com"><img src="https://avatars.githubusercontent.com/u/1188186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Julian Krispel-Samsel</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=juliankrispel" title="Documentation">📖</a></td>
     <td align="center"><a href="https://bandism.net/"><img src="https://avatars.githubusercontent.com/u/22633385?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ikko Ashimine</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=eltociear" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/berteotti"><img src="https://avatars.githubusercontent.com/u/23079677?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Leonardo Berteotti</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=berteotti" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://twitter.com/patcito"><img src="https://avatars.githubusercontent.com/u/26435?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Patrick Aljord</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=patcito" title="Code">💻</a></td>
   </tr>
 </table>
 
