@@ -85,7 +85,7 @@ function App() {
         {!correctNetwork && (
           <p>
             <button onClick={onClickSwitchToCorrectNetwork}>
-              Switch to Mainnet
+              Switch to Rinkeby
             </button>
           </p>
         )}
