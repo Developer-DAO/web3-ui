@@ -18,7 +18,7 @@ import { NETWORK } from '@web3-ui/core';
 // Passing in a theme is optional
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider theme={yourChakraTheme} network={NETWORKS.mainnet}>
+    <Provider theme={yourChakraTheme}>
       <Component {...pageProps} />
     </Provider>
   );
