@@ -13,7 +13,6 @@ At the root of your React app, wrap your app in the `<Provider>` component:
 ```tsx
 // _app.tsx (or the root of your app)
 import { Provider } from '@web3-ui/components';
-import { NETWORK } from '@web3-ui/core';
 
 // Passing in a theme is optional
 function MyApp({ Component, pageProps }) {
