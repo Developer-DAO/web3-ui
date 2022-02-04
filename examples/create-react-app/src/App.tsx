@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Greeter } from '../types/contracts';
 import GreeterABI from './abis/Greeter.json';
 import { ConnectWallet, useWallet } from '@web3-ui/core';
-import { useContract } from '@web3-ui/hooks';
+import { useWriteContract } from '@web3-ui/hooks';
 import { NFTGallery } from '@web3-ui/components';
 import { ethers } from 'ethers';
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
     switchToCorrectNetwork,
     connection,
   } = useWallet();
-  const [greeterContract, isReady] = useContract<Greeter>(
+  const [greeterContract, isReady] = useWriteContract<Greeter>(
     // Rinkeby
     '0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135',
     GreeterABI

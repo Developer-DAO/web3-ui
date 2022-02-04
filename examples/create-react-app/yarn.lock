@@ -3236,10 +3236,10 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3-ui/components@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.7.0.tgz#c0a8eb5c1bd286027bc15c4e8087e0ca40717939"
-  integrity sha512-1bLEz9o9ehub+uOJsRe273EhYXVq+nbANZ1Rgpcpk97vbjxDfj54T+L4/Gpes9S5XxethY4V/bp+rxAvoLS/Dg==
+"@web3-ui/components@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.9.0.tgz#f0c3680cb159670dbd3ca235dd9d2c937fe98374"
+  integrity sha512-r2TwCwuT7oKlyFVmCvRyNan3Lcc9GUtTQd/AeQtbWZCsScazAcv26OoiJLz2OST20FcfYrFOOqefjUnk9cuXDg==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/icons" "^1.1.1"
@@ -3249,23 +3249,23 @@
     ethers "^5.5.2"
     framer-motion "^4"
 
-"@web3-ui/core@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.5.1.tgz#7c7ee99579bafb5a05e18a8076dc49d4792e40af"
-  integrity sha512-oUAWfWJs6zBg5YdVUbJguQgzTrP5XUz+sNx886x6U2XFTSM0n3Ib2Z69ITBT8QI6bpipYOzTTL6o82MT4Suj9w==
+"@web3-ui/core@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.6.0.tgz#e957e09bb50beb0e5769089e7082220816670246"
+  integrity sha512-GVpPA4YN3NWLaDiyx6IgsoNQlxrexuAuiPafANuCE80qpgVrnpEeds/XgugNjcM8VkIduSH2+mRi2gDSn3w15g==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/react" "^1.7.2"
     "@emotion/react" "^11"
     "@emotion/styled" "^11"
-    "@web3-ui/components" "^0.7.0"
-    "@web3-ui/hooks" "^0.9.0"
+    "@web3-ui/components" "^0.9.0"
+    "@web3-ui/hooks" "^0.10.0"
     framer-motion "^4"
 
-"@web3-ui/hooks@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.9.0.tgz#52ea557f7dc8f1848946ac1859a2edca99982677"
-  integrity sha512-KeZ9JSYVXj7yePQHrAZBtEx3LHIoNUUNzHTURmm5AUc9jJL6hNOIRSait61HkGOxDUKvHGT5NN/IlF/YlLGDTg==
+"@web3-ui/hooks@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.10.0.tgz#9796a0e2c5dfa9f50c35a299f6f750366012ef47"
+  integrity sha512-MWJPGY2OSEE1LedbBAN17G0t3sv1RmkPcqcvab1sRgtJM1tomlHp2EmrBnbnxh3AIEc7aPr9z1RnPO4FV75GPA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@walletconnect/web3-provider" "^1.6.6"
