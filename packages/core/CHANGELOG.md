@@ -1,5 +1,17 @@
 # @web3-ui/core
 
+## 0.6.0
+
+### Minor Changes
+
+- [#274](https://github.com/Developer-DAO/web3-ui/pull/274) [`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Relaxed network attribute
+
+### Patch Changes
+
+- Updated dependencies [[`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde), [`8127709`](https://github.com/Developer-DAO/web3-ui/commit/8127709b63417096c5dd3bd9c1ec5eea84e9f6e5), [`f18bff0`](https://github.com/Developer-DAO/web3-ui/commit/f18bff025fdc16d5805ee3bdc466499629068a52), [`daafb02`](https://github.com/Developer-DAO/web3-ui/commit/daafb02dc9a00374fa28b139c0da2423ccb985fc), [`8037de7`](https://github.com/Developer-DAO/web3-ui/commit/8037de7968cf23bfdd4804699b0d6706a2053005)]:
+  - @web3-ui/hooks@0.10.0
+  - @web3-ui/components@0.9.0
+
 ## 0.5.2
 
 ### Patch Changes

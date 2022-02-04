@@ -1,5 +1,24 @@
 # @web3-ui/hooks
 
+## 0.10.0
+
+### Minor Changes
+
+- [#274](https://github.com/Developer-DAO/web3-ui/pull/274) [`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Relaxed network attribute
+
+* [#289](https://github.com/Developer-DAO/web3-ui/pull/289) [`8127709`](https://github.com/Developer-DAO/web3-ui/commit/8127709b63417096c5dd3bd9c1ec5eea84e9f6e5) Thanks [@with-heart](https://github.com/with-heart)! - Renamed the `useContract` hook to `useWriteContract` (#249). This helps ensure that consumers of this hook know that it requires the user's wallet signature.
+
+- [#276](https://github.com/Developer-DAO/web3-ui/pull/276) [`f18bff0`](https://github.com/Developer-DAO/web3-ui/commit/f18bff025fdc16d5805ee3bdc466499629068a52) Thanks [@berteotti](https://github.com/berteotti)! - You can now pass in args to the exec fn in useTransaction just like you would with ethers. You don't need to pass it all inside an array anymore.
+
+  ```tsx
+  execute(['Hello', { value: '10' }]);
+
+  // is now
+  execute('Hello', { value: '10' });
+  ```
+
+* [#286](https://github.com/Developer-DAO/web3-ui/pull/286) [`8037de7`](https://github.com/Developer-DAO/web3-ui/commit/8037de7968cf23bfdd4804699b0d6706a2053005) Thanks [@patcito](https://github.com/patcito)! - Arbitrum, Optimism and Metis have been to the list of networks available in the NETWORKS mapping export
+
 ## 0.9.0
 
 ### Minor Changes
