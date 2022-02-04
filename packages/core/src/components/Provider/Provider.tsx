@@ -4,7 +4,7 @@ import { Provider as ComponentsProvider } from '@web3-ui/components';
 
 interface ProviderProps {
   children: React.ReactNode;
-  network: number;
+  network?: number;
   rpcUrl?: string;
 }
 
