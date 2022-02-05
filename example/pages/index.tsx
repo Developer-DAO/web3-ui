@@ -15,7 +15,7 @@ import GreeterABI from '../abis/Greeter.json';
 
 export default function Home() {
   const [address, setAddress] = useState('');
-  const [nftGallery, setNftGallery] = useState(null);
+  const [nftGallery, setNftGallery] = useState(undefined);
   const { correctNetwork, switchToCorrectNetwork, connected, provider } =
     useWallet();
   const [greeterContract, isReady] = useWriteContract<Greeter>(
