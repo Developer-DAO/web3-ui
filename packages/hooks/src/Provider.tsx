@@ -1,16 +1,17 @@
 import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { ethers } from 'ethers';
-import React from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 import Web3Modal, { IProviderOptions } from 'web3modal';
 import { StaticJsonRpcProvider } from '@ethersproject/providers';
 import { useReadOnlyProvider } from './hooks';
 
 export interface Web3ContextType {
-  connectWallet?: () => void;
+  connectWallet?: () => Promise<void>;
   signer?: JsonRpcSigner | null;
   userAddress?: string | null;
   disconnectWallet?: () => void;
+  error?: string;
   chainId?: number | null;
   connected: boolean;
   provider?: ethers.providers.Web3Provider | null;
@@ -19,7 +20,7 @@ export interface Web3ContextType {
   readOnlyProvider?: StaticJsonRpcProvider;
 }
 
-export const Web3Context = React.createContext<Web3ContextType | undefined>(
+export const Web3Context = createContext<Web3ContextType | undefined>(
   undefined
 );
 
@@ -68,71 +69,43 @@ export const Provider: React.FC<ProviderProps> = ({
   extraWalletProviders = [],
   rpcUrl = '',
 }) => {
-  const [signer, setSigner] = React.useState<null | JsonRpcSigner>();
+  const [web3Modal, setWeb3Modal] = useState<Web3Modal>();
+  const [signer, setSigner] = useState<null | JsonRpcSigner>();
+  const [error, setError] = useState<string>();
   const [provider, setProvider] =
-    React.useState<ethers.providers.Web3Provider | null>();
-  const [userAddress, setUserAddress] = React.useState<null | string>();
-  const [web3Modal, setWeb3Modal] = React.useState<Web3Modal>();
-  const [chainId, setChainId] = React.useState<number | null>();
-  const [connected, setConnected] = React.useState<boolean>(false);
-  const [correctNetwork, setCorrectNetwork] = React.useState<boolean>(true);
+    useState<ethers.providers.Web3Provider | null>();
+  const [userAddress, setUserAddress] = useState<null | string>();
+  const [chainId, setChainId] = useState<number | null>();
+  const [connected, setConnected] = useState<boolean>(false);
+  const [correctNetwork, setCorrectNetwork] = useState<boolean>(true);
   const readOnlyProvider = useReadOnlyProvider(rpcUrl);
 
-  const connectWallet = React.useCallback(async () => {
-    const defaulProviderOptions = {
-      walletconnect: {
-        package: WalletConnectProvider,
-        options: {
-          bridge: 'https://polygon.bridge.walletconnect.org',
-          infuraId,
-          rpc: {
-            1: `https://mainnet.infura.io/v3/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
-            4: `https://rinkeby.infura.io/v3/${infuraId}`,
-            42: `https://kovan.infura.io/v3/${infuraId}`,
-            100: 'https://dai.poa.network', // xDai
-          },
+  const defaulProviderOptions = {
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        bridge: 'https://polygon.bridge.walletconnect.org',
+        infuraId,
+        rpc: {
+          1: `https://mainnet.infura.io/v3/${infuraId}`, // mainnet // For more WalletConnect providers: https://docs.walletconnect.org/quick-start/dapps/web3-provider#required
+          4: `https://rinkeby.infura.io/v3/${infuraId}`,
+          42: `https://kovan.infura.io/v3/${infuraId}`,
+          100: 'https://dai.poa.network', // xDai
         },
       },
-    };
-    const web3Modal = new Web3Modal({
-      providerOptions: Object.assign(
-        defaulProviderOptions,
-        ...extraWalletProviders
-      ),
-    });
-    setWeb3Modal(web3Modal);
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    setProvider(provider);
-    const chainId = await provider
-      .getNetwork()
-      .then((network) => network.chainId);
-    setChainId(chainId);
-    setCorrectNetwork(chainId === network);
-    const signer = provider.getSigner();
-    setSigner(signer);
-    setUserAddress(await signer.getAddress());
-    setConnected(true);
+    },
+  };
 
-    connection.on('chainChanged', async (newChainId: string) => {
-      const formattedChainId = +newChainId.split('0x')[1];
-      setChainId(formattedChainId);
-      setCorrectNetwork(formattedChainId === network);
-      const provider = new ethers.providers.Web3Provider(connection);
-      setProvider(provider);
-      const signer = provider.getSigner();
-      setSigner(signer);
-      setUserAddress(await signer.getAddress());
-      setConnected(true);
-    });
-
-    connection.on('accountsChanged', async (accounts: string[]) => {
-      if (accounts.length === 0) {
-        // The user has disconnected their account from Metamask
-        web3Modal?.clearCachedProvider();
-        disconnectWallet();
-        return;
-      }
+  const connectWallet = useCallback(async () => {
+    try {
+      const web3Modal = new Web3Modal({
+        providerOptions: Object.assign(
+          defaulProviderOptions,
+          ...extraWalletProviders
+        ),
+      });
+      setWeb3Modal(web3Modal);
+      const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
       setProvider(provider);
       const chainId = await provider
@@ -144,36 +117,63 @@ export const Provider: React.FC<ProviderProps> = ({
       setSigner(signer);
       setUserAddress(await signer.getAddress());
       setConnected(true);
-    });
 
-    connection.on('disconnect', async () => {
-      web3Modal?.clearCachedProvider();
-      disconnectWallet();
-    });
-  }, [
-    Web3Modal,
-    web3Modal,
-    WalletConnectProvider,
-    network,
-    infuraId,
-    ethers,
-    correctNetwork,
-  ]);
+      connection.on('chainChanged', async (newChainId: string) => {
+        const formattedChainId = +newChainId.split('0x')[1];
+        setChainId(formattedChainId);
+        setCorrectNetwork(formattedChainId === network);
+        const provider = new ethers.providers.Web3Provider(connection);
+        setProvider(provider);
+        const signer = provider.getSigner();
+        setSigner(signer);
+        setUserAddress(await signer.getAddress());
+        setConnected(true);
+      });
 
-  const disconnectWallet = React.useCallback(() => {
+      connection.on('accountsChanged', async (accounts: string[]) => {
+        if (accounts.length === 0) {
+          // The user has disconnected their account from Metamask
+          web3Modal?.clearCachedProvider();
+          disconnectWallet();
+          return;
+        }
+        const provider = new ethers.providers.Web3Provider(connection);
+        setProvider(provider);
+        const chainId = await provider
+          .getNetwork()
+          .then((network) => network.chainId);
+        setChainId(chainId);
+        setCorrectNetwork(chainId === network);
+        const signer = provider.getSigner();
+        setSigner(signer);
+        setUserAddress(await signer.getAddress());
+        setConnected(true);
+      });
+
+      connection.on('disconnect', async () => {
+        web3Modal?.clearCachedProvider();
+        disconnectWallet();
+      });
+    } catch (err: any) {
+      setError(err?.message || err.toString());
+    }
+  }, [network, correctNetwork, infuraId, extraWalletProviders]);
+
+  const disconnectWallet = useCallback(() => {
     web3Modal?.clearCachedProvider();
     setSigner(null);
     setUserAddress(null);
     setConnected(false);
   }, [web3Modal]);
 
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       connectWallet,
       signer,
       userAddress,
       disconnectWallet,
       connected,
+      error,
       provider,
       network,
       chainId,
@@ -184,6 +184,7 @@ export const Provider: React.FC<ProviderProps> = ({
       connectWallet,
       signer,
       userAddress,
+      error,
       web3Modal,
       connected,
       provider,
