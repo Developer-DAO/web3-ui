@@ -38,12 +38,12 @@
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "ethers": "^5.5.2",
     "framer-motion": "^4"
   },
   "peerDependencies": {
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "ethers": "^5.5.2"
   },
   "devDependencies": {
     "@web3-ui/hooks": "^0.10.0",
