@@ -41,8 +41,7 @@
     "web3modal": "^1.9.4"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
+    "react": ">= 16.8.0 | >= 17.0.0",
     "ethers": "^5.5.1"
   },
   "devDependencies": {
