@@ -1,5 +1,14 @@
 # @web3-ui/components
 
+## 0.10.0
+
+### Minor Changes
+
+- [#293](https://github.com/Developer-DAO/web3-ui/pull/293) [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - !! BREAKING CHANGE !!
+  `ethers` has been moved to peer dependencies for both the `components` and `hooks` packages. (It was already a peer dependency for `core`)
+
+  This means that you will users will now have to install `ethers` along side our packages manually.
+
 ## 0.9.0
 
 ### Minor Changes

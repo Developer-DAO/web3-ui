@@ -1,5 +1,13 @@
 # @web3-ui/core
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [[`29281c6`](https://github.com/Developer-DAO/web3-ui/commit/29281c6727aa74f5bb0807b4adf06428804bf319), [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3), [`b23d01b`](https://github.com/Developer-DAO/web3-ui/commit/b23d01b93cf74626f33913cbaa270ddd6f111636)]:
+  - @web3-ui/hooks@0.11.0
+  - @web3-ui/components@0.10.0
+
 ## 0.6.0
 
 ### Minor Changes

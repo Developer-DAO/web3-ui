@@ -1,5 +1,18 @@
 # @web3-ui/hooks
 
+## 0.11.0
+
+### Minor Changes
+
+- [#283](https://github.com/Developer-DAO/web3-ui/pull/283) [`29281c6`](https://github.com/Developer-DAO/web3-ui/commit/29281c6727aa74f5bb0807b4adf06428804bf319) Thanks [@Nazeeh21](https://github.com/Nazeeh21)! - Bug fixing for adding network to MetaMask
+
+* [#293](https://github.com/Developer-DAO/web3-ui/pull/293) [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - !! BREAKING CHANGE !!
+  `ethers` has been moved to peer dependencies for both the `components` and `hooks` packages. (It was already a peer dependency for `core`)
+
+  This means that you will users will now have to install `ethers` along side our packages manually.
+
+- [#284](https://github.com/Developer-DAO/web3-ui/pull/284) [`b23d01b`](https://github.com/Developer-DAO/web3-ui/commit/b23d01b93cf74626f33913cbaa270ddd6f111636) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Catch errors in connectWallet and expose them, correct type for connectWallet
+
 ## 0.10.0
 
 ### Minor Changes
