@@ -3,7 +3,7 @@
 A set of React components made for web3-specific use cases. Fully compatible with and built on top of ChakraUI.
 
 ```bash
-yarn add @web3-ui/components
+yarn add @web3-ui/components ethers
 ```
 
 ## Getting started

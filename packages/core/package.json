@@ -44,8 +44,7 @@
   },
   "peerDependencies": {
     "ethers": "^5.5.1",
-    "react": "*",
-    "react-dom": "*"
+    "react": ">= 16.8.0 | >= 17.0.0"
   },
   "devDependencies": {
     "@web3-ui/hooks": "^0.10.0",

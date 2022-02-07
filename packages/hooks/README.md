@@ -3,7 +3,7 @@
 A set of React hooks developed for web3 use cases.
 
 ```bash
-yarn add @web3-ui/hooks
+yarn add @web3-ui/hooks ethers
 ```
 
 ## Getting started

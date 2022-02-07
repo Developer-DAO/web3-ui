@@ -1,7 +1,9 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -19,7 +21,7 @@ A library of UI components specifically crafted for web3 use cases.
 1. Install the package
 
 ```bash
-$ yarn add @web3-ui/core
+$ yarn add @web3-ui/core ethers
 ```
 
 2. Setup the Provider
