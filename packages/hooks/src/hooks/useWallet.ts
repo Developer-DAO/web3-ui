@@ -51,19 +51,7 @@ export function useWallet() {
         // If it is not, then install it into the user's MetaMask
         // @ts-expect-error unknown error type
         if (error.code === 4902) {
-          try {
-            await window.ethereum.request({
-              method: 'wallet_addEthereumChain',
-              params: [
-                {
-                  chainId: '0x61',
-                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-                },
-              ],
-            });
-          } catch (addError) {
-            console.error(addError);
-          }
+          alert('Please add the network to your MetaMask');
         }
       }
     } else {
