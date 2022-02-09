@@ -8,15 +8,29 @@ Added the `TokenInput` component which combines an `input` for the user to provi
 const Example = () => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
+  const defaultTokens = [
+    {
+      symbol: 'USDT',
+      address: '0x55d398326f99059fF775485246999027B3197955'
+    },
+    {
+      symbol: 'DAI',
+      address: '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+    }
+  ];
 
   return (
-    <TokenInput
-      tokens={['BTC', 'ETH', 'GTC']}
-      value={value}
-      onValueChange={event => setValue(event.target.value)}
-      selectedToken={token}
-      onTokenChange={event => setToken(event.target.value)}
-    />
+    <TokenInput width="fit-content" p={2}>
+      <TokenInput.Input width="30rem" value={value} setValue={setValue} />
+      <TokenInput.Select
+        fontSize="1.2rem"
+        fontWeight="bold"
+        w="7rem"
+        token={token}
+        setToken={setToken}
+        tokensList={defaultTokens}
+      />
+    </TokenInput>
   );
 };
 ```

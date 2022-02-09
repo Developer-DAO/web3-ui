@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
 import React from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import TokenInput from './TokenInput';
 import { defaultTokens } from './tokens';
 
@@ -16,6 +16,7 @@ const Component = () => {
     >
       <TokenInput.Input width="20rem" value={value} setValue={setValue} />
       <TokenInput.Select
+        id="token-select"
         borderLeft="2px solid black"
         fontSize="1.2rem"
         fontWeight="bold"
@@ -23,7 +24,7 @@ const Component = () => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black',
+          borderLeft: '2px solid black'
         }}
         token={token}
         setToken={setToken}
@@ -37,5 +38,13 @@ describe('TokenInput', () => {
   it('renders correctly', () => {
     const { container } = render(<Component />);
     expect(container).toBeInTheDocument();
+  });
+
+  it('selects correct token', () => {
+    const { container } = render(<Component />);
+    fireEvent.select(container, { target: { option: 'USDT' } });
+    expect(container.querySelector('select')).toHaveValue(
+      '0x55d398326f99059fF775485246999027B3197955'
+    );
   });
 });

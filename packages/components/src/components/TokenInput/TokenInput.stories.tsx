@@ -2,7 +2,7 @@ import React from 'react';
 import TokenInput from './TokenInput';
 import { defaultTokens } from './tokens';
 
-const Component = () => {
+const DefaultStyling = () => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
@@ -18,7 +18,7 @@ const Component = () => {
   );
 };
 
-const Component2 = (props) => {
+const StyleInput = props => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
@@ -33,7 +33,7 @@ const Component2 = (props) => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black',
+          borderLeft: '2px solid black'
         }}
         token={token}
         setToken={setToken}
@@ -43,7 +43,7 @@ const Component2 = (props) => {
   );
 };
 
-const Component3 = () => {
+const StyleInputAndSelect = () => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
@@ -63,7 +63,7 @@ const Component3 = () => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black',
+          borderLeft: '2px solid black'
         }}
         token={token}
         setToken={setToken}
@@ -73,13 +73,13 @@ const Component3 = () => {
   );
 };
 
-export const Default = () => <Component />;
+export const Default = () => <DefaultStyling />;
 
-export const WithSelectProps = () => <Component2 />;
+export const WithSelectProps = () => <StyleInput />;
 
-export const withCustomWidthAndBorder = () => <Component3 />;
+export const withCustomWidthAndBorder = () => <StyleInputAndSelect />;
 
 export default {
   title: 'Components/TokenInputComp',
-  component: Default,
+  component: Default
 };
