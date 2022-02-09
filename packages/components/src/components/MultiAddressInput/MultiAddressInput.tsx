@@ -28,6 +28,10 @@ export interface MultiAddressInputProps {
   inputProps?: TextareaProps;
 }
 
+/*
+ * Original authors: Hans and Bliss from the Moonshot Collective
+ * Original source code: https://github.com/moonshotcollective/pay.party/blob/develop/packages/react-app/src/routes/create/components/MultiAddressInput.jsx
+ */
 export const MultiAddressInput: FC<MultiAddressInputProps> = ({
   ensProvider,
   value,
