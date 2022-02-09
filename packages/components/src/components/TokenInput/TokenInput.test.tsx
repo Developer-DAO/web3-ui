@@ -24,7 +24,7 @@ const Component = () => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black'
+          borderLeft: '2px solid black',
         }}
         token={token}
         setToken={setToken}

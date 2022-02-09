@@ -18,7 +18,7 @@ const DefaultStyling = () => {
   );
 };
 
-const StyleInput = props => {
+const StyleInput = (props) => {
   const [value, setValue] = React.useState('');
   const [token, setToken] = React.useState('');
 
@@ -33,7 +33,7 @@ const StyleInput = props => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black'
+          borderLeft: '2px solid black',
         }}
         token={token}
         setToken={setToken}
@@ -63,7 +63,7 @@ const StyleInputAndSelect = () => {
         outline="none"
         rounded="none"
         _focus={{
-          borderLeft: '2px solid black'
+          borderLeft: '2px solid black',
         }}
         token={token}
         setToken={setToken}
@@ -81,5 +81,5 @@ export const withCustomWidthAndBorder = () => <StyleInputAndSelect />;
 
 export default {
   title: 'Components/TokenInputComp',
-  component: Default
+  component: Default,
 };
