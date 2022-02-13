@@ -19,7 +19,7 @@ const Default = () => {
         <Button onClick={disconnectWallet}>Disconnect wallet</Button>
         <Text>{connection.ens || connection.userAddress}</Text>
         {error ? (
-          <Text>Error occured while trying to fetch balance.</Text>
+          <Text>Error occurred while trying to fetch balance.</Text>
         ) : loading ? (
           <Text>Loading...</Text>
         ) : (
