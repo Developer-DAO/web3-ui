@@ -35,7 +35,7 @@ jobs:
         uses: chromaui/action@v1
         # don't run this step if project token secret not specified
         # to prevent this workflow failing for any forked repositories
-        if: ${{ env.projectToken }}
+        if: ${{ env.CHROMATIC_PROJECT_TOKEN }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
