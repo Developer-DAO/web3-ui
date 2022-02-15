@@ -119,7 +119,7 @@ export const Provider: React.FC<ProviderProps> = ({
       setConnected(true);
 
       connection.on('chainChanged', async (newChainId: string) => {
-        const formattedChainId = +newChainId.split('0x')[1];
+        const formattedChainId = +newChainId;
         setChainId(formattedChainId);
         setCorrectNetwork(formattedChainId === network);
         const provider = new ethers.providers.Web3Provider(connection);
