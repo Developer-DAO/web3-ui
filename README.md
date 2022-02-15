@@ -1,9 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -111,6 +109,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://twitter.com/patcito"><img src="https://avatars.githubusercontent.com/u/26435?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Patrick Aljord</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=patcito" title="Code">💻</a></td>
+    <td align="center"><a href="https://shamoilarsi.com"><img src="https://avatars.githubusercontent.com/u/16434451?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shamoil Arsiwala</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=shamoilarsi" title="Code">💻</a></td>
   </tr>
 </table>
 
