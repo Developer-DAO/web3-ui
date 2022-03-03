@@ -40,10 +40,11 @@ export function useWallet() {
       try {
         console.log('chainId', { chainId });
         console.log('requiredNetwork', { network });
+        const hexNetwork = network?.toString(16);
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: `0x${network}` }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: `0x${hexNetwork}` }], // chainId must be in hexadecimal numbers
         });
       } catch (error) {
         console.error(error);
