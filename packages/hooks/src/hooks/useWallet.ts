@@ -68,7 +68,9 @@ export function useWallet() {
     error,
     connection: {
       userAddress,
-      network: CHAIN_ID_TO_NETWORK[chainId as number],
+      network: (CHAIN_ID_TO_NETWORK as { [key: number]: string })[
+        chainId as number
+      ],
       signer,
       ens,
     },

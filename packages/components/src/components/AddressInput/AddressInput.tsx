@@ -8,7 +8,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
-import { JsonRpcSigner } from '@ethersproject/providers/src.ts/json-rpc-provider';
+import { JsonRpcSigner } from '@ethersproject/providers';
 
 export interface AddressInputProps {
   /**
