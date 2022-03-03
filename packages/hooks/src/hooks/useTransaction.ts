@@ -15,7 +15,7 @@ import React from 'react';
  */
 
 export function useTransaction(
-  method
+  method: any
 ): [(args: any) => Promise<any>, boolean, any] {
   const [loading, setLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<any>(null);
