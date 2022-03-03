@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.10.1
+
+### Patch Changes
+
+- [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
 ## 0.10.0
 
 ### Minor Changes

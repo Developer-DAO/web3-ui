@@ -1,5 +1,15 @@
 # @web3-ui/core
 
+## 0.6.2
+
+### Patch Changes
+
+- [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
+- Updated dependencies [[`b39249e`](https://github.com/Developer-DAO/web3-ui/commit/b39249eee07246fe24ab0e11876eb05fb4a6ceb1), [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d)]:
+  - @web3-ui/hooks@0.11.1
+  - @web3-ui/components@0.10.1
+
 ## 0.6.1
 
 ### Patch Changes
