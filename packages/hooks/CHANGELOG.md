@@ -1,5 +1,14 @@
 # @web3-ui/hooks
 
+## 0.11.1
+
+### Patch Changes
+
+- [#297](https://github.com/Developer-DAO/web3-ui/pull/297) [`b39249e`](https://github.com/Developer-DAO/web3-ui/commit/b39249eee07246fe24ab0e11876eb05fb4a6ceb1) Thanks [@shamoilarsi](https://github.com/shamoilarsi)! - closes #273
+  fix: save chainId on chainChanged event without formatting
+
+* [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
 ## 0.11.0
 
 ### Minor Changes
