@@ -1,7 +1,7 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _In Development 🏗️_
@@ -112,6 +112,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://shamoilarsi.com"><img src="https://avatars.githubusercontent.com/u/16434451?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shamoil Arsiwala</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=shamoilarsi" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ernestognw"><img src="https://avatars.githubusercontent.com/u/33379285?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ernesto García</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=ernestognw" title="Code">💻</a></td>
     <td align="center"><a href="https://dfimbres.github.io/"><img src="https://avatars.githubusercontent.com/u/10216994?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=dfimbres" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/e-roy"><img src="https://avatars.githubusercontent.com/u/70700747?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Roupe</b></sub></a><br /><a href="https://github.com/Developer-DAO/web3-ui/commits?author=e-roy" title="Code">💻</a></td>
   </tr>
 </table>
 
