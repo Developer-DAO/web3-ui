@@ -5,3 +5,4 @@ export { useTokenBalance } from './useTokenBalance';
 export { useReadOnlyProvider } from './useReadOnlyProvider';
 export { useReadOnlyContract } from './useReadOnlyContract';
 export { usePoller } from './usePoller';
+export { useChainId } from './useChainId';
