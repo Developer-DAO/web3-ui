@@ -4,6 +4,10 @@ import { Select, SelectProps } from '@chakra-ui/react';
 import { useChainId } from '@web3-ui/hooks/src/hooks';
 import { switchNetwork } from '@web3-ui/hooks/src/utils';
 
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export interface NetworkSwitchProps {
   /**
    * The chain IDs (in base 10) that the component should display as options
@@ -26,7 +30,9 @@ export const NetworkSwitch: React.FC<NetworkSwitchProps & SelectProps> = ({
   return (
     <Select {...props} value={Number(chainId)} onChange={handleChange}>
       {networks.map((network) => (
-        <option value={network}>{CHAIN_ID_TO_NETWORK[network]}</option>
+        <option value={network}>
+          {capitalize(CHAIN_ID_TO_NETWORK[network])}
+        </option>
       ))}
     </Select>
   );
