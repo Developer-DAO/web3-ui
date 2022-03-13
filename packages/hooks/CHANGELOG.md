@@ -1,5 +1,13 @@
 # @web3-ui/hooks
 
+## 0.12.0
+
+### Minor Changes
+
+- [#311](https://github.com/Developer-DAO/web3-ui/pull/311) [`f95d2dd`](https://github.com/Developer-DAO/web3-ui/commit/f95d2ddecbe7b4d56a463deab676a1470037f492) Thanks [@swellander](https://github.com/swellander)! - Add `NetworkSwitch` component and `useChainId` hook
+
+* [#312](https://github.com/Developer-DAO/web3-ui/pull/312) [`0d12c98`](https://github.com/Developer-DAO/web3-ui/commit/0d12c98ce76e8bdde2627df6daa86ced69a5acca) Thanks [@swellander](https://github.com/swellander)! - The network/chain ID was not being converted to hexadecimal before requesting a switch from MetaMask. This was only a problem for networks with chain IDs greater than 9, like the Mumbai Testnet (80001).
+
 ## 0.11.1
 
 ### Patch Changes

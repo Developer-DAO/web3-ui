@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.11.0
+
+### Minor Changes
+
+- [#296](https://github.com/Developer-DAO/web3-ui/pull/296) [`01bac08`](https://github.com/Developer-DAO/web3-ui/commit/01bac080afdd85310c62927de9ed3dc92498af14) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Add `MultiAddressInput` component
+
 ## 0.10.1
 
 ### Patch Changes
