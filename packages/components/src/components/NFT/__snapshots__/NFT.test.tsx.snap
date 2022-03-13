@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NFT displays an image NFT properly 1`] = `
+<div
+  class="c-dhzjXW c-iTKOFX c-daoeyp"
+  data-testid="nft-container"
+>
+  <img
+    alt="Dev #1"
+    class="c-boeGUI"
+    src="https://test.com/image.png"
+  />
+  <div>
+    <div
+      class="c-dhzjXW c-dLiYgZ"
+    >
+      <h3
+        style="overflow-wrap: anywhere;"
+      >
+        Dev #1
+      </h3>
+      <div
+        class="c-fCArCM"
+      >
+        DEVS
+      </div>
+    </div>
+    <span
+      class="c-ijGyTM"
+    >
+      Devs for Revolution
+       #
+      1
+    </span>
+  </div>
+</div>
+`;

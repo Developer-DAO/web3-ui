@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { ethers } from 'ethers';
-import { VStack, Grid, Alert, AlertIcon } from '@chakra-ui/react';
 import { NFTCard } from '../NFT';
+import { AlertBox, Grid, VStack } from '../common';
+import { styled } from '@stitches/react';
 
 export interface NFTGalleryProps {
   /**
@@ -47,12 +48,17 @@ export const NFTGallery = ({
   const [nfts, setNfts] = React.useState<OpenSeaAsset[]>([]);
   const [errorMessage, setErrorMessage] = React.useState(null);
 
+  const NFTGrid = styled(Grid, {
+    gridTemplateColumns: `repeat(${gridWidth}, 1fr)`,
+    gap: '6px',
+  });
+
   useEffect(() => {
     async function exec() {
       let resolvedAddress: string | null = address;
       const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
       if (isTestnet)
-        console.log(
+        console.error(
           `⚠️ OpenSea currently only supports Rinkedby with testnets.`
         );
       if (address.endsWith('.eth')) {
@@ -83,28 +89,22 @@ export const NFTGallery = ({
 
   return (
     <VStack>
-      {errorMessage && (
-        <Alert status="error">
-          <AlertIcon />
-          {errorMessage}
-        </Alert>
-      )}
-      <Grid templateColumns={`repeat(${gridWidth}, 1fr)`} gap={6}>
+      {errorMessage && <AlertBox>{errorMessage}</AlertBox>}
+      <NFTGrid>
         {nfts.map((nft) => (
           <NFTCard
             key={`${nft.asset_contract.symbol}-${nft.token_id}`}
             data={{
-              name: nft.name!,
+              name: nft.name as string,
               imageUrl: nft.image_url,
               tokenId: nft.token_id,
               assetContractName: nft.asset_contract.name,
               assetContractSymbol: nft.asset_contract.symbol,
             }}
-            size="xs"
             hideIfError
           />
         ))}
-      </Grid>
+      </NFTGrid>
     </VStack>
   );
 };

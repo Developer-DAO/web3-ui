@@ -1,16 +1,6 @@
+import { styled } from '@stitches/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  Box,
-  Heading,
-  Image,
-  Flex,
-  Tag,
-  Text,
-  VStack,
-  Skeleton,
-  Alert,
-  AlertIcon,
-} from '@chakra-ui/react';
+import { Flex, VStack, Tag, AlertBox } from '../common';
 
 export interface NFTProps {
   /**
@@ -46,7 +36,7 @@ export interface NFTData {
 export const NFT = ({
   contractAddress,
   tokenId,
-  size = 'xs',
+  // width = '20rem',
   isTestnet = false,
 }: NFTProps) => {
   const _isMounted = useRef(true);
@@ -97,7 +87,7 @@ export const NFT = ({
     };
   }, [contractAddress, tokenId]);
 
-  return <NFTCard data={nftData} errorMessage={errorMessage} size={size} />;
+  return <NFTCard data={nftData} errorMessage={errorMessage} />;
 };
 
 /**
@@ -106,12 +96,12 @@ export const NFT = ({
 export const NFTCard = ({
   data,
   errorMessage = '',
-  size,
+  width,
   hideIfError = false,
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  width?: string;
   hideIfError?: boolean;
 }) => {
   const [error, setError] = useState(false);
@@ -123,57 +113,77 @@ export const NFTCard = ({
   const tokenId = data?.tokenId;
   const displayName = name || `${assetContractSymbol} #${tokenId}`;
 
+  const NFTCardContainer = styled(VStack, {
+    borderRadius: '7px',
+    border: '1px solid #eaeaea',
+    padding: '1rem',
+    width: width || '20rem',
+  });
+
+  const NFTImage = styled('img', {
+    borderRadius: '7px',
+    width: width || '20rem',
+  });
+
+  const VideoContainer = styled(Flex, {
+    backgroundColor: 'Black',
+    justifyContent: 'center',
+  });
+
+  const NFTDetailsContainer = styled(Flex, {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    overflow: 'hidden',
+  });
+
+  const LowerNFTDetailsContainer = styled('span', {
+    overflowWrap: 'anywhere',
+  });
+
+  const Video = styled('video', {
+    width: '20rem',
+  });
+
+  const Audio = styled('audio', {
+    borderRadius: '7px',
+  });
+
   if (errorMessage || error || imageUrl === '(unknown)' || !imageUrl) {
     if (hideIfError) return null;
-    return (
-      <Alert status="error">
-        <AlertIcon />
-        {errorMessage}
-      </Alert>
-    );
+    return <AlertBox>{errorMessage}</AlertBox>;
   }
 
   return (
-    <Skeleton isLoaded={!!data} maxW={size} h="md">
-      <Box maxW={size} borderRadius="lg" borderWidth="1px" overflow="hidden">
-        {animationUrl ? (
-          animationUrl.endsWith('.mp3') ? (
-            <VStack>
-              <Image
-                src={imageUrl}
-                alt={displayName}
-                borderRadius="lg"
-                w={size}
-                onError={() => setError(true)}
-              />
-              <audio
-                src={animationUrl}
-                controls
-                autoPlay
-                muted
-                style={{ borderRadius: '7px' }}
-              />
-            </VStack>
-          ) : (
-            <Flex w={size} h={size} bg="black" justifyContent="center">
-              <video src={animationUrl} controls autoPlay muted />
-            </Flex>
-          )
+    // TODO: Create skeleton
+    // <Skeleton isLoaded={!!data} maxW={size} h="md">
+    <NFTCardContainer data-testid="nft-container">
+      {animationUrl ? (
+        animationUrl.endsWith('.mp3') ? (
+          <VStack>
+            <NFTImage
+              src={imageUrl}
+              alt={displayName}
+              onError={() => setError(true)}
+            />
+            <Audio src={animationUrl} controls autoPlay muted />
+          </VStack>
         ) : (
-          <Image src={imageUrl} alt={displayName} borderRadius="lg" w={size} />
-        )}
-        <Box p="6">
-          <Flex alignItems="center" justifyContent="space-between" pb="2">
-            <Heading as="h3" size="sm" style={{ overflowWrap: 'anywhere' }}>
-              {displayName}
-            </Heading>
-            {assetContractSymbol && <Tag size="sm">{assetContractSymbol}</Tag>}
-          </Flex>
-          <Text fontSize="xs">
-            {assetContractName} #{tokenId}
-          </Text>
-        </Box>
-      </Box>
-    </Skeleton>
+          <VideoContainer>
+            <Video src={animationUrl} controls autoPlay muted />
+          </VideoContainer>
+        )
+      ) : (
+        <NFTImage src={imageUrl} alt={displayName} />
+      )}
+      <div>
+        <NFTDetailsContainer>
+          <h3 style={{ overflowWrap: 'anywhere' }}>{displayName}</h3>
+          {assetContractSymbol && <Tag>{assetContractSymbol}</Tag>}
+        </NFTDetailsContainer>
+        <LowerNFTDetailsContainer>
+          {assetContractName} #{tokenId}
+        </LowerNFTDetailsContainer>
+      </div>
+    </NFTCardContainer>
   );
 };

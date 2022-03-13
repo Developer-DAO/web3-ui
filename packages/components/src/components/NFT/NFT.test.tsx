@@ -18,6 +18,8 @@ describe('NFT', () => {
     const image = await screen.findByAltText('Dev #1');
     expect(name).toBeInTheDocument();
     expect(image).toBeInTheDocument();
+    const container = await screen.findByTestId('nft-container');
+    expect(container).toMatchSnapshot();
   });
 
   //TODO: test for video NFT

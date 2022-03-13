@@ -11,6 +11,7 @@ describe('NFTGallery', () => {
     await waitFor(() => {
       expect(container).toHaveTextContent('MutantApeYachtClub #29501');
       expect(container).toHaveTextContent('Dev #1');
+      expect(container).toMatchSnapshot();
     });
   });
 
@@ -18,6 +19,7 @@ describe('NFTGallery', () => {
     const { container } = render(<NFTGallery address="bad_address" />);
     await waitFor(() => {
       expect(container).toHaveTextContent('OpenSea request failed');
+      expect(container).toMatchSnapshot();
     });
   });
 
