@@ -34,6 +34,7 @@
   "types": "dist/web3-ui-components.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.16.7",
+    "@radix-ui/react-icons": "^1.1.0",
     "@stitches/react": "^1.2.7"
   },
   "peerDependencies": {

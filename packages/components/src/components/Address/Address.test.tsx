@@ -25,6 +25,7 @@ describe('Address', () => {
   it('renders without throwing', () => {
     const { container } = render(<Address value="taylorswift.eth" />);
     expect(container).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });
 
@@ -32,6 +33,7 @@ describe('Address copiable prop true', () => {
   it('renders without throwing', () => {
     const { container } = render(<Address copiable value="taylorswift.eth" />);
     expect(container).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with icon', () => {
@@ -39,6 +41,7 @@ describe('Address copiable prop true', () => {
     const svg = container.querySelector('svg') as SVGElement;
 
     expect(svg).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('uses writeText from Clipboard API', async () => {

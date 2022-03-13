@@ -1,13 +1,8 @@
-import {
-  Box,
-  Flex,
-  FormControl,
-  FormErrorMessage,
-  Text,
-} from '@chakra-ui/react';
-import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
+import { CopyIcon, CheckIcon } from '@radix-ui/react-icons';
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import { AlertBox, Flex } from '../common';
+import { styled } from '@stitches/react';
 
 export interface AddressProps {
   /**
@@ -97,26 +92,27 @@ export const Address: React.FC<AddressProps> = ({
     return () => clearTimeout(feedbackTimeOut);
   }, []);
 
+  const InnerContainer = styled(Flex, {
+    alignItems: 'center',
+    cursor: copiable ? 'pointer' : 'initial',
+    gap: '0.5rem',
+  });
+
+  const IconContainer = styled('div', {
+    marginLeft: 'auto',
+  });
+
   return (
-    <FormControl isInvalid={!!error}>
-      <Flex
-        data-testid="address-container"
-        alignItems="center"
-        cursor={copiable ? 'pointer' : 'initial'}
-        onClick={handleClick}
-      >
-        <Text>{ensName || displayAddress}</Text>
+    <>
+      <InnerContainer data-testid="address-container" onClick={handleClick}>
+        <span>{ensName || displayAddress}</span>
         {copiable && (
-          <Box ml="auto">
-            {copied ? (
-              <CheckIcon color="green.500" />
-            ) : (
-              <CopyIcon color="gray.300" />
-            )}
-          </Box>
+          <IconContainer>
+            {copied ? <CheckIcon color="Green" /> : <CopyIcon color="Gray" />}
+          </IconContainer>
         )}
-      </Flex>
-      <FormErrorMessage>{error}</FormErrorMessage>
-    </FormControl>
+      </InnerContainer>
+      {error && <AlertBox>{error}</AlertBox>}
+    </>
   );
 };
