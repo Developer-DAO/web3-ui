@@ -1,7 +1,7 @@
 {
   "name": "@web3-ui/core",
   "license": "MIT",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "private": false,
   "description": "React UI components for web3",
   "keywords": [
@@ -38,8 +38,8 @@
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@web3-ui/components": "^0.10.1",
-    "@web3-ui/hooks": "^0.11.1",
+    "@web3-ui/components": "^0.11.0",
+    "@web3-ui/hooks": "^0.12.0",
     "framer-motion": "^4"
   },
   "peerDependencies": {
@@ -47,7 +47,7 @@
     "react": ">= 16.8.0 | >= 17.0.0"
   },
   "devDependencies": {
-    "@web3-ui/hooks": "^0.11.1",
+    "@web3-ui/hooks": "^0.12.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
