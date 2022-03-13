@@ -9,7 +9,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
       class="c-bQzyIt c-iDwhyX"
     >
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -17,7 +17,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/Of37HlRWnVauCBNB9Mp03Fa3dRaKO1x_A1QKBFanFP4ARM3Pflxkn8TzZy4tM_s7wCdZxtTF2WrghtJa7I5LTeRmg3-vYzjiNo67ig"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -42,7 +44,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -50,7 +52,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/kEQd_Xd7i_aeqFLzKgqR8Mx4yYAXIBdzbxVAywcVphU8GKkzqK4DxL1MHpwuBBfAQ1TW-RPgKdZ7Z6q3PntWODdOboTI0wilzHT2"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -75,7 +79,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -83,7 +87,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/fo209cshW3khW5CDe3k2qPkX8CsJL-WoDeACfFB5ttEBi-5uGLqByGKQPiTkC7Sc_p2YP8EJwmV1E2Yk_jsJ6A2jCJBWYnl_NH2Ouyk"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -108,7 +114,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -116,7 +122,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/oykw79XWlYJYpaKU6ejc_go_v-KRbfPac_jnMyfYTlAweZCTkubmJtf1pjeeRryR9b87ZivTetwq4iYIMb54PqjCVPMkZu1dA0bwcw"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -141,7 +149,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -149,7 +157,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -174,7 +184,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -182,7 +192,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/2ugQojxUZyJrvGIkvfZykSEH10ooke96p2L3BACTrNbSZtSUgyou1dwuaL3ToLYfo2qCccMSesL26r2007jG01oRiP_nz2rZEZGF"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -207,7 +219,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -215,7 +227,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/CIWHaJC9BQvc-1unN_L_oNShuC6-qngwB421ik5WSw5YATNN7mHd0JGWlZoB6lRvUEsTn-vFhvFHtp0ccRVE1gZJjwirpHIqiFOiKg"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -240,7 +254,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -248,7 +262,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/PqUXUQ947U77EBxnDlD9fWqU6vaSRt6psVFRVksRE8Yf3UlN2KB7qfSL29A2pG5QGCUqrvV8wZBOLbFGupVu5fc4PakHNfQ8kjTe"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -273,7 +289,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -281,7 +297,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/20h55ixFQG_zQFj7Y7cf46ZYnz-w20GNYBV3Oeuars75bwxIRoOloDAakUDh7AedroaWpKYBD6_ACz954iku5cLF-K_EPIkKOdzZ"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -306,7 +324,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -314,7 +332,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/WQuioAZIrKrUh2QrZm9AJpgbAXlVxlWLRFHzGMO4LvBkLJvprlzKeZFWaoAxU3VF1kfqimn1hn7pBU6P_8qbluo1EJNqtpN8szaPQw"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -339,7 +359,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -347,7 +367,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/dBRUNceisNm0hf922mxR06ypVgJj5z8fEG6g2z8tm6kEYTjrNN9zu99IjRpFYSOIGkEZQaXuNcF3-e4pU272CgNXkxDawRkdCtX2tg"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -372,7 +394,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -380,7 +402,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/5pjcUIEyJ8DwwYOH-t4mUvGrcFvl9N31T-NO91Wd49o-EbOMmrB2CQ_JLgKvoPBaXvvXl8z8VdEeTMm_l2yA8yVw99WBxlhnI7zw"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -405,7 +429,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -413,7 +437,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/kqeKxxi1hmcYN82Foxvj-makyRUpq3Oky739o2znwWBnayelarW9t4nHN8PF4_-BJy9KG8DI2mYBgaQfFNWIbme8K0kERknHnTgwyQ"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >
@@ -438,7 +464,7 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
         </div>
       </div>
       <div
-        class="c-dhzjXW c-iTKOFX c-daoeyp"
+        class="c-dhzjXW c-iTKOFX c-eSgtYR"
         data-testid="nft-container"
       >
         <img
@@ -446,7 +472,9 @@ exports[`NFTGallery displays the grid of NFTs 1`] = `
           class="c-boeGUI"
           src="https://lh3.googleusercontent.com/b-dHa9KKjTnaZDjUtswR8Z7DK7lScIgukkT1Xpnr4voQoU78nUhGM_yMRu0nHPg3Wz6m7FD_J59irj_JsQINme3VHlIjZGwp64Habk8"
         />
-        <div>
+        <div
+          class="c-kIOGcq"
+        >
           <div
             class="c-dhzjXW c-dLiYgZ"
           >

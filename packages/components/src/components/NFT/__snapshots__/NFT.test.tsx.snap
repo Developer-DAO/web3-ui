@@ -2,7 +2,7 @@
 
 exports[`NFT displays an image NFT properly 1`] = `
 <div
-  class="c-dhzjXW c-iTKOFX c-daoeyp"
+  class="c-dhzjXW c-iTKOFX c-eSgtYR"
   data-testid="nft-container"
 >
   <img
@@ -10,7 +10,9 @@ exports[`NFT displays an image NFT properly 1`] = `
     class="c-boeGUI"
     src="https://test.com/image.png"
   />
-  <div>
+  <div
+    class="c-kIOGcq"
+  >
     <div
       class="c-dhzjXW c-dLiYgZ"
     >

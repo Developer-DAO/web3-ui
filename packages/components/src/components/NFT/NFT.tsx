@@ -14,7 +14,7 @@ export interface NFTProps {
   /**
    * The size of the NFT card.
    */
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  width?: number | string;
   /**
    * Use testnet API (Rinkeby) instead of mainnet
    */
@@ -36,7 +36,7 @@ export interface NFTData {
 export const NFT = ({
   contractAddress,
   tokenId,
-  // width = '20rem',
+  width,
   isTestnet = false,
 }: NFTProps) => {
   const _isMounted = useRef(true);
@@ -87,7 +87,7 @@ export const NFT = ({
     };
   }, [contractAddress, tokenId]);
 
-  return <NFTCard data={nftData} errorMessage={errorMessage} />;
+  return <NFTCard data={nftData} errorMessage={errorMessage} width={width} />;
 };
 
 /**
@@ -101,7 +101,7 @@ export const NFTCard = ({
 }: {
   data: NFTData | undefined | null;
   errorMessage?: string | undefined;
-  width?: string;
+  width?: string | number;
   hideIfError?: boolean;
 }) => {
   const [error, setError] = useState(false);
@@ -116,8 +116,11 @@ export const NFTCard = ({
   const NFTCardContainer = styled(VStack, {
     borderRadius: '7px',
     border: '1px solid #eaeaea',
-    padding: '1rem',
     width: width || '20rem',
+  });
+
+  const LowerContainer = styled('div', {
+    padding: '1rem',
   });
 
   const NFTImage = styled('img', {
@@ -146,6 +149,7 @@ export const NFTCard = ({
 
   const Audio = styled('audio', {
     borderRadius: '7px',
+    margin: 'auto',
   });
 
   if (errorMessage || error || imageUrl === '(unknown)' || !imageUrl) {
@@ -175,7 +179,7 @@ export const NFTCard = ({
       ) : (
         <NFTImage src={imageUrl} alt={displayName} />
       )}
-      <div>
+      <LowerContainer>
         <NFTDetailsContainer>
           <h3 style={{ overflowWrap: 'anywhere' }}>{displayName}</h3>
           {assetContractSymbol && <Tag>{assetContractSymbol}</Tag>}
@@ -183,7 +187,7 @@ export const NFTCard = ({
         <LowerNFTDetailsContainer>
           {assetContractName} #{tokenId}
         </LowerNFTDetailsContainer>
-      </div>
+      </LowerContainer>
     </NFTCardContainer>
   );
 };
