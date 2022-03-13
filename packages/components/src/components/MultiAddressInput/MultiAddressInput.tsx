@@ -31,6 +31,7 @@ export interface MultiAddressInputProps {
 /*
  * Original authors: Hans and Bliss from the Moonshot Collective
  * Original source code: https://github.com/moonshotcollective/pay.party/blob/develop/packages/react-app/src/routes/create/components/MultiAddressInput.jsx
+ * @dev This component lets you input multiple addresses and ENS names.
  */
 export const MultiAddressInput: FC<MultiAddressInputProps> = ({
   ensProvider,

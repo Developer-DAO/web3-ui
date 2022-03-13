@@ -27,7 +27,7 @@ const AddressUsingProvider = () => {
         value={value}
         onChange={setValue}
         ensProvider={mainnetProvider}
-        placeholder="Enter ENS names"
+        placeholder="Enter ENS names or addresses"
       />
     </>
   );
