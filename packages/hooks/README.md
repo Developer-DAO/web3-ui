@@ -1,3 +1,5 @@
+### ❗️Important: This package has been [deprecated](https://github.com/Developer-DAO/web3-ui/issues/319).
+
 # @web3-ui/hooks
 
 A set of React hooks developed for web3 use cases.
