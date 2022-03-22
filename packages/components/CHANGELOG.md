@@ -1,5 +1,52 @@
 # @web3-ui/components
 
+## 0.11.0
+
+### Minor Changes
+
+- [#296](https://github.com/Developer-DAO/web3-ui/pull/296) [`01bac08`](https://github.com/Developer-DAO/web3-ui/commit/01bac080afdd85310c62927de9ed3dc92498af14) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Add `MultiAddressInput` component
+
+## 0.10.1
+
+### Patch Changes
+
+- [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
+## 0.10.0
+
+### Minor Changes
+
+- [#293](https://github.com/Developer-DAO/web3-ui/pull/293) [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - !! BREAKING CHANGE !!
+  `ethers` has been moved to peer dependencies for both the `components` and `hooks` packages. (It was already a peer dependency for `core`)
+
+  This means that you will users will now have to install `ethers` along side our packages manually.
+
+## 0.9.0
+
+### Minor Changes
+
+- [#270](https://github.com/Developer-DAO/web3-ui/pull/270) [`daafb02`](https://github.com/Developer-DAO/web3-ui/commit/daafb02dc9a00374fa28b139c0da2423ccb985fc) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The NFT and NFTGallery components now support testnets (rinkeby only for now)! You can pass in `isTestnet` to the components if you want to fetch the NFT data from the testnet API. 🎉
+
+  ```tsx
+  <NFT
+    contractAddress="0xd067fae3311a5daefe21b81ec17224c7b2652ca6"
+    tokenId="20"
+    isTestnet
+  />
+
+  <NFTGallery
+    address="0x0ED6Cec17F860fb54E21D154b49DAEFd9Ca04106"
+    gridWidth={2}
+    isTestnet
+  />
+  ```
+
+## 0.8.0
+
+### Minor Changes
+
+- [#241](https://github.com/Developer-DAO/web3-ui/pull/241) [`b5d89eb`](https://github.com/Developer-DAO/web3-ui/commit/b5d89eb1a24b81b45c3f49034213f87eb1ad3ce8) Thanks [@hone1er](https://github.com/hone1er)! - Removed RPC Url from address component
+
 ## 0.7.0
 
 ### Minor Changes

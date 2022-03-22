@@ -1,5 +1,54 @@
 # @web3-ui/core
 
+## 0.7.0
+
+### Minor Changes
+
+- [#311](https://github.com/Developer-DAO/web3-ui/pull/311) [`f95d2dd`](https://github.com/Developer-DAO/web3-ui/commit/f95d2ddecbe7b4d56a463deab676a1470037f492) Thanks [@swellander](https://github.com/swellander)! - Add `NetworkSwitch` component and `useChainId` hook
+
+### Patch Changes
+
+- Updated dependencies [[`f95d2dd`](https://github.com/Developer-DAO/web3-ui/commit/f95d2ddecbe7b4d56a463deab676a1470037f492), [`01bac08`](https://github.com/Developer-DAO/web3-ui/commit/01bac080afdd85310c62927de9ed3dc92498af14), [`0d12c98`](https://github.com/Developer-DAO/web3-ui/commit/0d12c98ce76e8bdde2627df6daa86ced69a5acca)]:
+  - @web3-ui/hooks@0.12.0
+  - @web3-ui/components@0.11.0
+
+## 0.6.2
+
+### Patch Changes
+
+- [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
+- Updated dependencies [[`b39249e`](https://github.com/Developer-DAO/web3-ui/commit/b39249eee07246fe24ab0e11876eb05fb4a6ceb1), [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d)]:
+  - @web3-ui/hooks@0.11.1
+  - @web3-ui/components@0.10.1
+
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [[`29281c6`](https://github.com/Developer-DAO/web3-ui/commit/29281c6727aa74f5bb0807b4adf06428804bf319), [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3), [`b23d01b`](https://github.com/Developer-DAO/web3-ui/commit/b23d01b93cf74626f33913cbaa270ddd6f111636)]:
+  - @web3-ui/hooks@0.11.0
+  - @web3-ui/components@0.10.0
+
+## 0.6.0
+
+### Minor Changes
+
+- [#274](https://github.com/Developer-DAO/web3-ui/pull/274) [`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Relaxed network attribute
+
+### Patch Changes
+
+- Updated dependencies [[`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde), [`8127709`](https://github.com/Developer-DAO/web3-ui/commit/8127709b63417096c5dd3bd9c1ec5eea84e9f6e5), [`f18bff0`](https://github.com/Developer-DAO/web3-ui/commit/f18bff025fdc16d5805ee3bdc466499629068a52), [`daafb02`](https://github.com/Developer-DAO/web3-ui/commit/daafb02dc9a00374fa28b139c0da2423ccb985fc), [`8037de7`](https://github.com/Developer-DAO/web3-ui/commit/8037de7968cf23bfdd4804699b0d6706a2053005)]:
+  - @web3-ui/hooks@0.10.0
+  - @web3-ui/components@0.9.0
+
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [[`b5d89eb`](https://github.com/Developer-DAO/web3-ui/commit/b5d89eb1a24b81b45c3f49034213f87eb1ad3ce8)]:
+  - @web3-ui/components@0.8.0
+
 ## 0.5.1
 
 ### Patch Changes

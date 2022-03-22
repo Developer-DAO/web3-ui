@@ -11,7 +11,7 @@ export default {
 
 export const Default = () => <Address value="testaddress.eth" />;
 
-export const DefaultShortenedWithENS = () => (
+export const DefaultShortenedWithProvidedENS = () => (
   <Address shortened value="testaddress.eth" />
 );
 
@@ -21,21 +21,20 @@ export const DefaultShortenedWithHexAddress = () => (
 
 type AddressProps = {
   shortened?: boolean;
+  ens?: boolean;
 };
 
 const AddressUsingProvider = (props: AddressProps) => {
-  const { connected, connectWallet, connection } = useWallet();
+  const { connected, connectWallet, connection, provider } = useWallet();
 
   return (
     <VStack>
       <Address
         copiable
-        value={
-          connected
-            ? connection.ens || connection.userAddress || ''
-            : 'Not connected'
-        }
+        value={connected ? connection.userAddress || '' : 'Not connected'}
         shortened={props.shortened}
+        provider={provider || undefined}
+        ens={props.ens}
       />
       <Button onClick={connectWallet}>Connect wallet</Button>
     </VStack>
@@ -51,6 +50,12 @@ export const WithWallet = () => (
 export const WithWalletShortened = () => (
   <Provider network={NETWORKS.rinkeby}>
     <AddressUsingProvider shortened />
+  </Provider>
+);
+
+export const EnsLookupWithProvider = () => (
+  <Provider network={NETWORKS.rinkeby}>
+    <AddressUsingProvider shortened ens={true} />
   </Provider>
 );
 

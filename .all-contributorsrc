@@ -218,6 +218,96 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "codingwithmanny",
+      "name": "manny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/318082?v=4",
+      "profile": "https://medium.com/@codingwithmanny",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fjun99",
+      "name": "fangjun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/943418?v=4",
+      "profile": "https://github.com/fjun99",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "juliankrispel",
+      "name": "Julian Krispel-Samsel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1188186?v=4",
+      "profile": "http://jkrsp.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "eltociear",
+      "name": "Ikko Ashimine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22633385?v=4",
+      "profile": "https://bandism.net/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "berteotti",
+      "name": "Leonardo Berteotti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23079677?v=4",
+      "profile": "https://github.com/berteotti",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "patcito",
+      "name": "Patrick Aljord",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26435?v=4",
+      "profile": "https://twitter.com/patcito",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shamoilarsi",
+      "name": "Shamoil Arsiwala",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16434451?v=4",
+      "profile": "https://shamoilarsi.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ernestognw",
+      "name": "Ernesto García",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33379285?v=4",
+      "profile": "https://github.com/ernestognw",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dfimbres",
+      "name": "David",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10216994?v=4",
+      "profile": "https://dfimbres.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "e-roy",
+      "name": "Eric Roupe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70700747?v=4",
+      "profile": "https://github.com/e-roy",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

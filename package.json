@@ -5,8 +5,9 @@
   "private": true,
   "author": "Developer DAO",
   "workspaces": [
+    "docs",
     "packages/*",
-    "example"
+    "examples/*"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -18,10 +19,12 @@
     "test:coverage": "jest --coverage --colors",
     "storybook": "start-storybook -p 9001 -s ./packages/components/src/assets -c .storybook",
     "postinstall": "preconstruct dev",
-    "example": "yarn build && yarn workspace example dev",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic  --exit-zero-on-changes",
-    "publish:npm": "yarn build && yarn changeset publish"
+    "publish:npm": "yarn build && yarn changeset publish",
+    "docs:dev": "yarn workspace docs dev",
+    "docs:build": "yarn workspace docs build",
+    "docs:serve": "yarn workspace docs start"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",

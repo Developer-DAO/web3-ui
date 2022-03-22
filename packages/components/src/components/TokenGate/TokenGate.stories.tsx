@@ -58,7 +58,7 @@ const WithUseWallet = ({ ...props }) => {
   }
 
   if (error) {
-    return <Text>Error occured while trying to fetch balance.</Text>;
+    return <Text>Error occurred while trying to fetch balance.</Text>;
   }
   // Using the loading state from useTokenBalance hook does not work here because connected status and loading status change simultaneously.
   return !connected ? (

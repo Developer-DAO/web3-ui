@@ -1,9 +1,11 @@
+### ❗️Important: This package has been [deprecated](https://github.com/Developer-DAO/web3-ui/issues/319).
+
 # @web3-ui/hooks
 
 A set of React hooks developed for web3 use cases.
 
 ```bash
-yarn add @web3-ui/hooks
+yarn add @web3-ui/hooks ethers
 ```
 
 ## Getting started
@@ -12,11 +14,11 @@ At the root of your React app, wrap your app in the <Provider> component:
 
 ```tsx
 // _app.tsx (or the root of your app)
-import { Provider } from '@web3-ui/hooks';
+import { Provider, NETWORKS } from '@web3-ui/hooks';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider>
+    <Provider network={NETWORKS.mainnet}>
       <Component {...pageProps} />
     </Provider>
   );
@@ -175,12 +177,9 @@ import { useTransaction, useWriteContract } from '@web3-ui/hooks';
 const greeterContract = useWriteContract('CONTRACT_ADDRESS', 'CONTRACT_ABI');
 const [execute, loading, error] = useTransaction(greeter.setGreeting);
 
-await execute([
-  'Hello, world!',
-  {
-    value: ethers.utils.parseEther('0.1'), // you can also use this for payable transactions
-  },
-]); // will execute the transaction
+await execute('Hello, world!', {
+  value: ethers.utils.parseEther('0.1'), // you can also use this for payable transactions
+}); // will execute the transaction
 ```
 
 ---

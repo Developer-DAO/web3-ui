@@ -9,3 +9,4 @@ export * from './TokenGate';
 export * from './EtherInput';
 export * from './TokenBalance';
 export * from './TokenInput';
+export * from './MultiAddressInput';

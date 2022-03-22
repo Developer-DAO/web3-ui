@@ -1,5 +1,54 @@
 # @web3-ui/hooks
 
+## 0.12.0
+
+### Minor Changes
+
+- [#311](https://github.com/Developer-DAO/web3-ui/pull/311) [`f95d2dd`](https://github.com/Developer-DAO/web3-ui/commit/f95d2ddecbe7b4d56a463deab676a1470037f492) Thanks [@swellander](https://github.com/swellander)! - Add `NetworkSwitch` component and `useChainId` hook
+
+* [#312](https://github.com/Developer-DAO/web3-ui/pull/312) [`0d12c98`](https://github.com/Developer-DAO/web3-ui/commit/0d12c98ce76e8bdde2627df6daa86ced69a5acca) Thanks [@swellander](https://github.com/swellander)! - The network/chain ID was not being converted to hexadecimal before requesting a switch from MetaMask. This was only a problem for networks with chain IDs greater than 9, like the Mumbai Testnet (80001).
+
+## 0.11.1
+
+### Patch Changes
+
+- [#297](https://github.com/Developer-DAO/web3-ui/pull/297) [`b39249e`](https://github.com/Developer-DAO/web3-ui/commit/b39249eee07246fe24ab0e11876eb05fb4a6ceb1) Thanks [@shamoilarsi](https://github.com/shamoilarsi)! - closes #273
+  fix: save chainId on chainChanged event without formatting
+
+* [#314](https://github.com/Developer-DAO/web3-ui/pull/314) [`0676e04`](https://github.com/Developer-DAO/web3-ui/commit/0676e044f600db04ab01540aa4fb4e3ce011e91d) Thanks [@ernestognw](https://github.com/ernestognw)! - Fix some types/imports so that the packages work well with Next.js & ts
+
+## 0.11.0
+
+### Minor Changes
+
+- [#283](https://github.com/Developer-DAO/web3-ui/pull/283) [`29281c6`](https://github.com/Developer-DAO/web3-ui/commit/29281c6727aa74f5bb0807b4adf06428804bf319) Thanks [@Nazeeh21](https://github.com/Nazeeh21)! - Bug fixing for adding network to MetaMask
+
+* [#293](https://github.com/Developer-DAO/web3-ui/pull/293) [`be483bd`](https://github.com/Developer-DAO/web3-ui/commit/be483bd66022466578ed8ab7782db04b04c1b6c3) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - !! BREAKING CHANGE !!
+  `ethers` has been moved to peer dependencies for both the `components` and `hooks` packages. (It was already a peer dependency for `core`)
+
+  This means that you will users will now have to install `ethers` along side our packages manually.
+
+- [#284](https://github.com/Developer-DAO/web3-ui/pull/284) [`b23d01b`](https://github.com/Developer-DAO/web3-ui/commit/b23d01b93cf74626f33913cbaa270ddd6f111636) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Catch errors in connectWallet and expose them, correct type for connectWallet
+
+## 0.10.0
+
+### Minor Changes
+
+- [#274](https://github.com/Developer-DAO/web3-ui/pull/274) [`00be153`](https://github.com/Developer-DAO/web3-ui/commit/00be153264a5efc1ad883156f942b76c214e4cde) Thanks [@juliankrispel](https://github.com/juliankrispel)! - Relaxed network attribute
+
+* [#289](https://github.com/Developer-DAO/web3-ui/pull/289) [`8127709`](https://github.com/Developer-DAO/web3-ui/commit/8127709b63417096c5dd3bd9c1ec5eea84e9f6e5) Thanks [@with-heart](https://github.com/with-heart)! - Renamed the `useContract` hook to `useWriteContract` (#249). This helps ensure that consumers of this hook know that it requires the user's wallet signature.
+
+- [#276](https://github.com/Developer-DAO/web3-ui/pull/276) [`f18bff0`](https://github.com/Developer-DAO/web3-ui/commit/f18bff025fdc16d5805ee3bdc466499629068a52) Thanks [@berteotti](https://github.com/berteotti)! - You can now pass in args to the exec fn in useTransaction just like you would with ethers. You don't need to pass it all inside an array anymore.
+
+  ```tsx
+  execute(['Hello', { value: '10' }]);
+
+  // is now
+  execute('Hello', { value: '10' });
+  ```
+
+* [#286](https://github.com/Developer-DAO/web3-ui/pull/286) [`8037de7`](https://github.com/Developer-DAO/web3-ui/commit/8037de7968cf23bfdd4804699b0d6706a2053005) Thanks [@patcito](https://github.com/patcito)! - Arbitrum, Optimism and Metis have been to the list of networks available in the NETWORKS mapping export
+
 ## 0.9.0
 
 ### Minor Changes
