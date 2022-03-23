@@ -5,7 +5,6 @@ export * from './Address';
 export * from './NFTGallery';
 export * from './NFT';
 export * from './AddressInput';
-export * from './TokenGate';
 export * from './EtherInput';
 export * from './TokenBalance';
 export * from './MultiAddressInput';
