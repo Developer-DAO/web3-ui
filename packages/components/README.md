@@ -35,7 +35,6 @@ This is the list of components the package currently provides:
 - [NFT](#nft)
 - [NFTGallery](#nftgallery)
 - [Provider](#provider)
-- [TokenGate](#tokengate)
 - [EtherInput](#etherinput)
 - [TokenBalance](#tokenbalance)
 
@@ -94,23 +93,6 @@ You need to pass in a `web3Provider` if you want to support ENS names. We know t
 ### Provider
 
 The Provider component is the `web3-ui` equivalent of ChakraUI's `ChakraProvider` component. You need to wrap this component around your entire App. See [Getting Started](#getting-started) for an example.
-
----
-
-### TokenGate
-
-The TokenGate component lets you conditionally render some content depending on whether the user owns some quantity of tokens or not.
-
-```tsx
-<TokenGate
-  requiredQuantity={10}
-  walletBalance={walletBalance}
-  deniedMessage={<p>This will be rendered if walletBalance is less than 10.</p>}
->
-  <h1>You're eligible!</h1>
-  <p>This will be rendered if walletBalance is greater than or equal to 10.</p>
-</TokenGate>
-```
 
 ---
 
