@@ -1339,10 +1339,10 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3-ui/components@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.10.0.tgz#bd3f58a9e8fb43160ba16dc83cf277cc89f95ff0"
-  integrity sha512-sq5oMm8S2irGFzxi/USXO7spXgvn6uECtQOdme+KeFdCI7h5g/we3wvInO1pylxvJrIfGub6kthnYLt31vx+3g==
+"@web3-ui/components@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.11.0.tgz#0c82fcd67beeb3f6c5f787dc74b15053f0e41dd4"
+  integrity sha512-eTHRJWBGCrQA2ihQAAnWYwJAFCbukAa3HzG/HPKoYUkq+vp/KmKcNqQSYqUdHJ2DKZEvBTpBbYMTZWPr6yr9rw==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/icons" "^1.1.1"
@@ -1351,23 +1351,23 @@
     "@emotion/styled" "^11"
     framer-motion "^4"
 
-"@web3-ui/core@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.6.1.tgz#28fafa825880382f38575955a22aef4a67b9a452"
-  integrity sha512-s9yw5AY2+AWSLFdp5W8BmblODjIAOhLmN0t1Z/gda1O2Uy2FtKyVMz3/DSMotdwzgAgb4NteWB3+xd7agTVOVQ==
+"@web3-ui/core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.7.0.tgz#984e6f7fb0563369da7aff670b516dc997896375"
+  integrity sha512-ZLoLrhqLbTKW6qFm/SHa8J2/IKaxIke+M3z735cOzz6KVOqoDf7DF+qpPP0a819QE8GExz30825j7AxuqzKvZQ==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/react" "^1.7.2"
     "@emotion/react" "^11"
     "@emotion/styled" "^11"
-    "@web3-ui/components" "^0.10.0"
-    "@web3-ui/hooks" "^0.11.0"
+    "@web3-ui/components" "^0.11.0"
+    "@web3-ui/hooks" "^0.12.0"
     framer-motion "^4"
 
-"@web3-ui/hooks@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.11.0.tgz#ed50ef5e2a2262fe20370dd2dea97a6b01272c57"
-  integrity sha512-PYShglRmtNGsfvedQj548iPtdbpLPt/4q9C5fTK3tmk9MRlV3r5RwwkXE1rzjqcFTp3nYtlE8Xem0SbGgyNQbQ==
+"@web3-ui/hooks@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.12.0.tgz#e44fbc9f00f938ce7325c71b55765d1b9a601593"
+  integrity sha512-zApWcLAqo+dkQlrfcczifOmnjDArVOCiNvoXekiIxu1OJP3hrTENh5IiCi1epo9cnE5fmfNF9hOJ4hgdvKRzMA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@walletconnect/web3-provider" "^1.6.6"
@@ -3653,9 +3653,9 @@ minimatch@^3.0.4:
     brace-expansion "^1.1.7"
 
 minimist@^1.2.0:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 mkdirp@^1.0.4:
   version "1.0.4"
