@@ -53,7 +53,7 @@ export const NFTGallery = ({
       const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
       if (isTestnet)
         console.log(
-          `⚠️ OpenSea currently only supports Rinkedby with testnets.`
+          `⚠️ OpenSea currently only supports Rinkeby with testnets.`
         );
       if (address.endsWith('.eth')) {
         if (!web3Provider) {
