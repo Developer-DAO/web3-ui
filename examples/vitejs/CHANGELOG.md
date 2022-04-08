@@ -1,5 +1,12 @@
 # vitejs
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [[`ef8df06`](https://github.com/Developer-DAO/web3-ui/commit/ef8df06dea5b36c4f5d65bf6e37288eaa9571146)]:
+  - @web3-ui/core@0.8.0
+
 ## 0.0.2
 
 ### Patch Changes
