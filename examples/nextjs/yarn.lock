@@ -1339,10 +1339,10 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3-ui/components@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.10.0.tgz#bd3f58a9e8fb43160ba16dc83cf277cc89f95ff0"
-  integrity sha512-sq5oMm8S2irGFzxi/USXO7spXgvn6uECtQOdme+KeFdCI7h5g/we3wvInO1pylxvJrIfGub6kthnYLt31vx+3g==
+"@web3-ui/components@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.12.0.tgz#d0ba5f125dacee8a1017dac032cd078d38ab34eb"
+  integrity sha512-QO66kHQpen9/A6KoXUPm13GnxuuR48BtwRXQP+WH4t2Tiu0rQSPnNIi9qkpGkjBVPdw97+X5NBdEmcOTAFkQpw==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/icons" "^1.1.1"
@@ -1351,23 +1351,23 @@
     "@emotion/styled" "^11"
     framer-motion "^4"
 
-"@web3-ui/core@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.6.1.tgz#28fafa825880382f38575955a22aef4a67b9a452"
-  integrity sha512-s9yw5AY2+AWSLFdp5W8BmblODjIAOhLmN0t1Z/gda1O2Uy2FtKyVMz3/DSMotdwzgAgb4NteWB3+xd7agTVOVQ==
+"@web3-ui/core@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.8.0.tgz#408f64c75ff826dcb70548797875e0341ea81c51"
+  integrity sha512-cKjHXlFOnOiTv8whP/5aIxcEquShXRxaoDKhF8YMuFMP3dEdQ5eg2mIEzT1dUx41AHlmdzG6fwTZDumUcZ4NVg==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/react" "^1.7.2"
     "@emotion/react" "^11"
     "@emotion/styled" "^11"
-    "@web3-ui/components" "^0.10.0"
-    "@web3-ui/hooks" "^0.11.0"
+    "@web3-ui/components" "^0.12.0"
+    "@web3-ui/hooks" "^0.12.0"
     framer-motion "^4"
 
-"@web3-ui/hooks@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.11.0.tgz#ed50ef5e2a2262fe20370dd2dea97a6b01272c57"
-  integrity sha512-PYShglRmtNGsfvedQj548iPtdbpLPt/4q9C5fTK3tmk9MRlV3r5RwwkXE1rzjqcFTp3nYtlE8Xem0SbGgyNQbQ==
+"@web3-ui/hooks@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.12.0.tgz#e44fbc9f00f938ce7325c71b55765d1b9a601593"
+  integrity sha512-zApWcLAqo+dkQlrfcczifOmnjDArVOCiNvoXekiIxu1OJP3hrTENh5IiCi1epo9cnE5fmfNF9hOJ4hgdvKRzMA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@walletconnect/web3-provider" "^1.6.6"
@@ -1418,9 +1418,9 @@ ansi-colors@^4.1.1:
   integrity sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==
 
 ansi-regex@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
-  integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.1.tgz#164daac87ab2d6f6db3a29875e2d1766582dabed"
+  integrity sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
