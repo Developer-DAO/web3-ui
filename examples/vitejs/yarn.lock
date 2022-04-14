@@ -1612,40 +1612,38 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3-ui/components@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.7.0.tgz#c0a8eb5c1bd286027bc15c4e8087e0ca40717939"
-  integrity sha512-1bLEz9o9ehub+uOJsRe273EhYXVq+nbANZ1Rgpcpk97vbjxDfj54T+L4/Gpes9S5XxethY4V/bp+rxAvoLS/Dg==
+"@web3-ui/components@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/components/-/components-0.12.0.tgz#d0ba5f125dacee8a1017dac032cd078d38ab34eb"
+  integrity sha512-QO66kHQpen9/A6KoXUPm13GnxuuR48BtwRXQP+WH4t2Tiu0rQSPnNIi9qkpGkjBVPdw97+X5NBdEmcOTAFkQpw==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/icons" "^1.1.1"
     "@chakra-ui/react" "^1.7.2"
     "@emotion/react" "^11"
     "@emotion/styled" "^11"
-    ethers "^5.5.2"
     framer-motion "^4"
 
-"@web3-ui/core@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.5.1.tgz#7c7ee99579bafb5a05e18a8076dc49d4792e40af"
-  integrity sha512-oUAWfWJs6zBg5YdVUbJguQgzTrP5XUz+sNx886x6U2XFTSM0n3Ib2Z69ITBT8QI6bpipYOzTTL6o82MT4Suj9w==
+"@web3-ui/core@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/core/-/core-0.8.0.tgz#408f64c75ff826dcb70548797875e0341ea81c51"
+  integrity sha512-cKjHXlFOnOiTv8whP/5aIxcEquShXRxaoDKhF8YMuFMP3dEdQ5eg2mIEzT1dUx41AHlmdzG6fwTZDumUcZ4NVg==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@chakra-ui/react" "^1.7.2"
     "@emotion/react" "^11"
     "@emotion/styled" "^11"
-    "@web3-ui/components" "^0.7.0"
-    "@web3-ui/hooks" "^0.9.0"
+    "@web3-ui/components" "^0.12.0"
+    "@web3-ui/hooks" "^0.12.0"
     framer-motion "^4"
 
-"@web3-ui/hooks@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.9.0.tgz#52ea557f7dc8f1848946ac1859a2edca99982677"
-  integrity sha512-KeZ9JSYVXj7yePQHrAZBtEx3LHIoNUUNzHTURmm5AUc9jJL6hNOIRSait61HkGOxDUKvHGT5NN/IlF/YlLGDTg==
+"@web3-ui/hooks@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@web3-ui/hooks/-/hooks-0.12.0.tgz#e44fbc9f00f938ce7325c71b55765d1b9a601593"
+  integrity sha512-zApWcLAqo+dkQlrfcczifOmnjDArVOCiNvoXekiIxu1OJP3hrTENh5IiCi1epo9cnE5fmfNF9hOJ4hgdvKRzMA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     "@walletconnect/web3-provider" "^1.6.6"
-    ethers "^5.5.1"
     web3modal "^1.9.4"
 
 abstract-leveldown@~2.6.0:
@@ -1683,9 +1681,9 @@ ajv@^6.12.3:
     uri-js "^4.2.2"
 
 ansi-regex@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
-  integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.1.tgz#164daac87ab2d6f6db3a29875e2d1766582dabed"
+  integrity sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==
 
 ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   version "3.2.1"
@@ -2663,7 +2661,7 @@ ethereumjs-vm@^2.3.4:
     rustbn.js "~0.2.0"
     safe-buffer "^5.1.1"
 
-ethers@^5.5.1, ethers@^5.5.2, ethers@^5.5.3:
+ethers@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.5.3.tgz#1e361516711c0c3244b6210e7e3ecabf0c75fca0"
   integrity sha512-fTT4WT8/hTe/BLwRUtl7I5zlpF3XC3P/Xwqxc5AIP2HGlH15qpmjs0Ou78az93b1rLITzXLFxoNX63B8ZbUd7g==
