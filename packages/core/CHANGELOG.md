@@ -1,5 +1,16 @@
 # @web3-ui/core
 
+## 0.8.0
+
+### Minor Changes
+
+- [#324](https://github.com/Developer-DAO/web3-ui/pull/324) [`ef8df06`](https://github.com/Developer-DAO/web3-ui/commit/ef8df06dea5b36c4f5d65bf6e37288eaa9571146) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - The `TokenGate` component has been removed since its implementation was insecure.
+
+### Patch Changes
+
+- Updated dependencies [[`ef8df06`](https://github.com/Developer-DAO/web3-ui/commit/ef8df06dea5b36c4f5d65bf6e37288eaa9571146)]:
+  - @web3-ui/components@0.12.0
+
 ## 0.7.0
 
 ### Minor Changes

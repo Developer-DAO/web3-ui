@@ -1,5 +1,13 @@
 # example
 
+## 0.1.10
+
+### Patch Changes
+
+- Updated dependencies [[`ef8df06`](https://github.com/Developer-DAO/web3-ui/commit/ef8df06dea5b36c4f5d65bf6e37288eaa9571146)]:
+  - @web3-ui/components@0.12.0
+  - @web3-ui/core@0.8.0
+
 ## 0.1.9
 
 ### Patch Changes
