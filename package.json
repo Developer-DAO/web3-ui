@@ -21,10 +21,10 @@
     "postinstall": "preconstruct dev",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic  --exit-zero-on-changes",
-    "publish:npm": "yarn build && yarn changeset publish",
     "docs:dev": "yarn workspace docs dev",
     "docs:build": "yarn workspace docs build",
-    "docs:serve": "yarn workspace docs start"
+    "docs:serve": "yarn workspace docs start",
+    "release": "yarn build && changeset publish"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
