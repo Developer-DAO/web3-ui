@@ -1,14 +1,8 @@
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  InputProps,
-} from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
 import { JsonRpcSigner } from '@ethersproject/providers';
+import './AddressInput.css';
 
 export interface AddressInputProps {
   /**
@@ -27,16 +21,32 @@ export interface AddressInputProps {
    * Change handler for the text input
    */
   onChange: (value: string) => void;
+  /**
+   * className for the container
+   */
+  className?: string;
+  /**
+   * className for the input
+   */
+  inputClassName?: string;
 }
 
 /**
  * A text input component that is used to get ETH addresses. ENS support included. You can also pass all the styling props of the Chakra UI Input component.
  */
-export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
+export const AddressInput: React.FC<
+  AddressInputProps &
+    React.DetailedHTMLProps<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      HTMLInputElement
+    >
+> = ({
   provider,
   value: _value,
   onChange,
   label,
+  className,
+  inputClassName,
   ...props
 }) => {
   const [inputValue, setInputValue] = useState('');
@@ -80,15 +90,15 @@ export const AddressInput: React.FC<AddressInputProps & InputProps> = ({
   }, [inputValue]);
 
   return (
-    <FormControl isInvalid={!!error}>
-      {label && <FormLabel>Input address</FormLabel>}
-      <Input
-        isInvalid={!!error}
+    <div className={`Web3UI_AddressInput__Container ${className}`}>
+      {label && <label className="Web3UI_AddressInput__Label">{label}</label>}
+      <input
+        className={`Web3UI_AddressInput__Input ${inputClassName}`}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         {...props}
       />
-      <FormErrorMessage>{error ? ' ' + error : ''}</FormErrorMessage>
-    </FormControl>
+      {error && <p className="Web3UI_AddressInput__ErrorMessage">{error}</p>}
+    </div>
   );
 };

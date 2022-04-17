@@ -1,0 +1,10 @@
+.Web3UI_Address__Container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Web3UI_Address__ErrorMessage {
+  color: red;
+  margin-top: 4px;
+}

@@ -1,13 +1,7 @@
-import {
-  Box,
-  Flex,
-  FormControl,
-  FormErrorMessage,
-  Text,
-} from '@chakra-ui/react';
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import './Address.css';
 
 export interface AddressProps {
   /**
@@ -30,6 +24,10 @@ export interface AddressProps {
    * Set to true for ENS lookup
    */
   ens?: boolean;
+  /**
+   * className for the container
+   */
+  className?: string;
 }
 
 /**
@@ -41,6 +39,7 @@ export const Address: React.FC<AddressProps> = ({
   copiable = false,
   shortened = false,
   ens = false,
+  className,
 }) => {
   const [error, setError] = useState<undefined | string>(undefined);
   const [copied, setCopied] = useState<boolean>(false);
@@ -98,25 +97,21 @@ export const Address: React.FC<AddressProps> = ({
   }, []);
 
   return (
-    <FormControl isInvalid={!!error}>
-      <Flex
+    <>
+      <div
         data-testid="address-container"
-        alignItems="center"
-        cursor={copiable ? 'pointer' : 'initial'}
+        className={`Web3UI_Address__Container ${className}`}
+        style={{ cursor: copiable ? 'pointer' : 'initial' }}
         onClick={handleClick}
       >
-        <Text>{ensName || displayAddress}</Text>
-        {copiable && (
-          <Box ml="auto">
-            {copied ? (
-              <CheckIcon color="green.500" />
-            ) : (
-              <CopyIcon color="gray.300" />
-            )}
-          </Box>
+        <p>{ensName || displayAddress}</p>
+        {copiable && copied ? (
+          <CheckIcon marginLeft="auto" color="green.500" />
+        ) : (
+          <CopyIcon marginLeft="auto" color="gray.300" />
         )}
-      </Flex>
-      <FormErrorMessage>{error}</FormErrorMessage>
-    </FormControl>
+      </div>
+      <p className="Web3UI_Address__Error">{error}</p>
+    </>
   );
 };
