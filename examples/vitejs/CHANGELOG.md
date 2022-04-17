@@ -1,5 +1,12 @@
 # vitejs
 
+## 0.0.4-next.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @web3-ui/core@0.8.1-next.0
+
 ## 0.0.3
 
 ### Patch Changes

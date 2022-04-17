@@ -1,5 +1,12 @@
 # @web3-ui/core
 
+## 0.8.1-next.0
+
+### Patch Changes
+
+- Updated dependencies [[`efb8607`](https://github.com/Developer-DAO/web3-ui/commit/efb8607afc7b85d20056b1aff42eb20daa4c9abe)]:
+  - @web3-ui/components@0.13.0-next.0
+
 ## 0.8.0
 
 ### Minor Changes

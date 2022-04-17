@@ -1,5 +1,11 @@
 # @web3-ui/components
 
+## 0.13.0-next.0
+
+### Minor Changes
+
+- [#336](https://github.com/Developer-DAO/web3-ui/pull/336) [`efb8607`](https://github.com/Developer-DAO/web3-ui/commit/efb8607afc7b85d20056b1aff42eb20daa4c9abe) Thanks [@Dhaiwat10](https://github.com/Dhaiwat10)! - Refactor `Address` component to not use ChakraUI anymore. It uses plain CSS now. The functionality remains unchanged.
+
 ## 0.12.0
 
 ### Minor Changes
