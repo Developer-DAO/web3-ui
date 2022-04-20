@@ -141,7 +141,7 @@ const Default = () => {
 };
 
 storiesOf('Hooks/useWriteContract', module).add('Default', () => (
-  <Provider network={NETWORKS.rinkeby}>
+  <Provider network={NETWORKS.rinkeby} cacheProvider>
     <Default />
   </Provider>
 ));
