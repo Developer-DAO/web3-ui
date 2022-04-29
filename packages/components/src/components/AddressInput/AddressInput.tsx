@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useDebounce } from './useDebounce';
 import { JsonRpcSigner } from '@ethersproject/providers';
-import './AddressInput.css';
+import { styled } from '@stitches/react';
 
 export interface AddressInputProps {
   /**
@@ -30,6 +30,25 @@ export interface AddressInputProps {
    */
   inputClassName?: string;
 }
+
+const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const Label = styled('label', {});
+
+const Input = styled('input', {
+  marginTop: '4px',
+  padding: '8px',
+  borderRadius: '7px',
+  border: '1px solid #ccc',
+});
+
+const ErrorMessage = styled('p', {
+  color: 'red',
+  marginTop: '4px',
+});
 
 /**
  * A text input component that is used to get ETH addresses. ENS support included. You can also pass all the styling props of the Chakra UI Input component.
@@ -90,15 +109,20 @@ export const AddressInput: React.FC<
   }, [inputValue]);
 
   return (
-    <div className={`Web3UI_AddressInput__Container ${className}`}>
-      {label && <label className="Web3UI_AddressInput__Label">{label}</label>}
-      <input
+    <Container className={`Web3UI_AddressInput__Container ${className}`}>
+      {label && <Label className="Web3UI_AddressInput__Label">{label}</Label>}
+      {/* @ts-expect-error TODO: Fix this type error */}
+      <Input
         className={`Web3UI_AddressInput__Input ${inputClassName}`}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         {...props}
       />
-      {error && <p className="Web3UI_AddressInput__ErrorMessage">{error}</p>}
-    </div>
+      {error && (
+        <ErrorMessage className="Web3UI_AddressInput__ErrorMessage">
+          {error}
+        </ErrorMessage>
+      )}
+    </Container>
   );
 };

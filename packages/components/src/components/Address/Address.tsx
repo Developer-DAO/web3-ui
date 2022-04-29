@@ -1,7 +1,7 @@
 import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import './Address.css';
+import { styled } from '@stitches/react';
 
 export interface AddressProps {
   /**
@@ -29,6 +29,17 @@ export interface AddressProps {
    */
   className?: string;
 }
+
+const Container = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+});
+
+const ErrorMessage = styled('p', {
+  color: 'red',
+  marginTop: '4px',
+});
 
 /**
  * A component to display an address
@@ -98,7 +109,7 @@ export const Address: React.FC<AddressProps> = ({
 
   return (
     <>
-      <div
+      <Container
         data-testid="address-container"
         className={`Web3UI_Address__Container ${className}`}
         style={{ cursor: copiable ? 'pointer' : 'initial' }}
@@ -110,8 +121,8 @@ export const Address: React.FC<AddressProps> = ({
         ) : (
           <CopyIcon marginLeft="auto" color="gray.300" />
         )}
-      </div>
-      <p className="Web3UI_Address__Error">{error}</p>
+      </Container>
+      <ErrorMessage className="Web3UI_Address__Error">{error}</ErrorMessage>
     </>
   );
 };

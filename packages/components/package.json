@@ -38,12 +38,13 @@
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@stitches/react": "^1.2.8",
     "framer-motion": "^4"
   },
   "peerDependencies": {
+    "ethers": "^5.5.2",
     "react": ">= 16.8.0 | >= 17.0.0",
-    "react-dom": ">= 16.8.0 | >= 17.0.0",
-    "ethers": "^5.5.2"
+    "react-dom": ">= 16.8.0 | >= 17.0.0"
   },
   "devDependencies": {
     "@web3-ui/hooks": "^0.12.0",
