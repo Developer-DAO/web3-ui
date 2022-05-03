@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { JsonRpcSigner } from '@ethersproject/providers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { ethers } from 'ethers';
@@ -53,6 +54,11 @@ export interface ProviderProps {
    * @type string
    */
   rpcUrl?: string;
+  /**
+   * @dev To persist the cacheProvider functionality from web3modal
+   * @type boolean
+   */
+  cacheProvider?: boolean;
 }
 
 /**
@@ -61,6 +67,7 @@ export interface ProviderProps {
  * @param network The network you want to connect to.
  * @param infuraId Your Infura project ID. This is required if you want to support WalletConnect.
  * @param extraWalletProviders An array of extra Wallet Providers you want to support.
+ * @param cacheProvider boolean flag to persist provider
  */
 export const Provider: React.FC<ProviderProps> = ({
   children,
@@ -68,8 +75,9 @@ export const Provider: React.FC<ProviderProps> = ({
   infuraId,
   extraWalletProviders = [],
   rpcUrl = '',
+  cacheProvider = false,
 }) => {
-  const [web3Modal, setWeb3Modal] = useState<Web3Modal>();
+  const web3Modal = useRef<Web3Modal>();
   const [signer, setSigner] = useState<null | JsonRpcSigner>();
   const [error, setError] = useState<string>();
   const [provider, setProvider] =
@@ -97,15 +105,9 @@ export const Provider: React.FC<ProviderProps> = ({
   };
 
   const connectWallet = useCallback(async () => {
+    if (!web3Modal.current) return;
     try {
-      const web3Modal = new Web3Modal({
-        providerOptions: Object.assign(
-          defaulProviderOptions,
-          ...extraWalletProviders
-        ),
-      });
-      setWeb3Modal(web3Modal);
-      const connection = await web3Modal.connect();
+      const connection = await web3Modal.current.connect();
       const provider = new ethers.providers.Web3Provider(connection);
       setProvider(provider);
       const chainId = await provider
@@ -133,7 +135,7 @@ export const Provider: React.FC<ProviderProps> = ({
       connection.on('accountsChanged', async (accounts: string[]) => {
         if (accounts.length === 0) {
           // The user has disconnected their account from Metamask
-          web3Modal?.clearCachedProvider();
+          web3Modal.current?.clearCachedProvider();
           disconnectWallet();
           return;
         }
@@ -151,16 +153,16 @@ export const Provider: React.FC<ProviderProps> = ({
       });
 
       connection.on('disconnect', async () => {
-        web3Modal?.clearCachedProvider();
+        web3Modal.current?.clearCachedProvider();
         disconnectWallet();
       });
     } catch (err: any) {
-      setError(err?.message || err.toString());
+      setError(err?.message || err?.toString() || 'An error occurred');
     }
   }, [network, correctNetwork, infuraId, extraWalletProviders]);
 
   const disconnectWallet = useCallback(() => {
-    web3Modal?.clearCachedProvider();
+    web3Modal.current?.clearCachedProvider();
     setSigner(null);
     setUserAddress(null);
     setConnected(false);
@@ -194,6 +196,20 @@ export const Provider: React.FC<ProviderProps> = ({
       readOnlyProvider,
     ]
   );
+
+  useEffect(() => {
+    web3Modal.current = new Web3Modal({
+      cacheProvider,
+      providerOptions: Object.assign(
+        defaulProviderOptions,
+        ...extraWalletProviders
+      ),
+    });
+
+    if (web3Modal.current.cachedProvider) {
+      connectWallet();
+    }
+  }, []);
 
   return (
     <Web3Context.Provider value={{ ...value }}>{children}</Web3Context.Provider>
