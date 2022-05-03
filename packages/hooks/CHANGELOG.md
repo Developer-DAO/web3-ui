@@ -1,5 +1,11 @@
 # @web3-ui/hooks
 
+## 0.13.0
+
+### Minor Changes
+
+- [#340](https://github.com/Developer-DAO/web3-ui/pull/340) [`16ac4cc`](https://github.com/Developer-DAO/web3-ui/commit/16ac4cc35fc96284f7940724be2ebbd20f8fb022) Thanks [@jamescharlesworth](https://github.com/jamescharlesworth)! - [hooks] `<Provider />` now exposes a `cacheProvider` prop to allow persistence with Web3Modal.
+
 ## 0.12.0
 
 ### Minor Changes
