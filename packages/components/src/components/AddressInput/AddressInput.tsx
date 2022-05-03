@@ -120,7 +120,7 @@ export const AddressInput: React.FC<
       />
       {error && (
         <ErrorMessage className="Web3UI_AddressInput__ErrorMessage">
-          {error}
+          {JSON.stringify(error)}
         </ErrorMessage>
       )}
     </Container>
