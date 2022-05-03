@@ -122,7 +122,9 @@ export const Address: React.FC<AddressProps> = ({
           <CopyIcon marginLeft="auto" color="gray.300" />
         )}
       </Container>
-      <ErrorMessage className="Web3UI_Address__Error">{error}</ErrorMessage>
+      <ErrorMessage className="Web3UI_Address__Error">
+        {JSON.stringify(error)}
+      </ErrorMessage>
     </>
   );
 };
