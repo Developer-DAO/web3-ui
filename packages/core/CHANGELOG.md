@@ -1,5 +1,14 @@
 # @web3-ui/core
 
+## 0.8.1
+
+### Patch Changes
+
+- [#332](https://github.com/Developer-DAO/web3-ui/pull/332) [`76e5a2d`](https://github.com/Developer-DAO/web3-ui/commit/76e5a2df6d17e58ba737bc4c707be897811a3746) Thanks [@seromenho](https://github.com/seromenho)! - Export missing core components on components root path
+
+- Updated dependencies [[`16ac4cc`](https://github.com/Developer-DAO/web3-ui/commit/16ac4cc35fc96284f7940724be2ebbd20f8fb022)]:
+  - @web3-ui/hooks@0.13.0
+
 ## 0.8.0
 
 ### Minor Changes
