@@ -1,5 +1,9 @@
+const github = 'https://github.com/developer-dao/web3-ui';
+
 export default {
-  projectLink: 'https://github.com/developer-dao/web3-ui', // GitHub link in the navbar
+  github,
+  projectLink: github, // GitHub link in the navbar
+  titleSuffix: ' – Web3-UI',
   docsRepositoryBase: 'https://github.com/Developer-DAO/web3-ui/tree/main/docs', // base URL for the docs repository
   nextLinks: true,
   prevLinks: true,

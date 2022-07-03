@@ -1,5 +1,5 @@
 import React from 'react';
-import { NFT } from '.';
+import { NFT } from './';
 
 export default {
   title: 'Components/NFT',

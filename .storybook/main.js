@@ -1,28 +1,50 @@
 const path = require('path');
 
-const toPath = (_path) => path.join(process.cwd(), _path);
-
 module.exports = {
+  stories: ['../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
+    '@storybook/addon-links',
     {
-      name: '@storybook/addon-docs',
+      name: '@storybook/addon-essentials',
       options: {
-        configureJSX: true,
+        actions: false,
+      },
+    },
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        cssLoaderOptions: {
+          importLoaders: 1,
+        },
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
       },
     },
   ],
-  stories: ['../**/*.stories.tsx'],
-  webpackFinal: async (config) => {
-    return {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-          '@emotion/core': toPath('node_modules/@emotion/react'),
-          'emotion-theming': toPath('node_modules/@emotion/react'),
-        },
-      },
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
+  },
+  webpackFinal: (config) => {
+    /**
+     * Add support for alias-imports
+     * @see https://github.com/storybookjs/storybook/issues/11989#issuecomment-715524391
+     */
+    config.resolve.alias = {
+      ...config.resolve?.alias,
+      '@': [path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../')],
     };
+
+    /**
+     * Fixes font import with /
+     * @see https://github.com/storybookjs/storybook/issues/12844#issuecomment-867544160
+     */
+    config.resolve.roots = [
+      path.resolve(__dirname, '../public'),
+      'node_modules',
+    ];
+
+    return config;
   },
 };
