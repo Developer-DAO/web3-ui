@@ -34,9 +34,12 @@
     "prepublishOnly": "cp ../../LICENSE ./LICENSE",
     "typegen:watch": "tsc --emitDeclarationOnly --watch"
   },
-  "main": "dist/web3-ui-components.cjs.js",
+  "main": "dist/index.js",
   "module": "dist/web3-ui-components.esm.js",
-  "types": "dist/web3-ui-components.cjs.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
     "@radix-ui/colors": "^0.1.8",

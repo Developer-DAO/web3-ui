@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+// import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
+
 // import {
 //   Box,
 //   Heading,
@@ -44,59 +46,64 @@ export interface NFTData {
  * Component to fetch and display NFT data
  */
 export const NFT = ({
-  contractAddress,
-  tokenId,
+  // contractAddress,
+  // tokenId,
   size = 'xs',
-  isTestnet = false,
-}: NFTProps) => {
-  const _isMounted = useRef(true);
+}: // isTestnet = false,
+NFTProps) => {
+  // const _isMounted = useRef(true);
   const [nftData, setNftData] = React.useState<NFTData>();
   const [errorMessage, setErrorMessage] = React.useState<string>();
 
-  const fetchNFTData = useCallback(async () => {
-    const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
-
-    try {
-      const res = await fetch(
-        `https://${apiSubDomain}.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
-      );
-      if (isTestnet)
-        console.log(
-          `⚠️ OpenSea currently only supports Rinkedby with testnets.`
-        );
-      if (!res.ok) {
-        throw Error(
-          `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
-        );
-      }
-      const data = await res.json();
-      if (_isMounted.current) {
-        setNftData({
-          tokenId: data.token_id,
-          imageUrl: data.image_url,
-          name: data.name,
-          assetContractName: data.asset_contract.name,
-          assetContractSymbol: data.asset_contract.symbol,
-          animationUrl: data.animation_url,
-        });
-      }
-    } catch (error) {
-      if (error instanceof Error) {
-        setErrorMessage(error.message);
-      } else {
-        setErrorMessage('An unknown error occurred');
-      }
-    }
-  }, [contractAddress, tokenId]);
-
   useEffect(() => {
-    console.log(contractAddress);
-    _isMounted.current = true;
-    fetchNFTData();
-    return () => {
-      _isMounted.current = false;
-    };
-  }, [contractAddress, tokenId]);
+    setNftData(undefined);
+    setErrorMessage('');
+  }, []);
+
+  // const fetchNFTData = useCallback(async () => {
+  //   const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
+
+  //   try {
+  //     const res = await fetch(
+  //       `https://${apiSubDomain}.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
+  //     );
+  //     if (isTestnet)
+  //       console.log(
+  //         `⚠️ OpenSea currently only supports Rinkedby with testnets.`
+  //       );
+  //     if (!res.ok) {
+  //       throw Error(
+  //         `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
+  //       );
+  //     }
+  //     const data = await res.json();
+  //     if (_isMounted.current) {
+  //       setNftData({
+  //         tokenId: data.token_id,
+  //         imageUrl: data.image_url,
+  //         name: data.name,
+  //         assetContractName: data.asset_contract.name,
+  //         assetContractSymbol: data.asset_contract.symbol,
+  //         animationUrl: data.animation_url,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     if (error instanceof Error) {
+  //       setErrorMessage(error.message);
+  //     } else {
+  //       setErrorMessage('An unknown error occurred');
+  //     }
+  //   }
+  // }, [contractAddress, tokenId]);
+
+  //   useEffect(() => {
+  //     console.log(contractAddress);
+  //     _isMounted.current = true;
+  //     fetchNFTData();
+  //     return () => {
+  //       _isMounted.current = false;
+  //     };
+  //   }, [contractAddress, tokenId]);
 
   return <NFTCard data={nftData} errorMessage={errorMessage} size={size} />;
 };

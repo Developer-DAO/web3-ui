@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 1em;
+}
+
+.section {
+  margin: 1em 0;
+  border: 1px solid #ccc;
+}
+.section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.item {
+  margin: 0;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+}
+.item-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5em;
+}

@@ -1,5 +1,5 @@
-const BABEL_ENV = process.env.BABEL_ENV;
-const cjs = BABEL_ENV === 'cjs';
+// const BABEL_ENV = process.env.BABEL_ENV;
+// const cjs = BABEL_ENV === 'cjs';
 
 module.exports = {
   presets: [

@@ -4,8 +4,7 @@ import { Address } from '@web3-ui/components';
 export const AddressExample = () => {
   return (
     <div>
-      {/* <div>this is address example</div> */}
-      <Address value={'dhai.eth'} copiable ens={false} />
+      <Address value={'dhai.eth'} copiable ens={false} shortened />
     </div>
   );
 };

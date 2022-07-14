@@ -1,5 +1,6 @@
-import 'nextra-theme-docs/style.css';
+import * as React from 'react';
 import type { AppProps } from 'next/app';
+import './global.css';
 
 import { WagmiConfig, createClient, configureChains, chain } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
@@ -15,19 +16,12 @@ const wagmiClient = createClient({
   webSocketProvider,
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const getLayout =
-    (Component as any).getLayout || ((page: React.ReactElement) => page);
-
+const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
-      {getLayout(
-        <WagmiConfig client={wagmiClient}>
-          <Component {...pageProps} />
-        </WagmiConfig>
-      )}
-    </>
+    <WagmiConfig client={wagmiClient}>
+      <Component {...pageProps} />
+    </WagmiConfig>
   );
-}
+};
 
-export default MyApp;
+export default App;

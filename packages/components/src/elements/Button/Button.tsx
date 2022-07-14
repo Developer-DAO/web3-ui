@@ -1,6 +1,6 @@
-import { styled } from '../theme/baseTheme';
+import { styled } from '../../theme/baseTheme';
 
-export const IconButton = styled('button', {
+export const Button = styled('button', {
   // Reset
   all: 'unset',
   alignItems: 'center',
@@ -23,9 +23,9 @@ export const IconButton = styled('button', {
 
   // Custom
   px: '$2',
-  fontFamily: '$sans',
+  fontFamily: '$untitled',
   fontSize: '$base',
-  fontWeight: 500,
+  fontWeight: 600,
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {
@@ -39,18 +39,24 @@ export const IconButton = styled('button', {
     size: {
       '1': {
         borderRadius: '$md',
-        p: '$2',
+        py: '$1',
+        px: '$2',
         fontSize: '$base',
+        lineHeight: '$sizes$5',
       },
       '2': {
         borderRadius: '$lg',
-        p: '$3',
+        py: '$2',
+        px: '$3',
         fontSize: '$lg',
+        lineHeight: '$sizes$6',
       },
       '3': {
         borderRadius: '$xl',
-        p: '$4',
+        py: '$3',
+        px: '$4',
         fontSize: '$xl',
+        lineHeight: '$sizes$7',
       },
     },
     variant: {

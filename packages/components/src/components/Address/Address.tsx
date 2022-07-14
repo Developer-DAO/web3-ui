@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useEnsName, useEnsAddress } from 'wagmi';
 import { Box } from '../../common/Box';
 import { Text } from '../../common/Text';
-import { IconButton } from '../../elements/IconButton';
+import { Button } from '../../elements';
 
 export type AddressProps = {
   /**
@@ -26,12 +26,12 @@ export type AddressProps = {
 /**
  * A component to display an address
  */
-export function Address({
+export const Address = ({
   value,
   copiable = false,
   shortened = false,
   ens = false,
-}: AddressProps) {
+}: AddressProps) => {
   const [displayAddress, setDisplayAddress] = useState('');
   const [copyableAddress, setCopyableAddress] = useState('');
   /**
@@ -52,9 +52,6 @@ export function Address({
     address: value,
     chainId: 1,
   });
-
-  // const dataAddress = value;
-  // const dataName = value;
 
   useEffect(() => {
     if (ens && value) {
@@ -101,9 +98,7 @@ export function Address({
       {copiable && (
         <>
           {!copied ? (
-            <IconButton onClick={() => handleCopy(copyableAddress)}>
-              copy
-            </IconButton>
+            <Button onClick={() => handleCopy(copyableAddress)}>copy</Button>
           ) : (
             <Text css={{ p: 8 }}>copied</Text>
           )}
@@ -111,4 +106,4 @@ export function Address({
       )}
     </Box>
   );
-}
+};

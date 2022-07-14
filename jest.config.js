@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   preset: 'ts-jest/presets/js-with-ts',
   testMatch: [
     '<rootDir>/packages/*/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
@@ -25,5 +25,8 @@ module.exports = {
       statements: 90,
     },
   },
-  setupFilesAfterEnv: ['<rootDir>/utils/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/utils/setup.ts'],
+  testEnvironment: 'jsdom',
 };
+
+module.exports = config;
