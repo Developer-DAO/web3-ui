@@ -20,3 +20,7 @@ yarn-error.log
 dist
 /storybook-static
 build-storybook.log
+
+
+#example
+.next

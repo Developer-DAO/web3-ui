@@ -11,7 +11,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/Of37HlRWnVauCBNB9Mp03Fa3dRaKO1x_A1QKBFanFP4ARM3Pflxkn8TzZy4tM_s7wCdZxtTF2WrghtJa7I5LTeRmg3-vYzjiNo67ig=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/Of37HlRWnVauCBNB9Mp03Fa3dRaKO1x_A1QKBFanFP4ARM3Pflxkn8TzZy4tM_s7wCdZxtTF2WrghtJa7I5LTeRmg3-vYzjiNo67ig=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmbxURe7PAzUGHX2Kb3GkjtChG5esP3XbYr95bMpy7xbN5',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmbxURe7PAzUGHX2Kb3GkjtChG5esP3XbYr95bMpy7xbN5',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -43,7 +44,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 500,
         payout_address: '0xaae7ac476b117bccafe2f05f582906be44bc8ff1',
       },
-      permalink: 'https://opensea.io/assets/0x60e4d786628fea6478f785a6d7e704777c86a7c6/29501',
+      permalink:
+        'https://opensea.io/assets/0x60e4d786628fea6478f785a6d7e704777c86a7c6/29501',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/5c-HcdLMinTg3LvEwXYZYC-u5nN22Pn5ivTPYA4pVEsWJHU1rCobhUlHSFjZgCHPGSmcGMQGCrDCQU8BfSfygmL7Uol9MRQZt6-gqA=s2500',
@@ -87,7 +89,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -98,7 +101,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1652704763,
           listing_time: 1638284416,
-          order_hash: '0x2bb2f3be6a03bfd9ee317bd6b78fd0a1ab13e4892240536abe8a94350dab2266',
+          order_hash:
+            '0x2bb2f3be6a03bfd9ee317bd6b78fd0a1ab13e4892240536abe8a94350dab2266',
           metadata: {
             asset: {
               id: '29501',
@@ -109,13 +113,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -129,7 +135,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -149,7 +156,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -166,14 +174,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0x75f403e29530a98bb4f8cf100f3f59c3c4189d5309ecb7673f72f6e65575d92d',
+          prefixed_hash:
+            '0x75f403e29530a98bb4f8cf100f3f59c3c4189d5309ecb7673f72f6e65575d92d',
         },
       ],
       creator: {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
         address: '0x9056d15c49b19df52ffad1e6c11627f035c0c960',
         config: '',
       },
@@ -245,7 +255,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/kEQd_Xd7i_aeqFLzKgqR8Mx4yYAXIBdzbxVAywcVphU8GKkzqK4DxL1MHpwuBBfAQ1TW-RPgKdZ7Z6q3PntWODdOboTI0wilzHT2=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/kEQd_Xd7i_aeqFLzKgqR8Mx4yYAXIBdzbxVAywcVphU8GKkzqK4DxL1MHpwuBBfAQ1TW-RPgKdZ7Z6q3PntWODdOboTI0wilzHT2=s128',
-      image_original_url: 'https://storage.googleapis.com/lobster-images/00080105110923.jpg',
+      image_original_url:
+        'https://storage.googleapis.com/lobster-images/00080105110923.jpg',
       animation_url: null,
       animation_original_url: null,
       name: 'Lobby Lobster #4533',
@@ -278,7 +289,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 1000,
         payout_address: '0x75237802d46a40c4be57f518a7902528be688dfc',
       },
-      permalink: 'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4533',
+      permalink:
+        'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4533',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/UaD_lbxxFQVkHZ09U8bbgrptnn-mgLmbSpnpDCzyqQvx228YklDJGIwz9m-ZVmGRp7VgWjcUmYdlNCAEHEEmP-Jmam5OfzOEhSXObw=s2500',
@@ -325,7 +337,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -334,7 +347,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
         address: '0x3a502b41a34200c05760bad5f6e051ef2006e5d3',
         config: '',
       },
@@ -414,7 +428,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/fo209cshW3khW5CDe3k2qPkX8CsJL-WoDeACfFB5ttEBi-5uGLqByGKQPiTkC7Sc_p2YP8EJwmV1E2Yk_jsJ6A2jCJBWYnl_NH2Ouyk=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/fo209cshW3khW5CDe3k2qPkX8CsJL-WoDeACfFB5ttEBi-5uGLqByGKQPiTkC7Sc_p2YP8EJwmV1E2Yk_jsJ6A2jCJBWYnl_NH2Ouyk=s128',
-      image_original_url: 'https://storage.googleapis.com/lobster-images/01010104100407.jpg',
+      image_original_url:
+        'https://storage.googleapis.com/lobster-images/01010104100407.jpg',
       animation_url: null,
       animation_original_url: null,
       name: 'Lobby Lobster #4532',
@@ -447,7 +462,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 1000,
         payout_address: '0x75237802d46a40c4be57f518a7902528be688dfc',
       },
-      permalink: 'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4532',
+      permalink:
+        'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4532',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/UaD_lbxxFQVkHZ09U8bbgrptnn-mgLmbSpnpDCzyqQvx228YklDJGIwz9m-ZVmGRp7VgWjcUmYdlNCAEHEEmP-Jmam5OfzOEhSXObw=s2500',
@@ -494,7 +510,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -503,7 +520,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
         address: '0x3a502b41a34200c05760bad5f6e051ef2006e5d3',
         config: '',
       },
@@ -583,7 +601,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/oykw79XWlYJYpaKU6ejc_go_v-KRbfPac_jnMyfYTlAweZCTkubmJtf1pjeeRryR9b87ZivTetwq4iYIMb54PqjCVPMkZu1dA0bwcw=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/oykw79XWlYJYpaKU6ejc_go_v-KRbfPac_jnMyfYTlAweZCTkubmJtf1pjeeRryR9b87ZivTetwq4iYIMb54PqjCVPMkZu1dA0bwcw=s128',
-      image_original_url: 'https://storage.googleapis.com/lobster-images/03040206110004.jpg',
+      image_original_url:
+        'https://storage.googleapis.com/lobster-images/03040206110004.jpg',
       animation_url: null,
       animation_original_url: null,
       name: 'Lobby Lobster #4531',
@@ -616,7 +635,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 1000,
         payout_address: '0x75237802d46a40c4be57f518a7902528be688dfc',
       },
-      permalink: 'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4531',
+      permalink:
+        'https://opensea.io/assets/0xc0cb81c1f89ab0873653f67eea42652f13cd8416/4531',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/UaD_lbxxFQVkHZ09U8bbgrptnn-mgLmbSpnpDCzyqQvx228YklDJGIwz9m-ZVmGRp7VgWjcUmYdlNCAEHEEmP-Jmam5OfzOEhSXObw=s2500',
@@ -663,7 +683,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -672,7 +693,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
         address: '0x3a502b41a34200c05760bad5f6e051ef2006e5d3',
         config: '',
       },
@@ -746,9 +768,12 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
       token_id: '1',
       num_sales: 0,
       background_color: null,
-      image_url: 'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
-      image_preview_url: 'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
-      image_thumbnail_url: 'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
+      image_url:
+        'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
+      image_preview_url:
+        'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
+      image_thumbnail_url:
+        'https://storage.opensea.io/files/acef01b1f111088c40a0d86a4cd8a2bd.svg',
       image_original_url: null,
       animation_url: null,
       animation_original_url: null,
@@ -782,7 +807,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 1250,
         payout_address: '0x91d7a9e7c09477392290fe16c1b243e4a36d279a',
       },
-      permalink: 'https://opensea.io/assets/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b/1',
+      permalink:
+        'https://opensea.io/assets/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b/1',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/3i2R2xNiam0Pzk-7IYFQreM5Cy1JKK8Q7xNNVriGYqtiv2hwW404VlDnXDedCMpc0EUWMPxKpWXajKVWjLOBdEGUctbKMoc0Cjy4AQ=s2500',
@@ -829,7 +855,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -838,7 +865,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/21.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/21.png',
         address: '0x91d7a9e7c09477392290fe16c1b243e4a36d279a',
         config: '',
       },
@@ -861,7 +889,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/2ugQojxUZyJrvGIkvfZykSEH10ooke96p2L3BACTrNbSZtSUgyou1dwuaL3ToLYfo2qCccMSesL26r2007jG01oRiP_nz2rZEZGF=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/2ugQojxUZyJrvGIkvfZykSEH10ooke96p2L3BACTrNbSZtSUgyou1dwuaL3ToLYfo2qCccMSesL26r2007jG01oRiP_nz2rZEZGF=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmXBBN4rMHdnMT1xrqhLxPKT8mWibwDrP3B3E1n1GTAnx1',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmXBBN4rMHdnMT1xrqhLxPKT8mWibwDrP3B3E1n1GTAnx1',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -893,7 +922,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 500,
         payout_address: '0xaae7ac476b117bccafe2f05f582906be44bc8ff1',
       },
-      permalink: 'https://opensea.io/assets/0x60e4d786628fea6478f785a6d7e704777c86a7c6/2821',
+      permalink:
+        'https://opensea.io/assets/0x60e4d786628fea6478f785a6d7e704777c86a7c6/2821',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/5c-HcdLMinTg3LvEwXYZYC-u5nN22Pn5ivTPYA4pVEsWJHU1rCobhUlHSFjZgCHPGSmcGMQGCrDCQU8BfSfygmL7Uol9MRQZt6-gqA=s2500',
@@ -937,7 +967,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -948,7 +979,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1653951745,
           listing_time: 1638316854,
-          order_hash: '0x9de709ad58dde944d8add9bdf01928fe31e2a8d57d14185222649454afe393c2',
+          order_hash:
+            '0x9de709ad58dde944d8add9bdf01928fe31e2a8d57d14185222649454afe393c2',
           metadata: {
             asset: {
               id: '2821',
@@ -959,13 +991,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -979,7 +1013,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -999,7 +1034,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -1016,14 +1052,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0x5627bfe3fc7048d70e603c976ecf146349d503d335cfbeaeec8a08086aef3bb7',
+          prefixed_hash:
+            '0x5627bfe3fc7048d70e603c976ecf146349d503d335cfbeaeec8a08086aef3bb7',
         },
       ],
       creator: {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
         address: '0x9056d15c49b19df52ffad1e6c11627f035c0c960',
         config: '',
       },
@@ -1091,20 +1129,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 2,
           symbol: 'WETH',
           address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-          image_url: 'https://storage.opensea.io/files/accae6b6fb3888cbff27a013729c22dc.svg',
+          image_url:
+            'https://storage.opensea.io/files/accae6b6fb3888cbff27a013729c22dc.svg',
           name: 'Wrapped Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4716.109999999999673000',
         },
         transaction: {
-          block_hash: '0xbcfe5a589fb41ff8d355ea94ab8f09a87ddcdf869db47aac9dec638fe044e07c',
+          block_hash:
+            '0xbcfe5a589fb41ff8d355ea94ab8f09a87ddcdf869db47aac9dec638fe044e07c',
           block_number: '13717046',
           from_account: {
             user: {
               username: 'NFTBeltfort',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/14.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/14.png',
             address: '0xde700df70d96e2ad9436577b0926fb351cb0b228',
             config: '',
           },
@@ -1114,11 +1155,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0x9d6900cba95c13ae89e51755cf22db133f66a6afab9d14ff45b3c08e4c186d53',
+          transaction_hash:
+            '0x9d6900cba95c13ae89e51755cf22db133f66a6afab9d14ff45b3c08e4c186d53',
           transaction_index: '409',
         },
         created_date: '2021-11-30T21:00:16.557241',
@@ -1141,7 +1184,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/CIWHaJC9BQvc-1unN_L_oNShuC6-qngwB421ik5WSw5YATNN7mHd0JGWlZoB6lRvUEsTn-vFhvFHtp0ccRVE1gZJjwirpHIqiFOiKg=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/CIWHaJC9BQvc-1unN_L_oNShuC6-qngwB421ik5WSw5YATNN7mHd0JGWlZoB6lRvUEsTn-vFhvFHtp0ccRVE1gZJjwirpHIqiFOiKg=s128',
-      image_original_url: 'https://ipfs.io/ipfs/Qmdpbwr2ojevZY13i5W3AZ4cxkRYQD3iyPSmuLnDaTix3X',
+      image_original_url:
+        'https://ipfs.io/ipfs/Qmdpbwr2ojevZY13i5W3AZ4cxkRYQD3iyPSmuLnDaTix3X',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -1173,7 +1217,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 500,
         payout_address: '0x4a14091e6f9e8985929e773a65d99e1095a16837',
       },
-      permalink: 'https://opensea.io/assets/0x257d3caeda3932c6d48a5e5d5c7a5e3d23d92c83/529',
+      permalink:
+        'https://opensea.io/assets/0x257d3caeda3932c6d48a5e5d5c7a5e3d23d92c83/529',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/HrLkuvc50cU1Wf5usFLY6ieM_81Gifjl1ORbcQf4qUYy1oPf_VRvM_E_hu18owRz5_foV-bPHOl-6su5Nqk1lyw9fb5pkI5Ezys5=s2500',
@@ -1214,12 +1259,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/Qme9cSSVAnf6c8VnN3YCWb183Vodrkc2XU7XLcDttbY7qN/529',
+      token_metadata:
+        'https://ipfs.io/ipfs/Qme9cSSVAnf6c8VnN3YCWb183Vodrkc2XU7XLcDttbY7qN/529',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -1228,7 +1275,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: null,
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/21.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/21.png',
         address: '0x4a14091e6f9e8985929e773a65d99e1095a16837',
         config: '',
       },
@@ -1308,7 +1356,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/PqUXUQ947U77EBxnDlD9fWqU6vaSRt6psVFRVksRE8Yf3UlN2KB7qfSL29A2pG5QGCUqrvV8wZBOLbFGupVu5fc4PakHNfQ8kjTe=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/PqUXUQ947U77EBxnDlD9fWqU6vaSRt6psVFRVksRE8Yf3UlN2KB7qfSL29A2pG5QGCUqrvV8wZBOLbFGupVu5fc4PakHNfQ8kjTe=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmdeJYu42ZWM7Vt1QzQgEebZAeMPndavfYTejidjBAEm3q',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmdeJYu42ZWM7Vt1QzQgEebZAeMPndavfYTejidjBAEm3q',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -1340,7 +1389,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/5595',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/5595',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -1381,12 +1431,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/5595',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/5595',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -1397,7 +1449,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1653747243,
           listing_time: 1638112357,
-          order_hash: '0x4860bc0ed694b73db86acab5a2d7e50351ef0b3470ce3ab16a58c855b99fc613',
+          order_hash:
+            '0x4860bc0ed694b73db86acab5a2d7e50351ef0b3470ce3ab16a58c855b99fc613',
           metadata: {
             asset: {
               id: '5595',
@@ -1408,13 +1461,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -1428,7 +1483,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -1448,7 +1504,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -1465,14 +1522,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0xcf55de1286a7c2d8becb078c831c64e58d87d854f770e806fc1672a25b661c4c',
+          prefixed_hash:
+            '0xcf55de1286a7c2d8becb078c831c64e58d87d854f770e806fc1672a25b661c4c',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -1548,20 +1607,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0xa18641ad3dc04980879f0cb3abee13568416a92faac0d09c6ff7e5010b84b8ae',
+          block_hash:
+            '0xa18641ad3dc04980879f0cb3abee13568416a92faac0d09c6ff7e5010b84b8ae',
           block_number: '13185311',
           from_account: {
             user: {
               username: 'trevormil23',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
@@ -1571,11 +1633,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0x6d8716dab8fd1879dee04e91067f9fabc2e23cfff43c88cf618a7a21049c76f9',
+          transaction_hash:
+            '0x6d8716dab8fd1879dee04e91067f9fabc2e23cfff43c88cf618a7a21049c76f9',
           transaction_index: '12',
         },
         created_date: '2021-09-08T13:15:42.079907',
@@ -1598,7 +1662,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/20h55ixFQG_zQFj7Y7cf46ZYnz-w20GNYBV3Oeuars75bwxIRoOloDAakUDh7AedroaWpKYBD6_ACz954iku5cLF-K_EPIkKOdzZ=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/20h55ixFQG_zQFj7Y7cf46ZYnz-w20GNYBV3Oeuars75bwxIRoOloDAakUDh7AedroaWpKYBD6_ACz954iku5cLF-K_EPIkKOdzZ=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmNjukfgGuwT24MqPjj4ce3vHcvZaUq7YEuFxpqTFuNU29',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmNjukfgGuwT24MqPjj4ce3vHcvZaUq7YEuFxpqTFuNU29',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -1630,7 +1695,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1610',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1610',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -1671,12 +1737,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/1610',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/1610',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -1687,7 +1755,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1653749730,
           listing_time: 1638114836,
-          order_hash: '0x2cb79a6a4bafacb832ab0262068441b5e0bd915ad5b725fa57c6143108dacde0',
+          order_hash:
+            '0x2cb79a6a4bafacb832ab0262068441b5e0bd915ad5b725fa57c6143108dacde0',
           metadata: {
             asset: {
               id: '1610',
@@ -1698,13 +1767,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -1718,7 +1789,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -1738,7 +1810,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -1755,14 +1828,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0x621903831cf4d21cd8e0f2d1e801977f238b822e5d5519670d4814bb62b727a9',
+          prefixed_hash:
+            '0x621903831cf4d21cd8e0f2d1e801977f238b822e5d5519670d4814bb62b727a9',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -1838,20 +1913,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0x6c9b843c49bf12accf4b661e70154cef532135a82affbed43425d9f85ba80fc7',
+          block_hash:
+            '0x6c9b843c49bf12accf4b661e70154cef532135a82affbed43425d9f85ba80fc7',
           block_number: '12961202',
           from_account: {
             user: {
               username: 'eCoLokty',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/6.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/6.png',
             address: '0x290868fb9b864e876c3e35a32afadfee5a96824a',
             config: '',
           },
@@ -1861,11 +1939,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0x2e8bda2dc6fcfb3395f3393fe8093fd9156a6251c8b8febd72f1f00220a8927b',
+          transaction_hash:
+            '0x2e8bda2dc6fcfb3395f3393fe8093fd9156a6251c8b8febd72f1f00220a8927b',
           transaction_index: '138',
         },
         created_date: '2021-08-04T22:00:07.248322',
@@ -1888,7 +1968,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/WQuioAZIrKrUh2QrZm9AJpgbAXlVxlWLRFHzGMO4LvBkLJvprlzKeZFWaoAxU3VF1kfqimn1hn7pBU6P_8qbluo1EJNqtpN8szaPQw=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/WQuioAZIrKrUh2QrZm9AJpgbAXlVxlWLRFHzGMO4LvBkLJvprlzKeZFWaoAxU3VF1kfqimn1hn7pBU6P_8qbluo1EJNqtpN8szaPQw=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmUeFo9W6KCJC6gAAU4vvLq1ft61bvjwv8Likfz2AacmBZ',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmUeFo9W6KCJC6gAAU4vvLq1ft61bvjwv8Likfz2AacmBZ',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -1920,7 +2001,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/6971',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/6971',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -1961,12 +2043,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/6971',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/6971',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -1977,7 +2061,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1652871266,
           listing_time: 1637849758,
-          order_hash: '0xb205c9e997d40023545058ba88f6d23567088b3da1c925cf71db1653d4d687bc',
+          order_hash:
+            '0xb205c9e997d40023545058ba88f6d23567088b3da1c925cf71db1653d4d687bc',
           metadata: {
             asset: {
               id: '6971',
@@ -1988,13 +2073,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -2008,7 +2095,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -2028,7 +2116,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -2045,14 +2134,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0x51f70eaaec84095261b08fd034007732efe9361a7af86ac5930d0c2c24e34f78',
+          prefixed_hash:
+            '0x51f70eaaec84095261b08fd034007732efe9361a7af86ac5930d0c2c24e34f78',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -2128,20 +2219,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0xb3da2177162c007634722e2bf6c3abf3fbdccc5eee012aa6803197f244b3367a',
+          block_hash:
+            '0xb3da2177162c007634722e2bf6c3abf3fbdccc5eee012aa6803197f244b3367a',
           block_number: '13166135',
           from_account: {
             user: {
               username: 'trevormil23',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
@@ -2151,11 +2245,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0x5ca4c6684634413bad5e862bb090f769f566bbf8d57d24170699a80d35dd8fae',
+          transaction_hash:
+            '0x5ca4c6684634413bad5e862bb090f769f566bbf8d57d24170699a80d35dd8fae',
           transaction_index: '264',
         },
         created_date: '2021-09-05T13:59:29.664411',
@@ -2178,7 +2274,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/dBRUNceisNm0hf922mxR06ypVgJj5z8fEG6g2z8tm6kEYTjrNN9zu99IjRpFYSOIGkEZQaXuNcF3-e4pU272CgNXkxDawRkdCtX2tg=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/dBRUNceisNm0hf922mxR06ypVgJj5z8fEG6g2z8tm6kEYTjrNN9zu99IjRpFYSOIGkEZQaXuNcF3-e4pU272CgNXkxDawRkdCtX2tg=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmXndgeysw4354G6fDfWPgjSFcbbKkm65sUpdfTZgNsqRo',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmXndgeysw4354G6fDfWPgjSFcbbKkm65sUpdfTZgNsqRo',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -2210,7 +2307,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1306',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1306',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -2251,12 +2349,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/1306',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/1306',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -2267,7 +2367,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1652822242,
           listing_time: 1638316759,
-          order_hash: '0x21fd3e5bca783bbafeada59b287a949ff8b2d2fc236b8732e75e83e6aa8723f2',
+          order_hash:
+            '0x21fd3e5bca783bbafeada59b287a949ff8b2d2fc236b8732e75e83e6aa8723f2',
           metadata: {
             asset: {
               id: '1306',
@@ -2278,13 +2379,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -2298,7 +2401,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -2318,7 +2422,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -2335,14 +2440,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0xc9b54dac3e3a4177f22b9abbd4476f408e26dc8cfd7961a7fa6741de2e1f2bb5',
+          prefixed_hash:
+            '0xc9b54dac3e3a4177f22b9abbd4476f408e26dc8cfd7961a7fa6741de2e1f2bb5',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -2410,20 +2517,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0xa137ac08d2afb820f0a27afd1a40a36db6f6716757e3eb5c6a84364b881f0720',
+          block_hash:
+            '0xa137ac08d2afb820f0a27afd1a40a36db6f6716757e3eb5c6a84364b881f0720',
           block_number: '13610183',
           from_account: {
             user: {
               username: 'APE_G4NG',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/12.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/12.png',
             address: '0x563415679588e508c0c8f0a729c9bf898406e9b5',
             config: '',
           },
@@ -2433,11 +2543,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0xeeec0fd0388b2680223afa212fb387e95553c4c03f33d3d41cb9e5cae491c2e3',
+          transaction_hash:
+            '0xeeec0fd0388b2680223afa212fb387e95553c4c03f33d3d41cb9e5cae491c2e3',
           transaction_index: '166',
         },
         created_date: '2021-11-13T21:58:53.957421',
@@ -2460,7 +2572,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/5pjcUIEyJ8DwwYOH-t4mUvGrcFvl9N31T-NO91Wd49o-EbOMmrB2CQ_JLgKvoPBaXvvXl8z8VdEeTMm_l2yA8yVw99WBxlhnI7zw=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/5pjcUIEyJ8DwwYOH-t4mUvGrcFvl9N31T-NO91Wd49o-EbOMmrB2CQ_JLgKvoPBaXvvXl8z8VdEeTMm_l2yA8yVw99WBxlhnI7zw=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmZ6YGtqvnYf5kYKn1bYU3YmN2sDynda2fUaRu5Nb1L52d',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmZ6YGtqvnYf5kYKn1bYU3YmN2sDynda2fUaRu5Nb1L52d',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -2492,7 +2605,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/4629',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/4629',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -2533,12 +2647,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/4629',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/4629',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -2549,7 +2665,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 0,
           listing_time: 1637236434,
-          order_hash: '0xaab5907f2306587bb903f4eb6009be890d84be29dfcf9a9052bb7c65a10f083c',
+          order_hash:
+            '0xaab5907f2306587bb903f4eb6009be890d84be29dfcf9a9052bb7c65a10f083c',
           metadata: {
             asset: {
               id: '4629',
@@ -2560,13 +2677,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -2580,7 +2699,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -2600,7 +2720,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -2617,14 +2738,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0x7e08020e1baa0e2619c63f851408b4f9eab99d94e38987db6c5267c2f99cda13',
+          prefixed_hash:
+            '0x7e08020e1baa0e2619c63f851408b4f9eab99d94e38987db6c5267c2f99cda13',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -2692,20 +2815,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0x0cb9976cae7c5eed0a03e0a8d0c743fd861893804775b623f9c6c02a19f6ac06',
+          block_hash:
+            '0x0cb9976cae7c5eed0a03e0a8d0c743fd861893804775b623f9c6c02a19f6ac06',
           block_number: '13123344',
           from_account: {
             user: {
               username: 'trevormil23',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
@@ -2715,11 +2841,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0xc7fdb014d4711d035423703b2d54f11e92c483ad068774472312ac36f5ce14c4',
+          transaction_hash:
+            '0xc7fdb014d4711d035423703b2d54f11e92c483ad068774472312ac36f5ce14c4',
           transaction_index: '65',
         },
         created_date: '2021-08-29T23:24:02.348489',
@@ -2742,7 +2870,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         'https://lh3.googleusercontent.com/kqeKxxi1hmcYN82Foxvj-makyRUpq3Oky739o2znwWBnayelarW9t4nHN8PF4_-BJy9KG8DI2mYBgaQfFNWIbme8K0kERknHnTgwyQ=s250',
       image_thumbnail_url:
         'https://lh3.googleusercontent.com/kqeKxxi1hmcYN82Foxvj-makyRUpq3Oky739o2znwWBnayelarW9t4nHN8PF4_-BJy9KG8DI2mYBgaQfFNWIbme8K0kERknHnTgwyQ=s128',
-      image_original_url: 'https://ipfs.io/ipfs/QmZ565pLUD9VKmyrd2x7UgS3mhKnDzxTmXSxTdNusvP8Lu',
+      image_original_url:
+        'https://ipfs.io/ipfs/QmZ565pLUD9VKmyrd2x7UgS3mhKnDzxTmXSxTdNusvP8Lu',
       animation_url: null,
       animation_original_url: null,
       name: null,
@@ -2774,7 +2903,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         seller_fee_basis_points: 250,
         payout_address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
       },
-      permalink: 'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/6589',
+      permalink:
+        'https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/6589',
       collection: {
         banner_image_url:
           'https://lh3.googleusercontent.com/o7jTd9uDpVGbHOCgpHvId3c-O6clNo-DnvrJ0fSaZOH9fs4Wj2W1WZL6_RlfGk0a8gRb0GXgiMuwdUZVB0cn3zIM_1NPC9thgdGXJA=s2500',
@@ -2815,12 +2945,14 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         wiki_url: null,
       },
       decimals: 0,
-      token_metadata: 'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/6589',
+      token_metadata:
+        'https://ipfs.io/ipfs/QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/6589',
       owner: {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
@@ -2831,7 +2963,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           closing_extendable: false,
           expiration_time: 1652871353,
           listing_time: 1637849862,
-          order_hash: '0x7ea2eae1f6e002b95f3e974024fa7b0b17db44617240761a014b274f19411048',
+          order_hash:
+            '0x7ea2eae1f6e002b95f3e974024fa7b0b17db44617240761a014b274f19411048',
           metadata: {
             asset: {
               id: '6589',
@@ -2842,13 +2975,15 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           exchange: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
           maker: {
             user: 901282,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
           taker: {
             user: 1766,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/1.png',
             address: '0x0000000000000000000000000000000000000000',
             config: '',
           },
@@ -2862,7 +2997,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           maker_referrer_fee: '0',
           fee_recipient: {
             user: 3585,
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
             address: '0x5b3256965e7c3cf26e11fcaf296dfc8807c01073',
             config: 'verified',
           },
@@ -2882,7 +3018,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             id: 1,
             symbol: 'ETH',
             address: '0x0000000000000000000000000000000000000000',
-            image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+            image_url:
+              'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
             name: 'Ether',
             decimals: 18,
             eth_price: '1.000000000000000',
@@ -2899,14 +3036,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           cancelled: false,
           finalized: false,
           marked_invalid: false,
-          prefixed_hash: '0xb2a09149c45ea0426fe98fbbfc8ffa2f151b2045bef85a3c4552ab991721dd2f',
+          prefixed_hash:
+            '0xb2a09149c45ea0426fe98fbbfc8ffa2f151b2045bef85a3c4552ab991721dd2f',
         },
       ],
       creator: {
         user: {
           username: 'BoredApeKennelClub',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/28.png',
         address: '0xaf62311ee2224fed4d3884a1793b4c50b86f4462',
         config: '',
       },
@@ -2982,20 +3121,23 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
           id: 1,
           symbol: 'ETH',
           address: '0x0000000000000000000000000000000000000000',
-          image_url: 'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
+          image_url:
+            'https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg',
           name: 'Ether',
           decimals: 18,
           eth_price: '1.000000000000000',
           usd_price: '4705.649999999999636000',
         },
         transaction: {
-          block_hash: '0x8c8a69c6ea28104ecab1ee8011a5d135dc98723d7ee5e059477c34e0c122e8e1',
+          block_hash:
+            '0x8c8a69c6ea28104ecab1ee8011a5d135dc98723d7ee5e059477c34e0c122e8e1',
           block_number: '12741607',
           from_account: {
             user: {
               username: 'trevormil23',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
             address: '0x1a16c87927570239fecd343ad2654fd81682725e',
             config: '',
           },
@@ -3005,11 +3147,13 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
             user: {
               username: 'OpenSea-Orders',
             },
-            profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
+            profile_img_url:
+              'https://storage.googleapis.com/opensea-static/opensea-profile/22.png',
             address: '0x7be8076f4ea4a4ad08075c2508e481d6c946d12b',
             config: 'verified',
           },
-          transaction_hash: '0x8f352e3dbef499b40a305bd24c9b5bced3ce4eb19997bf4b453d511de7b61206',
+          transaction_hash:
+            '0x8f352e3dbef499b40a305bd24c9b5bced3ce4eb19997bf4b453d511de7b61206',
           transaction_index: '20',
         },
         created_date: '2021-07-01T11:54:06.763937',
@@ -3023,7 +3167,8 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
     },
     {
       id: 25121798,
-      token_id: '63749038382229673310580479897393938256042128543635190242604957525465954611742',
+      token_id:
+        '63749038382229673310580479897393938256042128543635190242604957525465954611742',
       num_sales: 0,
       background_color: null,
       image_url:
@@ -3110,14 +3255,16 @@ export const MOCK_OPENSEA_ASSETS_RESPONSE = {
         user: {
           username: 'trevormil23',
         },
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/2.png',
         address: '0x1a16c87927570239fecd343ad2654fd81682725e',
         config: '',
       },
       sell_orders: null,
       creator: {
         user: null,
-        profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/9.png',
+        profile_img_url:
+          'https://storage.googleapis.com/opensea-static/opensea-profile/9.png',
         address: '0x4fe4e666be5752f1fdd210f4ab5de2cc26e3e0e8',
         config: '',
       },

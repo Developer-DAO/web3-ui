@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "0.12.0",
   "private": false,
+  "type": "module",
   "description": "React UI components for web3",
   "keywords": [
     "web3",
@@ -25,29 +26,34 @@
     "dist"
   ],
   "scripts": {
+    "build": "node build.js",
+    "build:watch": "node build.js --watch",
+    "dev": "yarn build:watch & yarn typegen:watch",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE"
+    "prepublishOnly": "cp ../../LICENSE ./LICENSE",
+    "typegen:watch": "tsc --emitDeclarationOnly --watch"
   },
-  "main": "dist/web3-ui-components.cjs.js",
+  "main": "dist/index.js",
   "module": "dist/web3-ui-components.esm.js",
-  "types": "dist/web3-ui-components.cjs.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "@chakra-ui/icons": "^1.1.1",
-    "@chakra-ui/react": "^1.7.2",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "framer-motion": "^4"
+    "@radix-ui/colors": "^0.1.8",
+    "@stitches/react": "^1.2.8",
+    "framer-motion": "^6.3.15",
+    "wagmi": "^0.5.5"
   },
   "peerDependencies": {
-    "react": ">= 16.8.0 | >= 17.0.0",
-    "react-dom": ">= 16.8.0 | >= 17.0.0",
-    "ethers": "^5.5.2"
+    "ethers": ">=5.5.1",
+    "react": ">=17",
+    "react-dom": ">=17",
+    "wagmi": "0.5.x"
   },
   "devDependencies": {
-    "@web3-ui/hooks": "^0.13.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.1.0"
   }
 }

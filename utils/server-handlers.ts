@@ -11,9 +11,12 @@ const handlers = [
     }
     return res(ctx.json(MOCK_OPENSEA_ASSETS_RESPONSE));
   }),
-  rest.get('https://api.opensea.io/api/v1/asset/:contractId/:id', async (_, res, ctx) => {
-    return res(ctx.json(MOCK_IMAGE_NFT));
-  }),
+  rest.get(
+    'https://api.opensea.io/api/v1/asset/:contractId/:id',
+    async (_, res, ctx) => {
+      return res(ctx.json(MOCK_IMAGE_NFT));
+    }
+  ),
 ];
 
 export { handlers };

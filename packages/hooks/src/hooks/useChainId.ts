@@ -1,10 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useNetwork } from 'wagmi';
 
-export const useChainId = (): string | undefined => {
-  const [chainId, setChainId] = useState<string | undefined>();
-  useEffect(() => {
-    window.ethereum.on('chainChanged', setChainId);
-    window.ethereum.request({ method: 'eth_chainId' }).then(setChainId);
-  }, []);
-  return chainId;
-};
+export function useChainId(): number | null {
+  const { activeChain } = useNetwork();
+  return activeChain?.id ?? null;
+}

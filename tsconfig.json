@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "isolatedModules": true,
     "jsx": "react",
-    "lib": ["dom", "es5"],
+    "lib": ["dom", "dom.iterable", "es5"],
     "module": "esNext",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -20,5 +20,5 @@
     "resolveJsonModule": true
   },
   "exclude": ["node_modules"],
-  "include": ["./packages/*/src"]
+  "include": ["./packages/*/src", "./playground/*", "**/*.ts", "**/*.tsx"]
 }
