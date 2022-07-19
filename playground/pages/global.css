@@ -3,6 +3,46 @@ body {
   padding: 1em;
 }
 
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-mode a {
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header a {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 25%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header button {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 25%;
+  cursor: pointer;
+}
+
 .section {
   margin: 1em 0;
   border: 1px solid #ccc;
@@ -16,7 +56,7 @@ body {
 
 .item {
   margin: 0;
-  padding: 0.5em;
+  padding: 2em 1em;
   border: 1px solid #ccc;
 }
 .item-title {
