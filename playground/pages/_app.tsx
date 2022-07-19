@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { AppProps } from 'next/app';
 import './global.css';
+import { Header } from '../components';
 
 import { WagmiConfig, createClient, configureChains, chain } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
@@ -19,6 +20,7 @@ const wagmiClient = createClient({
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <WagmiConfig client={wagmiClient}>
+      <Header />
       <Component {...pageProps} />
     </WagmiConfig>
   );
