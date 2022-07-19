@@ -1,7 +1,7 @@
 import Head from 'next/head';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Address, Button } from '@web3-ui/components';
+import { Button } from '@web3-ui/components';
 
 export default function Home() {
   return (
@@ -12,7 +12,6 @@ export default function Home() {
       </Head>
       <main>
         <div className={`section`}>
-
           <h2 className={`section-title`}>Elements</h2>
           <div className={`item`}>
             <h3 className={`item-title`}>Button</h3>
