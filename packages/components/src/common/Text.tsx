@@ -13,13 +13,6 @@ export const Text = styled('span', {
   fontSize: '$base',
 
   variants: {
-    // '3xl':
-    // '4xl':
-    // '5xl':
-    // '6xl': '3.75rem',
-    // '7xl': '4.5rem',
-    // '8xl': '6rem',
-    // '9xl': '8rem',
     size: {
       xs: {
         fontSize: '$xs',
@@ -122,7 +115,7 @@ export const Text = styled('span', {
     },
   },
   defaultVariants: {
-    size: '1base',
+    size: 'base',
     variant: 'gray',
   },
 });

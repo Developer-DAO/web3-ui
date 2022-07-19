@@ -10,9 +10,9 @@ export default function Home() {
         <title>web3-ui dev playground</title>
         <meta name="description" content="" />
       </Head>
-
       <main>
         <div className={`section`}>
+
           <h2 className={`section-title`}>Elements</h2>
           <div className={`item`}>
             <h3 className={`item-title`}>Button</h3>
