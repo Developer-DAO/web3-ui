@@ -27,7 +27,7 @@ body {
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
-  border-radius: 25%;
+  border-radius: 0.5rem;
   cursor: pointer;
   text-decoration: none;
 }
@@ -39,7 +39,7 @@ body {
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
-  border-radius: 25%;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -64,4 +64,16 @@ body {
   font-weight: bold;
   margin: 0;
   padding: 0.5em;
+}
+
+.item-link {
+  color: rgb(54, 50, 241);
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.item-link:hover {
+  color: rgb(54, 50, 241);
+  text-decoration: underline;
 }

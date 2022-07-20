@@ -1,7 +1,4 @@
 import Head from 'next/head';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { Button } from '@web3-ui/components';
 
 export default function Home() {
   return (
@@ -12,10 +9,68 @@ export default function Home() {
       </Head>
       <main>
         <div className={`section`}>
-          <h2 className={`section-title`}>Elements</h2>
+          <h2 className={`section-title`}>Resources</h2>
           <div className={`item`}>
-            <h3 className={`item-title`}>Button</h3>
-            <Button>testing</Button>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://stitches.dev/docs/installation"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                stitches docs
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://github.com/stitchesjs/stitches"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                stitches github
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://design-system.modulz-deploys.com/"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                Radix design system modulz
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://github.com/radix-ui/design-system"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                Radix design system modulz github
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://wagmi.sh/"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                wagmi docs
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://github.com/wagmi-dev/wagmi"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                wagmi github
+              </a>
+            </div>
           </div>
         </div>
       </main>
