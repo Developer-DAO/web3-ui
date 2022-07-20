@@ -37,21 +37,21 @@ export const Button = styled('button', {
 
   variants: {
     size: {
-      '1': {
+      md: {
         borderRadius: '$md',
-        py: '$1',
-        px: '$2',
+        py: '$2',
+        px: '$3',
         fontSize: '$base',
         lineHeight: '$sizes$5',
       },
-      '2': {
+      lg: {
         borderRadius: '$lg',
         py: '$2',
         px: '$3',
         fontSize: '$lg',
         lineHeight: '$sizes$6',
       },
-      '3': {
+      xl: {
         borderRadius: '$xl',
         py: '$3',
         px: '$4',
@@ -86,7 +86,7 @@ export const Button = styled('button', {
   },
 
   defaultVariants: {
-    size: '1',
+    size: 'md',
     variant: 'gray',
   },
 });

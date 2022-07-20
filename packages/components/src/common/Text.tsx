@@ -33,25 +33,54 @@ export const Text = styled('span', {
         fontSize: '$2xl',
       },
       '3xl': {
-        fontSize: '$sm',
+        fontSize: '$3xl',
       },
       '4xl': {
-        fontSize: '$base',
+        fontSize: '$4xl',
       },
       '5xl': {
-        fontSize: '$lg',
+        fontSize: '$5xl',
       },
       '6xl': {
-        fontSize: '$xl',
+        fontSize: '$6xl',
       },
       '7xl': {
-        fontSize: '$2xl',
+        fontSize: '$7xl',
       },
       '8xl': {
         fontSize: '$8xl',
       },
       '9xl': {
         fontSize: '$9xl',
+      },
+    },
+    weight: {
+      thin: {
+        fontWeight: 100,
+      },
+      extralight: {
+        fontWeight: 200,
+      },
+      light: {
+        fontWeight: 300,
+      },
+      normal: {
+        fontWeight: 400,
+      },
+      medium: {
+        fontWeight: 500,
+      },
+      semibold: {
+        fontWeight: 600,
+      },
+      bold: {
+        fontWeight: 700,
+      },
+      extrabold: {
+        fontWeight: 800,
+      },
+      black: {
+        fontWeight: 900,
       },
     },
     variant: {
@@ -116,6 +145,7 @@ export const Text = styled('span', {
   },
   defaultVariants: {
     size: 'base',
+    weight: 'normal',
     variant: 'gray',
   },
 });
