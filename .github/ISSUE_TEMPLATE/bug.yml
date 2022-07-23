@@ -1,0 +1,45 @@
+name: 'Bug Report'
+description: 'Found a bug, and want to report it'
+labels: ['bug']
+body:
+  - type: 'markdown'
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        Make sure to search open/closed issues before submitting.
+  - type: 'textarea'
+    id: 'what-happened'
+    attributes:
+      label: 'What happened?'
+      description: 'What happeaned and can you explain how to re-create it?'
+      placeholder: 'Tell us what you see!'
+    validations:
+      required: true
+  - type: 'textarea'
+    id: 'what-expected'
+    attributes:
+      label: 'What was Expected?'
+      description: 'What did you expect to happen?'
+      placeholder: 'Tell us what you see!'
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: 'textarea'
+    id: 'proposed-solution'
+    attributes:
+      label: 'Proposed Solution'
+      description: |
+        Please share if you know of a possible solution.
+  - type: 'textarea'
+    id: 'additional-information'
+    attributes:
+      label: 'Additional Information'
+      description: |
+        What resources (links, screenshots, etc.) do you have to assist this
+        effort?
