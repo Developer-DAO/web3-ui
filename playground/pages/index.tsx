@@ -34,6 +34,16 @@ export default function Home() {
             <div style={{ padding: '1em 0em' }}>
               <a
                 target="_blank"
+                href="https://www.youtube.com/watch?v=Gw28VgyKGkw"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                stitches video overview
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
                 href="https://design-system.modulz-deploys.com/"
                 rel="noopener noreferrer"
                 className={`item-link`}
@@ -69,6 +79,31 @@ export default function Home() {
                 className={`item-link`}
               >
                 wagmi github
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className={`section`}>
+          <h2 className={`section-title`}>Inspiration</h2>
+          <div className={`item`}>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://nextui.org/"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                nextui
+              </a>
+            </div>
+            <div style={{ padding: '1em 0em' }}>
+              <a
+                target="_blank"
+                href="https://www.npmjs.com/package/web3uikit"
+                rel="noopener noreferrer"
+                className={`item-link`}
+              >
+                web3uikit
               </a>
             </div>
           </div>

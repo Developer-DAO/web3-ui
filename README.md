@@ -1,20 +1,24 @@
 # web3-ui
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-_In Development 🏗️_
+_In Development - Refactoring in Progress 🏗️_
 
 A library of UI components specifically crafted for web3 use cases.
 
 | Package name                                                                                       | Current version                                                                                                      |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| [`@web3-ui/core`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/core)                | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcore.svg)](https://badge.fury.io/js/@web3-ui%2Fcore)             |
+| [(Deprecated) `@web3-ui/core`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/core)   | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcore.svg)](https://badge.fury.io/js/@web3-ui%2Fcore)             |
 | [`@web3-ui/components`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/components)    | [![npm version](https://badge.fury.io/js/@web3-ui%2Fcomponents.svg)](https://badge.fury.io/js/@web3-ui%2Fcomponents) |
 | [(Deprecated) `@web3-ui/hooks`](https://github.com/Developer-DAO/web3-ui/tree/main/packages/hooks) | [![npm version](https://badge.fury.io/js/@web3-ui%2Fhooks.svg)](https://badge.fury.io/js/@web3-ui%2Fhooks)           |
 
 ## Quick start
+
+### Note: This is for the current public release. This library is being refactored and instructions will change.
 
 1. Install the package
 
@@ -53,7 +57,9 @@ function Home() {
 }
 ```
 
-Do note that you can also install & use the `components` and `hooks` packages separately. They are completely independent. The `core` package is an opinionated combination of the `components` and `hooks` packages.
+## Roadmap
+
+Please see the [Roadmap](/contributing/ROADMAP.md) for more details
 
 ## How to Contribute
 
