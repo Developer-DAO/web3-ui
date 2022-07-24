@@ -10,7 +10,6 @@ export const Text = styled('span', {
 
   // Custom
   fontFamily: '$sans',
-  fontSize: '$base',
 
   variants: {
     size: {
@@ -56,31 +55,51 @@ export const Text = styled('span', {
     },
     weight: {
       thin: {
-        fontWeight: 100,
+        fontWeight: '$thin',
       },
       extralight: {
-        fontWeight: 200,
+        fontWeight: '$extralight',
       },
       light: {
-        fontWeight: 300,
+        fontWeight: '$light',
       },
       normal: {
-        fontWeight: 400,
+        fontWeight: '$normal',
       },
       medium: {
-        fontWeight: 500,
+        fontWeight: '$medium',
       },
       semibold: {
-        fontWeight: 600,
+        fontWeight: '$semibold',
       },
       bold: {
-        fontWeight: 700,
+        fontWeight: '$bold',
       },
       extrabold: {
-        fontWeight: 800,
+        fontWeight: '$extrabold',
       },
       black: {
-        fontWeight: 900,
+        fontWeight: '$black',
+      },
+    },
+    spacing: {
+      tighter: {
+        letterSpacing: '$tighter',
+      },
+      tight: {
+        letterSpacing: '$tight',
+      },
+      normal: {
+        letterSpacing: '$normal',
+      },
+      wide: {
+        letterSpacing: '$wide',
+      },
+      wider: {
+        letterSpacing: '$wider',
+      },
+      widest: {
+        letterSpacing: '$widest',
       },
     },
     variant: {
@@ -146,6 +165,7 @@ export const Text = styled('span', {
   defaultVariants: {
     size: 'base',
     weight: 'normal',
+    spacing: 'normal',
     variant: 'gray',
   },
 });
