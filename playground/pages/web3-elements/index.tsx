@@ -22,7 +22,14 @@ const Web3ComponentsPage: NextPage = () => {
           <Button>testing</Button>
         </div>
         <div className={`item`}>
-          <h3 className={`item-title`}>Badge</h3>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            Badge
+          </Text>
           <Badge variant="lime">testing</Badge>
         </div>
       </div>
