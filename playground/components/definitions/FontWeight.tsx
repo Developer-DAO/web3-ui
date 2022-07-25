@@ -5,7 +5,9 @@ import { Text, Container } from '@web3-ui/components';
 export const FontWeight = () => {
   return (
     <div className={`section`}>
-      <h2 className={`section-title`}>fontWeight</h2>
+      <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+        fontWeight
+      </Text>
       <div className={`item`}>
         <h3 className={`item-title`}></h3>
         <Container size="3">

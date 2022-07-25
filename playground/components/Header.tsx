@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { darkTheme } from '@web3-ui/components';
 
 export const Header = () => {
   const [theme, setTheme] = useState('theme-default');
 
   useEffect(() => {
+    document.body.classList.remove('theme-default', darkTheme);
     document.body.classList.add(theme);
-  }, []);
-
-  const handleThemeChange = () => {
-    setTheme(theme === 'theme-default' ? 'theme-dark' : 'theme-default');
-    document.body.classList.toggle('dark-mode');
-  };
+  }, [theme]);
 
   return (
     <header>
@@ -36,7 +35,13 @@ export const Header = () => {
             Definitions
           </a>
         </Link>
-        <button style={{}} onClick={() => handleThemeChange()}>
+        <button
+          onClick={() =>
+            setTheme(
+              theme === 'theme-default' ? darkTheme.className : 'theme-default'
+            )
+          }
+        >
           {theme === 'theme-default' ? 'Dark' : 'Light'}
         </button>
       </nav>

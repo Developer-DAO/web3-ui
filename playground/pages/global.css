@@ -1,22 +1,12 @@
 body {
   margin: 0;
-  padding: 1em;
-}
-
-.dark-mode {
-  background-color: #000;
-  color: #fff;
-}
-
-.dark-mode a {
-  color: #fff;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.5rem;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -24,8 +14,8 @@ body {
   background-color: #fff;
   border: none;
   color: #000;
-  padding: 1em;
-  font-size: 1em;
+  padding: 1rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -36,40 +26,40 @@ body {
   background-color: #fff;
   border: none;
   color: #000;
-  padding: 1em;
-  font-size: 1em;
+  padding: 1rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .section {
-  margin: 1em 0;
+  margin: 1rem 0;
   border: 1px solid #ccc;
 }
 .section-title {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 .item {
   margin: 0;
-  padding: 2em 1em;
+  padding: 2rem 1rem;
   border: 1px solid #ccc;
 }
 .item-title {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 .item-link {
   color: rgb(54, 50, 241);
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

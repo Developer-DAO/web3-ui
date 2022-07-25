@@ -1,4 +1,4 @@
-import { styled } from '../theme/baseTheme';
+import { styled } from '../theme/stitches.config';
 
 export const Text = styled('span', {
   // Reset
@@ -102,6 +102,35 @@ export const Text = styled('span', {
         letterSpacing: '$widest',
       },
     },
+    height: {
+      xs: {
+        lineHeight: '$xs',
+      },
+      sm: {
+        lineHeight: '$sm',
+      },
+      base: {
+        lineHeight: '$base',
+      },
+      md: {
+        lineHeight: '$md',
+      },
+      lg: {
+        lineHeight: '$lg',
+      },
+      xl: {
+        lineHeight: '$xl',
+      },
+      '2xl': {
+        lineHeight: '$2xl',
+      },
+      '3xl': {
+        lineHeight: '$3xl',
+      },
+      '4xl': {
+        lineHeight: '$4xl',
+      },
+    },
     variant: {
       red: {
         color: '$red11',
@@ -166,6 +195,7 @@ export const Text = styled('span', {
     size: 'base',
     weight: 'normal',
     spacing: 'normal',
+    height: 'base',
     variant: 'gray',
   },
 });

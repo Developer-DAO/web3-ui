@@ -1,4 +1,4 @@
-import { styled } from '../theme/baseTheme';
+import { styled } from '../theme/stitches.config';
 
 export const Container = styled('div', {
   // Reset

@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { Text } from '@web3-ui/components';
 
 export default function Home() {
   return (
@@ -9,7 +12,9 @@ export default function Home() {
       </Head>
       <main>
         <div className={`section`}>
-          <h2 className={`section-title`}>Resources</h2>
+          <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+            Resources
+          </Text>
           <div className={`item`}>
             <div style={{ padding: '1em 0em' }}>
               <a
@@ -84,7 +89,9 @@ export default function Home() {
           </div>
         </div>
         <div className={`section`}>
-          <h2 className={`section-title`}>Inspiration</h2>
+          <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+            Inspiration
+          </Text>
           <div className={`item`}>
             <div style={{ padding: '1em 0em' }}>
               <a

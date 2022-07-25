@@ -5,11 +5,13 @@ import { Text, Container, Box } from '@web3-ui/components';
 export const BorderRadius = () => {
   return (
     <div className={`section`}>
-      <h2 className={`section-title`}>borderRadius</h2>
+      <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+        borderRadius
+      </Text>
       <div className={`item`}>
         <h3 className={`item-title`}></h3>
         <Container size="3">
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: sm (0.125rem)
           </Text>
           <Box
@@ -25,7 +27,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: DEFAULT (0.25rem)
           </Text>
           <Box
@@ -41,7 +43,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: md (0.375rem)
           </Text>
           <Box
@@ -57,7 +59,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: lg (0.5rem)
           </Text>
           <Box
@@ -73,7 +75,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: xl (0.75rem)
           </Text>
           <Box
@@ -89,7 +91,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: '2xl' (1rem)
           </Text>
           <Box
@@ -105,7 +107,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: '3xl' (1.5rem)
           </Text>
           <Box
@@ -121,7 +123,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: full (50%)
           </Text>
           <Box
@@ -137,7 +139,7 @@ export const BorderRadius = () => {
               backgroundColor: 'gray',
             }}
           />
-          <Text size={`xl`} as={`p`} css={{ lineHeight: '1.5em' }}>
+          <Text size={`xl`} as={`p`}>
             borderRadius: pill (9999px)
           </Text>
           <Box
