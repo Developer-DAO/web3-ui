@@ -1,6 +1,9 @@
 .DS_STORE
 packages/**/LICENSE
 
+# IDE
+.idea/
+
 node_modules
 .rpt2_cache
 .cache
