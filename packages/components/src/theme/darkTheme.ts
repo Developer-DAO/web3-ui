@@ -1,4 +1,4 @@
-import { createTheme } from './baseTheme';
+import { createTheme } from './stitches.config';
 
 import {
   grayDark,

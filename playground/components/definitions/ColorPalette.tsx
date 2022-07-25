@@ -4,8 +4,10 @@ import { Box, Text, Grid, Container } from '@web3-ui/components';
 
 export const ColorPalette = () => {
   return (
-    <div className={`section`}>
-      <h2 className={`section-title`}>Colors</h2>
+    <div className={`section darkTheme`}>
+      <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+        Colors
+      </Text>
       <div className={`item`}>
         <h3 className={`item-title`}></h3>
         <Container size="3">
@@ -18,40 +20,40 @@ export const ColorPalette = () => {
           >
             <Box></Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>1</Text>
+              <Text>1</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>2</Text>
+              <Text>2</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>3</Text>
+              <Text>3</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>4</Text>
+              <Text>4</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>5</Text>
+              <Text>5</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>6</Text>
+              <Text>6</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>7</Text>
+              <Text>7</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>8</Text>
+              <Text>8</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>9</Text>
+              <Text>9</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>10</Text>
+              <Text>10</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>11</Text>
+              <Text>11</Text>
             </Box>
             <Box css={{ ta: 'center', pb: '$2' }}>
-              <Text css={{ fontSize: '$2', color: '$slate11' }}>12</Text>
+              <Text>12</Text>
             </Box>
             <Box>
               <Text css={{ fontSize: '$base', fontWeight: 600 }}>Gray</Text>

@@ -1,15 +1,24 @@
 import type { NextPage } from 'next';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Address } from '@web3-ui/components';
+import { Text, Address } from '@web3-ui/components';
 
 const Web3ComponentsPage: NextPage = () => {
   return (
     <main>
       <div className={`section`}>
-        <h2 className={`section-title`}>Components</h2>
+        <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
+          Components
+        </Text>
         <div className={`item`}>
-          <h3 className={`item-title`}>Address</h3>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            Address
+          </Text>
           <Address
             value="0x0000000000000000000000000000000000000000"
             copiable

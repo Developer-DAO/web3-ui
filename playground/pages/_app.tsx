@@ -2,6 +2,9 @@ import * as React from 'react';
 import type { AppProps } from 'next/app';
 import './global.css';
 import { Header } from '../components';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { Box } from '@web3-ui/components';
 
 import { WagmiConfig, createClient, configureChains, chain } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
@@ -20,8 +23,10 @@ const wagmiClient = createClient({
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <WagmiConfig client={wagmiClient}>
-      <Header />
-      <Component {...pageProps} />
+      <Box css={{ backgroundColor: '$loContrast' }}>
+        <Header />
+        <Component {...pageProps} />
+      </Box>
     </WagmiConfig>
   );
 };
