@@ -45,12 +45,12 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
       '1': {
         width: '$3',
         height: '$3',
-        borderRadius: '$1',
+        borderRadius: '$DEFAULT',
       },
       '2': {
         width: '$5',
         height: '$5',
-        borderRadius: '$2',
+        borderRadius: '$DEFAULT',
       },
     },
   },
