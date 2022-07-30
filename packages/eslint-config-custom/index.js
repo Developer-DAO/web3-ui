@@ -6,7 +6,7 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@next/eslint-plugin-next',
+    'next/core-web-vitals',
   ],
   env: {
     es6: true,

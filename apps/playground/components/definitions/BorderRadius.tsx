@@ -10,7 +10,7 @@ export const BorderRadius = () => {
         <h3 className={`item-title`}></h3>
         <Container size="3">
           <Text size={`xl`} as={`p`}>
-            borderRadius: $sm (0.125rem)
+            {`borderRadius: $sm (0.125rem)`}
           </Text>
           <Box
             css={{
@@ -25,7 +25,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $DEFAULT (0.25rem)
+            {` borderRadius: $DEFAULT (0.25rem)`}
           </Text>
           <Box
             css={{
@@ -40,7 +40,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $md (0.375rem)
+            {` borderRadius: $md (0.375rem)`}
           </Text>
           <Box
             css={{
@@ -55,7 +55,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $lg (0.5rem)
+            {`borderRadius: $lg (0.5rem)`}
           </Text>
           <Box
             css={{
@@ -70,7 +70,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $xl (0.75rem)
+            {`borderRadius: $xl (0.75rem)`}
           </Text>
           <Box
             css={{
@@ -85,7 +85,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $'2xl' (1rem)
+            {`borderRadius: $'2xl' (1rem)`}
           </Text>
           <Box
             css={{
@@ -100,7 +100,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $'3xl' (1.5rem)
+            {`borderRadius: $'3xl' (1.5rem)`}
           </Text>
           <Box
             css={{
@@ -115,7 +115,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $full (50%)
+            {`borderRadius: $full (50%)`}
           </Text>
           <Box
             css={{
@@ -130,7 +130,7 @@ export const BorderRadius = () => {
             }}
           />
           <Text size={`xl`} as={`p`}>
-            borderRadius: $pill (9999px)
+            {`borderRadius: $pill (9999px)`}
           </Text>
           <Box
             css={{
