@@ -1,5 +1,6 @@
 import { ethers } from 'ethers';
-import { useContext, useEffect, useState } from 'react';
+// import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 // import { Web3Context } from '..';
 // import { ERC20ABI } from '../constants';
 import { BigNumber } from '@ethersproject/bignumber';

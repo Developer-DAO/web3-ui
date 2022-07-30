@@ -28,12 +28,16 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE"
+    "prepublishOnly": "cp ../../LICENSE ./LICENSE",
+    "clean": "rm -rf node_modules",
+    "clean-windows": "rd /s /q node_modules"
   },
   "main": "dist/web3-ui-core.cjs.js",
   "module": "dist/web3-ui-core.esm.js",
   "types": "dist/web3-ui-core.cjs.d.ts",
   "dependencies": {},
   "peerDependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "tsconfig": "*"
+  }
 }

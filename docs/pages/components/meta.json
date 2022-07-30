@@ -1,9 +1,0 @@
-{
-  "address-input": "<AddressInput />",
-  "address": "<Address />",
-  "ether-input": "<EtherInput />",
-  "multi-address-input": "<MultiAddressInput />",
-  "nft-gallery": "<NFTGallery />",
-  "nft": "<NFT />",
-  "token-balance": "<TokenBalance />"
-}

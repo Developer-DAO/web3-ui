@@ -30,7 +30,9 @@
     "test": "jest --maxWorkers=2",
     "test:watch": "yarn test --watch",
     "test:coverage": "jest --coverage --colors --maxWorkers=2",
-    "prepublishOnly": "cp ../../LICENSE ./LICENSE"
+    "prepublishOnly": "cp ../../LICENSE ./LICENSE",
+    "clean": "rm -rf node_modules",
+    "clean-windows": "rd /s /q node_modules"
   },
   "main": "dist/web3-ui-hooks.cjs.js",
   "module": "dist/web3-ui-hooks.esm.js",

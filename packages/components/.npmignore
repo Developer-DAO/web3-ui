@@ -1,0 +1,11 @@
+node_modules/
+.turbo/
+theme/
+utils/
+coverage/
+
+src/
+
+.eslintrc.js
+jest.config.js
+tsconfig.json
