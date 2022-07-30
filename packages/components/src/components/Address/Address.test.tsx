@@ -1,7 +1,5 @@
-import React from 'react';
-
 // use wagmi wrapper to provide wagmi client
-import { render } from '../../../../../utils/test-utils';
+import { render } from '../../../utils/test-utils';
 
 import { Address } from './';
 

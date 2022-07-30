@@ -16,14 +16,18 @@ npm-debug.log
 yarn-error.log
 
 # storybook
-.out
-
-/coverage
-
-dist
-/storybook-static
-build-storybook.log
-
+apps/storybook/storybook-static/
+apps/storybook/build-storybook.log
 
 #example
 .next
+
+# turbo
+.turbo
+
+# jest test coverage
+coverage-*.json
+packages/components/coverage
+
+# dist
+dist/
