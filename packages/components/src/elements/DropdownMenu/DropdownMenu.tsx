@@ -39,6 +39,7 @@ const DropdownMenuContent = React.forwardRef<
     <StyledContent {...props} ref={forwardedRef} />
   </DropdownMenuPrimitive.Portal>
 ));
+DropdownMenuContent.displayName = 'DropdownMenuContent';
 
 const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
 const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {});
@@ -73,6 +74,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     {children}
   </StyledDropdownMenuCheckboxItem>
 ));
+DropdownMenuCheckboxItem.displayName = 'DropdownMenuCheckboxItem';
 
 const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {});
 const StyledDropdownMenuRadioItem = styled(
@@ -116,6 +118,7 @@ const DropdownMenuRadioItem = React.forwardRef<
     {children}
   </StyledDropdownMenuRadioItem>
 ));
+DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem';
 
 export {
   DropdownMenu,

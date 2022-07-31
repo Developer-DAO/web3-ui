@@ -14,6 +14,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
+  Sheet,
+  SheetTrigger,
+  SheetContent,
 } from '@web3-ui/components/src';
 
 const Web3ComponentsPage: NextPage = () => {
@@ -23,6 +26,8 @@ const Web3ComponentsPage: NextPage = () => {
         <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
           Elements
         </Text>
+
+        {/* Button Element */}
         <div className={`item`}>
           <Text
             size={`lg`}
@@ -34,6 +39,8 @@ const Web3ComponentsPage: NextPage = () => {
           </Text>
           <Button>testing</Button>
         </div>
+
+        {/* Badge Element */}
         <div className={`item`}>
           <Text
             size={`lg`}
@@ -46,6 +53,7 @@ const Web3ComponentsPage: NextPage = () => {
           <Badge variant="lime">testing</Badge>
         </div>
 
+        {/* Checkbox Element */}
         <div className={`item`}>
           <Text
             size={`lg`}
@@ -58,6 +66,7 @@ const Web3ComponentsPage: NextPage = () => {
           <Checkbox size="2" defaultChecked />
         </div>
 
+        {/* Dropdown Element */}
         <div className={`item`}>
           <Text
             size={`lg`}
@@ -98,6 +107,30 @@ const Web3ComponentsPage: NextPage = () => {
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
+        </div>
+
+        {/* Sheet Element */}
+        <div className={`item`}>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            Sheet
+          </Text>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button>Open Left</Button>
+            </SheetTrigger>
+            <SheetContent side="left"></SheetContent>
+          </Sheet>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button>Open Right</Button>
+            </SheetTrigger>
+            <SheetContent side="right"></SheetContent>
+          </Sheet>
         </div>
       </div>
     </main>
