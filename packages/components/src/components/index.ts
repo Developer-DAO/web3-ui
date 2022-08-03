@@ -6,5 +6,5 @@ export * from './Address';
 // export * from './NFT';
 // export * from './AddressInput';
 // export * from './EtherInput';
-// export * from './TokenBalance';
+export * from './TokenBalance';
 // export * from './MultiAddressInput';
