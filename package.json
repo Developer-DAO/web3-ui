@@ -19,7 +19,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "build": "turbo run build",
-    "build:docs": "yarn workspace docs build",
+    "build:docs": "turbo run build --filter=docs...",
     "build-storybook": "yarn workspace storybook build-storybook",
     "clean": "turbo run clean",
     "clean-windows": "turbo run clean-windows",
