@@ -17,6 +17,7 @@ import {
   Sheet,
   SheetTrigger,
   SheetContent,
+  Avatar,
 } from '@web3-ui/components/src';
 
 const Web3ComponentsPage: NextPage = () => {
@@ -26,6 +27,23 @@ const Web3ComponentsPage: NextPage = () => {
         <Text size={`xl`} as={`h3`} weight={'bold'} css={{ padding: '$2' }}>
           Elements
         </Text>
+
+        {/* Avatar Element */}
+        <div className={`item`}>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            Avatar
+          </Text>
+          <Avatar
+            size={'1'}
+            shape={'circle'}
+            src={'https://www.developerdao.com/D_D_logo-light.svg'}
+          />
+        </div>
 
         {/* Button Element */}
         <div className={`item`}>
@@ -37,7 +55,7 @@ const Web3ComponentsPage: NextPage = () => {
           >
             Button
           </Text>
-          <Button>testing</Button>
+          <Button size={'md'}>testing</Button>
         </div>
 
         {/* Badge Element */}
