@@ -1,25 +1,21 @@
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
-export type { VariantProps } from '@stitches/react';
+import { baseTheme } from './baseTheme';
+
+export const stitches = createStitches({
+  ...baseTheme,
+});
+
+export const createTheme = stitches.createTheme;
+export const styled = stitches.styled;
+export const css = stitches.css;
+export const globalCss = stitches.globalCss;
+export const keyframes = stitches.keyframes;
+export const getCssText = stitches.getCssText;
+export const theme = stitches.theme;
+export const config = stitches.config;
+
+export type VariantProps<T> = Stitches.VariantProps<T>;
 export type CSS = Stitches.CSS<typeof config>;
 
-import { baseTheme } from './baseTheme';
-// import { defaultColors } from './defaultColors';
-// import { darkTheme } from './darkTheme';
-
-export const {
-  styled,
-  css,
-  theme,
-  createTheme,
-  getCssText,
-  globalCss,
-  keyframes,
-  config,
-  reset,
-} = createStitches({
-  ...baseTheme,
-  theme: {
-    ...baseTheme.theme,
-  },
-});
+export type StitchesTheme = typeof theme;

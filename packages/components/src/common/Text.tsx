@@ -132,56 +132,53 @@ export const Text = styled('span', {
       },
     },
     variant: {
-      red: {
-        color: '$red11',
+      primary: {
+        color: '$primary700',
       },
-      crimson: {
-        color: '$crimson11',
+      secondary: {
+        color: '$secondary700',
       },
-      pink: {
-        color: '$pink11',
+      success: {
+        color: '$success700',
       },
-      purple: {
-        color: '$purple11',
+      danger: {
+        color: '$danger700',
       },
-      violet: {
-        color: '$violet11',
+      warning: {
+        color: '$warning700',
       },
-      indigo: {
-        color: '$indigo11',
+      info: {
+        color: '$info700',
+      },
+      neutral: {
+        color: '$neutral700',
       },
       blue: {
-        color: '$blue11',
+        color: '$blue700',
       },
       cyan: {
-        color: '$cyan11',
-      },
-      teal: {
-        color: '$teal11',
-      },
-      green: {
-        color: '$green11',
-      },
-      lime: {
-        color: '$lime11',
-      },
-      yellow: {
-        color: '$yellow11',
-      },
-      orange: {
-        color: '$orange11',
-      },
-      gold: {
-        color: '$gold11',
-      },
-      bronze: {
-        color: '$bronze11',
+        color: '$cyan700',
       },
       gray: {
-        color: '$slate11',
+        color: '$gray700',
       },
-      contrast: {
-        color: '$hiContrast',
+      green: {
+        color: '$green700',
+      },
+      orange: {
+        color: '$orange700',
+      },
+      pink: {
+        color: '$pink700',
+      },
+      purple: {
+        color: '$purple700',
+      },
+      red: {
+        color: '$red700',
+      },
+      yellow: {
+        color: '$yellow700',
       },
     },
     gradient: {
