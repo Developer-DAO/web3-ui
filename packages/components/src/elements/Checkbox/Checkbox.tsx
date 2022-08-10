@@ -26,30 +26,30 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   padding: '0',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  color: '$hiContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$slate7',
+  color: '$blue500',
+  boxShadow: 'inset 0 0 0 1px $colors$gray700',
   overflow: 'hidden',
   '@hover': {
     '&:hover': {
-      boxShadow: 'inset 0 0 0 1px $colors$slate8',
+      boxShadow: 'inset 0 0 0 1px $colors$gray800',
     },
   },
   '&:focus': {
     outline: 'none',
-    borderColor: '$red7',
-    boxShadow: 'inset 0 0 0 1px $colors$blue9, 0 0 0 1px $colors$blue9',
+    borderColor: '$gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$blue500, 0 0 0 1px $colors$blue500',
   },
 
   variants: {
     size: {
       '1': {
-        width: '$3',
-        height: '$3',
+        width: '$5',
+        height: '$5',
         borderRadius: '$DEFAULT',
       },
       '2': {
-        width: '$5',
-        height: '$5',
+        width: '$7',
+        height: '$7',
         borderRadius: '$DEFAULT',
       },
     },

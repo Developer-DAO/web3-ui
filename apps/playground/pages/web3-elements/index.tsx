@@ -68,7 +68,7 @@ const Web3ComponentsPage: NextPage = () => {
           >
             Badge
           </Text>
-          <Badge variant="lime">testing</Badge>
+          <Badge variant="blue">testing</Badge>
         </div>
 
         {/* Checkbox Element */}

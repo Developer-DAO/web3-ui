@@ -43,72 +43,69 @@ export const Badge = styled('span', {
 
   variants: {
     variant: {
-      red: {
-        color: '$red11',
-        backgroundColor: '$red3',
+      primary: {
+        color: '$primary700',
+        backgroundColor: '$primary100',
       },
-      crimson: {
-        color: '$crimson11',
-        backgroundColor: '$crimson3',
+      secondary: {
+        color: '$secondary700',
+        backgroundColor: '$secondary100',
       },
-      pink: {
-        color: '$pink11',
-        backgroundColor: '$pink3',
+      success: {
+        color: '$success700',
+        backgroundColor: '$success100',
       },
-      purple: {
-        color: '$purple11',
-        backgroundColor: '$purple3',
+      danger: {
+        color: '$danger700',
+        backgroundColor: '$danger100',
       },
-      violet: {
-        color: '$violet11',
-        backgroundColor: '$violet3',
+      warning: {
+        color: '$warning700',
+        backgroundColor: '$warning100',
       },
-      indigo: {
-        color: '$indigo11',
-        backgroundColor: '$indigo3',
+      info: {
+        color: '$info700',
+        backgroundColor: '$info100',
+      },
+      neutral: {
+        color: '$neutral700',
+        backgroundColor: '$neutral100',
       },
       blue: {
-        color: '$blue11',
-        backgroundColor: '$blue3',
+        color: '$blue700',
+        backgroundColor: '$blue100',
       },
       cyan: {
-        color: '$cyan11',
-        backgroundColor: '$cyan3',
-      },
-      teal: {
-        color: '$teal11',
-        backgroundColor: '$teal3',
-      },
-      green: {
-        color: '$green11',
-        backgroundColor: '$green3',
-      },
-      lime: {
-        color: '$lime11',
-        backgroundColor: '$lime3',
-      },
-      yellow: {
-        color: '$yellow11',
-        backgroundColor: '$yellow3',
-      },
-      orange: {
-        color: '$orange11',
-        backgroundColor: '$orange3',
-      },
-      gold: {
-        color: '$gold11',
-        backgroundColor: '$gold3',
-      },
-      bronze: {
-        color: '$bronze11',
-        backgroundColor: '$bronze3',
+        color: '$cyan700',
+        backgroundColor: '$cyan100',
       },
       gray: {
-        color: '$slate11',
-        backgroundColor: '$slate3',
+        color: '$gray700',
+        backgroundColor: '$gray100',
       },
-      contrast: {
-        color: '$hiContrast',
+      green: {
+        color: '$green700',
+        backgroundColor: '$green100',
+      },
+      orange: {
+        color: '$orange700',
+        backgroundColor: '$orange100',
+      },
+      pink: {
+        color: '$pink700',
+        backgroundColor: '$pink100',
+      },
+      purple: {
+        color: '$purple700',
+        backgroundColor: '$purple100',
+      },
+      red: {
+        color: '$red700',
+        backgroundColor: '$red100',
+      },
+      yellow: {
+        color: '$yellow700',
+        backgroundColor: '$yellow100',
       },
     },
   },

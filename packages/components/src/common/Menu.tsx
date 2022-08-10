@@ -16,7 +16,7 @@ export const baseItemCss = css({
   fontSize: '$1',
   fontVariantNumeric: 'tabular-nums',
   lineHeight: '1',
-  cursor: 'default',
+  cursor: 'pointer',
   userSelect: 'none',
   whiteSpace: 'nowrap',
   height: '$5',
@@ -29,17 +29,17 @@ export const itemCss = css(baseItemCss, {
 
   '&[data-highlighted]': {
     outline: 'none',
-    backgroundColor: '$blue9',
+    backgroundColor: '$blue500',
     color: 'white',
   },
 
   '&[data-disabled]': {
-    color: '$slate9',
+    color: '$gray800',
   },
 });
 
 export const labelCss = css(baseItemCss, {
-  color: '$slate11',
+  color: '$gray800',
 });
 
 export const menuCss = css({
@@ -51,7 +51,7 @@ export const menuCss = css({
 export const separatorCss = css({
   height: 1,
   my: '$1',
-  backgroundColor: '$slate6',
+  backgroundColor: '$gray500',
 });
 
 export const Menu = styled(MenuPrimitive.Root, menuCss);

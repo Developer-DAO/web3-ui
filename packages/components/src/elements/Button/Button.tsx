@@ -29,9 +29,9 @@ export const Button = styled('button', {
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {
-    backgroundColor: '$slate2',
-    boxShadow: 'inset 0 0 0 1px $colors$slate7',
-    color: '$slate8',
+    backgroundColor: '$gray200',
+    boxShadow: 'inset 0 0 0 1px $colors$gray300',
+    color: '$gray800',
     pointerEvents: 'none',
   },
 
@@ -62,24 +62,25 @@ export const Button = styled('button', {
     variant: {
       gray: {
         backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$slate7',
-        color: '$hiContrast',
+        boxShadow: 'inset 0 0 0 1px $colors$gray700',
+        color: '$gray800',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
+            boxShadow: 'inset 0 0 0 1px $colors$gray800',
           },
         },
         '&:active': {
-          backgroundColor: '$slate2',
-          boxShadow: 'inset 0 0 0 1px $colors$slate8',
+          backgroundColor: '$gray200',
+          boxShadow: 'inset 0 0 0 1px $colors$gray800',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
+          boxShadow:
+            'inset 0 0 0 1px $colors$gray800, 0 0 0 1px $colors$gray800',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            backgroundColor: '$slate4',
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
+            backgroundColor: '$gray4',
+            boxShadow: 'inset 0 0 0 1px $colors$gray800',
           },
       },
     },

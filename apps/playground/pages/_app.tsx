@@ -21,7 +21,7 @@ const wagmiClient = createClient({
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <WagmiConfig client={wagmiClient}>
-      <Box css={{ backgroundColor: '$loContrast' }}>
+      <Box css={{ backgroundColor: '$background' }}>
         <Header />
         <Component {...pageProps} />
       </Box>

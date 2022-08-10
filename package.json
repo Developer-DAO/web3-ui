@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --no-cache --filter=playground --no-deps",
+    "dev": "turbo run dev --no-cache --filter=playground... --no-deps",
     "dev:docs": "turbo run dev --no-cache --filter=docs... --no-deps",
     "storybook": "turbo run sb --filter=storybook... --no-deps",
     "test": "yarn workspace @web3-ui/components test",

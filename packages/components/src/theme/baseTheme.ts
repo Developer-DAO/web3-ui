@@ -2,6 +2,7 @@ import type * as Stitches from '@stitches/react';
 import { defaultThemeMap as defaultStitchesThemeMap } from '@stitches/react';
 
 import { defaultColors } from './defaultColors';
+import { brandColors } from './colors';
 
 const spacing = {
   0: '0px',
@@ -43,6 +44,7 @@ const spacing = {
 const defaultTokens = {
   colors: {
     ...defaultColors,
+    ...brandColors,
   },
   fonts: {
     untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
