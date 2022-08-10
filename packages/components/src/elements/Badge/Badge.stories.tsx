@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge } from './';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 

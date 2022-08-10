@@ -18,6 +18,7 @@ import {
   SheetTrigger,
   SheetContent,
   Avatar,
+  TextField,
 } from '@web3-ui/components/src';
 
 const Web3ComponentsPage: NextPage = () => {
@@ -149,6 +150,19 @@ const Web3ComponentsPage: NextPage = () => {
             </SheetTrigger>
             <SheetContent side="right"></SheetContent>
           </Sheet>
+        </div>
+
+        {/* TextField Element */}
+        <div className={`item`}>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            TextField
+          </Text>
+          <TextField placeholder="placeholder" />
         </div>
       </div>
     </main>
