@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@web3-ui/components": "*",
+    "@web3-ui/hooks": "*",
     "next": "12.2.0",
     "react": "18.1.0",
     "react-code-blocks": "^0.0.9-0",

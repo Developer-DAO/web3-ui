@@ -8,6 +8,7 @@ node_modules
 .rpt2_cache
 .cache
 .env*
+.env
 
 /coverage
 

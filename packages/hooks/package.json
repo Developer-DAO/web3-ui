@@ -25,6 +25,8 @@
     "dist"
   ],
   "scripts": {
+    "build": "tsup ./src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup ./src/index.ts --format esm,cjs --watch --dts --external react",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "test": "jest --maxWorkers=2",
@@ -34,11 +36,11 @@
     "clean": "rm -rf node_modules",
     "clean-windows": "rd /s /q node_modules"
   },
-  "main": "dist/web3-ui-hooks.cjs.js",
-  "module": "dist/web3-ui-hooks.esm.js",
-  "types": "dist/web3-ui-hooks.cjs.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.16.7",
+    "ankr-react": "^0.2.1",
     "wagmi": "^0.5.5"
   },
   "peerDependencies": {
@@ -48,6 +50,13 @@
     "wagmi": "0.5.x"
   },
   "devDependencies": {
-    "react": "^18.1.0"
+    "@types/react": "18.0.15",
+    "react": "^18.1.0",
+    "tsconfig": "*",
+    "tsup": "^6.2.0",
+    "typescript": "^4.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

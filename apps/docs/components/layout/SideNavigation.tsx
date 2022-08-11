@@ -30,6 +30,32 @@ const themeNavigation = [
   },
 ];
 
+const componentNavigation = [
+  {
+    title: 'Address',
+    href: '/components/address-component',
+  },
+  {
+    title: 'NFT',
+    href: '/components/nft-component',
+  },
+  {
+    title: 'TokenBalance',
+    href: '/components/token-component',
+  },
+];
+
+const hooksNavigation = [
+  {
+    title: 'Ankr Hooks',
+    href: '/hooks/ankr-hooks',
+  },
+  {
+    title: 'Alchemy Hooks',
+    href: '/hooks/alchemy-hooks',
+  },
+];
+
 export const SideNavigation = () => {
   const router = useRouter();
 
@@ -81,7 +107,7 @@ export const SideNavigation = () => {
             <>
               <dt className="text-lg">
                 <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                  <span className="font-medium text-gray-900">Theme</span>
+                  <span className="font-bold text-sm text-gray-900">Theme</span>
                   <span className="ml-6 h-7 flex items-center">
                     <ChevronDownIcon
                       className={classNames(
@@ -101,7 +127,83 @@ export const SideNavigation = () => {
                         router.pathname === nav.href
                           ? 'border-soilGreen-600 left-active text-white bg-purple-800/80 cursor-default'
                           : 'border-black/20 text-gray-700 hover:text-white hover:bg-purple-800/60',
-                        'block w-full rounded-lg p-2 my-1'
+                        'block w-full rounded-lg py-1 px-2 my-1'
+                      )}
+                    >
+                      <span className="text-sm font-bold">{nav.title}</span>
+                    </a>
+                  </Link>
+                ))}
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+
+        <Disclosure as="div" className="pt-6">
+          {({ open }) => (
+            <>
+              <dt className="text-lg">
+                <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
+                  <span className="font-bold text-sm text-gray-900">
+                    Components
+                  </span>
+                  <span className="ml-6 h-7 flex items-center">
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? '-rotate-180' : 'rotate-0',
+                        'h-6 w-6 transform'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Disclosure.Button>
+              </dt>
+              <Disclosure.Panel as="dd" className="mt-2">
+                {componentNavigation.map((nav, index) => (
+                  <Link href={nav.href} key={index}>
+                    <a
+                      className={classNames(
+                        router.pathname === nav.href
+                          ? 'border-soilGreen-600 left-active text-white bg-purple-800/80 cursor-default'
+                          : 'border-black/20 text-gray-700 hover:text-white hover:bg-purple-800/60',
+                        'block w-full rounded-lg py-1 px-2 my-1'
+                      )}
+                    >
+                      <span className="text-sm font-bold">{nav.title}</span>
+                    </a>
+                  </Link>
+                ))}
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+
+        <Disclosure as="div" className="pt-6">
+          {({ open }) => (
+            <>
+              <dt className="text-lg">
+                <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
+                  <span className="font-bold text-sm text-gray-900">Hooks</span>
+                  <span className="ml-6 h-7 flex items-center">
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? '-rotate-180' : 'rotate-0',
+                        'h-6 w-6 transform'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Disclosure.Button>
+              </dt>
+              <Disclosure.Panel as="dd" className="mt-2">
+                {hooksNavigation.map((nav, index) => (
+                  <Link href={nav.href} key={index}>
+                    <a
+                      className={classNames(
+                        router.pathname === nav.href
+                          ? 'border-soilGreen-600 left-active text-white bg-purple-800/80 cursor-default'
+                          : 'border-black/20 text-gray-700 hover:text-white hover:bg-purple-800/60',
+                        'block w-full rounded-lg py-1 px-2 my-1'
                       )}
                     >
                       <span className="text-sm font-bold">{nav.title}</span>

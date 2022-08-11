@@ -5,6 +5,8 @@ import '../styles/globals.css';
 import { WagmiConfig, createClient, configureChains, chain } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 
+import { Web3uiProvider } from '@web3-ui/components';
+
 import { AppLayout } from '../components/layout/AppLayout';
 
 const { provider, webSocketProvider } = configureChains(
@@ -21,9 +23,11 @@ const wagmiClient = createClient({
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <WagmiConfig client={wagmiClient}>
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
+      <Web3uiProvider>
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </Web3uiProvider>
     </WagmiConfig>
   );
 };

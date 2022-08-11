@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Provider as AnkrProvider } from 'ankr-react';
+// TODO: HooksProvider is not working on build for storybook or docs on vercel
+// import { HooksProvider } from '@web3-ui/hooks';
 import { CSS, getCssText, createTheme } from '../../theme/stitches.config';
 
 export interface IWeb3uiProviderProps {
@@ -44,20 +47,23 @@ export const Web3uiProvider = ({
 
   // const testScript = `<img src=??? onerror="alert('test script here')">`;
 
+  // console.log(HooksProvider);
   const selector = createThemeRootSelector(id);
 
   if (!isMounted) return null;
 
-  // TODO dangerous set innerHTML is set for ssr.  neet to test this. https://stitches.dev/docs/server-side-rendering
+  // TODO dangerous set innerHTML is set for ssr.  need to test this. https://stitches.dev/docs/server-side-rendering
   return (
-    <div {...createThemeRootProps(id)} className={currentTheme}>
-      <style
-        id="stitches"
-        dangerouslySetInnerHTML={{
-          __html: [`${selector}${getCssText()}`].join(),
-        }}
-      />
-      {children}
-    </div>
+    <AnkrProvider>
+      <div {...createThemeRootProps(id)} className={currentTheme}>
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{
+            __html: [`${selector}${getCssText()}`].join(),
+          }}
+        />
+        {children}
+      </div>
+    </AnkrProvider>
   );
 };
