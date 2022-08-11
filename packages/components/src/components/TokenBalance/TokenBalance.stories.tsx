@@ -1,4 +1,3 @@
-import React from 'react';
 import { chain } from 'wagmi';
 
 import { TokenBalance } from './TokenBalance';

@@ -1,28 +1,16 @@
 // import React, { useCallback, useEffect, useRef } from 'react';
 import React, { useEffect } from 'react';
-
-// import {
-//   Box,
-//   Heading,
-//   Image,
-//   Flex,
-//   Tag,
-//   Text,
-//   VStack,
-//   Skeleton,
-//   Alert,
-//   AlertIcon,
-// } from '@chakra-ui/react';
+// import { useNFTsByOwner } from '@web3-ui/hooks';
 
 export type NFTProps = {
   /**
    * The address of the NFT contract.
    */
-  contractAddress: string;
+  contractAddress?: string;
   /**
    * The id of the NFT.
    */
-  tokenId: string;
+  tokenId?: string;
   /**
    * The size of the NFT card.
    */
@@ -60,50 +48,14 @@ NFTProps) => {
     setErrorMessage('');
   }, []);
 
-  // const fetchNFTData = useCallback(async () => {
-  //   const apiSubDomain = isTestnet ? `rinkeby-api` : `api`;
-
-  //   try {
-  //     const res = await fetch(
-  //       `https://${apiSubDomain}.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`
-  //     );
-  //     if (isTestnet)
-  //       console.log(
-  //         `⚠️ OpenSea currently only supports Rinkedby with testnets.`
-  //       );
-  //     if (!res.ok) {
-  //       throw Error(
-  //         `OpenSea request failed with status: ${res.status}. Make sure you are on mainnet.`
-  //       );
-  //     }
-  //     const data = await res.json();
-  //     if (_isMounted.current) {
-  //       setNftData({
-  //         tokenId: data.token_id,
-  //         imageUrl: data.image_url,
-  //         name: data.name,
-  //         assetContractName: data.asset_contract.name,
-  //         assetContractSymbol: data.asset_contract.symbol,
-  //         animationUrl: data.animation_url,
-  //       });
-  //     }
-  //   } catch (error) {
-  //     if (error instanceof Error) {
-  //       setErrorMessage(error.message);
-  //     } else {
-  //       setErrorMessage('An unknown error occurred');
-  //     }
-  //   }
-  // }, [contractAddress, tokenId]);
-
-  //   useEffect(() => {
-  //     console.log(contractAddress);
-  //     _isMounted.current = true;
-  //     fetchNFTData();
-  //     return () => {
-  //       _isMounted.current = false;
-  //     };
-  //   }, [contractAddress, tokenId]);
+  // working ankr api hook for nfts by owner
+  // const { data, error, isLoading } = useNFTsByOwner({
+  //   walletAddress: '0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5',
+  //   blockchain: ['eth', 'polygon']
+  // });
+  // console.log('loading', isLoading);
+  // console.log('error', error);
+  // console.log(data);
 
   return <NFTCard data={nftData} errorMessage={errorMessage} size={size} />;
 };

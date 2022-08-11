@@ -1,4 +1,3 @@
-import React from 'react';
 import { Address } from './';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { WagmiDecorator } from '../../../../../apps/storybook/.storybook/decorator';

@@ -8,6 +8,7 @@ import {
   Text,
   Address,
   TokenBalance,
+  NFT,
 } from '@web3-ui/components/src';
 
 const UNI_TOKEN_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
@@ -95,6 +96,17 @@ const Web3ComponentsPage: NextPage = () => {
               <TokenBalance />
             </Flex>
           )}
+        </div>
+        <div className={`item`}>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            NFT
+          </Text>
+          <NFT />
         </div>
       </div>
     </main>
