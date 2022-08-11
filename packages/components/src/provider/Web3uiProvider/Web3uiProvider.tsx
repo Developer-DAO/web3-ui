@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { Provider as AnkrProvider } from 'ankr-react';
-import { HooksProvider } from '@web3-ui/hooks/src';
+import { HooksProvider } from '@web3-ui/hooks';
 import { CSS, getCssText, createTheme } from '../../theme/stitches.config';
 
 export interface IWeb3uiProviderProps {
