@@ -12,7 +12,9 @@ import {
 const GettingStartedPage: NextPage = () => {
   return (
     <div>
-      <h1>Getting Started</h1>
+      <h1 className="my-2 text-center font-bold text-2xl text-gray-700 uppercase">
+        Getting Started
+      </h1>
       <h1>Install Package</h1>
       <CopyBlock
         text={install['jsx']}
