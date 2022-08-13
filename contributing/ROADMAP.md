@@ -44,9 +44,9 @@ Library will include:
 
    - basic figma files of elements and components
 
-4. Basic theme structure
+~~4. Basic theme structure~~
 
-   - a wrapper for end user w/ props to change theme state
+~~- a wrapper for end user w/ props to change theme state~~
 
 5. Apply design
 
