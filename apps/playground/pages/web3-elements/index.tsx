@@ -41,7 +41,7 @@ const Web3ComponentsPage: NextPage = () => {
             Avatar
           </Text>
           <Avatar
-            size={'1'}
+            size={'md'}
             shape={'circle'}
             src={'https://www.developerdao.com/D_D_logo-light.svg'}
           />

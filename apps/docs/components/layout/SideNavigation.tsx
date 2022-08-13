@@ -79,7 +79,7 @@ export const SideNavigation = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="overflow-y-scroll h-9/10 pb-16">
       <p className="text-base font-bold py-2 lg:pb-6 text-gray-700">
         Documentation
       </p>
