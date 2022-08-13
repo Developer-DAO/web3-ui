@@ -56,6 +56,25 @@ const hooksNavigation = [
   },
 ];
 
+const previousVersionNavigation = [
+  {
+    title: 'web3-ui previous version',
+    href: '/previous-version/web3-ui-previous',
+  },
+  {
+    title: 'web3-ui/core 0.8.1',
+    href: '/previous-version/web3-ui-core',
+  },
+  {
+    title: 'web3-ui/components 0.12.0',
+    href: '/previous-version/web3-ui-components',
+  },
+  {
+    title: 'web3-ui/hooks 0.13.0',
+    href: '/previous-version/web3-ui-hooks',
+  },
+];
+
 export const SideNavigation = () => {
   const router = useRouter();
 
@@ -197,6 +216,45 @@ export const SideNavigation = () => {
               </dt>
               <Disclosure.Panel as="dd" className="mt-2">
                 {hooksNavigation.map((nav, index) => (
+                  <Link href={nav.href} key={index}>
+                    <a
+                      className={classNames(
+                        router.pathname === nav.href
+                          ? 'border-soilGreen-600 left-active text-white bg-purple-800/80 cursor-default'
+                          : 'border-black/20 text-gray-700 hover:text-white hover:bg-purple-800/60',
+                        'block w-full rounded-lg py-1 px-2 my-1'
+                      )}
+                    >
+                      <span className="text-sm font-bold">{nav.title}</span>
+                    </a>
+                  </Link>
+                ))}
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+
+        <Disclosure as="div" className="pt-6">
+          {({ open }) => (
+            <>
+              <dt className="text-lg">
+                <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
+                  <span className="font-bold text-sm text-gray-900">
+                    Previous Version
+                  </span>
+                  <span className="ml-6 h-7 flex items-center">
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? '-rotate-180' : 'rotate-0',
+                        'h-6 w-6 transform'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Disclosure.Button>
+              </dt>
+              <Disclosure.Panel as="dd" className="mt-2">
+                {previousVersionNavigation.map((nav, index) => (
                   <Link href={nav.href} key={index}>
                     <a
                       className={classNames(
