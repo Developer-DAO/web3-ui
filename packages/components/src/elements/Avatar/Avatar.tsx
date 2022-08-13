@@ -35,29 +35,29 @@ export const StyledAvatar = styled(AvatarPrimitive.Root, {
 
   variants: {
     size: {
-      '1': {
-        width: '$web3ui$space$3',
-        height: '$web3ui$space$3',
-      },
-      '2': {
-        width: '$web3ui$space$5',
-        height: '$web3ui$space$5',
-      },
-      '3': {
+      xs: {
         width: '$web3ui$space$6',
         height: '$web3ui$space$6',
       },
-      '4': {
-        width: '$web3ui$space$7',
-        height: '$web3ui$space$7',
+      sm: {
+        width: '$web3ui$space$10',
+        height: '$web3ui$space$10',
       },
-      '5': {
-        width: '$web3ui$space$8',
-        height: '$web3ui$space$8',
+      md: {
+        width: '$web3ui$space$14',
+        height: '$web3ui$space$14',
       },
-      '6': {
-        width: '$web3ui$space$9',
-        height: '$web3ui$space$9',
+      lg: {
+        width: '$web3ui$space$20',
+        height: '$web3ui$space$20',
+      },
+      xl: {
+        width: '$web3ui$space$24',
+        height: '$web3ui$space$24',
+      },
+      '2xl': {
+        width: '$web3ui$space$28',
+        height: '$web3ui$space$28',
       },
     },
     shape: {

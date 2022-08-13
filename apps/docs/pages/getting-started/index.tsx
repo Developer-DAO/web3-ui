@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
-
 import { CopyBlock, dracula } from 'react-code-blocks';
 
 import {
   install,
   includePackage,
   provider,
-  theme,
 } from '../../components/snippets/getting-started';
 
 const GettingStartedPage: NextPage = () => {
@@ -40,17 +38,6 @@ const GettingStartedPage: NextPage = () => {
 
       <CopyBlock
         text={provider['jsx']}
-        language={'jsx'}
-        showLineNumbers={false}
-        theme={dracula}
-        wrapLines={true}
-        codeBlock
-      />
-
-      <h1>Customize Theme</h1>
-
-      <CopyBlock
-        text={theme['jsx']}
         language={'jsx'}
         showLineNumbers={false}
         theme={dracula}

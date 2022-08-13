@@ -7,8 +7,8 @@ export default {
   argTypes: {
     size: {
       type: 'string',
-      defaultValue: '4',
-      options: ['1', '2', '3', '4', '5', '6'],
+      defaultValue: 'md',
+      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
       control: { type: 'select' },
     },
     shape: {

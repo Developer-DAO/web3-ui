@@ -21,7 +21,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
         <div className="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal mt-8">
           <SideNavigation />
         </div>
-        <div className="w-full overflow-y-scroll h-9/10 lg:w-4/5 mt-6 lg:mt-0 text-gray-900">
+        <div className="w-full overflow-y-scroll h-9/10 lg:w-4/5 mt-6 px-4 lg:mt-0 text-gray-900">
           {children}
         </div>
       </div>
