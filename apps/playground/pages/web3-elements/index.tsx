@@ -19,6 +19,7 @@ import {
   SheetContent,
   Avatar,
   TextField,
+  Card,
 } from '@web3-ui/components/src';
 
 const Web3ComponentsPage: NextPage = () => {
@@ -163,6 +164,19 @@ const Web3ComponentsPage: NextPage = () => {
             TextField
           </Text>
           <TextField placeholder="placeholder" />
+        </div>
+
+        {/* Card Element */}
+        <div className={`item`}>
+          <Text
+            size={`lg`}
+            as={`p`}
+            weight={'semibold'}
+            css={{ padding: '$4' }}
+          >
+            Card
+          </Text>
+          <Card> This is a Card </Card>
         </div>
       </div>
     </main>

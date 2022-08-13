@@ -5,3 +5,4 @@ export * from './DropdownMenu';
 export * from './Sheet';
 export * from './Avatar';
 export * from './TextField';
+export * from './Card';
