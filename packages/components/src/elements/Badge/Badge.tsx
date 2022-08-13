@@ -31,7 +31,7 @@ export const Badge = styled('span', {
   },
 
   // Custom
-  backgroundColor: '$slate3',
+  backgroundColor: '$gray200',
   borderRadius: '$pill',
   color: '$slate11',
   whiteSpace: 'nowrap',
