@@ -5,10 +5,12 @@ import { chain, useConnect, useAccount, useNetwork } from 'wagmi';
 import {
   Button,
   Flex,
+  Box,
   Text,
   Address,
   TokenBalance,
   NFT,
+  ENSAvatar,
 } from '@web3-ui/components/src';
 
 const UNI_TOKEN_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
@@ -97,6 +99,21 @@ const Web3ComponentsPage: NextPage = () => {
             </Flex>
           )}
         </div>
+
+        {mounted && (
+          <div className="item">
+            <Text
+              size={`lg`}
+              as={`p`}
+              weight={'semibold'}
+              css={{ padding: '$4' }}
+            >
+              Address
+            </Text>
+            <ENSAvatar address="0xc37c41601bc88c91b6569c701f08d37fa0f565f0" />
+          </div>
+        )}
+
         <div className={`item`}>
           <Text
             size={`lg`}
