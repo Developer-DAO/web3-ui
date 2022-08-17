@@ -137,7 +137,7 @@ const Web3ComponentsPage: NextPage = () => {
               </Box>
               <Box>
                 <Text size="xl">Avatar Fallbacks</Text>
-                <ENSAvatar address="0xf9d26888427ab76e4dc5b9acb23793bdd30d8000" />
+                <ENSAvatar address="0x3f379e678092FB3eE0f01994398a9dD8Dc7B223a" />
               </Box>
             </Flex>
           </Box>

@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import { useEnsAvatar } from 'wagmi';
-import Jazzicon from 'react-jazzicon';
+import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
 import { Avatar } from '../../elements';
 
 type ENSAvatarProps = {
@@ -20,7 +19,10 @@ export const ENSAvatar: FC<ENSAvatarProps> = ({ address, size = 'xl' }) => {
   return (
     <div>
       {isError || !data ? (
-        <Jazzicon diameter={{ xs: 24, sm: 40, md: 56, lg: 80, xl: 96 }[size]} />
+        <Jazzicon
+          seed={jsNumberForAddress(address)}
+          diameter={{ xs: 24, sm: 40, md: 56, lg: 80, xl: 96 }[size]}
+        />
       ) : (
         <Avatar shape="circle" size={size} src={data} alt={address} />
       )}
