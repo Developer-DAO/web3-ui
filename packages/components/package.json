@@ -54,13 +54,13 @@
     "@types/jest": "^28.1.4",
     "@types/react": "18.0.15",
     "@types/react-dom": "^18.0.6",
+    "ankr-react": "^0.2.1",
     "eslint": "^8.20.0",
     "eslint-config-custom": "*",
     "ethers": "^5.6.9",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "react": "18.1.0",
-    "ankr-react": "^0.2.1",
     "ts-jest": "^28.0.5",
     "tsconfig": "*",
     "tsup": "^6.2.0",
@@ -69,7 +69,8 @@
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.8",
-    "@web3-ui/hooks": "*"
+    "@web3-ui/hooks": "*",
+    "react-jazzicon": "^1.0.4"
   },
   "peerDependencies": {
     "ethers": ">=5.5.1",

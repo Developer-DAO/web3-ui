@@ -9,6 +9,8 @@ import {
   Address,
   TokenBalance,
   NFT,
+  ENSAvatar,
+  Box,
 } from '@web3-ui/components/src';
 
 const UNI_TOKEN_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
@@ -97,6 +99,50 @@ const Web3ComponentsPage: NextPage = () => {
             </Flex>
           )}
         </div>
+
+        {mounted && (
+          <Box className="item" css={{ padding: '$4' }}>
+            <Text size={`lg`} as={`p`} weight={'semibold'}>
+              Avatar
+            </Text>
+            <Flex gap="5" direction="column">
+              <Box>
+                <ENSAvatar address="vitalik.eth" />
+              </Box>
+              <Box>
+                <Text size="xl">Avatar Sizes</Text>
+                <Text>The ENSAvatar component comes in 5 sizes.</Text>
+                <Flex css={{ mt: '$2' }} gap="1">
+                  <ENSAvatar
+                    size="xs"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="sm"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="md"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="lg"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="xl"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                </Flex>
+              </Box>
+              <Box>
+                <Text size="xl">Avatar Fallbacks</Text>
+                <ENSAvatar address="0x3f379e678092FB3eE0f01994398a9dD8Dc7B223a" />
+              </Box>
+            </Flex>
+          </Box>
+        )}
+
         <div className={`item`}>
           <Text
             size={`lg`}

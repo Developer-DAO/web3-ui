@@ -8,3 +8,4 @@ export * from './NFT';
 // export * from './EtherInput';
 export * from './TokenBalance';
 // export * from './MultiAddressInput';
+export * from './ENSAvatar';
