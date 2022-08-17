@@ -5,12 +5,12 @@ import { chain, useConnect, useAccount, useNetwork } from 'wagmi';
 import {
   Button,
   Flex,
-  Box,
   Text,
   Address,
   TokenBalance,
   NFT,
   ENSAvatar,
+  Box,
 } from '@web3-ui/components/src';
 
 const UNI_TOKEN_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
@@ -101,17 +101,46 @@ const Web3ComponentsPage: NextPage = () => {
         </div>
 
         {mounted && (
-          <div className="item">
-            <Text
-              size={`lg`}
-              as={`p`}
-              weight={'semibold'}
-              css={{ padding: '$4' }}
-            >
-              Address
+          <Box className="item" css={{ padding: '$4' }}>
+            <Text size={`lg`} as={`p`} weight={'semibold'}>
+              Avatar
             </Text>
-            <ENSAvatar address="0xc37c41601bc88c91b6569c701f08d37fa0f565f0" />
-          </div>
+            <Flex gap="5" direction="column">
+              <Box>
+                <ENSAvatar address="vitalik.eth" />
+              </Box>
+              <Box>
+                <Text size="xl">Avatar Sizes</Text>
+                <Text>The ENSAvatar component comes in 5 sizes.</Text>
+                <Flex css={{ mt: '$2' }} gap="1">
+                  <ENSAvatar
+                    size="xs"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="sm"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="md"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="lg"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                  <ENSAvatar
+                    size="xl"
+                    address="0xc37c41601bC88C91b6569c701f08D37FA0F565f0"
+                  />
+                </Flex>
+              </Box>
+              <Box>
+                <Text size="xl">Avatar Fallbacks</Text>
+                <ENSAvatar address="0xf9d26888427ab76e4dc5b9acb23793bdd30d8000" />
+              </Box>
+            </Flex>
+          </Box>
         )}
 
         <div className={`item`}>
