@@ -1,19 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownContent,
-  DropdownGroup,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownCheckboxItem,
-  DropdownLabel,
-  DropdownRadioGroup,
-  DropdownRadioItem,
-} from './Dropdown';
-
-import { Button } from '../Button';
+import { Dropdown } from './Dropdown';
 
 export default {
   title: 'Elements/Dropdown',
@@ -21,32 +8,15 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args}>
-    <DropdownTrigger asChild>
-      <Button>Dropdown</Button>
-    </DropdownTrigger>
-    <DropdownContent align="end">
-      <DropdownGroup>
-        <DropdownItem>Item</DropdownItem>
-        <DropdownItem>Item</DropdownItem>
-        <DropdownItem>Item</DropdownItem>
-        <DropdownSeparator />
-        <DropdownCheckboxItem>Item</DropdownCheckboxItem>
-        <DropdownCheckboxItem checked>Item</DropdownCheckboxItem>
-        <DropdownCheckboxItem>Item</DropdownCheckboxItem>
-        <DropdownSeparator />
-        <DropdownLabel>Choose one</DropdownLabel>
-        <DropdownRadioGroup value="one">
-          <DropdownRadioItem value="one">Item</DropdownRadioItem>
-          <DropdownRadioItem value="two">Item</DropdownRadioItem>
-          <DropdownRadioItem value="three">Item</DropdownRadioItem>
-        </DropdownRadioGroup>
-      </DropdownGroup>
-    </DropdownContent>
-  </Dropdown>
+  <Dropdown {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Dropdown',
+  label: 'Test label',
+  placeHolder: 'Test placeHolder',
+  items: ['Item 1', 'Item 2', 'Item 3'],
+  onSelect: (value) => {
+    alert('value changed, new value is: ' + value);
+  },
 };
