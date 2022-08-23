@@ -15,8 +15,8 @@ import {
   labelCss,
 } from '../../common';
 
-const DropdownMenu = DropdownMenuPrimitive.Root;
-const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+const Dropdown = DropdownMenuPrimitive.Root;
+const DropdownTrigger = DropdownMenuPrimitive.Trigger;
 
 const StyledContent = styled(
   DropdownMenuPrimitive.Content,
@@ -31,7 +31,7 @@ type DropdownMenuContentProps = DropdownMenuContentPrimitiveProps & {
   css?: CSS;
 };
 
-const DropdownMenuContent = React.forwardRef<
+const DropdownContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   DropdownMenuContentProps
 >((props, forwardedRef) => (
@@ -39,15 +39,12 @@ const DropdownMenuContent = React.forwardRef<
     <StyledContent {...props} ref={forwardedRef} />
   </DropdownMenuPrimitive.Portal>
 ));
-DropdownMenuContent.displayName = 'DropdownMenuContent';
+DropdownContent.displayName = 'DropdownMenuContent';
 
-const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
-const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {});
-const DropdownMenuLabel = styled(DropdownMenuPrimitive.Label, labelCss);
-const DropdownMenuSeparator = styled(
-  DropdownMenuPrimitive.Separator,
-  separatorCss
-);
+const DropdownItem = styled(DropdownMenuPrimitive.Item, itemCss);
+const DropdownGroup = styled(DropdownMenuPrimitive.Group, {});
+const DropdownLabel = styled(DropdownMenuPrimitive.Label, labelCss);
+const DropdownSeparator = styled(DropdownMenuPrimitive.Separator, separatorCss);
 
 const StyledDropdownMenuCheckboxItem = styled(
   DropdownMenuPrimitive.CheckboxItem,
@@ -61,7 +58,7 @@ type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & {
   css?: CSS;
 };
 
-const DropdownMenuCheckboxItem = React.forwardRef<
+const DropdownCheckboxItem = React.forwardRef<
   React.ElementRef<typeof StyledDropdownMenuCheckboxItem>,
   DialogMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
@@ -74,9 +71,9 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     {children}
   </StyledDropdownMenuCheckboxItem>
 ));
-DropdownMenuCheckboxItem.displayName = 'DropdownMenuCheckboxItem';
+DropdownCheckboxItem.displayName = 'DropdownMenuCheckboxItem';
 
-const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {});
+const DropdownRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {});
 const StyledDropdownMenuRadioItem = styled(
   DropdownMenuPrimitive.RadioItem,
   itemCss
@@ -89,7 +86,7 @@ type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & {
   css?: CSS;
 };
 
-const DropdownMenuRadioItem = React.forwardRef<
+const DropdownRadioItem = React.forwardRef<
   React.ElementRef<typeof StyledDropdownMenuRadioItem>,
   DialogMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
@@ -118,17 +115,17 @@ const DropdownMenuRadioItem = React.forwardRef<
     {children}
   </StyledDropdownMenuRadioItem>
 ));
-DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem';
+DropdownRadioItem.displayName = 'DropdownMenuRadioItem';
 
 export {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuCheckboxItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
+  DropdownGroup,
+  DropdownLabel,
+  DropdownSeparator,
+  DropdownCheckboxItem,
+  DropdownRadioGroup,
+  DropdownRadioItem,
 };
