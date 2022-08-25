@@ -21,6 +21,7 @@ export const baseItemCss = css({
   whiteSpace: 'nowrap',
   height: '$5',
   px: '$5',
+  py: '$1',
 });
 
 export const itemCss = css(baseItemCss, {
@@ -29,12 +30,15 @@ export const itemCss = css(baseItemCss, {
 
   '&[data-highlighted]': {
     outline: 'none',
-    backgroundColor: '$blue500',
-    color: 'white',
+    backgroundColor: '$gray100',
+    color: 'black',
+    paddingTop: '$1',
+    paddingBottom: '$1',
   },
 
   '&[data-disabled]': {
     color: '$gray800',
+    paddingBottom: '$1',
   },
 });
 
@@ -44,7 +48,9 @@ export const labelCss = css(baseItemCss, {
 
 export const menuCss = css({
   boxSizing: 'border-box',
-  minWidth: 120,
+  minWidth: 150,
+  borderColor: '$red',
+  borderWidth: '5px',
   py: '$1',
 });
 
