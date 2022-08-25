@@ -49,8 +49,6 @@ export const labelCss = css(baseItemCss, {
 export const menuCss = css({
   boxSizing: 'border-box',
   minWidth: 150,
-  borderColor: '$red',
-  borderWidth: '5px',
   py: '$1',
 });
 

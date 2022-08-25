@@ -52,7 +52,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <DropdownMenu>
       <DropdownTrigger asChild>
-        <Button>{label ? label : placeHolder}</Button>
+        <Button variant="white">{label ? label : placeHolder}</Button>
       </DropdownTrigger>
       <DropdownContent align="end">
         <DropdownGroup>
