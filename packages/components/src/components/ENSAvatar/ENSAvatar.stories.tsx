@@ -20,11 +20,11 @@ export default {
   decorators: [WagmiDecorator],
 } as ComponentMeta<typeof ENSAvatar>;
 
-export const Template: ComponentStory<typeof ENSAvatar> = (args) => (
+const Template: ComponentStory<typeof ENSAvatar> = (args) => (
   <ENSAvatar {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  address: 'https://www.developerdao.com/D_D_logo-light.svg',
+  address: '0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5',
 };
