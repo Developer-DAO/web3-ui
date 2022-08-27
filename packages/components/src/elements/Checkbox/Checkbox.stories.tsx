@@ -13,5 +13,7 @@ const Template: ComponentStory<typeof Checkbox> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Checkbox',
+  // onClick: () => {
+  //   console.log('onClick');
+  // },
 };

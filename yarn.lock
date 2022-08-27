@@ -5053,10 +5053,10 @@ ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.12.4, ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ankr-react@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/ankr-react/-/ankr-react-0.2.1.tgz#316d8d40c6581d34f08916aba4d6d3f384c13587"
-  integrity sha512-92E6+YyLwfyNmrDSwYuNVptXkm7GBR4BiVq7zLW9KBiCJ9n87lfzD9k7yA/mgTkrpWnfxNV7y4zUhPRKqO91gw==
+ankr-react@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ankr-react/-/ankr-react-0.3.0.tgz#2ac5c2cebd79716777c00a98fe2548839e4a5086"
+  integrity sha512-rgL3/sncImvlD3McAZY116j1oC77NoVbDNMMdZYrdd26PSkpIN4v+P6TFeBE+2Lp/ZjiRDs+Jqgok+9eFoa7ug==
   dependencies:
     "@ankr.com/ankr.js" "^0.1.6"
     react-query "^3.39.1"

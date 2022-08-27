@@ -54,7 +54,7 @@
     "@types/jest": "^28.1.4",
     "@types/react": "18.0.15",
     "@types/react-dom": "^18.0.6",
-    "ankr-react": "^0.2.1",
+    "ankr-react": "^0.3.0",
     "eslint": "^8.20.0",
     "eslint-config-custom": "*",
     "ethers": "^5.6.9",

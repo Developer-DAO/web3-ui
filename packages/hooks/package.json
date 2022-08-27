@@ -40,7 +40,6 @@
   "types": "./dist/index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "ankr-react": "^0.2.1",
     "wagmi": "^0.5.5"
   },
   "peerDependencies": {
@@ -51,6 +50,7 @@
   },
   "devDependencies": {
     "@types/react": "18.0.15",
+    "ankr-react": "^0.3.0",
     "react": "^18.1.0",
     "tsconfig": "*",
     "tsup": "^6.2.0",
