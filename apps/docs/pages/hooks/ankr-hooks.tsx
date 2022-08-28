@@ -10,6 +10,7 @@ import {
   use_token_holders_count,
   use_token_holders,
   use_transactions_by_hash,
+  use_nft_metadata,
 } from '../../components/snippets/hooks/ankr';
 
 const AnkrHooksPage: NextPage = () => {
@@ -54,6 +55,16 @@ const AnkrHooksPage: NextPage = () => {
       <h3 className="p-2 font-medium text-gray-700 text-lg">useLogs</h3>
       <CopyBlock
         text={use_logs['jsx']}
+        language={'jsx'}
+        showLineNumbers={false}
+        theme={dracula}
+        wrapLines={true}
+        codeBlock
+      />
+
+      <h3 className="p-2 font-medium text-gray-700 text-lg">useNFTMetadata</h3>
+      <CopyBlock
+        text={use_nft_metadata['jsx']}
         language={'jsx'}
         showLineNumbers={false}
         theme={dracula}

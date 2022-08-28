@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Provider as AnkrProvider } from 'ankr-react';
 // TODO: HooksProvider is not working on build for storybook or docs on vercel
 // import { HooksProvider } from '@web3-ui/hooks';
+// import { AlchemyProvider } from '@web3-ui/hooks';
 import { CSS, getCssText, createTheme } from '../../theme/stitches.config';
 
 export interface IWeb3uiProviderProps {

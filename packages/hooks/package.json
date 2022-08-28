@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@types/react": "18.0.15",
+    "alchemy-sdk": "^2.0.3",
     "ankr-react": "^0.3.0",
     "react": "^18.1.0",
     "tsconfig": "*",
