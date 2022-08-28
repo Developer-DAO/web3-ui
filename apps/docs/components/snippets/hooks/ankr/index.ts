@@ -6,3 +6,4 @@ export { default as use_nfts_by_owner } from './use_nfts_by_owner';
 export { default as use_token_holders_count } from './use_token_holders_count';
 export { default as use_token_holders } from './use_token_holders';
 export { default as use_transactions_by_hash } from './use_transactions_by_hash';
+export { default as use_nft_metadata } from './use_nft_metadata';
