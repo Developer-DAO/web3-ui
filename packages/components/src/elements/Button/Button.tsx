@@ -60,28 +60,227 @@ export const Button = styled('button', {
       },
     },
     variant: {
-      gray: {
-        backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$gray700',
-        color: '$gray800',
+      primary: {
+        backgroundColor: '$primary600',
+        color: '$white',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$gray800',
+            backgroundColor: '$primary700',
           },
         },
         '&:active': {
-          backgroundColor: '$gray200',
-          boxShadow: 'inset 0 0 0 1px $colors$gray800',
+          backgroundColor: '$primary800',
         },
-        '&:focus': {
-          boxShadow:
-            'inset 0 0 0 1px $colors$gray800, 0 0 0 1px $colors$gray800',
-        },
-        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-          {
-            backgroundColor: '$gray4',
-            boxShadow: 'inset 0 0 0 1px $colors$gray800',
+        '&:focus': {},
+      },
+      secondary: {
+        backgroundColor: '$secondary600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$secondary700',
           },
+        },
+        '&:active': {
+          backgroundColor: '$secondary800',
+        },
+        '&:focus': {},
+      },
+      success: {
+        backgroundColor: '$success600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$success700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$success800',
+        },
+        '&:focus': {},
+      },
+      danger: {
+        backgroundColor: '$danger600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$danger700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$danger800',
+        },
+        '&:focus': {},
+      },
+      warning: {
+        backgroundColor: '$warning600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$warning700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$warning800',
+        },
+        '&:focus': {},
+      },
+      info: {
+        backgroundColor: '$info600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$info700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$info800',
+        },
+        '&:focus': {},
+      },
+      neutral: {
+        backgroundColor: '$neutral600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$neutral700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$neutral800',
+        },
+        '&:focus': {},
+      },
+      blue: {
+        backgroundColor: '$blue600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$blue700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$blue800',
+        },
+        '&:focus': {},
+      },
+      cyan: {
+        backgroundColor: '$cyan600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$cyan700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$cyan800',
+        },
+        '&:focus': {},
+      },
+      teal: {
+        backgroundColor: '$teal600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$teal700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$teal800',
+        },
+        '&:focus': {},
+      },
+      green: {
+        backgroundColor: '$green600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$green700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$green800',
+        },
+        '&:focus': {},
+      },
+      yellow: {
+        backgroundColor: '$yellow600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$yellow700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$yellow800',
+        },
+        '&:focus': {},
+      },
+      orange: {
+        backgroundColor: '$orange600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$orange700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$orange800',
+        },
+        '&:focus': {},
+      },
+      red: {
+        backgroundColor: '$red600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$red700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$red800',
+        },
+        '&:focus': {},
+      },
+      purple: {
+        backgroundColor: '$purple600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$purple700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$purple800',
+        },
+        '&:focus': {},
+      },
+      pink: {
+        backgroundColor: '$pink600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$pink700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$pink800',
+        },
+        '&:focus': {},
+      },
+
+      gray: {
+        backgroundColor: '$gray600',
+        color: '$white',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$gray700',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$gray800',
+        },
+        '&:focus': {},
       },
       white: {
         backgroundColor: '$white',
@@ -111,6 +310,6 @@ export const Button = styled('button', {
 
   defaultVariants: {
     size: 'md',
-    variant: 'gray',
+    variant: 'primary',
   },
 });

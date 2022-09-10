@@ -27,6 +27,7 @@ export const defaultColors = {
   background: '#fff',
 
   // canvas: 'hsl(0 0% 93%)',
+  white: '#fff',
   panel: 'white',
   transparentPanel: 'hsl(0 0% 0% / 97%)',
   shadowLight: 'hsl(206 22% 7% / 35%)',
