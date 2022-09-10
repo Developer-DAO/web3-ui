@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 // import { useNFTsByOwner } from '@web3-ui/hooks';
 import { Alchemy } from 'alchemy-sdk';
 import { useQuery } from 'react-query';
+import { Card } from '../../elements';
+import { Flex, Text, Box } from '../../common';
 
 // Using default settings - pass in a settings object to specify your API key and network
 const alchemy = new Alchemy();
@@ -39,7 +41,7 @@ type getNFTMetadataProps = {
 /**
  * Component to fetch and display NFT data
  */
-export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
+export const NFT = ({ contractAddress, tokenId, size }: NFTProps) => {
   const { data, isLoading } = useQuery(
     ['getNFTMetadata', contractAddress, tokenId],
     () => {
@@ -58,11 +60,33 @@ export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
     tokenId,
   }: getNFTMetadataProps) => {
     if (!contractAddress || !tokenId) return null;
-    const data = await alchemy.nft.getNftMetadata(contractAddress!, tokenId!);
+    const data = await alchemy.nft.getNftMetadata(contractAddress, tokenId);
     return data;
   };
 
-  console.log(data);
-
-  return <div>nft here</div>;
+  return (
+    <Card size={size}>
+      <Flex direction={'column'}>
+        {data?.media.at(0)?.gateway ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={data?.media.at(0)?.gateway}
+            alt={data?.title || 'nft image'}
+          />
+        ) : (
+          <Box
+            css={{
+              height: '$36',
+              width: '100%',
+              backgroundColor: '$gray400',
+            }}
+          />
+        )}
+        <Flex direction={'column'}>
+          <Text weight={'semibold'}>{data?.title}</Text>
+          <Text>{data?.tokenId}</Text>
+        </Flex>
+      </Flex>
+    </Card>
+  );
 };

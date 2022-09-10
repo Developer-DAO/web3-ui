@@ -153,8 +153,9 @@ const Web3ComponentsPage: NextPage = () => {
             NFT
           </Text>
           <NFT
-            contractAddress="0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
-            tokenId="4560"
+            contractAddress="0x23581767a106ae21c074b2276d25e5c3e136a68b"
+            tokenId="6240"
+            size="xl"
           />
         </div>
       </div>

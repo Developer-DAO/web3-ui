@@ -130,8 +130,35 @@ export const Card = styled('div', {
         borderRadius: '$pill',
       },
     },
+    size: {
+      xs: {
+        width: '$space$20',
+        height: '$space$32',
+      },
+      sm: {
+        width: '$space$32',
+        height: '$space$48',
+      },
+      md: {
+        width: '$space$48',
+        height: '$space$64',
+      },
+      lg: {
+        width: '$space$64',
+        height: '$space$80',
+      },
+      xl: {
+        width: '$space$80',
+        height: '$space$96',
+      },
+      '2xl': {
+        width: '$space$96',
+        height: 'fit-content',
+      },
+    },
   },
   defaultVariants: {
     rounded: 'full',
+    size: 'xs',
   },
 });
