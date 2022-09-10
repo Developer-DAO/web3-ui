@@ -4,7 +4,7 @@ import { Provider as AnkrProvider } from 'ankr-react';
 // import { HooksProvider } from '@web3-ui/hooks';
 // import { AlchemyProvider } from '@web3-ui/hooks';
 import { CSS, getCssText, createTheme } from '../../theme/stitches.config';
-
+import { QueryClient, QueryClientProvider } from 'react-query';
 export interface IWeb3uiProviderProps {
   children: React.ReactNode;
   theme?: CSS | null;
@@ -23,6 +23,8 @@ const createThemeRootSelector = (id: string | undefined) => {
 
   return id ? `[${attr}="${id}-theme"]` : `[${attr}]`;
 };
+
+const queryClient = new QueryClient();
 
 export const Web3uiProvider = ({
   children,
@@ -55,16 +57,18 @@ export const Web3uiProvider = ({
 
   // TODO dangerous set innerHTML is set for ssr.  need to test this. https://stitches.dev/docs/server-side-rendering
   return (
-    <AnkrProvider>
-      <div {...createThemeRootProps(id)} className={currentTheme}>
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{
-            __html: [`${selector}${getCssText()}`].join(),
-          }}
-        />
-        {children}
-      </div>
-    </AnkrProvider>
+    <QueryClientProvider client={queryClient}>
+      <AnkrProvider>
+        <div {...createThemeRootProps(id)} className={currentTheme}>
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{
+              __html: [`${selector}${getCssText()}`].join(),
+            }}
+          />
+          {children}
+        </div>
+      </AnkrProvider>
+    </QueryClientProvider>
   );
 };

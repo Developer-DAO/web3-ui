@@ -1,7 +1,11 @@
 // import React, { useCallback, useEffect, useRef } from 'react';
 import React, { useEffect } from 'react';
 // import { useNFTsByOwner } from '@web3-ui/hooks';
-import { useNFTMetadata } from 'ankr-react';
+import { Alchemy } from 'alchemy-sdk';
+import { useQuery } from 'react-query';
+
+// Using default settings - pass in a settings object to specify your API key and network
+const alchemy = new Alchemy();
 
 export type NFTProps = {
   /**
@@ -27,30 +31,38 @@ export interface NFTData {
   animationUrl?: string;
 }
 
+type getNFTMetadataProps = {
+  contractAddress?: string;
+  tokenId?: string;
+};
+
 /**
  * Component to fetch and display NFT data
  */
-export const NFT = ({
-  // contractAddress,
-  // tokenId,
-  size = 'xs',
-}: NFTProps) => {
-  // const { data, error, isLoading } = useNFTMetadata({
-  //   blockchain: 'eth',
-  //   contractAddress: '0xEdB61f74B0d09B2558F1eeb79B247c1F363Ae452',
-  //   tokenId: '2276'
-  // });
+export const NFT = ({ contractAddress, tokenId, size = 'xs' }: NFTProps) => {
+  const { data, isLoading } = useQuery(
+    ['getNFTMetadata', contractAddress, tokenId],
+    () => {
+      return fetchNft({
+        contractAddress,
+        tokenId,
+      });
+    },
+    {
+      enabled: !!contractAddress && !!tokenId,
+    }
+  );
 
-  // console.log('data', data);
+  const fetchNft = async ({
+    contractAddress,
+    tokenId,
+  }: getNFTMetadataProps) => {
+    if (!contractAddress || !tokenId) return null;
+    const data = await alchemy.nft.getNftMetadata(contractAddress!, tokenId!);
+    return data;
+  };
 
-  // working ankr api hook for nfts by owner
-  // const { data, error, isLoading } = useNFTsByOwner({
-  //   walletAddress: '0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5',
-  //   blockchain: ['eth', 'polygon']
-  // });
-  // console.log('loading', isLoading);
-  // console.log('error', error);
-  // console.log(data);
+  console.log(data);
 
   return <div>nft here</div>;
 };
