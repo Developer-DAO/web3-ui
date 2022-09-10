@@ -62,7 +62,6 @@
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "react": "18.1.0",
-    "react-query": "^3.39.2",
     "ts-jest": "^28.0.5",
     "tsconfig": "*",
     "tsup": "^6.2.0",
@@ -72,7 +71,8 @@
     "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.8",
     "@web3-ui/hooks": "*",
-    "react-jazzicon": "^1.0.4"
+    "react-jazzicon": "^1.0.4",
+    "react-query": "^3.39.2"
   },
   "peerDependencies": {
     "ethers": ">=5.5.1",
