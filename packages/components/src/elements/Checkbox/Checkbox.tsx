@@ -26,7 +26,7 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   padding: '0',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  color: '$blue500',
+  color: '$primary700',
   boxShadow: 'inset 0 0 0 1px $colors$gray700',
   overflow: 'hidden',
   '@hover': {
@@ -36,8 +36,9 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   },
   '&:focus': {
     outline: 'none',
-    borderColor: '$gray700',
-    boxShadow: 'inset 0 0 0 1px $colors$blue500, 0 0 0 1px $colors$blue500',
+    borderColor: '$primary700',
+    boxShadow:
+      'inset 0 0 0 1px $colors$primary500, 0 0 0 1px $colors$primary500',
   },
 
   variants: {
@@ -53,9 +54,155 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
         borderRadius: '$DEFAULT',
       },
     },
+    color: {
+      primary: {
+        color: '$primary600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$primary700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$primary500, 0 0 0 1px $colors$primary500',
+        },
+      },
+      secondary: {
+        color: '$secondary600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$secondary700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$secondary500, 0 0 0 1px $colors$secondary500',
+        },
+      },
+      success: {
+        color: '$success600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$success700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$success500, 0 0 0 1px $colors$success500',
+        },
+      },
+      warning: {
+        color: '$warning600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$warning700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$warning500, 0 0 0 1px $colors$warning500',
+        },
+      },
+      danger: {
+        color: '$danger600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$danger700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$danger500, 0 0 0 1px $colors$danger500',
+        },
+      },
+      info: {
+        color: '$info600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$info700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$info500, 0 0 0 1px $colors$info500',
+        },
+      },
+      neutral: {
+        color: '$neutral600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$neutral700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$neutral500, 0 0 0 1px $colors$neutral500',
+        },
+      },
+      blue: {
+        color: '$blue600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$blue700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$blue500, 0 0 0 1px $colors$blue500',
+        },
+      },
+      cyan: {
+        color: '$cyan600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$cyan700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$cyan500, 0 0 0 1px $colors$cyan500',
+        },
+      },
+      gray: {
+        color: '$gray600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$gray700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$gray500, 0 0 0 1px $colors$gray500',
+        },
+      },
+      green: {
+        color: '$green600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$green700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$green500, 0 0 0 1px $colors$green500',
+        },
+      },
+      orange: {
+        color: '$orange600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$orange700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$orange500, 0 0 0 1px $colors$orange500',
+        },
+      },
+      yellow: {
+        color: '$yellow600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$yellow700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$yellow500, 0 0 0 1px $colors$yellow500',
+        },
+      },
+      pink: {
+        color: '$pink600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$pink700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$pink500, 0 0 0 1px $colors$pink500',
+        },
+      },
+      purple: {
+        color: '$purple600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$purple700',
+          boxShadow:
+            'inset 0 0 0 1px $colors$purple500, 0 0 0 1px $colors$purple500',
+        },
+      },
+      red: {
+        color: '$red600',
+        '&:focus': {
+          outline: 'none',
+          borderColor: '$red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red500, 0 0 0 1px $colors$red500',
+        },
+      },
+    },
   },
   defaultVariants: {
     size: '1',
+    color: 'primary',
   },
 });
 

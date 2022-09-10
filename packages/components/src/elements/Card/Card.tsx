@@ -101,33 +101,57 @@ export const Card = styled('div', {
     rounded: {
       none: {
         borderRadius: '$none',
+        '&::before': {
+          borderRadius: '$none',
+        },
       },
       sm: {
         borderRadius: '$sm',
+        '&::before': {
+          borderRadius: '$sm',
+        },
       },
       base: {
         borderRadius: '$DEFAULT',
+        '&::before': {
+          borderRadius: '$DEFAULT',
+        },
       },
       md: {
         borderRadius: '$md',
+        '&::before': {
+          borderRadius: '$md',
+        },
       },
       lg: {
         borderRadius: '$lg',
+        '&::before': {
+          borderRadius: '$lg',
+        },
       },
       xl: {
         borderRadius: '$xl',
+        '&::before': {
+          borderRadius: '$xl',
+        },
       },
       '2xl': {
         borderRadius: '$2xl',
+        '&::before': {
+          borderRadius: '$2xl',
+        },
       },
       '3xl': {
         borderRadius: '$3xl',
-      },
-      full: {
-        borderRadius: '$full',
+        '&::before': {
+          borderRadius: '$3xl',
+        },
       },
       pill: {
         borderRadius: '$pill',
+        '&::before': {
+          borderRadius: '$pill',
+        },
       },
     },
   },
