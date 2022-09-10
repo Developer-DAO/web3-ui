@@ -17,7 +17,7 @@ export const Card = styled('div', {
   textDecoration: 'none',
   color: 'inherit',
   flexShrink: 0,
-  borderRadius: '$3',
+  borderRadius: '$DEFAULT',
   position: 'relative',
 
   '&::before': {
@@ -29,7 +29,7 @@ export const Card = styled('div', {
     bottom: 0,
     left: 0,
     boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
-    borderRadius: '$3',
+    borderRadius: '$DEFAULT',
     pointerEvents: 'none',
   },
 
@@ -98,5 +98,40 @@ export const Card = styled('div', {
         },
       },
     },
+    rounded: {
+      none: {
+        borderRadius: '$none',
+      },
+      sm: {
+        borderRadius: '$sm',
+      },
+      base: {
+        borderRadius: '$DEFAULT',
+      },
+      md: {
+        borderRadius: '$md',
+      },
+      lg: {
+        borderRadius: '$lg',
+      },
+      xl: {
+        borderRadius: '$xl',
+      },
+      '2xl': {
+        borderRadius: '$2xl',
+      },
+      '3xl': {
+        borderRadius: '$3xl',
+      },
+      full: {
+        borderRadius: '$full',
+      },
+      pill: {
+        borderRadius: '$pill',
+      },
+    },
+  },
+  defaultVariants: {
+    rounded: 'full',
   },
 });
